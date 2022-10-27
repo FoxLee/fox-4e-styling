@@ -21,7 +21,6 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 * Makes heavy use of "tooltip" messages to assist in editing.
 * Every piece of visible text (aside from user entry of course) should be translation-ready.
 * Auto-generated MM3 style power summary. No need to write your own summary, add extra info to headers or target lines, or any of that stuff. Just get the data right, and your summary should look perfect.
-* 
 * Skills entry on the Main tab displays any skills which has a "base" value set, has any bonuses set, or has a total bonus higher than the correspondingn raw ability check.
 * In the absence of a monster trait object in the current system build, the sheet collapses *almost* all Feats and Class/Race/Etc Features down into a single "Traits" section. The sole exception is Epic Destiny Features; to maintain continuity with Drac's import code, we're currently using the "destinyFeats" object to store monster lore in a chat-card-friendly format, so they appear on the Lore tab instead.
 ### Journal Styling
@@ -56,8 +55,8 @@ Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenac
   * Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin.
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * Each set of styling optional (either as settings or as separate sheets)
-* Fix the new NPC sheet's power sorting method, for Token Action HUD. Power sorting is not "set" even though the sheet forces its unique sorting, so TAH retains the last selected value for the actor (for now, swap back to the default sheet and choose "action" sorting to fix). 
- * TAH also doesn't inherit the specific MM3 action groups. Default action sorting is sufficient, but it would be nice for it to be exactly right.
+* Fix the new NPC sheet's power sorting method, for Token Action HUD. Power sorting is not "set" even though the sheet forces its unique sorting, so TAH retains the last selected value for the actor (for now, swap back to the default sheet and choose "action" sorting to fix).
+  * TAH also doesn't inherit the specific MM3 action groups. Default action sorting is sufficient, but it would be nice for it to be exactly right.
 
 ## Installation
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
