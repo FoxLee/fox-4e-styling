@@ -22,7 +22,9 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 * Makes heavy use of "tooltip" messages to assist in editing.
 * Every piece of visible text (aside from user entry of course) should be translation-ready.
 * Auto-generated MM3 style power summary. No need to write your own summary, add extra info to headers or target lines, or any of that stuff. Just get the data right, and your summary should look perfect!
-* Power icons are not inlcuded because of dubious legality; the icon displayed is the image you set for the power. But if you use a white SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—png files will be unchanged.
+
+**Tips for Use**
+* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a white SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—png files will be unchanged.
 * Skills entry on the Main tab lists any skill which has a "base" value set, has any bonuses active, or has a total bonus higher than the corresponding raw ability check (configured on the "Manage" tab). **Exception:** Perception will never appear here since it's always in the header.
 * Resistances/Immunities/Vulnerabilities entries in the header will show any damage type with a value not equal to 0, or with "immunity" checked (configured on the "Manage" tab).
 * Elite and Solo monsters will display Action Points and Saving Throws in the header. For everybody else, you can find them in the "Manage" tab if you need them.
