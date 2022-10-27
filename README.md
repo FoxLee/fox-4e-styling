@@ -19,6 +19,7 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 * Should work near-seamlessly with Draconas [Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)/[Masterplan exporter](https://github.com/draconas1/masterplan-json-export)
 * Makes heavy use of "tooltip" messages to assist in editing.
 * Every piece of visible text should be translation-ready.
+* In the absence of a monster trait object in the current system build, the sheet collapses *almost* all Feats and Class/Race/Etc Features down into a single "Traits" section. The sole exception is "desintyFeats". To maintain continuity with Drac's import code, we're currently using the "destinyFeats" object to store monster lore in a chat-card-friendly format, so they appear on the "Lore" tab instead.
 ### Journal Styling
 Makes your Journals look just like official 4e books!
 
