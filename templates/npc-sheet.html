@@ -484,7 +484,7 @@
 			{{#if (hasLore features)}}
 				<h2 class="subsection">{{localize 'Fox4e.TabInfo'}}</h2>
 				<section class="lore">
-					<ul>
+					<ul class="item-list feature-list sublist">
 						{{#each features as |section sid|}}
 							{{#if (eq section.dataset.type "destinyFeats")}}
 								{{#each section.items as |item iid|}}
