@@ -52,14 +52,13 @@ Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenac
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * Each set of styling optional (either as settings or as separate sheets)
 
-## I only want the NPC sheet
+## Installation
+* From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
+* In the **"Manifest URL"** field, paste the following: https://raw.githubusercontent.com/FoxLee/fox-4e-styling/main/module.json
+* Click "Install".
+### I only want the NPC sheet
 I hope to eventually have all components be loaded separately, either as separate sheets or based on settings. In the mean time, if you don't want to style journals/chat cards/TAH, do one of the following:
 * Remove the corresponding CSS file from the "styles" list in the module.json file
 * Edit the corresponding CSS file to be empty (don't delete the file or you'll get an error).
 
 Yes, this will be undone next time the module updates. Sorry. I'll get optional loading done as soon as I can!
-
-## Installation
-* From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
-* In the **"Manifest URL"** field, paste the following: https://raw.githubusercontent.com/FoxLee/fox-4e-styling/main/module.json
-* Click "Install".
