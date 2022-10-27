@@ -688,7 +688,7 @@
 								<th class="skill-name">{{localize 'DND4EBETA.Skill'}}</th>
 								{{#if system.advancedCals}}<th class="skill-abil">{{localize 'Fox4e.Stat'}}</th>{{/if}}
 								{{#if system.advancedCals}}<th class="skill-value">{{localize 'Fox4e.Total'}}</th>{{/if}}
-								<th class="skill-base">{{localize 'Fox4e.Base'}}</th>
+								<th class="skill-base">{{#if system.advancedCals}}{{localize 'Fox4e.Base'}}{{else}}{{localize 'DND4EBETA.Value'}}{{/if}}</th>
 							</tr>
 						</thead>
 						<tbody class="skills items-list inventory-list">
@@ -698,8 +698,8 @@
 								<input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"></td>{{/if}}
 								<td class="skill-name"><h4 class="skill-name rollable" title="{{localize 'DND4EBETA.Roll'}} {{skill.label}} {{localize 'Fox4e.Check'}}">{{skill.label}}</h4></td>
 								{{#if ../system.advancedCals}}<td class="skill-ability">{{skill.ability}}</td>{{/if}}
-								{{#if ../system.advancedCals}}<td class="skill-bonus rollable">{{numberFormat skill.total decimals=0 sign=true}}</td>{{/if}}
-								<td class="skill-mod"><input class="skill-mod" name="system.skills.{{s}}.base" value="{{skill.base}}" data-dtype="Number" size="2" /></td>
+								{{#if ../system.advancedCals}}<td class="skill-bonus rollable" title="{{localize 'Fox4e.TipBonus'}}">{{numberFormat skill.total decimals=0 sign=true}}</td>{{/if}}
+								<td class="skill-mod" title="{{#if ../system.advancedCals}}{{localize 'Fox4e.TipAddBonus'}}{{else}}{{localize 'Fox4e.TipEnterNum'}}{{/if}}  {{skill.label}}"><input class="skill-mod" name="system.skills.{{s}}.base" value="{{skill.base}}" data-dtype="Number" size="2" /></td>
 							</tr>
 							{{/each}}
 						</tbody>
@@ -715,7 +715,7 @@
 							<tr class="res-header">
 								<th class="res-name">{{localize 'DND4EBETA.Type'}}</th>
 								{{#if system.advancedCals}}<th class="res-value">{{localize 'Fox4e.Total'}}</th>{{/if}}
-								<th class="res-bonus">{{localize 'Fox4e.Base'}}</th>
+								<th class="res-bonus">{{#if system.advancedCals}}{{localize 'Fox4e.Base'}}{{else}}{{localize 'DND4EBETA.Value'}}{{/if}}</th>
 								<th class="res-imm">{{localize 'Fox4e.DamImmune'}}</th>
 							</tr>
 						</thead>

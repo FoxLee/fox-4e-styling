@@ -18,10 +18,6 @@ Handlebars.registerHelper("stripsq", function(lunch){
 	return lunch.replace(' sq', '');
 });
 
-Handlebars.registerHelper("fart", function(lunchbox){
-	return JSON.stringify(lunchbox);
-});
-
 Handlebars.registerHelper("hasTraits", function(lunchbox){
 	var snacking = false;
 	
