@@ -5,7 +5,7 @@ Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, ite
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta)
 * **Foundry VTT Compatibility**: v10
-* **System Compatibility**: v0.3.13 (earlier versions **will** cause errors)
+* **4e System Compatibility**: v0.3.13 (earlier versions **will** cause errors)
 
 ## Features
 ### Core style NPC sheet
@@ -55,8 +55,8 @@ Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenac
 
 <a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
 
-* If you have "Colour Powers By Use Type" turned on, tweaks the colours to be a bit more book-accurate (matching chat cards and PC sheet).
-* Not currently optional. I want to put this in a new journal sheet or make it a toggle-able setting, but I haven't worked that out yet!
+* If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
+* Not currently optional. I want to make it a toggle-able setting, but I haven't worked that out yet!
 ### To-Do/In Progress
 * New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
   * Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin.
