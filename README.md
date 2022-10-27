@@ -56,6 +56,7 @@ Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenac
 I hope to eventually have all components be loaded separately, either as separate sheets or based on settings. In the mean time, if you don't want to style journals/chat cards/TAH, do one of the following:
 * Remove the corresponding CSS file from the "styles" list in the module.json file
 * Edit the corresponding CSS file to be empty (don't delete the file or you'll get an error).
+
 Yes, this will be undone next time the module updates. Sorry. I'll get optional loading done as soon as I can!
 
 ## Installation
