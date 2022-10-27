@@ -1,0 +1,45 @@
+{   
+	"name": "fox-4e-styling",
+	"title": "Fox's 4e Styling",
+	"description": "Styles sheets, journal entries, chat cards and various other things to mimic official 4e material.",
+	"authors": [
+		{
+			"name": "Fox Lee",
+			"url": "https://www.invincible.ink",
+			"discord": "Fox#3590",
+			"twitter": "https://twitter.com/Invincible_Ink",
+			"email": "fox@invincible.ink"
+		}
+	],
+	"version": "0.9",
+	"compatibility": {
+		"minimum": "10",
+		"verified": "10.288"
+	},
+	"styles": [
+		"styles/chat.css",
+		"styles/journal.css",
+		"styles/sheets.css",
+		"styles/tah.css",
+		"fonts/4ed6.css",
+		"fonts/dragonbody-sans.css",
+		"fonts/dragonbody-serif.css",
+		"fonts/dragonhead.css",
+		"fonts/dragontitle.css"
+	],
+	"scripts": [
+		"scripts/helpers.js"
+	],
+	"esmodules": [
+		"pc-sheet.js",
+		"npc-sheet.js"
+	],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ]
+}

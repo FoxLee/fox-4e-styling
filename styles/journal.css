@@ -1,0 +1,707 @@
+/*-----------------------------*/
+/*--General Stuff and Resets --*/
+
+.sheet.journal-entry .journal-entry-content,
+.editor.prosemirror{
+	background:#fff;
+}
+.journal-page-content,
+.sheet.fox4e .editor-content{
+	font-family:'DragonBody Serif';
+	padding:1em;
+	text-rendering:optimizeLegibility;
+}
+.sheet.journal-entry .journal-entry-page + .journal-entry-page{
+	margin-top:0;
+}
+.sheet.journal-entry .journal-entry-pages>.journal-entry-page:not(:last-child){
+	padding-bottom:0;
+}
+.editor-content.ProseMirror::-webkit-scrollbar-thumb,
+.sheet.journal-entry .scrollable::-webkit-scrollbar-thumb{
+	background:#d3d1ba;
+	border:none;
+}
+.editor-content.ProseMirror::-webkit-scrollbar-track,
+.sheet.journal-entry .scrollable::-webkit-scrollbar-track{
+	background:rgba(0,0,0,0.06);
+}
+.journal-page-header+.journal-page-content{
+	padding-top:0;
+}
+.journal-page-content table thead tr:nth-child(even),
+.sheet.fox4e .editor-content table thead tr:nth-child(even){
+	background:none;
+}
+.journal-page-content p,
+.journal-page-content ol,
+.journal-page-content ul,
+.journal-page-content figure figcaption,
+.sheet.fox4e .editor-content p,
+.sheet.fox4e .editor-content ol,
+.sheet.fox4e .editor-content ul,
+.sheet.fox4e .editor-content figure figcaption{
+	line-height:1.1;
+	font-size:1rem;
+}
+.journal-page-content table tbody tr:nth-child(2n+1),
+.sheet.fox4e .editor-content table tbody tr:nth-child(2n+1){
+	background:unset;
+}
+.journal-page-content .icon
+.journal-page-content .icon{
+	font-family:'4e Icons';
+	font-weight:bold;
+}
+.journal-entry-page figure figcaption{
+	font-family:'DragonBody Serif';
+	font-weight:normal;
+	font-style:oblique;
+}
+.journal-page-content a.content-link,
+.journal-page-content a.inline-roll,
+.sheet.fox4e .editor-content a.content-link,
+.sheet.fox4e .editor-content a.inline-roll{
+	background:none;
+	border:none;
+	text-decoration:underline;
+	padding:0;
+	white-space:break-spaces;
+	word-break:inherit;
+	color:#12588f;
+}
+.journal-page-content a.content-link i,
+.journal-page-content a.inline-roll i,
+.sheet.fox4e .editor-content a.content-link i,
+.sheet.fox4e .editor-content a.inline-roll i{
+	margin-right:0;
+}
+.journal-page-content .fa-file-alt::before,
+.journal-page-content .fa-file-lines::before,
+.journal-page-content .fa-file-text::before,
+.sheet.fox4e .editor-content .fa-file-alt::before,
+.sheet.fox4e .editor-content .fa-file-lines::before,
+.sheet.fox4e .editor-content .fa-file-text::before{
+	content:unset;
+}
+
+
+/*-----------------------------*/
+/*-- Headings and Beginnings --*/
+
+.journal-sheet .journal-header{
+	-webkit-box-flex:0;
+	    -ms-flex:none;
+	        flex:none;
+	margin:1rem 1rem 0 -1px;
+}
+.sheet.journal-entry .journal-header .title,
+.editable .journal-header .title{
+	font-family:DragonTitle;
+	background-color:#193d5e;
+	color:#fff;
+	padding:0.4em 0.8em;
+	font-variant:normal;
+	font-weight:bold;
+	font-variant:small-caps;
+	margin-bottom:0.4em;
+	border-radius:0 20px 0 0;
+	border:2px solid #c2ae41;
+	border-left:none;
+	margin-top:0;
+}
+.journal-page-content h2,
+.journal-page-content h3,
+.journal-page-content h4,
+.journal-page-content h5,
+.journal-page-content h6,
+.sheet.fox4e .editor-content h2,
+.sheet.fox4e .editor-content h3,
+.sheet.fox4e .editor-content h4,
+.sheet.fox4e .editor-content h5,
+.sheet.fox4e .editor-content h6,
+.journal-page-header h1,
+.journal-page-header h2,
+.journal-page-header h3{
+	color:#193d5e;
+	font-family:'DragonHead';
+}
+.journal-page-content h1,
+.sheet.fox4e .editor-content h1{
+	color:#193d5e;
+	font-family:DragonTitle;
+	font-size:2.7em;
+	border-bottom:none;
+	font-weight:bold;
+	margin:1rem 0 0.5rem;
+	font-variant:small-caps;
+}
+.journal-page-header h1{
+	font-family:DragonTitle;
+	font-size:2.7em;
+	border-bottom:none;
+	font-weight:bold;
+	margin:0 0.5rem 0 0.5rem;
+	font-variant:small-caps;
+}
+.journal-page-content h2,
+.sheet.fox4e .editor-content h2{
+	font-size:2em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:600;
+	margin:1rem 0 0.5rem;
+}
+.journal-page-header h2{
+	font-size:2em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:600;
+	margin:1rem 0 0.5rem;
+	border-bottom:none;
+}
+.journal-page-content h3,
+.sheet.fox4e .editor-content h3{
+	font-size:1.8em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:600;
+	margin:1rem 0 0.5rem;
+}
+.journal-page-header h3{
+	font-size:1.8em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:600;
+	margin:1rem 0 0.5rem;
+	border-bottom:none;
+}
+.journal-page-content h4,
+.sheet.fox4e .editor-content h4{
+	font-size:1.7em;
+	margin:1rem 0 0.5rem;
+	font-weight:400;
+}
+.journal-page-content h5,
+.sheet.fox4e .editor-content h5{
+	font-size:1.5em;
+	margin:1rem 0 0.5rem;
+	font-weight:400;
+}
+.journal-page-content h6,
+.sheet.fox4e .editor-content h6{
+	font-size:1.35em;
+	margin:1rem 0 0.5rem;
+	font-weight:400;
+}
+.journal-page-content h1+p::first-letter{
+    float:none;
+    font-family:inherit;
+    font-size:inherit;
+    color:inherit;
+    line-height:inherit;
+}
+.journal-page-content .first-words{
+    font-family:DragonTitle;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+/*-----------*/
+/*-- Lists --*/
+.journal-page-content ul,
+.sheet.fox4e .editor-content ul{
+  list-style:none outside;
+  position:relative;
+}
+.journal-page-content ul li::before,
+.sheet.fox4e .editor-content ul li::before{
+  display:block;
+  margin-left:-1.3em;
+  margin-right:0.4em;
+  font-size:1em;
+  content:'\2726';
+  position:absolute;
+}
+.journal-page-content ul li,
+.sheet.fox4e .editor-content ul li,
+.journal-page-content ol li,
+.sheet.fox4e .editor-content ol li{
+    margin-bottom:0.5em;
+}
+
+/*------------*/
+/*-- Asides --*/
+.journal-page-content .aside,
+.sheet.fox4e .aside{
+	background-color:#e8e5d4;
+	padding:1.5em 2em;
+	margin-bottom:1em;
+}
+.journal-page-content .aside h2,
+.sheet.fox4e .editor-content .aside h2{
+	font-family:DragonTitle;
+	font-weight:bold;
+}
+
+/*------------------*/
+/*-- Rules Blocks --*/
+.journal-page-content .rules-block,
+.sheet.fox4e .editor-content .rules-block{
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	padding:0.8em 1.2em;
+	margin-bottom:1em;
+	font-family:'DragonBody Sans';
+}
+.journal-page-content .rules-block p+p,
+.journal-page-content .rules-block ul+p,
+.journal-page-content .rules-block ol+p,
+.sheet.fox4e .editor-content .rules-block p+p,
+.sheet.fox4e .editor-content .rules-block ul+p,
+.sheet.fox4e .editor-content .rules-block ol+p{
+    text-indent:0;
+}
+.journal-page-content .rules-block h1,
+.journal-page-content .rules-block h2,
+.journal-page-content .rules-block h3,
+.journal-page-content .rules-block h4,
+.journal-page-content .rules-block h5,
+.journal-page-content .rules-block h6,
+.sheet.fox4e .editor-content .rules-block h1,
+.sheet.fox4e .editor-content .rules-block h2,
+.sheet.fox4e .editor-content .rules-block h3,
+.sheet.fox4e .editor-content .rules-block h4,
+.sheet.fox4e .editor-content .rules-block h5,
+.sheet.fox4e .editor-content .rules-block h6{
+	font-family:'DragonBody Sans';
+	color:#000;
+	text-transform:uppercase;
+	font-variant:unset;
+	font-weight:bold;
+}
+.journal-page-content .rules-block h2,
+.sheet.fox4e .editor-content .rules-block h2{
+    font-size:1.2em;
+}
+.journal-page-content .rules-block h3,
+.sheet.fox4e .editor-content .rules-block h3{
+    font-size:1.2em;
+}
+.journal-page-content .rules-block h4,
+.sheet.fox4e .editor-content .rules-block h4{
+    font-size:1.1em;
+}
+.journal-page-content .rules-block h5,
+.sheet.fox4e .editor-content .rules-block h5{
+    font-size:1.1em;
+}
+.journal-page-content .rules-block h6,
+.sheet.fox4e .editor-content .rules-block h6{
+    font-size:1em;
+}
+.journal-page-content .rules-block.traits ul,
+.sheet.fox4e .editor-content .rules-block.traits ul{
+    font-size:1em;
+    list-style-type:none outside;
+    padding-left:0;
+}
+.journal-page-content .rules-block.traits ul li::before,
+.sheet.fox4e .editor-content .rules-block.traits ul li::before{
+    content:unset;
+}
+.journal-page-content .rules-block.traits ul li,
+.sheet.fox4e .editor-content .rules-block.traits ul li{
+    padding-left:1em;
+    text-indent:-1em;
+    margin-bottom:0;
+}
+.journal-page-content .rules-block.traits ul li p,
+.sheet.fox4e .editor-content .rules-block.traits ul li p{
+    margin-top:0;
+    margin-bottom:0.2em;
+}
+
+
+/*----------------*/
+/*-- All Tables --*/
+.journal-page-content table,
+.sheet.fox4e .editor-content table{
+	font-family:'DragonBody Sans';
+	font-size:0.8rem;
+	background:#fff;
+}
+.journal-page-content table thead th,
+.journal-page-content table thead td,
+.journal-page-content table tbody tr td,
+.sheet.fox4e .editor-content table thead th,
+.sheet.fox4e .editor-content table thead td,
+.sheet.fox4e .editor-content table tbody tr td{
+	padding:0.25em 0.6em;
+}
+.journal-page-content thead th,
+.journal-page-content thead td,
+.sheet.fox4e .editor-content thead th,
+.sheet.fox4e .editor-content thead td{
+	color:#fff;
+}
+
+/*------------*/
+/*-- Powers --*/
+.journal-page-content .power.encounter th,
+.sheet.fox4e .editor-content .power.encounter th{
+	background-color:#961334;
+}
+.journal-page-content .power.at-will th,
+.sheet.fox4e .editor-content .power.at-will th{
+	background-color:#619769;
+}
+.journal-page-content .power.daily th,
+.sheet.fox4e .editor-content .power.daily th{
+	background-color:#4d4d4f;
+}
+.journal-page-content .power thead td:last-child,
+.sheet.fox4e .editor-content .power thead td:last-child{
+	font-size:80%;
+}
+.journal-page-content .power:not(.flavourless) tbody tr:nth-child(1),
+.sheet.fox4e .editor-content .power:not(.flavourless) tbody tr:nth-child(1){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	font-style:oblique;
+}
+.journal-page-content .power.flavourless tbody tr:nth-child(1),
+.journal-page-content .power tbody tr:nth-child(2),
+.journal-page-content .power:not(.flavourless)  tbody tr:nth-child(3),
+.sheet.fox4e .editor-content .power.flavourless tbody tr:nth-child(1),
+.sheet.fox4e .editor-content .power tbody tr:nth-child(2),
+.sheet.fox4e .editor-content .power:not(.flavourless)  tbody tr:nth-child(3){
+	background-color:#fff;
+	font-weight:bold;
+}
+.journal-page-content .power:not(.flavourless)  tbody tr:nth-child(2) td,
+.journal-page-content .power.flavourless  tbody tr:nth-child(1) td,
+.sheet.fox4e .editor-content .power:not(.flavourless)  tbody tr:nth-child(2) td,
+.sheet.fox4e .editor-content .power.flavourless  tbody tr:nth-child(1) td{
+	padding-bottom:0;
+}
+.journal-page-content .power:not(.flavourless) tbody tr:nth-child(3) td,
+.journal-page-content .power.flavourless tbody tr:nth-child(2) td,
+.sheet.fox4e .editor-content .power:not(.flavourless) tbody tr:nth-child(3) td,
+.sheet.fox4e .editor-content .power.flavourless tbody tr:nth-child(2) td{
+	padding-top:0;
+}
+.journal-page-content .power:not(.flavourless)  tr:nth-child(n+4),
+.journal-page-content .power.flavourless  tr:nth-child(n+3),
+.sheet.fox4e .editor-content .power:not(.flavourless)  tr:nth-child(n+4),
+.sheet.fox4e .editor-content .power.flavourless  tr:nth-child(n+3){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+
+/*--------------*/
+/*-- Monsters --*/
+.journal-page-content .monster,
+.sheet.fox4e .editor-content .monster{
+	margin-bottom:1em;
+}
+.journal-page-content .monster p,
+.sheet.fox4e .editor-content .monster p{
+	margin:0;
+	background-color:#e8e6d4;
+	font-family:'DragonBody Sans';
+	font-size:100%;
+	padding:0.25em 0.6em;
+}
+.journal-page-content .monster table+p,
+.sheet.fox4e .editor-content .monster table+p{
+	text-indent:0;
+}
+.journal-page-content .monster>table,
+.sheet.fox4e .editor-content .monster>table{
+	margin-bottom:0;
+}
+.journal-page-content .monster section table,
+.sheet.fox4e .editor-content .monster section table{
+	margin-top:0;
+	margin-bottom:0;
+}
+.journal-page-content .monster h2,
+.sheet.fox4e .editor-content .monster h2{
+    background-color:#70774f;
+    padding:0.25em 0.6em;
+    margin:0;
+    color:#fff;
+    font-size:1em;
+    font-family:'DragonBody Sans';
+    font-weight:bold;
+    font-variant:small-caps;
+    -webkit-text-stroke-width:0;
+}
+.journal-page-content .monster table tbody tr,
+.sheet.fox4e .editor-content .monster table tbody tr{
+	background-color:#e8e6d4;
+}
+.journal-page-content .monster>table th,
+.sheet.fox4e .editor-content .monster>table th{
+	background-color:#4e5c2e;
+}
+.journal-page-content .monster section table th,
+.sheet.fox4e .editor-content .monster section table th{
+	background-color:#cdcbb5;
+	color:#000;
+}
+.journal-page-content .monster>table thead th,
+.sheet.fox4e .editor-content .monster>table thead th{
+	padding-bottom:0;
+}
+.journal-page-content .monster>table tbody tr:first-child,
+.sheet.fox4e .editor-content .monster>table tbody tr:first-child{
+	background-color:#4e5c2e;
+	color:#fff;
+}
+.journal-page-content .monster>table tbody tr:first-child td,
+.sheet.fox4e .editor-content .monster>table tbody tr:first-child td{
+	padding-top:0;
+}
+.journal-page-content .monster>table  tbody tr:not(:last-child):not(:nth-child(1)) td,
+.sheet.fox4e .editor-content .monster>table  tbody tr:not(:last-child):not(:nth-child(1)) td{
+	padding-bottom:0;
+}
+.journal-page-content .monster>table tbody tr:not(:first-child):not(:nth-child(2)) td,
+.sheet.fox4e .editor-content .monster>table tbody tr:not(:first-child):not(:nth-child(2)) td{
+	padding-top:0;
+}
+.journal-page-content .monster section table thead tr th,
+.sheet.fox4e .editor-content .monster section table thead tr th{
+	font-size:100%;
+}
+.journal-page-content .monster sections table tbody tr:first-child:not(:last-child) td,
+.sheet.fox4e .editor-content .monster sections table tbody tr:first-child:not(:last-child) td{
+	padding-bottom:0;
+}
+.journal-page-content .monster section table tbody tr:not(:first-child) td,
+.sheet.fox4e .editor-content .monster section table tbody tr:not(:first-child) td{
+	padding-top:0;
+}
+.journal-page-content .monster section table tbody td,
+.sheet.fox4e .editor-content .monster section table tbody td{
+    text-indent:-1em;
+    padding-left:1.7em;
+}
+.journal-page-content .monster sections table tbody td:first-line,
+.sheet.fox4e .editor-content .monster sections table tbody td:first-line{
+    text-indent:0;
+}
+.journal-page-content .monster section table thead tr th,
+.sheet.fox4e .editor-content .monster section table thead tr th{
+	font-weight:normal;
+}
+.journal-page-content .monster .checks p,
+.journal-page-content .monster .checks tr,
+.sheet.fox4e .editor-content .monster .checks p,
+.sheet.fox4e .editor-content .monster .checks tr{
+	background-color:#cdcbb5;
+}
+.journal-page-content .monster .checks tbody tr:first-child:not(:last-child) td,
+.sheet.fox4e .editor-content .monster .checks tbody tr:first-child:not(:last-child) td{
+	padding-bottom:0;
+	padding-top:0;
+}
+.journal-page-content .monster .tail thead tr,
+.journal-page-content .monster .checks thead tr,
+.sheet.fox4e .editor-content .monster .tail thead tr,
+.sheet.fox4e .editor-content .monster .checks thead tr{
+    display:none;
+}
+.journal-page-content .monster .tail table:first-child tbody tr:first-child td,
+.sheet.fox4e .editor-content .monster .tail table:first-child tbody tr:first-child td{
+    padding-top:0.25em;
+    padding-bottom:0;
+}
+
+/*----------*/
+/*-- Item --*/
+.journal-page-content .item,
+.sheet.fox4e .editor-content .item{
+    margin-bottom:1em;
+}
+.journal-page-content .item tr td,
+.sheet.fox4e .editor-content .item tr td{
+	background-color:#f7e8d3;
+}
+.journal-page-content .item th,
+.sheet.fox4e .editor-content .item th{
+	background-color:#d7941d;
+}
+.journal-page-content .item table:first-child,
+.sheet.fox4e .editor-content .item table:first-child{
+    margin-bottom:0;
+}
+.journal-page-content .item>table tbody tr:nth-child(1) td,
+.sheet.fox4e .editor-content .item>table tbody tr:nth-child(1) td{
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(238,212,173,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(238,212,173,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(238,212,173,1) 100%);
+	font-style:oblique;
+}
+.journal-page-content .item .basics table,
+.journal-page-content .item .properties table,
+.sheet.fox4e .editor-content .item .basics table,
+.sheet.fox4e .editor-content .item .properties table{
+    margin-top:0;
+    margin-bottom:0;
+}
+.journal-page-content .item .basics thead tr,
+.sheet.fox4e .editor-content .item .basics thead tr{
+    display:none;
+}
+.journal-page-content .item .properties thead tr th,
+.sheet.fox4e .editor-content .item .properties thead tr th{
+    background-color:#edcc9b;
+    color:#000;
+    font-size:1em;
+    font-weight:normal;
+}
+.journal-page-content .item .basics table tbody tr:not(:last-child) td,
+.journal-page-content .item .properties table tbody tr:not(:last-child) td,
+.sheet.fox4e .editor-content .item .basics table tbody tr:not(:last-child) td,
+.sheet.fox4e .editor-content .item .properties table tbody tr:not(:last-child) td{
+    padding-bottom:0;
+}
+.journal-page-content .item .basics table tbody tr:not(:first-child) td,
+.journal-page-content .item .properties table tbody tr:not(:first-child) td,
+.sheet.fox4e .editor-content .item .basics table tbody tr:not(:first-child) td,
+.sheet.fox4e .editor-content .item .properties table tbody tr:not(:first-child) td{
+    padding-top:0;
+}
+
+/*------------*/
+/*-- Hazard --*/
+.journal-page-content .hazard,
+.sheet.fox4e .editor-content .hazard{
+    margin-bottom:1em;
+}
+.journal-page-content .hazard table tbody tr,
+.journal-page-content .hazard p,
+.sheet.fox4e .editor-content .hazard table tbody tr,
+.sheet.fox4e .editor-content .hazard p{
+	background-color:#e8e6d4;
+}
+.journal-page-content .hazard>table thead th,
+.sheet.fox4e .editor-content .hazard>table thead th{
+	background-color:#5b2034;
+	padding-bottom:0;
+}
+.journal-page-content .hazard>table tbody tr:first-child,
+.sheet.fox4e .editor-content .hazard>table tbody tr:first-child{
+	background-color:#5b2034;
+	color:#fff;
+}
+.journal-page-content .hazard>table tbody tr:first-child td,
+.sheet.fox4e .editor-content .hazard>table tbody tr:first-child td,
+.sheet.fox4e .editor-content .hazard section table tbody tr:not(:last-child) td,
+.sheet.fox4e .editor-content .hazard>table tbody tr:nth-child(2) td{
+	padding-top:0;
+}
+.journal-page-content .hazard section table tbody tr:not(:last-child) td,
+.journal-page-content .hazard>table tbody tr:nth-child(2) td,
+.sheet.fox4e .editor-content .hazard section table tbody tr:not(:first-child) td,
+.sheet.fox4e .editor-content .hazard>table tbody tr:nth-child(3) td{
+	padding-bottom:0;
+}
+.journal-page-content .hazard section table tbody tr:not(:first-child) td,
+.journal-page-content .hazard>table tbody tr:nth-child(3) td{
+	padding-top:0;
+}
+.journal-page-content .hazard .actions table thead tr,
+.sheet.fox4e .editor-content .hazard .actions table thead tr{
+    background-color:#ccccb8;
+}
+.journal-page-content .hazard .actions table thead tr th,
+.sheet.fox4e .editor-content .hazard .actions table thead tr th{
+    color:#000;
+    font-size:100%;
+    font-weight:normal
+}
+.journal-page-content .hazard section h2,
+.sheet.fox4e .editor-content .hazard section h2{
+    background-color:#784e58;
+    padding:0.25em 0.6em;
+    margin:0;
+    color:#fff;
+    font-size:1em;
+    font-family:'DragonBody Sans';
+    font-weight:bold;
+    font-variant:small-caps;
+    -webkit-text-stroke-width:0;
+}
+.journal-page-content .hazard .counters table thead tr,
+.sheet.fox4e .editor-content .hazard .counters table thead tr{
+    background-color:#784e58;
+    color:#fff;
+    font-variant:small-caps;
+}
+.journal-page-content .hazard .counters table thead th,
+.sheet.fox4e .editor-content .hazard .counters table thead th{
+    font-size:1em;
+}
+.journal-page-content .hazard>table,
+.journal-page-content .hazard section table,
+.sheet.fox4e .editor-content .hazard>table,
+.sheet.fox4e .editor-content .hazard section table{
+    margin-bottom:0;
+}
+.journal-page-content .hazard section table tbody td,
+.sheet.fox4e .editor-content .hazard section table tbody td{
+    text-indent:-1em;
+    padding-left:1.7em;
+}
+.journal-page-content .hazard sections table tbody td:first-line,
+.sheet.fox4e .editor-content .hazard sections table tbody td:first-line{
+    text-indent:0;
+}
+
+/*-------------------------*/
+/*-- Generic Alternating --*/
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster),
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster){
+	border-collapse:collapse;
+	border:none;
+}
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr,
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr{
+	border-bottom:2px solid rgba(255,255,255,0);
+	position:relative;
+}
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) thead,
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) thead{
+	background:#193d5e;
+}
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tr,
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) td,
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tr,
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) td{
+	border:none;
+}
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(odd),
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(odd){
+	background:#d3d1ba;
+}
+.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(even),
+.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(even){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+
+/*-------------------------*/
+/*-- Misc Other --*/
+
+.journal-page-content code,
+.sheet.fox4e .editor-content code{
+	white-space:pre-wrap;
+}

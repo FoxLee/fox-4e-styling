@@ -1,0 +1,249 @@
+
+<section class="powers">	
+	<ul class="items-list power-list">
+	{{#each sections as |section sid|}}
+	
+	{{#if (laden section.items)}}
+			
+		<li class="items-header">
+			<div class="subsection sublist-header flexrow {{name}}">
+				<h2 class="item-name">{{localize section.label}}</h2>
+				{{#if ../owner}}
+				<div class="item-controls">
+					<a class="item-control power-create" title="{{localize 'DND4EBETA.ItemCreate'}}"
+						{{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
+						<i class="fas fa-plus"></i> {{localize "DND4EBETA.Add"}}
+					</a>
+				</div>
+				{{/if}}
+			</div>
+	
+			<ul class="item-list power-list sublist">
+			{{#each section.items as |item iid|}}
+			
+				<li class="item flexcol" data-item-id="{{item._id}}" draggable="true">			
+					<div class="item-header flexrow {{#if item.system.useType }}ability-usage--{{item.system.useType}}{{else}}ability-usage--blank{{/if}} {{#if item.system.notAvailable}}not-available{{/if}}">	
+						<div class="item-name flexrow">
+							<img src="{{item.img}}" class="item-image rollable" height="16" width="16" alt="Power icon" title="{{localize 'Fox4e.TipSendChat'}}" />
+							<div class="power-title">
+								<h4 class="power-detail item-image rollable" title="{{localize 'Fox4e.TipSendChat'}}">{{!--
+									--}}{{item.name}}{{!--
+									--}}<span class="keywords">{{!--
+										--}}{{#each item.system.damageType as |name type|}}{{!--
+											--}}{{#if name}}<span class="keyword">{{lookup ../../../config.damageTypes type}}</span>{{/if}}{{!--
+										--}}{{/each}}{{!--
+										--}}{{#each item.system.effectType as |name type|}}{{!--
+											--}}{{#if name}}<span class="keyword">{{lookup ../../../config.effectTypes type}}</span>{{/if}}{{!--
+										--}}{{/each}}{{!--
+									--}}</span>{{!--
+								--}}</h4>
+								&thinsp;♦&thinsp;
+								<span class="usage">
+									{{#if (eq item.system.useType "recharge")}}
+										<span class="power-detail item-uses">
+											{{#if item.system.rechargeRoll}}
+												<a class="item-recharge rollable numerical" title="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">	{{!--
+													--}}{{localize 'DND4EBETA.PowerRecharge'}} 
+													<span class="dice d6">{{!--
+														--}}{{#if (lt item.system.rechargeRoll 3)}}2{{/if}}{{!--
+														--}}{{#if (lt item.system.rechargeRoll 4)}}3{{/if}}{{!--
+														--}}{{#if (lt item.system.rechargeRoll 5)}}4{{/if}}{{!--
+														--}}{{#if (lt item.system.rechargeRoll 6)}}5{{/if}}{{!--
+														--}}6{{!--
+													--}}</span>{{!--
+												--}}</a>
+											{{else if item.system.rechargeCondition}}
+												<a class="item-recharge rollable" title="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4EBETA.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
+										{{/if}}
+										</span>
+									{{else}}
+										{{#if item.system.preparedMaxUses}}
+											<label class="uses autosize" for="item.system.uses.value">{{!--
+												--}}<input class="number" type="text" value="{{item.system.uses.value}}" name="item.system.uses.value" placeholder="0" />{{!--
+												--}}<span class="ruler">{{item.system.uses.value}}</span>{{!--
+											--}}</label> 
+											of {{item.system.preparedMaxUses}}/{{!--
+										--}}{{/if}}{{!--
+										--}}{{lookup ../../config.powerUseType item.system.useType}}{{!--
+									--}}{{/if}}{{!-- [Close] Recharge details --}}
+								</span>
+							</div>
+				
+						</div>
+						
+						{{#if ../../owner}}
+						<div class="item-controls flexrow">
+							<a class="item-control power-detail item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+							<a class="item-control power-detail item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+						</div>
+						{{/if}}
+					</div>{{!--Item header close--}}
+					
+					<div class="item-body flexcol">
+					
+						{{#if item.system.description.value}}
+							<div class="flavour">
+								{{{item.system.description.value}}}
+							</div>
+						{{/if}}
+						
+						{{#if item.system.requirement}}
+							<p class="requirements">
+							<span class="label">{{localize 'DND4EBETA.Requirements'}}:</span> {{item.system.requirement}}
+							</p>
+						{{/if}}
+						
+						{{#if item.system.trigger}}
+							<p class="trigger">
+							<span class="label">{{localize 'DND4EBETA.Trigger'}}:</span> {{item.system.trigger}}
+							</p>
+						{{/if}}
+						
+						{{#if item.system.effect.detail}}
+							<div class="effect {{#if item.system.postEffect}} post{{/if}}">
+								<span class="label">{{!--
+									--}}{{localize "DND4EBETA.Effect"}}{{!--
+									--}}{{#unless item.system.attack.isAttack}}{{!--
+										--}}{{#if (eq ../name "triggered-actions")}}
+											<span class="action">{{!--
+												--}}({{lookup ../../config.abilityActivationTypes item.system.actionType}}){{!--
+											--}}</span>{{!--
+										--}}{{else if (eq ../name "other-actions")}}
+											<span class="action">{{!--
+												--}}({{lookup ../../config.abilityActivationTypes item.system.actionType}}){{!--
+											--}}</span>{{!--
+										--}}{{/if}}{{!--
+									--}}{{/unless}}:{{!--
+								--}}</span>
+								
+								{{#unless item.system.attack.isAttack}}{{!--
+									--}}{{#unless (eq item.system.rangeType "personal")}}{{!--
+										--}}<span class="range">{{!--
+											--}}{{lookup ../../config.rangeType item.system.rangeType}}{{!--
+												--}}{{#if (eq item.system.rangeType "rangeBlast")}} 
+													{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+												{{else if (eq item.system.rangeType "rangeBurst")}} 
+													{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+												{{else if (eq item.system.rangeType "wall")}} 
+													{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}}
+												{{/if}}{{!--
+												--}}{{#if (eq item.system.rangeType "special")}}{{!--
+												--}}{{else if (eq item.system.rangeType "closeBlast")}} 
+													{{item.system.area}}{{!--
+												--}}{{else if (eq item.system.rangeType "closeBurst")}} 
+													{{item.system.area}}{{!--
+												--}}{{else}}{{!--
+												--}}{{item.system.rangePower}}{{!--
+											--}}{{/if}}{{!--
+										--}}</span>{{!--
+										--}}{{#if item.system.target}}
+											<span class="target">({{item.system.target}})</span>{{!--
+										--}}{{/if}}{{!--
+									--}}{{/unless}}{{!--
+								--}}{{/unless}}
+								
+								{{#if item.system.effectHTML}}{{!--
+									--}}{{{item.system.effect.detail}}}{{!--
+								--}}{{else}}{{!--
+									--}}{{item.system.effect.detail}}{{!--
+								--}}{{/if}}
+							</div>
+						{{/if}}
+						
+						{{#if item.system.special}}
+							<p class="special{{#if item.system.postSpecial}} post{{/if}}">
+								<span class="label">{{localize 'DND4EBETA.Special'}}:</span> {{item.system.special}}{{#each item.system.specialAdd.parts as |entry i|}}; {{entry}}{{/each}}
+							</p>
+						{{/if}}
+						
+						{{#if item.system.attack.isAttack}}
+							<p class="attack">
+								<span class="label">{{localize 'DND4EBETA.Attack'}}{{!--
+									--}}{{#if (eq ../name "triggered-actions")}}
+										<span class="action">{{!--
+											--}}({{lookup ../../config.abilityActivationTypes item.system.actionType}}){{!--
+										--}}</span>{{!--
+									--}}{{else if (eq ../name "other-actions")}}
+										<span class="action">{{!--
+											--}}({{lookup ../../config.abilityActivationTypes item.system.actionType}}){{!--
+										--}}</span>{{!--
+									--}}{{/if}}{{!--
+								--}}</span>: 
+							
+								{{#unless (eq item.system.rangeType "personal")}}
+									<span class="range">
+										{{lookup ../../config.rangeType item.system.rangeType}} 
+										
+										{{#if (eq item.system.rangeType "rangeBlast")}} 
+											{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+										{{else if (eq item.system.rangeType "rangeBurst")}} 
+											{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+										{{else if (eq item.system.rangeType "wall")}}
+											{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}}
+										{{/if}}
+										
+										{{#if (eq item.system.rangeType "special")}}
+										{{else if (eq item.system.rangeType "closeBlast")}} 
+											{{item.system.area}}
+										{{else if (eq item.system.rangeType "closeBurst")}} 
+											{{item.system.area}}
+										{{else}} 
+											{{item.system.rangePower}}
+										{{/if}}
+										
+										{{#if item.system.target}}<span class="target">({{item.system.target}})</span>{{/if}}{{!--
+										
+									--}}</span>;
+								{{/unless}}
+								
+								<span class="tohit">{{!--
+									--}}{{numberFormat (form item.system.attack.formula actor this) sign=true}}&thinsp;{{!--
+									--}}{{localize 'DND4EBETA.VS'}}&thinsp;{{lookup ../../config.def item.system.attack.def}}{{!--
+								--}}</span>
+								
+							</p>{{!-- [Close] If it's an Attack --}}	
+						{{/if}}
+						
+						{{#if item.system.hit.detail}}
+							<p class="hit">
+								<span class="label">{{localize 'DND4EBETA.Hit'}}:</span> {{item.system.hit.detail}}
+							</p>
+						{{/if}}
+						
+						{{#if item.system.sustain.actionType}}
+							{{#if (ne item.system.sustain.actionType "none")}}
+								<p class="sustain">
+									<span class="label">{{!--
+										--}}{{localize 'DND4EBETA.Sustain'}} 
+										{{#if (eq item.system.sustain.actionType "none")}}{{!--
+											--}}{{localize 'DND4EBETA.NoActionShort'}}{{!--
+										--}}{{else if (eq item.system.sustain.actionType "standard")}}{{!--
+											--}}{{localize 'Fox4e.ActStandard'}}{{!--
+										--}}{{else if (eq item.system.sustain.actionType "move")}}{{!--
+											--}}{{localize 'Fox4e.ActMove'}}{{!--
+										--}}{{else if (eq item.system.sustain.actionType "minor")}}{{!--
+											--}}{{localize 'Fox4e.ActMinor'}}{{!--
+										--}}{{else if (eq item.system.sustain.actionType "free")}}{{!--
+											--}}{{localize 'Fox4e.ActFree'}}{{!--
+										--}}{{else}}{{!--
+											--}}{{lookup ../../config.abilityActivationTypes item.system.sustain.actionType}}{{!--
+										--}}{{/if}}{{!--
+									--}}</span>: 
+									{{item.system.sustain.detail}}
+								</p>
+							{{/if}}
+						{{/if}}
+					</div>{{!--[Close] Item body--}}
+					
+				</li>{{!-- [Close] Power item --}}
+				
+			{{/each}}
+			</ul>{{!-- [Close] Powers sublist --}}
+			
+		</li>{{!-- [Close] Power group --}}
+		
+	{{/if}}
+	{{/each}}
+
+	</ul>{{!-- [Close] Powers list --}}
+</section>

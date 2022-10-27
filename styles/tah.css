@@ -1,0 +1,32 @@
+div.tah-action{
+	padding:0;
+	border-radius:3px;
+}
+div.tah-action button{
+  border:1px solid rgba(0,0,0,0);
+  margin-left:0;
+  border-radius:3px;
+  color:#fff;
+  padding-right:6px;
+}
+div.tah-action .tah-img{
+	margin-left:-3px;
+}
+.force-ability-usage--atwill{
+	background:#619769 !important;
+}
+.force-ability-usage--encounter{
+	background:#961334 !important;
+}
+.force-ability-usage--daily{
+	background:#4d4d4f !important;
+}
+.force-ability-usage--item{
+	background:#d7941d !important;
+}
+.force-ability-usage--recharge{
+	background:#193d5e !important;
+}
+.force-ability-usage--other{
+	background:#9271a9 !important;
+}

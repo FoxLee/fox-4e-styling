@@ -1,0 +1,981 @@
+/***************************************************/
+/*         ALL SHEETS                              */
+/***************************************************/
+
+/*---------- All Sections ----------*/
+
+.sheet.fox4e .window-content{
+	text-rendering:optimizeLegibility;
+	font-family:'DragonBody Sans';
+}
+.sheet.fox4e .sheet-body ::-webkit-scrollbar-thumb{
+	background:#d3d1ba;
+	border:none;
+}
+.sheet.fox4e .sheet-body ::-webkit-scrollbar-track{
+	background:rgba(0,0,0,0.06);
+}
+.sheet.fox4e .sheet-body .flexrow,
+.sheet.fox4e .sheet-body .flexcol{
+	-ms-flex-wrap:nowrap;
+	    flex-wrap:nowrap;
+}
+.sheet.fox4e .sheet-body .flexrow>*,
+.sheet.fox4e .sheet-body .flexcol>*{
+	-webkit-box-flex:unset;
+	    -ms-flex:unset;
+	        flex:unset;
+}
+.sheet.fox4e .sheet-body .flatrow{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+}
+.sheet.fox4e .sheet-body .flatrow>*:not(:last-child){
+	margin-right:0.2em;
+}
+.sheet.fox4e .sheet-body .editor{
+	height:100%;
+}
+.sheet.fox4e .sheet-body input{
+	font-family:'DragonBody Sans';
+	padding:0;
+	height:auto;
+	background:none;
+	border:unset;
+	margin:auto;
+}
+.sheet.fox4e .sheet-body input[type="text"],
+.sheet.fox4e .sheet-body input[type="number"],
+.sheet.fox4e .sheet-body input[type="password"],
+.sheet.fox4e .sheet-body input[type="date"],
+.sheet.fox4e .sheet-body input[type="time"],
+.sheet.fox4e .sheet-body input[type="search"],
+.sheet.fox4e .sheet-body input[type='checkbox']{
+	min-width:6px;
+	border:0;
+	display:inline-block;
+	background:white;
+	padding:0em 0.3em;
+	color:#000;
+}
+.sheet.fox4e .sheet-body input[type='checkbox']{
+	height:0.8rem;
+	vertical-align:middle;
+	margin-top:-0.55em;
+}
+.sheet.fox4e .sheet-body h1,
+.sheet.fox4e .sheet-body h2,
+.sheet.fox4e .sheet-body h3,
+.sheet.fox4e .sheet-body h4,
+.sheet.fox4e .sheet-body h5,
+.sheet.fox4e .sheet-body h6{
+	border-bottom:none;
+	margin-bottom:0;
+}
+.sheet.fox4e .sheet-body .label{
+	font-weight:bold;
+}
+.sheet.fox4e .sheet-body .cover{
+	position:relative;
+	cursor:pointer;
+	display:inline-block;
+}
+.sheet.fox4e .sheet-body .covered{
+	opacity:0;
+	position:absolute;
+	width:100%;
+	height:1.4em;
+	overflow:hidden;
+	cursor:pointer;
+}
+.sheet.fox4e .sheet-body .covered:active option,
+.sheet.fox4e .sheet-body .covered:focus option,
+.sheet.fox4e .sheet-body .covered:focus-within option{
+	opacity:1;
+}
+.sheet.fox4e .sheet-body .placeholder{
+	opacity:0.6;
+}
+.sheet.fox4e .sheet-body .placeholder:not(:only-child){
+	display:none;
+}
+.sheet.fox4e .sheet-body .autosize{
+	position:relative;
+	display:inline-block;
+}
+.sheet.fox4e .sheet-body .autosize>input{
+	position:absolute;
+	width:100%;
+	height:100%;
+	padding:0;
+	display:inline-block;
+	-webkit-filter:opacity(0);
+	        filter:opacity(0);
+}
+.sheet.fox4e .sheet-body .autosize .ruler{
+	pointer-events:none;
+}
+.sheet.fox4e .sheet-body .autosize input:focus{
+	-webkit-filter:opacity(100);
+	        filter:opacity(100);
+}
+.sheet.fox4e .sheet-body .autosize input:focus+.ruler{
+	opacity:0;
+}
+
+
+/*---------- Item Lists ----------*/
+
+.sheet.fox4e .sheet-body .items-list li{
+	width:100%;
+}
+.sheet.fox4e .sheet-body .item-header{
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.sheet.fox4e .sheet-body img.item-image{
+	border:none;
+	max-width:1em;
+	height:100%;
+	-o-object-fit:contain;
+	   object-fit:contain;
+	margin-right:2px;
+}
+.sheet.fox4e .sheet-body .item-name{
+	-webkit-box-flex:2;
+	    -ms-flex-positive:2;
+	        flex-grow:2;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.sheet.fox4e .sheet-body .item-name h4{
+	margin:0;
+	font-weight:bold;
+	display:inline-block;
+}
+.sheet.fox4e .sheet-body .item-body h1,
+.sheet.fox4e .sheet-body .item-body h2,
+.sheet.fox4e .sheet-body .item-body h3,
+.sheet.fox4e .sheet-body .item-body h4,
+.sheet.fox4e .sheet-body .item-body h5,
+.sheet.fox4e .sheet-body .item-body h6{
+	margin-top:0.2em;
+	line-height:1;
+}
+.sheet.fox4e .sheet-body .item-body h1{
+	font-size:1.4em;
+	font-variant:small-caps;
+	font-weight:bold;	
+}
+.sheet.fox4e .sheet-body .item-body h2{
+	font-size:1.2em;
+	font-variant:small-caps;
+	font-weight:bold;
+}
+.sheet.fox4e .sheet-body .item-body h3{
+	font-size:1.1em;
+	font-weight:bold;
+}
+.sheet.fox4e .sheet-body .item-body h4{
+	font-style:oblique;
+	font-weight:bold;
+}
+.sheet.fox4e .sheet-body .item-body h5{
+	font-size:0.9em;
+	font-style:oblique;
+	font-weight:bold;
+}
+.sheet.fox4e .sheet-body .item-body h6{
+	font-size:0.8em;
+	font-style:oblique;
+}
+.sheet.fox4e .sheet-body .item-detail{
+	text-transform:uppercase;
+	text-align:center;
+	font-size:0.7rem;
+}
+.sheet.fox4e .sheet-body .item-controls .fas{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e .sheet-body .item-controls .fas:focus,
+.sheet.fox4e .sheet-body .item-controls .fas:active,
+.sheet.fox4e .sheet-body .item-controls .fas:hover{
+	color:#000;
+}
+
+
+/***************************************************/
+/*         NPC SHEETS                              */
+/***************************************************/
+
+/*---------- All Sections ----------*/
+.sheet.fox4e.npc .window-content{
+	background:#e8e6d4;
+	font-family:'DragonBody Sans';
+	padding:0;
+	overflow:hidden;
+}
+.sheet.fox4e.npc .window-content>form{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+}
+.sheet.fox4e.npc .sheet-body ::-webkit-scrollbar-thumb{
+	background:#fff;
+	border:none;
+}
+.sheet.fox4e.npc .sheet-body ::-webkit-scrollbar-track{
+	background:#cdcbb5;
+}
+.sheet.fox4e.npc .sheet-body .section.tabs{
+	border-top:1px solid;
+	border-bottom:1px solid;
+	font-size:0.75em;
+	text-transform:uppercase;
+}
+.sheet.fox4e.npc .sheet-body .section.tabs .sheet-tabs.tabs{
+	border:none;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	max-width:30rem;
+}
+.sheet.fox4e.npc .sheet-body .section.tabs .sheet-tabs.tabs .item{
+	padding:4px 6px;
+}
+.sheet.fox4e.npc .sheet-body .sheet-body{
+	overflow:auto;
+	-webkit-box-flex:10;
+	    -ms-flex-positive:10;
+	        flex-grow:10;
+	padding-bottom:4px;
+}
+.sheet.fox4e.npc .sheet-body .indented{
+	text-indent:0;
+}
+.sheet.fox4e.npc .sheet-body ul{
+	margin:0;
+	padding:0;
+	list-style:none inside;
+}
+.sheet.fox4e.npc .sheet-body button{
+	border:0;
+	padding:4px 8px 4px 6px;
+	line-height:1em;
+	width:auto;
+	font-size:0.75em;
+	text-transform:uppercase;
+	margin:2px;
+	background:#cdcbb5;
+}
+.sheet.fox4e.npc .sheet-body .subsection{
+	background-color:#70774f;
+	color:#fff;
+	padding:0 12px 1px 6px;
+	margin-top:0;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.sheet.fox4e.npc .sheet-body h2.subsection,
+.sheet.fox4e.npc .sheet-body .subsection h2{
+	font-size:1.2em;
+	font-variant:small-caps;
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body h3.subsection{
+	background:#cdcbb5;
+	color:#000;
+	padding:0 12px 1px 6px;
+	margin-top:0;
+	-webkit-box-align:center;
+		-ms-flex-align:center;
+		align-items:center;
+	line-height:1.25em;
+	font-variant:small-caps;
+}
+
+
+/*---------- All Sections — Owned Item Lists ----------*/
+
+.sheet.fox4e.npc .sheet-body .subsection .item-controls .fas,
+.sheet.fox4e.npc .sheet-body .item-controls .item-create .fas{
+	color:#fff;
+}
+.sheet.fox4e.npc .sheet-body .item-header{
+	padding:0 12px 1px 6px;
+	background:#cdcbb5;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.npc .sheet-body .item-name h4{
+	margin-top:0;
+}
+.sheet.fox4e.npc .sheet-body .item-header.not-available,
+.sheet.fox4e.npc .sheet-body .item-header.not-available+.item-body{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Unprepared"]{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Prepared"]{
+	color:#000;
+}
+.sheet.fox4e.npc .sheet-body .item-recharge.rollable{
+	color:#000;
+}
+.sheet.fox4e.npc .sheet-body .item-recharge.rollable .dice.d6{
+	font-family:'4ed6';
+	letter-spacing:2px;
+}
+.sheet.fox4e.npc .sheet-body .item-summary{
+	display:none !important;
+}
+.sheet.fox4e.npc .sheet-body .item-body{
+	padding:1px 12px 1px 12px;
+	background:#e8e6d4;
+	min-width:100%;
+}
+.sheet.fox4e.npc .sheet-body .item-body p{
+	margin:0;
+}
+.sheet.fox4e.npc .sheet-body .powers .item-body p,
+.sheet.fox4e.npc .sheet-body .powers .item-body div.effect{
+	text-indent:-6px;
+	padding-left:6px;
+}
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h1,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h2,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h3,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h4,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h5,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h6{
+	padding-left:0;
+	text-indent:0;
+}
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect p:first-of-type{
+	display:inline;
+	text-indent:unset;
+	padding-left:unset;
+}
+.sheet.fox4e.npc .sheet-body .item-body ul{
+	list-style-type:disc;
+	margin: 0.5em 0;
+	padding:0 0 0 1.5em;
+}
+.sheet.fox4e.npc .sheet-body .item-body ul,
+.sheet.fox4e.npc .sheet-body .item-body ol{
+	padding-left:1.5em;
+	list-style-position:outside;
+}
+.sheet.fox4e.npc .sheet-body .item-body p.sustain{
+	padding-left:12px;
+}
+.sheet.fox4e.npc .sheet-body .item-body .label{
+	font-weight:normal;
+	font-style:oblique;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>*{
+	-webkit-box-ordinal-group:2;
+	    -ms-flex-order:1;
+	        order:1;
+	-webkit-box-flex:unset;
+	    -ms-flex:unset;
+	        flex:unset;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.attack,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.hit{
+	-webkit-box-ordinal-group:4;
+	    -ms-flex-order:3;
+	        order:3;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.effect,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.special{
+	-webkit-box-ordinal-group:3;
+	    -ms-flex-order:2;
+	        order:2;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.effect.post,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.special.post{
+	-webkit-box-ordinal-group:5;
+	    -ms-flex-order:4;
+	        order:4;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.sustain{
+	-webkit-box-ordinal-group:6;
+	    -ms-flex-order:5;
+	        order:5;
+}
+.sheet.fox4e.npc .sheet-body img.item-image[src$="svg"]{
+	-webkit-filter:brightness(0);
+	        filter:brightness(0);
+}
+
+
+/*---------- All Sections — Tables ----------*/
+
+.sheet.fox4e.npc .sheet-body table{
+	border:none;
+	background:none;
+	margin:0;
+	border-spacing:0;
+}
+.sheet.fox4e.npc .sheet-body tr{
+   border-bottom:1px solid #e8e6d4;
+	border:none;
+}
+.sheet.fox4e.npc .sheet-body table thead{
+	background:#cdcbb5;
+	border-bottom:none;
+}
+.sheet.fox4e.npc .sheet-body table thead tr{
+   padding:2px 8px 2px 4px;
+}
+.sheet.fox4e.npc .sheet-body table th,
+.sheet.fox4e.npc .sheet-body table td{
+	padding: 2px 8px 2px 4px;
+	border:none;
+}
+.sheet.fox4e.npc .sheet-body table th:first-child,
+.sheet.fox4e.npc .sheet-body table td:first-child{
+	padding-left:8px;
+}
+.sheet.fox4e.npc .sheet-body table thead tr th,
+.sheet.fox4e.npc .sheet-body table thead tr td{
+	text-shadow:none;
+	font-size:0.75em;
+	text-transform:uppercase;
+	color:#000;
+	font-weight:normal;
+}
+.sheet.fox4e.npc .sheet-body table tbody tr:nth-child(odd){
+	background:rgba(255,255,255,0.4);
+}
+.sheet.fox4e.npc .sheet-body table tbody tr:nth-child(even){
+	background:unset;
+}
+
+
+/*---------- Header Section ----------*/
+
+.sheet.fox4e.npc .sheet-body .head{
+	background-color:#4e5c2e;
+	color:#fff;
+	padding:1px 12px 4px 6px;
+	overflow:hidden;
+}
+.sheet.fox4e.npc .sheet-body .head ::-webkit-input-placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.npc .sheet-body .head ::-moz-placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.npc .sheet-body .head :-ms-input-placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.npc .sheet-body .head ::-ms-input-placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.npc .sheet-body .head ::placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.npc .sheet-body .head>.flexcol>.flexrow{
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.npc .sheet-body .head>.flexcol>.flexrow>*:nth-child(2){
+	text-align:right;
+}
+.sheet.fox4e.npc .sheet-body .head .portrait{
+	width:3em;
+	max-width:3em;
+	margin-right:4px;
+	border:none;
+	height:auto;
+	-o-object-fit:contain;
+	   object-fit:contain;
+}
+.sheet.fox4e.npc .sheet-body .head .header-text{
+	-webkit-box-pack:stretch;
+	    -ms-flex-pack:stretch;
+	        justify-content:stretch;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.npc .sheet-body .head .name{
+	font-weight:bold;
+	font-size:1rem;
+}
+.sheet.fox4e.npc .sheet-body .head .name.autosize{
+	-webkit-box-flex:4;
+	    -ms-flex:4;
+	        flex:4;
+	min-width:1em;
+}
+.sheet.fox4e.npc .sheet-body .head .basics{
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body .head .level{
+	font-weight:bold;
+	text-align:center;
+}
+.sheet.fox4e.npc .sheet-body .leader input.covered{
+	min-width:2em;
+	height:1.4em;
+	margin:0;
+	width:100%;
+}
+.sheet.fox4e.npc .sheet-body .head .categories,
+.sheet.fox4e.npc .sheet-body .head .xp-value,
+.sheet.fox4e.npc .sheet-body .head .categories input[type="text"],
+.sheet.fox4e.npc .sheet-body .head .xp-value input[type="text"]{
+	font-weight:300;
+}
+.sheet.fox4e.npc .sheet-body .head .categories{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.npc .sheet-body .head .xp-value{
+	white-space:nowrap;
+}
+.sheet.fox4e.npc .sheet-body .type.cover,
+.sheet.fox4e.npc .sheet-body .origin.cover{
+	text-transform:lowercase;
+}
+.sheet.fox4e.npc .sheet-body .head .autosize.empty input{
+	color:rgba(255,255,255,0.3);
+	text-transform:lowercase;
+}
+.sheet.fox4e.npc .sheet-body .autosize.subtypes .ruler{
+	text-transform:lowercase;
+	color:#fff;
+}
+.sheet.fox4e.npc .sheet-body .basics,
+.sheet.fox4e.npc .sheet-body .categories{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.npc .sheet-body .basics{
+	-webkit-box-pack:end;
+	    -ms-flex-pack:end;
+	        justify-content:flex-end;
+}
+.sheet.fox4e.npc .sheet-body .basics>*:not(.secondary):not(.leader):not(:first-child),
+.sheet.fox4e.npc .sheet-body .basics .secondary .display,
+.sheet.fox4e.npc .sheet-body .basics .leader .display,
+.sheet.fox4e.npc .sheet-body .categories>*:not(.subtypes):not(:first-child),
+.sheet.fox4e.npc .sheet-body .categories .subtypes{
+	margin-left:0.2em;
+}
+.sheet.fox4e.npc .sheet-body .basics .leader input:not([checked])+.display,
+.sheet.fox4e.npc .sheet-body .basics label.secondary:not(.visible) .display,
+.sheet.fox4e.npc .sheet-body .categories label.subtypes:not(.visible) .display{
+	display:none;
+}
+.sheet.fox4e.npc .sheet-body .basics:focus-within .leader input:not([checked])+.display,
+.sheet.fox4e.npc .sheet-body .basics:focus-within label.secondary:not(.visible) .display,
+.sheet.fox4e.npc .sheet-body .categories:focus-within label.subtypes:not(.visible) .display{
+	display:inline-block;
+	color:rgba(255,255,255,0.3);
+}
+
+
+/*---------- Vitals Section ----------*/
+
+.sheet.fox4e.npc .sheet-body .vitals{
+	padding:2px 8px 2px 8px;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.npc .sheet-body .vitals>.right{
+	text-align:right;
+}
+.sheet.fox4e.npc .sheet-body .vitals .defences>span{
+	white-space:nowrap;
+}
+.sheet.fox4e.npc .sheet-body .movement>span:not(:last-child)::after,
+.sheet.fox4e.npc .sheet-body .trait-selector-senses>span:not(:last-child):not(.placeholder)::after{
+	content:', ';
+	display:inline;
+}
+.sheet.fox4e.npc .sheet-body .hp .temp input[value="0"],
+.sheet.fox4e.npc .sheet-body .action-points input[value="0"],
+.sheet.fox4e.npc .sheet-body .hp .temp input[value="0"]+.ruler,
+.sheet.fox4e.npc .sheet-body .action-points input[value="0"]+.ruler{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods>div{
+	display:inline-block;
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .label:last-child{
+	display:none;
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .immunity:not(:last-child)::after,
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .resistance:not(:last-child)::after,
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .vulnerability:not(:last-child)::after{
+	content: ', ';
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .immunities:not(:last-child) .immunity:last-child::after,
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .resistances:not(:last-child) .resistance:last-child::after{
+	content: '; ';
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .bonus-note:first-child::before{
+	content:'(';
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .bonus-note:last-child::after{
+	content:')';
+}
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods .bonus-note:not(:last-child)::after{
+	content:';';
+}
+.sheet.fox4e.npc .sheet-body .res-mod.reverse{
+	display:inline-block;
+}
+.sheet.fox4e.npc .sheet-body .res-mod.reverse::first-letter{
+	color:rgba(0,0,0,0);
+	margin-right:-5px;
+}
+
+
+/*---------- Traits Section ----------*/
+
+.sheet.fox4e.npc .sheet-body .traits{
+	position:relative;
+}
+.sheet.fox4e.npc .sheet-body .traits>ul>li:first-child .item-control.item-create{
+	position:absolute;
+	top:0;
+	right:10px;
+	display:block;
+	color:#fff;
+}
+.sheet.fox4e.npc .sheet-body .traits>ul>li:not(:first-child)>.item-controls{
+	display:none;
+}
+.sheet.fox4e.npc .sheet-body .traits h3.item-name{
+	display:none;
+}
+.sheet.fox4e.npc .sheet-body .feature-list .item{
+	border-bottom:none;
+	font-size:1em;
+}
+
+
+/*---------- Powers Section ----------*/
+
+.sheet.fox4e.npc .sheet-body .keyword{
+	font-weight:normal;
+	text-transform:lowercase;
+}
+.sheet.fox4e.npc .sheet-body .keyword:not(:last-child)::after{
+	content:', ';
+}
+.sheet.fox4e.npc .sheet-body .keyword:first-child::before{
+	content:' (';
+}
+.sheet.fox4e.npc .sheet-body .keyword:last-child::after{
+	content:')';
+}
+.sheet.fox4e.npc .sheet-body .powers .target{
+	text-transform:lowercase;
+}
+.sheet.fox4e.npc .sheet-body .powers .usage{
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body .powers .usage .dice{
+	font-weight:normal;
+}
+.sheet.fox4e.npc .sheet-body .powers .flavour{
+	font-style:oblique;
+	background:rgba(255,255,255,0.4);
+	padding:2px 12px 4px 12px;
+	margin:-1px -12px 2px -12px;
+}
+
+
+
+/*---------- Footer Sections ----------*/
+
+.sheet.fox4e.npc .sheet-body .checks{
+	background-color:#cdcbb5;
+	padding:2px 8px 2px 8px;
+}
+.sheet.fox4e.npc .sheet-body .skills .items{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.npc .sheet-body .skills .items .label{
+	display:none;
+}
+.sheet.fox4e.npc .sheet-body .skills .items span+.label{
+	display:unset;
+	-webkit-box-ordinal-group:0;
+	    -ms-flex-order:-1;
+	        order:-1;
+}
+.sheet.fox4e.npc .sheet-body .skills .items span:not(:last-child):not(:nth-last-child(2))::after{
+	content:', ';
+	display:inline-block;
+	margin-right:3px;
+}
+.sheet.fox4e.npc .sheet-body .ability-scores{
+	width:100%;
+	max-width:25em;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+	width:100%;
+}
+.sheet.fox4e.npc .sheet-body .ability-scores .ability-score{
+	-ms-flex-preferred-size:6rem;
+	    flex-basis:6rem;
+	text-align:left;
+}
+.sheet.fox4e.npc .sheet-body .ability-scores .ability-score .label{
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body .ability-scores .ability-score .value{
+	width:1.2em;
+}
+.sheet.fox4e.npc .sheet-body .social{
+	padding:2px 8px 2px 8px;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.npc .sheet-body .alignment{
+	-ms-flex-preferred-size:10rem;
+	    flex-basis:10rem;
+}
+.sheet.fox4e.npc .sheet-body .languages>*:not(.hidden){
+	display:inline;
+}
+.sheet.fox4e.npc .sheet-body .languages>li:not(:last-child)::after{
+	content:', ';
+}
+.sheet.fox4e.npc .sheet-body .other{
+	padding:2px 8px 2px 8px;
+}
+
+
+/*---------- Description Tab ----------*/
+
+.sheet.fox4e.npc .sheet-body .tab.description.active{
+	max-height:100%;
+	height:100vh;
+}
+.sheet.fox4e.npc .sheet-body .editor.prosemirror{
+	height:auto;
+	min-height:50vh;
+}
+.sheet.fox4e.npc .sheet-body .editor.prosemirror ::-webkit-scrollbar-thumb{
+	background:#d3d1ba;
+	border:none;
+}
+.sheet.fox4e.npc .sheet-body .editor.prosemirror ::-webkit-scrollbar-track{
+	background:rgba(0,0,0,0.06);
+}
+.sheet.fox4e.npc .sheet-body .editor:not(.prosemirror) .editor-content{
+	background:#fff;
+	margin:4px 2px 4px 4px;
+	height:auto;
+}
+.sheet.fox4e.npc .sheet-body .editor-content ul{
+	padding:0 0 0 1.5em;
+	list-style:none outside;
+}
+.sheet.fox4e.npc .sheet-body .editor-content table thead tr th,
+.sheet.fox4e.npc .sheet-body .editor-content table thead tr td{
+	font-size:1em;
+	color:#fff;
+	text-transform:none;
+}
+.sheet.fox4e.npc .sheet-body .lore>ul>li:not(:first-child){
+	margin-top:0.5em;
+}
+
+
+/*---------- Manage Tab ----------*/
+
+.sheet.fox4e.npc .sheet-body .tab.manage .columns{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	width:calc(100% - 1px);
+}
+.sheet.fox4e.npc .sheet-body .tab.manage .columns>*{
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
+	-webkit-box-flex:2;
+	    -ms-flex-positive:2;
+	        flex-grow:2;
+}
+.sheet.fox4e.npc .sheet-body .tab.manage .defs-manage,
+.sheet.fox4e.npc .sheet-body .tab.manage .adds-body{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.npc .sheet-body .basics-manage-body,
+.sheet.fox4e.npc .sheet-body .resources-body,
+.sheet.fox4e.npc .sheet-body .adds-body{
+	padding:2px 8px 2px 8px;
+}
+.sheet.fox4e.npc .sheet-body .adds-body .equipment{
+	margin-bottom:0.5rem;
+}
+.sheet.fox4e.npc .sheet-body table.resistances{
+	margin-left:1px;
+}
+.sheet.fox4e.npc .sheet-body .skill-trained{
+	text-align:center;
+}
+.sheet.fox4e.npc .sheet-body th.skill-name,
+.sheet.fox4e.npc .sheet-body th.res-name{
+	text-align:left;
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body .skill-name h4,
+.sheet.fox4e.npc .sheet-body .res-name h4{
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body td.skill-mod,
+.sheet.fox4e.npc .sheet-body td.skill-value,
+.sheet.fox4e.npc .sheet-body td.skill-mod>input,
+.sheet.fox4e.npc .sheet-body td.res-bonus,
+.sheet.fox4e.npc .sheet-body td.res-value{
+	text-align:right;
+}
+.sheet.fox4e.npc .sheet-body .resistance h4,
+.sheet.fox4e.npc .sheet-body .skill--block h4{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	font-style:normal;
+}
+.sheet.fox4e.npc .sheet-body .res-bonus.override-true,
+.sheet.fox4e.npc .sheet-body .res-value.override-true{
+	color:rgba(0,0,0,0.2);
+}
+.sheet.fox4e.npc .sheet-body td.skill-ability{
+	font-size:0.75em;
+	text-transform:uppercase;
+	text-align:center;
+}
+.sheet.fox4e.npc .sheet-body .res-immune{
+	text-align:center;
+}
+.sheet.fox4e.npc .sheet-body .res-special h3{
+	padding-top:0.5em;
+	font-weight:bold;
+	font-size:1.1em;
+}
+.sheet.fox4e.npc .sheet-body .res-special-body{
+	padding:2px 8px 2px 8px;
+	background:#cdcbb5;
+}
+.sheet.fox4e.npc .sheet-body .res-special-body>p:first-child{
+	margin-top:0;
+}
+
+
+/*---------- Effects Tab ----------*/
+
+.sheet.fox4e.npc .sheet-body .global-mods{
+	padding:4px 8px 4px 8px;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+}
+.sheet.fox4e.npc .sheet-body .global-mods .columns{
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	-ms-flex-preferred-size:26.5rem;
+	    flex-basis:26.5rem;
+}
+.sheet.fox4e.npc .sheet-body .global-mods .columns>*{
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+}
+.sheet.fox4e.npc .sheet-body .effects-list .subsection{
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+}
+.sheet.fox4e.npc .sheet-body .item.effect{
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.npc .sheet-body .effect-name{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	text-align:left;
+	-webkit-box-flex:unset;
+	    -ms-flex-positive:unset;
+	        flex-grow:unset;
+	-ms-flex-negative:20;
+	    flex-shrink:20;
+}
+.sheet.fox4e.npc .sheet-body .item-list .effect-name{
+	background:#cdcbb5;
+	padding:2px 8px 2px 8px;
+}
+.sheet.fox4e.npc .sheet-body .item-list .item-details{
+	padding:2px 8px 2px 8px;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.npc .sheet-body .effect-source{
+	text-align:left;
+}
+.sheet.fox4e.npc .sheet-body .effect-duration{
+	text-align:right;
+}
+.sheet.fox4e.npc .sheet-body .effect-controls{
+	text-align:right;
+	min-width:3rem;
+}
+.sheet.fox4e.npc .sheet-body .item-controls .toggle.on .fas{
+	color:#000;
+}
+.sheet.fox4e.npc .sheet-body .item-name h3{
+	border-bottom:unset;
+	font-size:1em;	
+	margin:0;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	font-weight:bold;
+}
+.sheet.fox4e.npc .sheet-body .effect-save img{
+	height:1em;
+	width:auto;
+	-webkit-filter:brightness(0);
+	        filter:brightness(0);
+	border:0;
+   margin-bottom:-2px;
+	margin-right:2px;
+}
