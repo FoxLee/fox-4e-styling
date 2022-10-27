@@ -4,7 +4,7 @@
 	"description": "Styles sheets, journal entries, chat cards and various other things to mimic official 4e material.",
 	"url": "https://github.com/FoxLee/fox-4e-styling/",
 	"manifest": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json",
-    "download": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.zip",
+	"download": "https://github.com/FoxLee/fox-4e-styling/releases/download/v0.9-beta/module.zip",
 	"license": "https://github.com/FoxLee/fox-4e-styling/blob/main/LICENSE",
 	"readme": "https://github.com/FoxLee/fox-4e-styling/blob/main/README.md",
 	"bugs": "https://github.com/FoxLee/fox-4e-styling/issues",
