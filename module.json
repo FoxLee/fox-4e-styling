@@ -13,14 +13,24 @@
 			"name": "Fox Lee",
 			"url": "https://www.invincible.ink",
 			"discord": "Fox#3590",
-			"twitter": "https://twitter.com/Invincible_Ink",
+			"twitter": "https://twitter.com/TheArtGremblin",
 			"email": "fox@invincible.ink"
 		}
 	],
-	"version": "0.9",
+	"version": "0.9.1",
 	"compatibility": {
 		"minimum": "10",
 		"verified": "10.288"
+	},
+	"relationships": {
+		"systems": [{
+			"id": "dnd4e",
+			"type": "system",
+			"manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
+			"compatibility": {
+				"verified": "0.3.13"
+			}
+		}]
 	},
 	"styles": [
 		"styles/chat.css",
