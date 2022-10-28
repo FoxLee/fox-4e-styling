@@ -232,9 +232,9 @@
 			<div class="dmg-taken-mods" title="{{localize 'Fox4e.TipResistances'}}&mdash;{{localize 'Fox4e.TipEditOnManage'}}">{{!--
 			
 				--}}<div class="immunities">{{!--
-					--}}<span class="label">{{localize 'Fox4e.DamImmune'}}</span>
+					--}}<span class="label">{{localize 'Fox4e.DamImmune'}} </span>{{!--
 
-					{{#if (laden system.untypedResistances.immunities)}}{{!--
+					--}}{{#if (laden system.untypedResistances.immunities)}}{{!--
 						--}}{{#each system.untypedResistances.immunities as |imm|}}{{!--
 								--}}<span class="immunity special">{{imm}}</span>{{!--
 						--}}{{/each}}{{!--
@@ -252,12 +252,12 @@
 						--}}{{/if}}{{!--
 					--}}{{/each}}{{!--
 					
-				--}}</div>{{!-- [Close] Immunities section --}}
-				
-				<div class="resistances">{{!--
-					--}}<span class="label">{{localize 'Fox4e.DamResist'}}</span>
+				--}}</div>{{!-- [Close] Immunities section --}}{{!--
 					
-					{{#each system.resistances as |res r|}}{{!--
+				--}}<div class="resistances">{{!--
+					--}}<span class="label">{{localize 'Fox4e.DamResist'}} </span>{{!--
+					
+					--}}{{#each system.resistances as |res r|}}{{!--
 						--}}{{#if (gt res.value 0)}}{{#unless res.immune}}{{!--
 							--}}<span class="resistance damage">{{!--
 								--}}<span class="res-mod">{{numberFormat res.value decimals=0}}&thinsp;</span>{{!--
@@ -278,12 +278,12 @@
 						--}}{{/each}}{{!--
 					--}}{{/if}}{{!--
 					
-				--}}</div>{{!-- [Close] Resistances section--}}
-				
-				<div class="vulnerabilities">{{!--
-					--}}<span class="label">{{localize 'Fox4e.DamVulnerable'}}</span>
+				--}}</div>{{!-- [Close] Resistances section--}}{{!--
 					
-					{{#each system.resistances as |res r|}}{{!--
+				--}}<div class="vulnerabilities">{{!--
+					--}}<span class="label">{{localize 'Fox4e.DamVulnerable'}} </span>{{!--
+					
+					--}}{{#each system.resistances as |res r|}}{{!--
 						--}}{{#if (lt res.value 0)}}{{!--
 							--}}{{#unless res.immune}}{{!--
 								--}}<span class="vulnerability damage">{{!--
