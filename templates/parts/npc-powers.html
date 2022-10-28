@@ -38,9 +38,9 @@
 									--}}</span>{{!--
 								--}}</h4>
 								&thinsp;♦&thinsp;
-								<span class="usage">
+								<span class="usage power-detail item-uses">
 									{{#if (eq item.system.useType "recharge")}}
-										<span class="power-detail item-uses">
+										<span class="recharge">
 											{{#if item.system.rechargeRoll}}
 												<a class="item-recharge rollable numerical" title="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">	{{!--
 													--}}{{localize 'DND4EBETA.PowerRecharge'}} 
@@ -64,7 +64,12 @@
 											--}}</label> 
 											of {{item.system.preparedMaxUses}}/{{!--
 										--}}{{/if}}{{!--
-										--}}{{lookup ../../config.powerUseType item.system.useType}}{{!--
+										
+										--}}{{#if item.system.uses.per}}{{!--
+											--}}{{lookup ../../config.limitedUsePeriods item.system.uses.per}}{{!--
+										--}}{{else}}{{!--
+											--}}{{lookup ../../config.powerUseType item.system.useType}}{{!--
+										--}}{{/if}}{{!--
 									--}}{{/if}}{{!-- [Close] Recharge details --}}
 								</span>
 							</div>
