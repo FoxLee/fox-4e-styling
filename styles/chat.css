@@ -7,6 +7,7 @@
 }
 .dnd4eBeta.chat-card .card-content{
 	margin:0;
+	background:#fff;
 }
 .dnd4eBeta.chat-card .card-content>p{
 	margin:0;
@@ -25,22 +26,22 @@
 	color:#fff;
 	text-shadow:0 0 4px #dedede;
 }
-.chat-sidebar .ability-usage--atwill{
+.dnd4eBeta.chat-card .card-header .ability-usage--atwill{
 	background:#619769;
 }
-.chat-sidebar .ability-usage--encounter{
+.dnd4eBeta.chat-card .card-header .ability-usage--encounter{
 	background:#961334;
 }
-.chat-sidebar .ability-usage--daily{
+.dnd4eBeta.chat-card .card-header .ability-usage--daily{
 	background:#4d4d4f;
 }
-.chat-sidebar .ability-usage--item{
+.dnd4eBeta.chat-card .card-header .ability-usage--item{
 	background:#d7941d;
 }
-.chat-sidebar .ability-usage--recharge{
+.dnd4eBeta.chat-card .card-header .ability-usage--recharge{
 	background:#193d5e;
 }
-.chat-sidebar .ability-usage--other{
+.dnd4eBeta.chat-card .card-header .ability-usage--other{
 	background:#9271a9;
 }
 .dnd4eBeta.chat-card .card-header{
@@ -60,7 +61,15 @@
 }
 .dnd4eBeta.chat-card .item-description p,
 .dnd4eBeta.chat-card .item-details .alt,
-.dnd4eBeta.chat-card .card-content p{
+.dnd4eBeta.chat-card .card-content p,
+.dnd4eBeta.chat-card .card-content ol,
+.dnd4eBeta.chat-card .card-content ul,
+.dnd4eBeta.chat-card .card-content h1,
+.dnd4eBeta.chat-card .card-content h2,
+.dnd4eBeta.chat-card .card-content h3,
+.dnd4eBeta.chat-card .card-content h4,
+.dnd4eBeta.chat-card .card-content h5,
+.dnd4eBeta.chat-card .card-content h6{
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 }
 .dnd4eBeta.chat-card .item-details span,
@@ -92,7 +101,6 @@
 .dnd4eBeta.chat-card .card-content h4,
 .dnd4eBeta.chat-card .card-content h5,
 .dnd4eBeta.chat-card .card-content h6{
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	border-bottom:0;
 	margin-bottom:0;
 }
@@ -131,6 +139,43 @@
 .dnd4eBeta.chat-card .card-content h6~p{
 	font-style:normal;
 }
+.dnd4eBeta.chat-card .card-content table{
+	font-family:'DragonBody Sans';
+	font-size:0.8rem;
+	background:#fff;
+}
+.dnd4eBeta.chat-card .card-content table thead th,
+.dnd4eBeta.chat-card .card-content table thead td,
+.dnd4eBeta.chat-card .card-content table tbody tr td{
+	padding:0.25em 0.6em;
+}
+.dnd4eBeta.chat-card .card-content thead th,
+.dnd4eBeta.chat-card .card-content thead td{
+	color:#fff;
+}
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster){
+	border-collapse:collapse;
+	border:none;
+}
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr{
+	border-bottom:2px solid rgba(255,255,255,0);
+	position:relative;
+}
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster) thead{
+	background:#193d5e;
+}
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster) tr,
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster) td{
+	border:none;
+}
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(odd){
+	background:#d3d1ba;
+}
+.dnd4eBeta.chat-card .card-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(even){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
 .dnd4eBeta.chat-card .card-buttons{
 	display:-webkit-box;
 	display:-ms-flexbox;
@@ -146,4 +191,14 @@
 .dnd4eBeta.chat-card .card-buttons button[data-action="placeTemplate"]{
 	-ms-flex-preferred-size:100%;
 	    flex-basis:100%;
+}
+
+
+/*---------- Fixes issues with Chat Portraits module ----------*/
+
+.chat-portrait-flexrow+.dnd4eBeta.chat-card .card-header h3{
+	padding-left:0 !important;
+}
+.chat-portrait-flexrow+.dnd4eBeta.chat-card .card-header img{
+	margin-right:3px;
 }
