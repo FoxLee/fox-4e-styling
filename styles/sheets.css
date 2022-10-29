@@ -621,17 +621,20 @@
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods>div{
 	display:inline-block;
 }
+.sheet.fox4e.npc .sheet-body .dmg-taken-mods>div{
+	display:inline-block;
+}
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .label:last-child{
 	display:none;
 }
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .immunity:not(:last-child)::after,
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .resistance:not(:last-child)::after,
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .vulnerability:not(:last-child)::after{
-	content: ', ';
+	content: ',\2009';
 }
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .immunities:not(:last-child) .immunity:last-child::after,
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .resistances:not(:last-child) .resistance:last-child::after{
-	content: '; ';
+	content: ';\2009';
 }
 .sheet.fox4e.npc .sheet-body .dmg-taken-mods .bonus-note:first-child::before{
 	content:'(';
