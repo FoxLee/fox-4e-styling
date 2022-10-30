@@ -1,56 +1,55 @@
-{   
-	"name": "fox-4e-styling",
-	"title": "Fox's 4e Styling",
-	"description": "Styles sheets, journal entries, chat cards and various other things to mimic official 4e material.",
-	"url": "https://github.com/FoxLee/fox-4e-styling/",
-	"manifest": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json",
-	"download": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.zip",
-	"license": "https://github.com/FoxLee/fox-4e-styling/blob/main/LICENSE",
-	"readme": "https://github.com/FoxLee/fox-4e-styling/blob/main/README.md",
-	"bugs": "https://github.com/FoxLee/fox-4e-styling/issues",
-	"authors": [
-		{
-			"name": "Fox Lee",
-			"url": "https://www.invincible.ink",
-			"discord": "Fox#3590",
-			"twitter": "https://twitter.com/TheArtGremblin",
-			"email": "fox@invincible.ink"
-		}
-	],
-	"version": "0.9.2",
-	"compatibility": {
-		"minimum": "10",
-		"verified": "10.288"
-	},
-	"relationships": {
-		"systems": [{
-			"id": "dnd4e",
-			"type": "system",
-			"manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
-			"compatibility": {
-				"minimum": "0.3.13",
-				"verified": "0.3.13"
-			}
-		}]
-	},
-	"styles": [
-		"styles/chat.css",
-		"styles/journal.css",
-		"styles/sheets.css",
-		"styles/tah.css",
-		"fonts/4ed6.css",
-		"fonts/dragonbody-sans.css",
-		"fonts/dragonbody-serif.css",
-		"fonts/dragonhead.css",
-		"fonts/dragontitle.css"
-	],
-	"scripts": [
-		"scripts/helpers.js"
-	],
-	"esmodules": [
-		"pc-sheet.js",
-		"npc-sheet.js"
-	],
+{
+  "title": "Fox's 4e Styling",
+  "description": "Styles sheets, journal entries, chat cards and various other things to mimic official 4e material.",
+  "url": "https://github.com/FoxLee/fox-4e-styling/",
+  "manifest": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json",
+  "download": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.zip",
+  "license": "https://github.com/FoxLee/fox-4e-styling/blob/main/LICENSE",
+  "readme": "https://github.com/FoxLee/fox-4e-styling/blob/main/README.md",
+  "bugs": "https://github.com/FoxLee/fox-4e-styling/issues",
+  "authors": [
+    {
+      "name": "Fox Lee",
+      "url": "https://www.invincible.ink",
+      "discord": "Fox#3590",
+      "email": "fox@invincible.ink",
+      "flags": {}
+    }
+  ],
+  "version": "0.9.3",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10.288"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd4e",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
+        "compatibility": {
+          "minimum": "0.3.14",
+          "verified": "0.3.14"
+        }
+      }
+    ]
+  },
+  "styles": [
+    "fonts/dragonbody-sans.css",
+    "fonts/dragonbody-serif.css",
+    "fonts/dragonhead.css",
+    "fonts/dragontitle.css",
+    "fonts/4ed6.css",
+    "styles/sheets.css"
+  ],
+  "scripts": [
+    "scripts/helpers.js"
+  ],
+  "esmodules": [
+    "4e-styling.js",
+    "pc-sheet.js",
+    "npc-sheet.js"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -58,5 +57,6 @@
       "path": "lang/en.json",
       "flags": {}
     }
-  ]
+  ],
+  "id": "fox-4e-styling"
 }
