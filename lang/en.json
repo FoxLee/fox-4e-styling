@@ -73,5 +73,17 @@
 "Fox4e.Train": "Train",
 "Fox4e.Trait": "Trait",
 "Fox4e.Type": "Type",
-"Fox4e.XP": "XP"
+"Fox4e.XP": "XP",
+"Fox4e.settings.style-journal.Name": "Journal styles",
+"Fox4e.settings.journal-font.Name": "Journal body font",
+"Fox4e.settings.style-chat.Name": "Chat card styles",
+"Fox4e.settings.style-tah.Name": "TAH styles",
+"Fox4e.settings.style-chat-ex.Name": "Extra chat styles",
+"Fox4e.settings.style-journal.Hint": "Style Journal areas (including in other sheets) to look like official 4e material",
+"Fox4e.settings.journal-font.Hint": "Change the base journal font; try sans-serif if you find the default unpleasant to read",
+"Fox4e.settings.style-chat.Hint": "Make item cards in chat look like official 4e material",
+"Fox4e.settings.style-tah.Hint": "[Token Action HUD] If using coloured buttons for powers, tweak the colours to match official 4e",
+"Fox4e.settings.style-chat-ex.Hint": "These have nothing to do with book-accuracy, they're just cute.",
+"Fox4e.settings.journal-font.Serif": "Serif",
+"Fox4e.settings.journal-font.Sans": "Sans Serif"
 }

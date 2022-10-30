@@ -1,0 +1,78 @@
+.chat-message .speechmaker~.message-content{
+  border-radius:5px;
+  padding:1rem;
+  background:#fff;
+  margin-top:0.9rem;
+}
+.chat-message .speechmaker~.message-content::before{
+  content:'\2BC5';
+  font-size:20px;
+  color:#fff;
+  display:block;
+  width:20px;
+  height:20px;
+  margin-top:-18px;
+  line-height:0;
+  margin-left:-9px;
+}
+.chat-message .message-content .chat-card{
+  background:none;
+}
+.chat-message .message-content .dice-roll{
+  background:none;
+  padding-top:5px;
+}
+.chat-message.whisper .message-content .chat-card,
+.chat-message.whisper .message-content .dice-roll{
+  background:#e8e8ef;
+}
+.chat-message.whisper.blind .message-content .chat-card,
+.chat-message.whisper.blind .message-content .dice-roll{
+  background:#f5eaf5;
+}
+.chat-message .flavor-text{
+  background:url('../../../ui/parchment.jpg') repeat;
+  color:#000;
+  padding:0.5em 0.8em;
+  margin-top:0.5em;
+}
+.dice-roll .dice-formula,
+.dice-roll .dice-total,
+.dnd4eBeta.chat-card .card-buttons button,
+.dice-roll .dice-tooltip.expanded{
+  background:url('../../../ui/parchment.jpg') repeat;
+}
+.dnd4eBeta.chat-card .card-buttons button{
+  margin:2px;
+}
+h4.chat-portrait-flexrow{
+  display:none;
+}
+.chat-message{
+  background:none;
+}
+.chat-message .message-header{
+  color:#cecece;
+}
+.chat-message .message-sender{
+  font-variant:normal;
+  text-transform:uppercase;
+  font-size:0.8em;
+}
+.chat-message .message-metadata{
+  color:#919191;
+}
+.chat-message .message-metadata:hover,
+.chat-message .message-metadata:active,
+.chat-message .message-metadata:focus{
+  color:#fff;
+}
+.chat-message .dnd4eBeta.chat-card.item-card{
+  background:none;
+}
+.chat-message .message-header{
+  line-height:1;
+}
+.message img.chat-portrait-message-portrait-generic{
+  margin-bottom:0;
+}

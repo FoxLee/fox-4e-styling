@@ -6,7 +6,8 @@
 
 .sheet.fox4e .window-content{
 	text-rendering:optimizeLegibility;
-	font-family:'DragonBody Sans';
+	--font-primary:'DragonBodySans';
+	font-family:var(--font-primary);
 }
 .sheet.fox4e .sheet-body ::-webkit-scrollbar-thumb{
 	background:#d3d1ba;
@@ -40,7 +41,7 @@
 	height:100%;
 }
 .sheet.fox4e .sheet-body input{
-	font-family:'DragonBody Sans';
+	font-family:var(--font-primary);
 	padding:0;
 	height:auto;
 	background:none;
@@ -216,7 +217,6 @@
 /*---------- All Sections ----------*/
 .sheet.fox4e.npc .window-content{
 	background:#e8e6d4;
-	font-family:'DragonBody Sans';
 	padding:0;
 	overflow:hidden;
 }

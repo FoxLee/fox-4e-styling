@@ -1,0 +1,52 @@
+import Fox4eStyles from "./4e-styling.js";
+
+export function registerConfigs() {
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.JOURNAL_STYLES, {
+		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.JOURNAL_STYLES}.Name`,
+		default: true,
+		type: Boolean,
+		scope: 'world',
+		config: true,
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.JOURNAL_STYLES}.Hint`,
+		onChange: debouncedReload
+	});
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.JOURNAL_FONT, {
+	name: `Fox4e.settings.${Fox4eStyles.SETTINGS.JOURNAL_FONT}.Name`,
+		default: "DragonBodySerif",
+		type: String,
+		scope: 'world',
+		config: true,
+		choices: {
+			"DragonBodySerif": `Fox4e.settings.${Fox4eStyles.SETTINGS.JOURNAL_FONT}.Serif`,
+			"DragonBodySans": `Fox4e.settings.${Fox4eStyles.SETTINGS.JOURNAL_FONT}.Sans`
+		},
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.JOURNAL_FONT}.Hint`
+	});
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.CHAT_STYLES, {
+		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.CHAT_STYLES}.Name`,
+		default: true,
+		type: Boolean,
+		scope: 'world',
+		config: true,
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.CHAT_STYLES}.Hint`,
+		onChange: debouncedReload
+	});
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.TAH_STYLES, {
+		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.TAH_STYLES}.Name`,
+		default: true,
+		type: Boolean,
+		scope: 'world',
+		config: true,
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.TAH_STYLES}.Hint`,
+		onChange: debouncedReload
+	});
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.CHAT_EX_STYLES, {
+		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.CHAT_EX_STYLES}.Name`,
+		default: true,
+		type: Boolean,
+		scope: 'world',
+		config: true,
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.CHAT_EX_STYLES}.Hint`,
+		onChange: debouncedReload
+	});
+}
