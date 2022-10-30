@@ -121,10 +121,14 @@
 	-ms-flex-wrap:wrap;
 	    flex-wrap:wrap;
 }
-.dnd4eBeta.chat-card .card-buttons button{
+.dnd4eBeta.chat-card .card-buttons button,
+.chat-message .fakechatbutton{
 	flex: 1;
 	-ms-flex-preferred-size:30%;
 	    flex-basis:30%;
+}
+.chat-message .fakechatbutton{
+	border:1px solid var(--color-border-light-primary);
 }
 .dnd4eBeta.chat-card .card-buttons button[data-action="placeTemplate"]{
 	-ms-flex-preferred-size:100%;
