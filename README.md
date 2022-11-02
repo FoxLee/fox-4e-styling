@@ -5,7 +5,8 @@ Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, ite
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta)
 * **Foundry VTT Compatibility**: v10
-* **4e System Compatibility**: v0.3.13 (earlier versions **will** cause errors)
+* **4e System Compatibility**: v0.3.14 (earlier versions **will** cause errors)
+* **Other Credits**: The Monster token in the screenshots is by [Yuikami](https://yuikami.tumblr.com), who makes the cutest token packs ever.
 
 ## Features
 ### Core style NPC sheet
@@ -39,29 +40,43 @@ Makes your Journals look just like official 4e books!
 * Should work for all ProseMirror-based rich text areas.
 * Includes body text, headings, lists, tables, and whatever else I can manage.
 * I haven't worked out how to include selectable styles yet, but you can access the boxed text style by switching to the code editor and wrapping the target content in a div with the "rules-block" class. (Other styles will be forthcoming if I can work out how to make them front-end selectable.)
-* Not currently optional. I want to put this in a new journal sheet or make it a toggle-able setting, but I haven't worked that out yet!
+* I dunno how to add journal sheets, but you can toggle the styling package it on/off from the module settings.
+* Also includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
 ### Chat Card Styling
 Styles chat item cards to match the core 4e books.
 
-<a href="https://user-images.githubusercontent.com/10067730/198209338-8242894a-335a-4dee-ae5d-c8eebabe8cf2.png"><img src="https://user-images.githubusercontent.com/10067730/198209338-8242894a-335a-4dee-ae5d-c8eebabe8cf2.png" width=150></a>
+<a href="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png"><img src="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png"><img src="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198209275-159bdd5f-371e-4b42-baff-e72e2064627b.png"><img src="https://user-images.githubusercontent.com/10067730/198209275-159bdd5f-371e-4b42-baff-e72e2064627b.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198209867-1e4277d7-a741-4440-9b25-5befdfb0099c.png"><img src="https://user-images.githubusercontent.com/10067730/198209867-1e4277d7-a741-4440-9b25-5befdfb0099c.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198209996-b95ac613-0a29-4be2-b509-62bfcb34627a.png"><img src="https://user-images.githubusercontent.com/10067730/198209996-b95ac613-0a29-4be2-b509-62bfcb34627a.png" width=150></a>
-* Not yet perfect for all item types; I've focused on getting powers right for now.
-* Not currently optional. I want to make this a toggle-able setting, but I haven't worked that out yet!
+<a href="https://user-images.githubusercontent.com/10067730/198873758-63eeda18-691b-4770-86cf-ce1d602f946b.png"><img src="https://user-images.githubusercontent.com/10067730/198873758-63eeda18-691b-4770-86cf-ce1d602f946b.png" width=150></a>
+<a href="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png"><img src="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png" width=150></a>
+<a href="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png"><img src="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png" width=150></a>
+* Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
+* Recharge powers have monster header colour, since they almost always come form NPCs.
+* I gave rituals a purple header cus, I dunno, I like it.
+* Turn it on/off in the module settings.
+* Includes tweaks for compatibility with the Chat Portrait module.
 ### Token Action HUD Styling
 Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenactionhud) just a little.
 
 <a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
 
 * If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
-* Not currently optional. I want to make it a toggle-able setting, but I haven't worked that out yet!
+* Turn it on/off from the module settings.
+### Extra chat styling
+It's got nothing to do with book accuracy. I just think it's cute!
+
+<a href="https://user-images.githubusercontent.com/10067730/198873864-6dd16cd4-69dc-4afd-abb0-0214eda9045e.png"><img src="https://user-images.githubusercontent.com/10067730/198873864-6dd16cd4-69dc-4afd-abb0-0214eda9045e.png" width=150></a>
+<a href="https://user-images.githubusercontent.com/10067730/198873449-7a145209-4e76-4068-8f90-3f5445024990.png"><img src="https://user-images.githubusercontent.com/10067730/198873449-7a145209-4e76-4068-8f90-3f5445024990.png" width=150></a>
+* Turn it on/off in the module settings.
+* Substantially cuter with the [Chat Portrait](https://foundryvtt.com/packages/chat-portrait) module
+
 ### To-Do/In Progress
 * New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
   * Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin.
 * New Sheets for all system "items" (powers, feats, gear, etc)
-* Each set of styling optional (either as settings or as separate sheets)
+* <strike>Each set of styling optional (either as settings or as separate sheets)</strike> Done! :D
 * Fix the new NPC sheet's power sorting method, for Token Action HUD. Power sorting is not "set" even though the sheet forces its unique sorting, so TAH retains the last selected value for the actor (for now, swap back to the default sheet and choose "action" sorting to fix).
   * TAH also doesn't inherit the specific MM3 action groups. Default action sorting is sufficient, but it would be nice for it to be exactly right.
 * Make condition/special immunities editable on the sheet. Since this was a new addition to support this sheet, I didn't have a built-in edit dialogue to piggyback on, so I had to leave it in the "too hard" basket for now.
@@ -70,9 +85,3 @@ Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenac
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
 * In the **"Manifest URL"** field, paste the following: https://raw.githubusercontent.com/FoxLee/fox-4e-styling/main/module.json
 * Click "Install".
-### I only want the NPC sheet
-I hope to eventually have all components be loaded separately, either as separate sheets or based on settings. In the mean time, if you don't want to style journals/chat cards/TAH, do one of the following:
-* Remove the corresponding CSS file from the "styles" list in the module.json file
-* Edit the corresponding CSS file to be empty (don't delete the file or you'll get an error).
-
-Yes, this will be undone next time the module updates. Sorry. I'll get optional loading done as soon as I can!

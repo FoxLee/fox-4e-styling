@@ -1,0 +1,76 @@
+<!-- note here actor == the actor instance (thus must us .id), item == item.data instance (thus should use ._id) -->
+<div class="dnd4eBeta chat-card item-card" data-actor-id="{{actor.id}}" data-item-id="{{item._id}}"
+	 {{#if tokenId}}data-token-id="{{tokenId}}"{{/if}} {{#if isSpell}}data-spell-level="{{item.data.level}}"{{/if}}>
+	<header class="card-header flexrow">
+		<img src="{{item.img}}" title="{{item.name}}" width="36" height="36"/>
+		<h3 class="item-name ability-usage--">{{item.name}}</h3>
+	</header>
+
+	<div class="card-content" style="display: block;">
+		{{{system.description.value}}}
+		{{#if data.materials.value}}
+		<p><strong>{{ localize "DND4EBETA.RequiredMaterials" }}.</strong> {{data.materials.value}}</p>
+		{{/if}}
+	</div>
+	<div class="item-summary">
+		<div class="item-details">
+			{{{cardData}}}
+		</div>
+	</div>
+	<div class="card-buttons">
+
+
+
+		{{#if hasAttack}}
+		<button data-action="attack" title="{{ localize "DND4EBETA.QuickRoll" }}">
+			{{ localize "DND4EBETA.Attack" }}
+		</button>
+		{{/if}}
+
+		{{#if hasDamage}}
+		<button data-action="damage" title="{{ localize "DND4EBETA.QuickRoll" }}">
+			{{localize "DND4EBETA.Damage" }}
+		</button>
+		{{/if}}
+
+		{{#if hasHealing}}
+		<button data-action="healing" title="{{ localize "DND4EBETA.QuickRoll" }}">
+			{{ localize "DND4EBETA.Healing" }}
+		</button>
+		{{/if}}
+
+		{{#if hasEffect}}
+		<!-- <div class="card-content" style="display: block;">
+			{{localize "DND4EBETA.Effect" }}: {{{data.effect.detail}}}
+		</div> -->
+		{{/if}}
+		<!-- {{#if hasEffect}}<button data-action="effect">{{ localize "DND4EBETA.Effect" }}</button>{{/if}} -->
+
+		{{#if isVersatile}}
+		<button data-action="versatile">{{ localize "DND4EBETA.Versatile" }}</button>
+		{{/if}}
+
+		{{#if hasSave}}
+		<button data-action="save" data-ability="{{data.save.ability}}" disabled>
+			{{ localize "DND4EBETA.SavingThrow" }} {{labels.save}}
+		</button>
+		{{/if}}
+
+		{{#if data.formula}}
+		<button data-action="formula">{{ localize "DND4EBETA.OtherFormula"}}</button>
+		{{/if}}
+
+		{{#if hasAreaTarget}}
+		<button data-action="placeTemplate">{{ localize "DND4EBETA.PlaceTemplate" }}</button>
+		{{/if}}
+	</div>
+
+	<footer class="card-footer">
+		{{#if isPower}}
+		{{else}}
+			{{#each data.properties}}
+			<span>{{this}}</span>
+			{{/each}}
+		{{/if}}
+	</footer>
+</div>
