@@ -8,6 +8,7 @@ export default class Fox4eNPCSheet extends ActorSheet4eNPC{
 	static get defaultOptions(){
 		return mergeObject(super.defaultOptions, {
 			classes: ["dnd4e", "sheet", "actor", "npc", "fox4e"],
+			width:436,
 		});
 	}
 	
