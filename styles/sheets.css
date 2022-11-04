@@ -76,6 +76,9 @@
 	border-bottom:none;
 	margin-bottom:0;
 }
+.sheet.fox4e .window-content p{
+	min-height:unset;
+}
 .sheet.fox4e .sheet-body .label{
 	font-weight:bold;
 }
@@ -183,17 +186,17 @@
 	font-weight:bold;
 }
 .sheet.fox4e .sheet-body .item-body h4{
-	font-style:oblique;
+	font-style:italic;
 	font-weight:bold;
 }
 .sheet.fox4e .sheet-body .item-body h5{
 	font-size:0.9em;
-	font-style:oblique;
+	font-style:italic;
 	font-weight:bold;
 }
 .sheet.fox4e .sheet-body .item-body h6{
 	font-size:0.8em;
-	font-style:oblique;
+	font-style:italic;
 }
 .sheet.fox4e .sheet-body .item-detail{
 	text-transform:uppercase;
@@ -290,7 +293,7 @@
 .sheet.fox4e.npc .sheet-body .subsection h2{
 	font-size:1.2em;
 	font-variant:small-caps;
-	font-weight:bold;
+	font-weight:500;
 }
 .sheet.fox4e.npc .sheet-body h3.subsection{
 	background:#cdcbb5;
@@ -382,7 +385,7 @@
 }
 .sheet.fox4e.npc .sheet-body .item-body .label{
 	font-weight:normal;
-	font-style:oblique;
+	font-style:italic;
 }
 .sheet.fox4e.npc .sheet-body .item-body.flexcol>*{
 	-webkit-box-ordinal-group:2;
@@ -703,7 +706,7 @@
 	font-weight:normal;
 }
 .sheet.fox4e.npc .sheet-body .powers .flavour{
-	font-style:oblique;
+	font-style:italic;
 	background:rgba(255,255,255,0.4);
 	padding:2px 12px 4px 12px;
 	margin:-1px -12px 2px -12px;
