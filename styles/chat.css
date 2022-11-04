@@ -5,15 +5,20 @@
 	--font-primary:'DragonBodySans';
 	font-family:var(--font-primary);
 }
+.dnd4eBeta.chat-card p{
+	min-height:unset;
+}
+
 .dnd4eBeta.chat-card .card-content>p{
 	margin:0;
-	padding:0 5px;
+	padding:5px;
+	line-height:1;
 }
 .dnd4eBeta.chat-card .card-header h3{
 	text-transform:none;
 	font-size:1.2em;
 	color:#fff;
-	line-height:1;
+	line-height:initial;
 	font-family:var(--font-primary);
 }
 .dnd4eBeta.chat-card .card-header h3:hover,
@@ -59,17 +64,17 @@
 	font-weight:bold;
 }
 .dnd4eBeta.chat-card .card-content h4{
-	font-style:oblique;
+	font-style:italic;
 	font-weight:bold;
 }
 .dnd4eBeta.chat-card .card-content h5{
 	font-size:0.9em;
-	font-style:oblique;
+	font-style:italic;
 	font-weight:bold;
 }
 .dnd4eBeta.chat-card .card-content h6{
 	font-size:0.8em;
-	font-style:oblique;
+	font-style:italic;
 }
 .dnd4eBeta.chat-card .card-content h1~p,
 .dnd4eBeta.chat-card .card-content h2~p,
@@ -179,6 +184,9 @@
 .dnd4eBeta.chat-card .card-header img{
 	z-index:0;
 	border:none;
+	height:100%;
+	-o-object-fit:contain;
+	object-fit:contain;
 }
 .dnd4eBeta.chat-card.power-card .card-content,
 .dnd4eBeta.chat-card.consumable-card .card-content{
@@ -195,7 +203,7 @@
 .dnd4eBeta.chat-card.consumable-card .item-description p,
 .dnd4eBeta.chat-card.consumable-card .item-description span,
 .dnd4eBeta.chat-card.consumable-card .card-content p{
-	font-style:oblique;
+	font-style:italic;
 }
 .dnd4eBeta.chat-card.power-card .item-description p,
 .dnd4eBeta.chat-card.power-card .item-details .alt,
@@ -366,4 +374,7 @@
 	position:absolute;
 	top:0;
 	left:0;
+}
+.system-dnd4e .chat-portrait-text-size-name-generic{
+	display:inline-block;
 }
