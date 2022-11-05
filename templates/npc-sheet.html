@@ -674,6 +674,11 @@
 							<span class="label">{{localize "DND4EBETA.HealingSurges"}} <span><label class="attribute-sub attribute-input current autosize"><input class="number" type="text" name="system.details.surges.value" value="{{#if system.details.surges.value}}{{system.details.surges.value}}{{else}}0{{/if}}" title="{{localize 'DND4EBETA.SurgeCur'}}"  placeholder="Current" data-dtype="Number" onClick="this.select();" /><span class="ruler">{{system.details.surges.value}}</span></label>/<label class="attribute-sub attribute-input max autosize"><input type="text" name="system.details.surges.max" value="{{#if system.details.surges.max}}{{system.details.surges.max}}{{else}}0{{/if}}" title="{{localize 'DND4EBETA.SurgeDay'}}"  placeholder="Total" data-dtype="Number" onClick="this.select();" /><span class="ruler">{{system.details.surges.max}}</span>
 							</label>
 						</div>
+						
+						<div class="resting">
+							<button class="rest short-rest npc" title="{{localize 'DND4EBETA.RestShort'}}">{{ localize "DND4EBETA.RestShort" }}</a>
+							<button class="rest long-rest npc" title="{{localize 'DND4EBETA.RestLong'}}">{{ localize "DND4EBETA.RestLong" }}</button>
+						</div>
 							
 					</div>{{!--[Close] Resources Body--}}
 				</section>{{!-- [Close] Resources Section	--}}
@@ -737,6 +742,7 @@
 						<div class="res-special-body">
 							<p>Condition & special resistances will be editable here in a future version.</p>
 						</div>
+						
 					</div>
 					
 				</section>
