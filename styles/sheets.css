@@ -327,19 +327,6 @@
 .sheet.fox4e.npc .sheet-body .item-header.not-available+.item-body{
 	color:rgba(0,0,0,0.3);
 }
-.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Unprepared"]{
-	color:rgba(0,0,0,0.3);
-}
-.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Prepared"]{
-	color:#000;
-}
-.sheet.fox4e.npc .sheet-body .item-recharge.rollable{
-	color:#000;
-}
-.sheet.fox4e.npc .sheet-body .item-recharge.rollable .dice.d6{
-	font-family:'4ed6';
-	letter-spacing:2px;
-}
 .sheet.fox4e.npc .sheet-body .item-summary{
 	display:none !important;
 }
@@ -351,25 +338,6 @@
 .sheet.fox4e.npc .sheet-body .item-body p{
 	margin:0;
 }
-.sheet.fox4e.npc .sheet-body .powers .item-body p,
-.sheet.fox4e.npc .sheet-body .powers .item-body div.effect{
-	text-indent:-6px;
-	padding-left:6px;
-}
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect h1,
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect h2,
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect h3,
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect h4,
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect h5,
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect h6{
-	padding-left:0;
-	text-indent:0;
-}
-.sheet.fox4e.npc .sheet-body .powers .item-body .effect p:first-of-type{
-	display:inline;
-	text-indent:unset;
-	padding-left:unset;
-}
 .sheet.fox4e.npc .sheet-body .item-body ul{
 	list-style-type:disc;
 	margin: 0.5em 0;
@@ -379,9 +347,6 @@
 .sheet.fox4e.npc .sheet-body .item-body ol{
 	padding-left:1.5em;
 	list-style-position:outside;
-}
-.sheet.fox4e.npc .sheet-body .item-body p.sustain{
-	padding-left:12px;
 }
 .sheet.fox4e.npc .sheet-body .item-body .label{
 	font-weight:normal;
@@ -394,29 +359,6 @@
 	-webkit-box-flex:unset;
 	    -ms-flex:unset;
 	        flex:unset;
-}
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.attack,
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.hit{
-	-webkit-box-ordinal-group:4;
-	    -ms-flex-order:3;
-	        order:3;
-}
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.effect,
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.special{
-	-webkit-box-ordinal-group:3;
-	    -ms-flex-order:2;
-	        order:2;
-}
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.effect.post,
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.special.post{
-	-webkit-box-ordinal-group:5;
-	    -ms-flex-order:4;
-	        order:4;
-}
-.sheet.fox4e.npc .sheet-body .item-body.flexcol>.sustain{
-	-webkit-box-ordinal-group:6;
-	    -ms-flex-order:5;
-	        order:5;
 }
 .sheet.fox4e.npc .sheet-body img.item-image[src$="svg"]{
 	-webkit-filter:brightness(0);
@@ -696,8 +638,35 @@
 .sheet.fox4e.npc .sheet-body .keyword:last-child::after{
 	content:')';
 }
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.attack,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.hit,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.miss{
+	-webkit-box-ordinal-group:4;
+	    -ms-flex-order:3;
+	        order:3;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.effect,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.special{
+	-webkit-box-ordinal-group:3;
+	    -ms-flex-order:2;
+	        order:2;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.effect.post,
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.special.post{
+	-webkit-box-ordinal-group:5;
+	    -ms-flex-order:4;
+	        order:4;
+}
+.sheet.fox4e.npc .sheet-body .item-body.flexcol>.sustain{
+	-webkit-box-ordinal-group:6;
+	    -ms-flex-order:5;
+	        order:5;
+}
 .sheet.fox4e.npc .sheet-body .powers .target{
 	text-transform:lowercase;
+}
+.sheet.fox4e.npc .sheet-body .powers .sustain{
+	padding-left:12px;
 }
 .sheet.fox4e.npc .sheet-body .powers .usage{
 	font-weight:bold;
@@ -710,6 +679,38 @@
 	background:rgba(255,255,255,0.4);
 	padding:2px 12px 4px 12px;
 	margin:-1px -12px 2px -12px;
+}
+.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Unprepared"]{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Prepared"]{
+	color:#000;
+}
+.sheet.fox4e.npc .sheet-body .item-recharge.rollable{
+	color:#000;
+}
+.sheet.fox4e.npc .sheet-body .item-recharge.rollable .dice.d6{
+	font-family:'4ed6';
+	letter-spacing:2px;
+}
+.sheet.fox4e.npc .sheet-body .powers .item-body p,
+.sheet.fox4e.npc .sheet-body .powers .item-body div.effect{
+	text-indent:-6px;
+	padding-left:6px;
+}
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h1,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h2,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h3,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h4,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h5,
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect h6{
+	padding-left:0;
+	text-indent:0;
+}
+.sheet.fox4e.npc .sheet-body .powers .item-body .effect p:first-of-type{
+	display:inline;
+	text-indent:unset;
+	padding-left:unset;
 }
 
 
