@@ -16,7 +16,7 @@
       "flags": {}
     }
   ],
-  "version": "0.9.35",
+  "version": "0.9.36",
   "compatibility": {
     "minimum": "10",
     "verified": "10.290"
@@ -28,8 +28,8 @@
         "type": "system",
         "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
         "compatibility": {
-          "minimum": "0.3.14",
-          "verified": "0.3.16"
+          "minimum": "0.3.17",
+          "verified": "0.3.17"
         }
       }
     ]
