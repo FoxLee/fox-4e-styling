@@ -220,6 +220,13 @@
 .dnd4eBeta.chat-card.consumable-card .item-details p,
 .dnd4eBeta.chat-card.consumable-card .item-description p{
 	margin:0;
+}
+.dnd4eBeta.chat-card.power-card .item-details>span,
+.dnd4eBeta.chat-card.power-card .item-details p,
+.dnd4eBeta.chat-card.power-card .item-description p,
+.dnd4eBeta.chat-card.consumable-card .item-details>span,
+.dnd4eBeta.chat-card.consumable-card .item-details p,
+.dnd4eBeta.chat-card.consumable-card .item-description p{
 	text-indent:-0.5em;
 	padding:0em 0.3em 0em 0.8em;
 }
@@ -235,9 +242,12 @@
 }
 .dnd4eBeta.chat-card.power-card .item-details span,
 .dnd4eBeta.chat-card.consumable-card .item-details span{
-	display:block;
 	padding-top:0;
 	padding-bottom:0;
+}
+.dnd4eBeta.chat-card.power-card .item-details>span,
+.dnd4eBeta.chat-card.consumable-card .item-details>span{
+	display:block;
 }
 .dnd4eBeta.chat-card.power-card .item-details>br,
 .dnd4eBeta.chat-card.consumable-card .item-details>br{
