@@ -4,8 +4,8 @@
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta)
-* **Foundry VTT Compatibility**: v10
-* **4e System Compatibility**: v0.3.14 (earlier versions **will** cause errors)
+* **Foundry VTT Compatibility**: v10+
+* **4e System Compatibility**: v0.3.17 (versions earlier than 0.3.17 will cause display issues; versions earlier than 0.3.14 will cause more severe errors)
 * **Other Credits**: The Monster token in the screenshots is by [Yuikami](https://yuikami.tumblr.com), who makes the cutest token packs ever.
 
 ## Features
