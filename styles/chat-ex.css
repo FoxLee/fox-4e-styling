@@ -41,7 +41,6 @@
 	    flex-basis:100%;
 }
 .chat-message .dice-roll .dice-result>.flavor-text{
-	color:#000;
 	padding:0;
 	-ms-flex-preferred-size:50%;
 	    flex-basis:50%;
@@ -51,6 +50,44 @@
 	-ms-flex-negative:4;
 	    flex-shrink:4;
 	white-space:nowrap;
+}
+.dice-roll .hit-prediction::before,
+.dice-roll .hit-prediction::before{
+	display:inline-block;
+	margin-right:2px;
+	width:0.9em;
+	height:0.9em;
+	margin-bottom:-1px;
+}
+.dice-roll .hit-prediction.probable-hit::before{
+	content:" ";
+	background:url('../images/hit.svg') center bottom no-repeat;
+}
+.dice-roll .hit-prediction.probable-miss::before{
+	content:" ";
+	background:url('../images/miss.svg') center bottom no-repeat;
+}
+.dice-roll .hit-prediction.critical::before{
+	content:" ";
+	background:url('../images/hit-crit.svg') center bottom no-repeat;
+	margin-top:-4px;
+	margin-bottom:-3px;
+	width:1.2em;
+	height:1.2em;
+}
+.dice-roll .hit-prediction.critical{
+	color:#00a846;
+}
+.dice-roll .dice-total.critical{
+	color:#00a846;
+}
+.dice-roll .hit-prediction.fumble::before{
+	content:" ";
+	background:url('../images/miss-crit.svg') center bottom no-repeat;
+	margin-top:-4px;
+	margin-bottom:-3px;
+	width:1.2em;
+	height:1.2em;
 }
 .chat-message .message-header+.message-content>.dice-roll:first-child,
 .chat-message .message-header+.message-content>h4+.dice-roll{
