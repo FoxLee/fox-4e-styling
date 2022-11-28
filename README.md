@@ -57,6 +57,11 @@ Styles chat item cards to match the core 4e books.
 * I gave rituals a purple header cus, I dunno, I like it.
 * Turn it on/off in the module settings.
 * Includes tweaks for compatibility with the Chat Portrait module.
+* If you're not using auto-generated power cards, I've enabled two classes you can use with the source code editor to make the appropriate parts of your text pick up some basic styling.
+  * `power-basics` for text that should look like the source/type/usage/keywords section
+  * `flavour` for text that should look like flavour text. 
+  * To use them, enter "source code" mode using the toolbar button in the text editor. Then just add the desired class name to the `p` or `div` element wrapping your text, like so: `<p class="flavour">`. You won't see any difference while editing your item (at least for now) but you should see it in chat next time you use the power.
+  * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
 ### Token Action HUD Styling
 Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenactionhud) just a little.
 
@@ -69,6 +74,8 @@ It's got nothing to do with book accuracy. I just think it's cute!
 
 <a href="https://user-images.githubusercontent.com/10067730/198873864-6dd16cd4-69dc-4afd-abb0-0214eda9045e.png"><img src="https://user-images.githubusercontent.com/10067730/198873864-6dd16cd4-69dc-4afd-abb0-0214eda9045e.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198873449-7a145209-4e76-4068-8f90-3f5445024990.png"><img src="https://user-images.githubusercontent.com/10067730/198873449-7a145209-4e76-4068-8f90-3f5445024990.png" width=150></a>
+<a href="https://user-images.githubusercontent.com/10067730/204185140-c38c4f43-55f9-445e-9f74-a3eaf5ffbdbf.png"><img src="https://user-images.githubusercontent.com/10067730/204185140-c38c4f43-55f9-445e-9f74-a3eaf5ffbdbf.png" width=150></a>
+
 * Turn it on/off in the module settings.
 * Substantially cuter with the [Chat Portrait](https://foundryvtt.com/packages/chat-portrait) module
 
