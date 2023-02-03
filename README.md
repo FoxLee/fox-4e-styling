@@ -90,5 +90,5 @@ It's got nothing to do with book accuracy. I just think it's cute!
 
 ## Installation
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
-* In the **"Manifest URL"** field, paste the following: https://raw.githubusercontent.com/FoxLee/fox-4e-styling/main/module.json
+* In the **"Manifest URL"** field, paste the following: `https://raw.githubusercontent.com/FoxLee/fox-4e-styling/main/module.json`
 * Click "Install".
