@@ -6,8 +6,16 @@ Handlebars.registerHelper("empty", function(lunchbox){
 	return Object.keys(lunchbox).length === 0;
 });
 
-Handlebars.registerHelper("form", function(formula, actorData, powerInnerData){	
-	return eval(game.helper.commonReplace(formula,actorData,powerInnerData));	
+Handlebars.registerHelper("form", function(formula, actorData, powerInnerData){
+	let value = game.helper.commonReplace(formula,actorData,powerInnerData);
+	try{
+		value = eval(value);
+	}
+	catch (e) {
+		value = powerInnerData.name + ': Error evaluating formula.'
+		console.log(value);
+	}
+	return value;
 });
 
 Handlebars.registerHelper("commfy", function(lunch){
