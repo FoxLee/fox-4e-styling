@@ -1,10 +1,10 @@
-.chat-message .speechmaker~.message-content{
+.chat-message:not(.narrator-narrative,.narrator-chat) .speechmaker~.message-content{
 	border-radius:5px;
 	padding:1rem;
 	background:#fff;
 	margin-top:0.9rem;
 }
-.chat-message .speechmaker~.message-content::before{
+.chat-message:not(.narrator-narrative,.narrator-chat) .speechmaker~.message-content::before{
 	content:'\2BC5';
 	font-size:20px;
 	color:#fff;
