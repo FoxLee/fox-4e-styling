@@ -63,10 +63,12 @@ Hooks.once('init', () => {
 });
 
 Hooks.on('renderChatMessage', function(message, html, data){
-	if(!message.isRoll){
-		if(message.content){
-			if(!message.content.startsWith("<div")){
-				html.prepend('<span class="speechmaker" style="display:none !important;">');
+	if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
+		if(!message.isRoll){
+			if(message.content){
+				if(!message.content.startsWith("<div")){
+					html.prepend('<span class="speechmaker" style="display:none !important;">');
+				}
 			}
 		}
 	}
