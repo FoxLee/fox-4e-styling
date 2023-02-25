@@ -251,7 +251,7 @@
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	padding:0.8em 1.2em;
 	margin-bottom:1em;
-	--font-primary:'Dragonbody Sans';
+	font-family:'DragonbodySans';
 }
 .journal-page-content .rules-block p+p,
 .journal-page-content .rules-block ul+p,
@@ -326,7 +326,7 @@
 /*---- Tables ----*/
 .journal-page-content table,
 .sheet.fox4e .editor-content table{
-	--font-primary:'Dragonbody Sans';
+	font-family:'DragonbodySans';
 	font-size:0.8rem;
 }
 .journal-page-content table thead th,
@@ -336,6 +336,9 @@
 .sheet.fox4e .editor-content table thead td,
 .sheet.fox4e .editor-content table tbody tr td{
 	padding:0.25em 0.6em;
+}
+.journal-page-content table thead th{
+	color:#fff;
 }
 /*-------------------------*/
 /*-- Generic Alternating --*/
