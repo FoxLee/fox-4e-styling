@@ -16,7 +16,7 @@
       "flags": {}
     }
   ],
-  "version": "0.9.40",
+  "version": "0.9.41",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291"
@@ -55,6 +55,17 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "packs": [
+	{
+      "name": "Styling Examples",
+      "label": "Styling Examples",
+      "path": "packs/styling-examples.db",
+      "type": "JournalEntry",
+      "system": "dnd4e",
+      "private": false,
       "flags": {}
     }
   ],
