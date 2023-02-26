@@ -321,56 +321,166 @@
     margin-bottom:0.2em;
 }
 
+/*-----------------*/
+/*---- Rituals ----*/
+.journal-page-content div.ritual,
+.sheet.fox4e .editor-content div.ritual{
+	font-family:'DragonbodySans';
+	max-width:450px;
+	font-weight:300;
+}
+.journal-page-content div.ritual h1,
+.sheet.fox4e .editor-content div.ritual h1{
+	font-family:'Dragonhead';
+	font-size:1.8em;
+}
+.journal-page-content div.ritual>.basics,
+.sheet.fox4e .editor-content div.ritual>.basics{
+	display:flex;
+	justify-content:space-between;
+}
+.journal-page-content div.ritual>.basics>*,
+.sheet.fox4e .editor-content div.ritual>.basics>*{
+	flex-basis:48%;
+}
+.journal-page-content .ritual .basics ul,
+.sheet.fox4e .editor-content .ritual .basics ul{
+  position:static;
+  padding-left:0;
+}
+.journal-page-content .ritual .basics ul li::before,
+.sheet.fox4e .editor-content .ritual .basics ul li::before{
+  content:unset;
+}
+.journal-page-content .ritual .basics ul li,
+.sheet.fox4e .editor-content .ritual .basics ul li{
+    margin-bottom:0;
+}
+.journal-page-content .ritual table,
+.sheet.fox4e .editor-content .ritual table{
+	font-weight:400;
+}
+
 
 /*----------------*/
 /*---- Tables ----*/
 .journal-page-content table,
 .sheet.fox4e .editor-content table{
 	font-family:'DragonbodySans';
-	font-size:0.8rem;
-}
-.journal-page-content table thead th,
-.journal-page-content table thead td,
-.journal-page-content table tbody tr td,
-.sheet.fox4e .editor-content table thead th,
-.sheet.fox4e .editor-content table thead td,
-.sheet.fox4e .editor-content table tbody tr td{
-	padding:0.25em 0.6em;
-}
-.journal-page-content table thead th{
-	color:#fff;
-}
-/*-------------------------*/
-/*-- Generic Alternating --*/
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster),
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster){
+	font-size:1rem;
 	border-collapse:collapse;
 	border:none;
+	margin-top:1rem;
+	margin-bottom:1rem;
 }
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr,
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr{
-	border-bottom:2px solid rgba(255,255,255,0);
-	position:relative;
+.journal-page-content table thead,
+.sheet.fox4e .editor-content table thead{
+	border-bottom:0;
+	text-shadow:unset;
+	text-align:left;
+	color:#fff;
 }
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) thead,
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) thead{
-	background:#193d5e;
+.journal-page-content table th,
+.journal-page-content table td,
+.sheet.fox4e .editor-content th,
+.sheet.fox4e .editor-content td{
+	padding:0.25em 0.6em;
 }
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tr,
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) td,
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tr,
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) td{
-	border:none;
+.journal-page-content table tr.subhead,
+.sheet.fox4e .editor-content table tr.subhead{
+	color:#fff;
 }
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(odd),
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(odd){
-	background:#d3d1ba;
-}
-.journal-page-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(even),
-.sheet.fox4e .editor-content table:not(.power):not(.item):not(.hazard):not(.monster) tbody tr:nth-child(even){
+.journal-page-content table tr.flavour,
+.sheet.fox4e .editor-content table tr.flavour{
 	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	font-style:oblique;
+}
+.journal-page-content table tbody tr:nth-child(odd),
+.sheet.fox4e .editor-content table tbody tr:nth-child(odd){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+.journal-page-content table tbody tr:nth-child(even),
+.sheet.fox4e .editor-content table tbody tr:nth-child(even){
+	background:#fff;
+}
+.journal-page-content table tr,
+.journal-page-content table td,
+.sheet.fox4e .editor-content table tr,
+.sheet.fox4e .editor-content table td{
+	border:0;
+}
+.journal-page-content table tfoot,
+.sheet.fox4e .editor-content table tfoot{
+	font-size:0.8rem;
+}
+.journal-page-content table tfoot tr td,
+.sheet.fox4e .editor-content table tfoot tr td{
+	padding-left:4px;
+	padding-right:4px;
+}
+
+
+/*-------------------------*/
+/*-- Generic Alternating --*/
+.journal-page-content table:not(.power,.item,.hazard,.monster),
+.sheet.fox4e .editor-content table:not(.power,.item,.hazard,.monster){
+	border-collapse:collapse;
+	border:none;
+}
+.journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr,
+.sheet.fox4e .editor-content table:not(.power,.item,.hazard,.monster) tbody tr{
+	border-bottom:2px solid rgba(255,255,255,0);
+	position:relative;
+}
+.journal-page-content table:not(.power,.item,.hazard,.monster) thead,
+.sheet.fox4e .editor-content table:not(.power,.item,.hazard,.monster) thead{
+	background:#193d5e;
+}
+.journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd),
+.sheet.fox4e .editor-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd){
+	background:#d3d1ba;
+}
+.journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even),
+.sheet.fox4e .editor-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+
+/*-------------------------*/
+/*--------- Item ----------*/
+.journal-page-content table.item,
+.sheet.fox4e .editor-content table.item{
+	border-collapse:collapse;
+	border:none;
+}
+.journal-page-content table.item thead,
+.sheet.fox4e .editor-content table.item thead,
+.journal-page-content table.item tr.subhead,
+.sheet.fox4e .editor-content table.item tr.subhead{
+	background:#d9951c;
+}
+.journal-page-content table.item thead tr:first-child th:first-child,
+.sheet.fox4e .editor-content table.item thead tr:first-child th:first-child{
+	font-size:1.2rem;
+}
+.journal-page-content table.item thead td:not(:first-child),
+.sheet.fox4e .editor-content table.item thead td:not(:first-child),
+.journal-page-content table.item tr.subhead td:not(:first-child),
+.sheet.fox4e .editor-content table.item tr.subhead td:not(:first-child){
+	text-align:right;
+}
+.journal-page-content table.item tr.pricing,
+.sheet.fox4e .editor-content table.item tr.pricing,
+.journal-page-content table.item tr.effect,
+.sheet.fox4e .editor-content table.item tr.effect,
+.journal-page-content table.item tr.item-type,
+.sheet.fox4e .editor-content table.item tr.item-type{
+	background:#fff;
 }
 
 
