@@ -326,13 +326,17 @@
 .journal-page-content div.ritual,
 .sheet.fox4e .editor-content div.ritual{
 	font-family:'DragonbodySans';
-	max-width:450px;
+	max-width:500px;
 	font-weight:300;
 }
 .journal-page-content div.ritual h1,
 .sheet.fox4e .editor-content div.ritual h1{
 	font-family:'Dragonhead';
 	font-size:1.8em;
+}
+.journal-page-content div.ritual .flavour,
+.sheet.fox4e .editor-content div.ritual .flavour{
+	font-style:oblique;
 }
 .journal-page-content div.ritual>.basics,
 .sheet.fox4e .editor-content div.ritual>.basics{
@@ -457,6 +461,7 @@
 .sheet.fox4e .editor-content table.item{
 	border-collapse:collapse;
 	border:none;
+	max-width:500px;
 }
 .journal-page-content table.item thead,
 .sheet.fox4e .editor-content table.item thead,
@@ -476,11 +481,15 @@
 }
 .journal-page-content table.item tr.pricing,
 .sheet.fox4e .editor-content table.item tr.pricing,
-.journal-page-content table.item tr.effect,
-.sheet.fox4e .editor-content table.item tr.effect,
-.journal-page-content table.item tr.item-type,
-.sheet.fox4e .editor-content table.item tr.item-type{
+.journal-page-content table.item tr.detail,
+.sheet.fox4e .editor-content table.item tr.detail{
 	background:#fff;
+}
+.journal-page-content table.item tr.pricing~tr.pricing td,
+.sheet.fox4e .editor-content table.item tr.pricing~tr.pricing td,
+.journal-page-content table.item tr.detail~tr.detail td,
+.sheet.fox4e .editor-content table.item tr.detail~tr.detail td{
+	padding-top:0;
 }
 
 
