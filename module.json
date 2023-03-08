@@ -14,9 +14,12 @@
       "discord": "Fox#3590",
       "email": "fox@invincible.ink",
       "flags": {}
+    },
+    {
+      "name": "Glyphe"
     }
   ],
-  "version": "0.9.41",
+  "version": "0.9.42",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291"
@@ -56,7 +59,13 @@
       "name": "English",
       "path": "lang/en.json",
       "flags": {}
-    }
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json",
+      "flags": {}
+    }  
   ],
   "packs": [
 	{
