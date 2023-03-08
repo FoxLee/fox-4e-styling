@@ -3,7 +3,7 @@
 	{{!-- Sheet Header --}}
 	<header class="head flexrow">
 	
-		<img class="portrait flexrow left" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" height="64" width="64" />
+		<img class="portrait flexrow left" src="{{actor.img}}" title="{{localize 'Fox4e.TipSheetImage'}}" data-edit="img" height="64" width="64" />
 		
 		<div class="flexcol header-text">
 		
@@ -17,7 +17,7 @@
 				
 				<div class="basics">
 				
-					<span class="label">Level&thinsp;</span>{{!--
+					<span class="label">{{localize 'DND4EBETA.Level'}}&thinsp;</span>{{!--
 					--}}<label class="level autosize" title="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4EBETA.Level'}}" for="system.details.level">{{!--
 						--}}<input type="text" class="number level" name="system.details.level" value="{{system.details.level}}" data-dtype="Number" onClick="this.select();" tabindex=0 />{{!--
 						--}}<span class="ruler">{{system.details.level}}</span>{{!--
@@ -132,7 +132,7 @@
 				--}}</label>/{{!--
 				
 				--}}<label class="autosize">{{!--
-					--}}<input class="max number" type="text" name="system.attributes.hp.max" value="{{system.attributes.hp.max}}" title="{{localize 'Fox4e.TipEnterNum'}} {localize 'DND4EBETA.HPTotal'}}" placeholder="Total" data-dtype="Number" onClick="this.select();" />{{!--
+					--}}<input class="max number" type="text" name="system.attributes.hp.max" value="{{system.attributes.hp.max}}" title="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4EBETA.HPTotal'}}" placeholder="Total" data-dtype="Number" onClick="this.select();" />{{!--
 					--}}<span class="ruler">{{system.attributes.hp.max}}</span>{{!--
 				--}}</label>;
 				
@@ -652,7 +652,7 @@
 							{{#if (ne system.details.role.secondary "elite")}}
 								<div class="saves">
 									<span class="label roll-save rollable" title="{{localize 'DND4EBETA.SavingThrow'}}">{{localize 'Fox4e.GroupSaves'}}</span> 
-									<span class="roll-save-bonus rollable" title="Adjust Saving Throw Bonuses">+{{system.details.saves.value}}</span>
+									<span class="roll-save-bonus rollable" title="{{localize 'Fox4e.TipBonus'}}">+{{system.details.saves.value}}</span>
 								</div>
 								
 								<div class="action-points">
