@@ -228,11 +228,35 @@
 					<span class="tag {{k}}">{{v}}</span>
 				{{/each}}
 			</div>
+
+			<div class="dmg-taken-mods	{{!-- 
+			Ugly mess to avoid space being given to empty line 
 			
-			<div class="dmg-taken-mods" title="{{localize 'Fox4e.TipResistances'}}&mdash;{{localize 'Fox4e.TipEditOnManage'}}">{{!--
+			--}}{{#if (laden system.untypedResistances.immunities)}}{{!--
+				--}} spec-imm{{!--
+			--}}{{else if (laden system.untypedResistances.resistances)}}{{!--
+				--}} spec-res{{!--
+			--}}{{else if (laden system.untypedResistances.vulnerabilities)}}{{!--
+				--}} spec-vuln{{!--
+			--}}{{/if}}{{!--
+			
+			--}}{{#each system.resistances as |res r|}}{{!--
+				--}}{{#if (gt res.value 0)}}{{#unless res.immune}}{{!--
+					--}} dmg-res{{!--
+				--}}{{/unless}}{{/if}}{{!--
+				--}}{{#if (lt res.value 0)}}{{#unless res.immune}}{{!--
+					--}} dmg-vuln{{!--
+				--}}{{/unless}}{{/if}}{{!--
+				--}}{{#if res.immune}}{{!--
+					--}} dmg-imm{{!--
+				--}}{{/if}}{{!--
+			--}}{{/each}}{{!--
+			
+			{{!-- End ugly mess 	
+			--}}" title="{{localize 'Fox4e.TipResistances'}}&mdash;{{localize 'Fox4e.TipEditOnManage'}}">{{!--
 			
 				--}}<div class="immunities">{{!--
-					--}}<span class="label">{{localize 'Fox4e.DamImmune'}} </span>{{!--
+					--}}<span class="label">{{localize 'Fox4e.Immune'}} </span>{{!--
 
 					--}}{{#if (laden system.untypedResistances.immunities)}}{{!--
 						--}}{{#each system.untypedResistances.immunities as |imm|}}{{!--
@@ -255,7 +279,7 @@
 				--}}</div>{{!-- [Close] Immunities section --}}{{!--
 					
 				--}}<div class="resistances">{{!--
-					--}}<span class="label">{{localize 'Fox4e.DamResist'}} </span>{{!--
+					--}}<span class="label">{{localize 'Fox4e.Resist'}} </span>{{!--
 					
 					--}}{{#each system.resistances as |res r|}}{{!--
 						--}}{{#if (gt res.value 0)}}{{#unless res.immune}}{{!--
@@ -281,7 +305,7 @@
 				--}}</div>{{!-- [Close] Resistances section--}}{{!--
 					
 				--}}<div class="vulnerabilities">{{!--
-					--}}<span class="label">{{localize 'Fox4e.DamVulnerable'}} </span>{{!--
+					--}}<span class="label">{{localize 'Fox4e.Vulnerable'}} </span>{{!--
 					
 					--}}{{#each system.resistances as |res r|}}{{!--
 						--}}{{#if (lt res.value 0)}}{{!--
@@ -721,7 +745,7 @@
 								<th class="res-name">{{localize 'DND4EBETA.Type'}}</th>
 								{{#if system.advancedCals}}<th class="res-value">{{localize 'Fox4e.Total'}}</th>{{/if}}
 								<th class="res-bonus">{{#if system.advancedCals}}{{localize 'Fox4e.Base'}}{{else}}{{localize 'DND4EBETA.Value'}}{{/if}}</th>
-								<th class="res-imm">{{localize 'Fox4e.DamImmune'}}</th>
+								<th class="res-imm">{{localize 'Fox4e.Immune'}}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -739,8 +763,42 @@
 					
 					<div class="res-special">
 						<h3 class="subsection">{{localize 'Fox4e.TabResistancesExtra'}}</h3>
-						<div class="res-special-body">
-							<p>Condition & special resistances will be editable here in a future version.</p>
+						<div class="res-special-body">	
+							<div>
+								<a class="list-string-input label untyped-resistances" data-options="special" data-target="system.untypedResistances.resistances" title="{{ localize 'Fox4e.TipEdit' }} {{ localize 'DND4EBETA.UntypedRes'}}">
+									<span>{{ localize "Fox4e.Resist" }}</span>
+									<i class="fas fa-edit"></i>
+								</a>							
+								<ul class="traits-list">
+								{{#each system.untypedResistances.resistances as |v k|}}
+									<li class="tag {{k}}">{{v}}</li>
+								{{/each}}
+								</ul>
+							</div>
+							
+							<div>
+								<a class="list-string-input label untyped-vulnerabilities" data-options="special" data-target="system.untypedResistances.vulnerabilities" title="{{ localize 'Fox4e.TipEdit' }} {{ localize 'DND4EBETA.UntypedVuln'}}">
+									<span>{{ localize "Fox4e.Vulnerable" }}</span>
+									<i class="fas fa-edit"></i>
+								</a>								
+								<ul class="traits-list">
+								{{#each system.untypedResistances.vulnerabilities as |v k|}}
+									<li class="tag {{k}}">{{v}}</li>
+								{{/each}}
+								</ul>
+							</div>
+							
+							<div>
+								<a class="list-string-input label untyped-immunities" data-options="special" data-target="system.untypedResistances.immunities" title="{{ localize 'Fox4e.TipEdit' }} {{ localize 'DND4EBETA.UntypedImm'}}">
+									<span>{{ localize "Fox4e.Immune" }}</span>
+									<i class="fas fa-edit"></i>
+								</a>							
+								<ul class="traits-list">
+								{{#each system.untypedResistances.immunities as |v k|}}
+									<li class="tag {{k}}">{{v}}</li>
+								{{/each}}
+								</ul>
+							</div>
 						</div>
 						
 					</div>
