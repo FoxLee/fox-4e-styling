@@ -53,10 +53,11 @@ Styles chat item cards to match the core 4e books.
 <a href="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png"><img src="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png"><img src="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png" width=150></a>
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
-* Recharge powers have monster header colour, since they almost always come form NPCs.
+* Recharge powers have monster header colour, since they almost always come from NPCs.
 * I gave rituals a purple header cus, I dunno, I like it.
 * Turn it on/off in the module settings.
 * Includes tweaks for compatibility with the Chat Portrait module.
+* If you're using auto-generated power cards, NPC power cards will have their flavour text automatically be toggled "hidden" in chat. Reaosning: unlike PC powers, using the chat flavour field to judge whether or not we need the full description is unreliable (because NPC powers almost never have real flavour text).
 * If you're not using auto-generated power cards, I've enabled two classes you can use with the source code editor to make the appropriate parts of your text pick up some basic styling.
   * `power-basics` for text that should look like the source/type/usage/keywords section
   * `flavour` for text that should look like flavour text. 
