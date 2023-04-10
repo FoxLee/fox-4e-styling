@@ -39,7 +39,7 @@ Makes your Journals look just like official 4e books!
 <a href="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png"><img src="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png" width=150></a>
 * Should work for all ProseMirror-based rich text areas.
 * Includes body text, headings, lists, tables, and whatever else I can manage.
-* I haven't worked out how to include selectable styles yet, but you use HTML source editor to take advantage of built-in classes. **New:** Check the included "Example Styling" for how to markup game stuff in journals. Currently supports generic table, "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
+* I haven't worked out how to include selectable styles yet, but you use HTML source editor to take advantage of built-in classes. **New:** Check the included "Example Styling" compendium for how to markup game stuff in journals. Currently supports generic table, "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
 * I dunno how to add journal sheets, but you can toggle the styling package it on/off from the module settings.
 * Also includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
 ### Chat Card Styling
@@ -82,7 +82,7 @@ It's got nothing to do with book accuracy. I just think it's cute!
 
 ### To-Do/In Progress
 * New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
-  * Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin.
+  * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I"m in love.
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * <strike>Each set of styling optional (either as settings or as separate sheets)</strike> Done! :D
 * Fix the new NPC sheet's power sorting method, for Token Action HUD. Power sorting is not "set" even though the sheet forces its unique sorting, so TAH retains the last selected value for the actor (for now, swap back to the default sheet and choose "action" sorting to fix).
