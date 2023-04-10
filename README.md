@@ -3,7 +3,7 @@
 # Fox's 4e Styling for Foundry VTT (BETA)
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
 * **Author**: [FoxLee](https://github.com/FoxLee)
-* **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta)
+* **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta). French translation provided by Gliphe.
 * **Foundry VTT Compatibility**: v10+
 * **4e System Compatibility**: v0.3.17+ (versions earlier than 0.3.17 will cause display issues; versions earlier than 0.3.14 will cause more severe errors)
 * **Other Credits**: The Monster token in the screenshots is by [Yuikami](https://yuikami.tumblr.com), who makes the cutest token packs ever.
@@ -18,16 +18,16 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 <a href="https://user-images.githubusercontent.com/10067730/198204382-763aa610-a799-4a8f-b9d2-ce15224e3b74.png"><img src="https://user-images.githubusercontent.com/10067730/198204382-763aa610-a799-4a8f-b9d2-ce15224e3b74.png" width=150></a>
 * Specifically based on the MM3 style stat block, with action-based subheadings. (Note that the sheet uses its own power sorting mode, including sending powers with triggers to their own group.)
 * Doesn't override the existing NPC sheet, so you can choose it per-monster or set it as the default, as you see fit.
-* Retains the functionality of the existing sheet in almost all cases (some items have to managed on a separate tab).
-* Should work near-seamlessly with Draconas [Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)/[Masterplan exporter](https://github.com/draconas1/masterplan-json-export)
+* Retains the functionality of the existing sheet in almost all cases (some items have to be managed on a separate tab).
+* Should work near-seamlessly with Draconas' [Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)/[Masterplan exporter](https://github.com/draconas1/masterplan-json-export)
 * Makes heavy use of "tooltip" messages to assist in editing.
 * Every piece of visible text (aside from user entry of course) should be translation-ready.
 * Auto-generated MM3 style power summary. No need to write your own summary, add extra info to headers or target lines, or any of that stuff. Just get the data right, and your summary should look perfect!
 
 **Tips for Use**
-* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a white SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—png files will be unchanged.
+* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a light-coloured SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—png files will be unchanged.
 * Skills entry on the Main tab lists any skill which has a "base" value set, has any bonuses active, or has a total bonus higher than the corresponding raw ability check (configured on the "Manage" tab). **Exception:** Perception will never appear here since it's always in the header.
-* Resistances/Immunities/Vulnerabilities entries in the header will show any damage type with a value not equal to 0, or with "immunity" checked (configured on the "Manage" tab).
+* Resistances/Immunities/Vulnerabilities entries in the header will show any damage type with a final value not equal to 0, or with "immunity" checked (configured on the "Manage" tab).
 * Elite and Solo monsters will display Action Points and Saving Throws in the header. For everybody else, you can find them in the "Manage" tab if you need them.
 * If "Advanced Math" is turned on, Ability Scores will appear for editing in the "Manage" tab, to avoid cluttering up the header.
 * In the absence of a monster trait object in the current system build, the sheet collapses *almost* all Feats and Class/Race/Etc Features down into a single "Traits" section. The sole exception is Epic Destiny Features; to maintain continuity with Drac's import code, we're currently using the "destinyFeats" object to store monster lore in a chat-card-friendly format, so they appear on the Lore tab instead.
@@ -52,19 +52,19 @@ Styles chat item cards to match the core 4e books.
 <a href="https://user-images.githubusercontent.com/10067730/198873758-63eeda18-691b-4770-86cf-ce1d602f946b.png"><img src="https://user-images.githubusercontent.com/10067730/198873758-63eeda18-691b-4770-86cf-ce1d602f946b.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png"><img src="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png"><img src="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png" width=150></a>
+* Turn it on/off in the module settings.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
 * Recharge powers have monster header colour, since they almost always come from NPCs.
 * I gave rituals a purple header cus, I dunno, I like it.
-* Turn it on/off in the module settings.
-* Includes tweaks for compatibility with the Chat Portrait module.
-* If you're using auto-generated power cards, NPC power cards will have their flavour text automatically be toggled "hidden" in chat. Reaosning: unlike PC powers, using the chat flavour field to judge whether or not we need the full description is unreliable (because NPC powers almost never have real flavour text).
+* If you're using auto-generated power cards, NPC power cards will have their flavour text automatically be toggled "hidden" in chat. Reasoning: unlike PC powers, using the chat flavour field to judge whether or not we need the full description is unreliable (because NPC powers almost never have flavour text).
 * If you're not using auto-generated power cards, I've enabled two classes you can use with the source code editor to make the appropriate parts of your text pick up some basic styling.
   * `power-basics` for text that should look like the source/type/usage/keywords section
   * `flavour` for text that should look like flavour text. 
   * To use them, enter "source code" mode using the toolbar button in the text editor. Then just add the desired class name to the `p` or `div` element wrapping your text, like so: `<p class="flavour">`. You won't see any difference while editing your item (at least for now) but you should see it in chat next time you use the power.
   * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
+* Includes tweaks for compatibility with the Chat Portrait module.
 ### Token Action HUD Styling
-Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenactionhud) just a little.
+Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenactionhud) just a little (if you're using Drac's integration).
 
 <a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
 
@@ -78,16 +78,19 @@ It's got nothing to do with book accuracy. I just think it's cute!
 <a href="https://user-images.githubusercontent.com/10067730/204185140-c38c4f43-55f9-445e-9f74-a3eaf5ffbdbf.png"><img src="https://user-images.githubusercontent.com/10067730/204185140-c38c4f43-55f9-445e-9f74-a3eaf5ffbdbf.png" width=150></a>
 
 * Turn it on/off in the module settings.
+* Basically makes your chat cards and dialogue stand out more than system messages.
 * Substantially cuter with the [Chat Portrait](https://foundryvtt.com/packages/chat-portrait) module
+* Includes tweaks for compatibility with Narrator Tools module.
+* Please feel free to ask for tweaks if it causes problems with any modules you use. It's super hard to keep it out of everybody's way by default, but usually trivially easy to fix any given conflict!
 
 ### To-Do/In Progress
 * New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
-  * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I"m in love.
+  * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I'm in love.
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * <strike>Each set of styling optional (either as settings or as separate sheets)</strike> Done! :D
 * Fix the new NPC sheet's power sorting method, for Token Action HUD. Power sorting is not "set" even though the sheet forces its unique sorting, so TAH retains the last selected value for the actor (for now, swap back to the default sheet and choose "action" sorting to fix).
   * TAH also doesn't inherit the specific MM3 action groups. Default action sorting is sufficient, but it would be nice for it to be exactly right.
-* Make condition/special immunities editable on the sheet. Since this was a new addition to support this sheet, I didn't have a built-in edit dialogue to piggyback on, so I had to leave it in the "too hard" basket for now.
+* <strike>Make condition/special immunities editable on the sheet. Since this was a new addition to support this sheet, I didn't have a built-in edit dialogue to piggyback on, so I had to leave it in the "too hard" basket for now.</strike> Done! :D
 
 ## Installation
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
