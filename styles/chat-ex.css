@@ -1,7 +1,14 @@
+.chat-message{
+	background:none;
+}
+.chat-message .message-header{
+	color:#dedede;
+}
 .chat-message:not(.narrator-narrative,.narrator-chat) .speechmaker~.message-content{
 	border-radius:5px;
 	padding:1rem;
 	background:#fff;
+	color:#000;
 	margin-top:0.9rem;
 }
 .chat-message:not(.narrator-narrative,.narrator-chat) .speechmaker~.message-content::before{
@@ -29,6 +36,9 @@
 .chat-message.whisper.blind .message-content .chat-card,
 .chat-message.whisper.blind .message-content .dice-roll{
 	background:#f5eaf5;
+}
+.chat-message:not(.whisper) .message-header{
+	color:#cecece;
 }
 .chat-message .message-header .flavor-text{
 	background:url('../../../ui/parchment.jpg') repeat;
@@ -139,6 +149,7 @@
 .dnd4eBeta.chat-card .card-buttons button,
 .chat-message .fakechatbutton{
 	background:url('../../../ui/parchment.jpg') repeat;
+	color:#000;
 }
 .dnd4eBeta.chat-card .card-buttons button{
 	margin:2px;
@@ -151,12 +162,6 @@
 }
 h4.chat-portrait-flexrow{
 	display:none;
-}
-.chat-message{
-	background:none;
-}
-.chat-message .message-header{
-	color:#cecece;
 }
 .chat-message .message-sender{
 	font-variant:normal;
@@ -176,10 +181,100 @@ h4.chat-portrait-flexrow{
 }
 .chat-message .message-header{
 	line-height:1;
-}
-.message img.chat-portrait-message-portrait-generic{
-	margin-bottom:0;
+	position:relative;
 }
 .chat-message .message-header+.message-content>h4+.dice-roll:first-child .dice-result .flavor-text{
 	margin-top:-0.3em;
+}
+.chat-message .message-content .table-description{
+	background:#fff;
+	padding:0.75em 0.75em 0.85em 0.75em;
+	color:#000;
+	border-top:0;
+	font-size:1em;
+}
+.chat-message .table-draw .dice-roll .dice-formula{
+	margin-top:0;
+}
+.chat-message .table-draw .table-results{
+	margin-top:0;
+}
+.chat-message .table-draw .table-results .table-result{
+	padding-left:0.2em;
+	border-top:1px solid #fff;
+	border-bottom:0;
+}
+.chat-message .table-draw .table-results .table-result:nth-child(odd){
+	background:#d3d1ba;
+}
+.chat-message .table-draw .table-results .table-result:nth-child(even){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+.chat-message .table-draw .table-results .table-result img{
+	border:0;
+}
+
+/* Chat Portrait support! */
+
+.message img.chat-portrait-message-portrait-generic{
+	margin-bottom:0;
+}
+.chat-message .message-header.chat-portrait-message-header-generic .flavor-text,
+.chat-message h4[class^="chat-portrait"]~.dnd4eBeta.chat-card{
+	margin-top:0;
+}
+
+/* Enchanced Conditions support! */
+
+.chat-message .enhanced-conditions.header{
+	font-size:0.7em;
+	background:url(../../../ui/parchment.jpg) repeat;
+	color:#000;
+	padding:0.5em 0.8em;
+	margin-top:0.5em;
+}
+.chat-message .enhanced-conditions.header h3{
+	border:none;
+	padding:0;
+	margin:0;
+}
+ul.chat-message.condition-list{	
+	border:0;
+	background:#fff;
+	border-radius:0;
+	margin:0;
+	padding:2px;
+}
+
+/* Item Piles support! */
+
+.chat-message .item-piles-chat-card{
+	background:#fff;
+	padding:0;
+	color:#000;
+}
+.chat-message .item-piles-chat-card-title{
+padding:0.5rem;}
+.chat-message .item-piles-chat-card ul{
+	margin-top:-0.5rem;
+}
+.chat-message .item-piles-chat-card ul li{
+	border-radius:0;
+	margin:0;
+	border-top:1px solid #fff;
+}
+.chat-message .item-piles-chat-card ul li:nth-child(odd){
+	background:#d3d1ba;
+}
+.chat-message .item-piles-chat-card ul li:nth-child(even){
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+.chat-message .item-piles-chat-card .item-piles-chat-card-title img[src$="svg"],
+.chat-message .chat-portrait-message-header-generic .flavor-text.chat-portrait-text-size-name-generic>.chat-portrait-image-size-name-generic[src$="svg"]{
+	-webkit-filter:brightness(0);
+	        filter:brightness(0);
 }
