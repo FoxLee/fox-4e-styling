@@ -1,7 +1,7 @@
 .chat-message{
 	background:none;
 }
-.chat-message .message-header{
+.chat-message:not(.whisper) .message-header{
 	color:#dedede;
 }
 .chat-message:not(.narrator-narrative,.narrator-chat) .speechmaker~.message-content{
@@ -256,14 +256,32 @@ ul.chat-message.condition-list{
 	color:#000;
 }
 .chat-message .item-piles-chat-card-title{
-padding:0.5rem;}
+	padding:0.5rem;
+}
+.chat-message .item-piles-chat-card-title img{
+	border:unset;
+}
 .chat-message .item-piles-chat-card ul{
 	margin-top:-0.5rem;
+	padding:0;
+	list-style:none outside;
 }
 .chat-message .item-piles-chat-card ul li{
 	border-radius:0;
 	margin:0;
 	border-top:1px solid #fff;
+	height:1.8em;
+	display:flex;
+	align-items:center;
+}
+.chat-message .item-piles-chat-card ul li img{
+	height:calc(100% - 5px);
+	margin:2px;
+	border:unset;
+}
+.chat-message .item-piles-chat-card ul li label{
+	margin-right:4px;
+	margin-left:2px;
 }
 .chat-message .item-piles-chat-card ul li:nth-child(odd){
 	background:#d3d1ba;
