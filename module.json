@@ -16,10 +16,10 @@
       "flags": {}
     },
     {
-      "name": "Glyphe"
+      "name": "Gilphe"
     }
   ],
-  "version": "0.9.46",
+  "version": "0.9.47",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291"
@@ -58,7 +58,13 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json",
+      "path": "lang/en-us.json",
+      "flags": {}
+    },
+    {
+      "lang": "en-AU",
+      "name": "English",
+      "path": "lang/en-au.json",
       "flags": {}
     },
     {
