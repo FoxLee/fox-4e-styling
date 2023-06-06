@@ -21,7 +21,7 @@ export default class Fox4eSheet extends ActorSheet4e{
 
 	static get defaultOptions(){
 		return mergeObject(super.defaultOptions, {
-			classes: ["dnd4e", "sheet", "actor", "fox4e"],
+			classes: ["dnd4e", "sheet", "actor", "pc", "fox4e"],
 		});
 	}
 

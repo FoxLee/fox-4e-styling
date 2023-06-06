@@ -1,0 +1,27 @@
+button{
+	line-height:1;
+	padding:0.5em;
+}
+.directory .action-buttons button{
+	height:unset;
+	line-height:1;
+}
+
+
+/* Making Chat Portrait play nicely with Item Piles. Yeesh! */
+
+.chat-message .chat-portrait-message-header-generic .flavor-text.chat-portrait-text-size-name-generic>.chat-portrait-image-size-name-generic{
+	border:unset;
+	position:absolute;
+	bottom:-3rem;
+}
+.chat-message .chat-portrait-message-header-generic~.message-content .item-piles-chat-card-title>p:first-child::before{
+	width:42px;
+	height:42px;
+	content:'';
+	display:block;
+	float:left;
+}
+.chat-message .chat-portrait-message-header-generic~.message-content .item-piles-chat-card-title>p .fa-arrow-right{
+	margin-left:0;
+}

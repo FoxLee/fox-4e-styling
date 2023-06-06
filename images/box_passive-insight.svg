@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 39.902797 31.3055"
+   version="1.1"
+   width="39.902798pt"
+   height="31.3055pt"
+   id="svg29"
+   sodipodi:docname="box_passive-insight.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview31"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     lock-margins="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="8.7165442"
+     inkscape:cx="75.43127"
+     inkscape:cy="16.118773"
+     inkscape:window-width="3840"
+     inkscape:window-height="2058"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Background" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="Background"
+     inkscape:label="Background"
+     transform="translate(-21.366324,-14.69998)">
+    <path
+       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.694488;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 50.325323,41.46128 -0.5873,2.1912 -1.6889,1.7044 -2.3761,0.6486 -2.376,-0.6486 -1.6889,-1.7044 -0.2904,-1.0836 -0.2905,1.0836 -1.6888,1.7044 -2.3761,0.6486 -2.376,-0.6486 -1.688899,-1.7044 -0.5873,-2.1912 -0.5936,0.5991 -2.37605,0.6486 -2.37603,-0.6486 -1.68887,-1.7044 -0.64273,-2.3979 0.64273,-2.3978 0.5936,-0.5991 -2.17125,-0.5927 -1.68887,-1.7044 -0.64273,-2.3979 0.64273,-2.3978 1.68887,-1.7044 1.75774,-0.4799 -0.18009,-0.1817 -0.64273,-2.3979 0.64273,-2.39785 1.68887,-1.70438 2.37603,-0.64864 2.37605,0.64864 0.572899,0.57817 -0.0347,-0.12957 0.6427,-2.39785 1.6889,-1.70438 2.376,-0.64864 2.3761,0.64864 1.6888,1.70438 0.2905,1.08359 0.2904,-1.08359 1.6889,-1.70438 2.376,-0.64864 2.3761,0.64864 1.6889,1.70438 0.6427,2.39785 -0.0348,0.12961 0.573,-0.57821 2.376,-0.64864 2.3761,0.64864 1.6888,1.70438 0.6427,2.39785 -0.6427,2.3979 -0.1801,0.1818 1.7578,0.4798 1.6888,1.7044 0.6428,2.3978 -0.6428,2.3979 -1.6888,1.7044 -2.1713,0.5927 0.5936,0.5991 0.6427,2.3978 -0.6427,2.3979 -1.6888,1.7044 -2.3761,0.6486 -2.376,-0.6486 z"
+       id="path24" />
+  </g>
+</svg>

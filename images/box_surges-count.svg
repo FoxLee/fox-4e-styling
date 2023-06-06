@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 30.339479 30.33947"
+   version="1.1"
+   width="30.339479pt"
+   height="30.33947pt"
+   id="svg29"
+   sodipodi:docname="box_surgespd.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview31"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     lock-margins="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="8.7165442"
+     inkscape:cx="20.363575"
+     inkscape:cy="9.6942089"
+     inkscape:window-width="3840"
+     inkscape:window-height="2058"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Background" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="Background"
+     inkscape:label="Background"
+     transform="translate(22.982726,-58.979022)">
+    <path
+       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.694488;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m -22.982726,74.044282 15.0652594,-15.06526 15.27422,15.27421 -15.06527,15.06526 z"
+       id="path18" />
+  </g>
+</svg>

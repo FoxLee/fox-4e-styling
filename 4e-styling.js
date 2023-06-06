@@ -9,6 +9,7 @@ export default class Fox4eStyles{
 		CHAT_STYLES: 'style-chat',
 		TAH_STYLES: 'style-tah',
 		JOURNAL_FONT: 'journal-font',
+		GLOBAL_STYLES: 'style-global',
 		CHAT_EX_STYLES: 'style-chat-ex'
 	}
 
@@ -50,6 +51,15 @@ export default class Fox4eStyles{
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = './modules/fox-4e-styling/styles/chat-ex.css';
+			//Append link element to HTML head
+			head.appendChild(link);
+		}
+		
+		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.GLOBAL_STYLES)){
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = './modules/fox-4e-styling/styles/global.css';
 			//Append link element to HTML head
 			head.appendChild(link);
 		}

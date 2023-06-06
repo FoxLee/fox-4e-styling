@@ -370,44 +370,44 @@
 
 /*---------- All Sections — Tables ----------*/
 
-.sheet.fox4e.npc .sheet-body table{
+.sheet.fox4e.npc .tab:not(.lore) table{
 	border:none;
 	background:none;
 	margin:0;
 	border-spacing:0;
 }
-.sheet.fox4e.npc .sheet-body tr{
+.sheet.fox4e.npc .tab:not(.lore) tr{
    border-bottom:1px solid #e8e6d4;
 	border:none;
 }
-.sheet.fox4e.npc .sheet-body table thead{
+.sheet.fox4e.npc .tab:not(.lore) table thead{
 	background:#cdcbb5;
 	border-bottom:none;
 }
-.sheet.fox4e.npc .sheet-body table thead tr{
+.sheet.fox4e.npc .tab:not(.lore) table thead tr{
    padding:2px 8px 2px 4px;
 }
-.sheet.fox4e.npc .sheet-body table th,
-.sheet.fox4e.npc .sheet-body table td{
+.sheet.fox4e.npc .tab:not(.lore) table th,
+.sheet.fox4e.npc .tab:not(.lore) table td{
 	padding: 2px 8px 2px 4px;
 	border:none;
 }
-.sheet.fox4e.npc .sheet-body table th:first-child,
-.sheet.fox4e.npc .sheet-body table td:first-child{
+.sheet.fox4e.npc .tab:not(.lore) table th:first-child,
+.sheet.fox4e.npc .tab:not(.lore) table td:first-child{
 	padding-left:8px;
 }
-.sheet.fox4e.npc .sheet-body table thead tr th,
-.sheet.fox4e.npc .sheet-body table thead tr td{
+.sheet.fox4e.npc .tab:not(.lore) table thead tr th,
+.sheet.fox4e.npc .tab:not(.lore) table thead tr td{
 	text-shadow:none;
 	font-size:0.75em;
 	text-transform:uppercase;
 	color:#000;
 	font-weight:normal;
 }
-.sheet.fox4e.npc .sheet-body table tbody tr:nth-child(odd){
+.sheet.fox4e.npc .tab:not(.lore) table tbody tr:nth-child(odd){
 	background:rgba(255,255,255,0.4);
 }
-.sheet.fox4e.npc .sheet-body table tbody tr:nth-child(even){
+.sheet.fox4e.npc .tab:not(.lore) table tbody tr:nth-child(even){
 	background:unset;
 }
 

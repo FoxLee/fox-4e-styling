@@ -4,6 +4,7 @@
 	text-rendering:optimizeLegibility;
 	--font-primary:'DragonBodySans';
 	font-family:var(--font-primary);
+	margin-top:0.5em;
 }
 .dnd4eBeta.chat-card p{
 	min-height:unset;
@@ -131,6 +132,9 @@
 	flex: 1;
 	-ms-flex-preferred-size:30%;
 	    flex-basis:30%;
+	height:unset;
+	line-height:1;
+	padding:0.5em;
 }
 .chat-message .fakechatbutton{
 	border:1px solid var(--color-border-light-primary);
