@@ -1,11 +1,12 @@
+![](https://img.shields.io/badge/Foundry-v11-informational)
 ![](https://img.shields.io/badge/Foundry-v10-informational)
 
 # Fox's 4e Styling for Foundry VTT (BETA)
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta). French translation provided by [Gilphe](https://github.com/Gilphe)
-* **Foundry VTT Compatibility**: v10+
-* **4e System Compatibility**: v0.3.17+ (versions earlier than 0.3.17 will cause display issues; versions earlier than 0.3.14 will cause more severe errors)
+* **Foundry VTT Compatibility**: v11+ (last FVTT 10.x compatible release is v0.9.47)
+* **4e System Compatibility**: v0.4.1+ (v0.9.47 requires dnd4e 0.3.17+)
 * **Languages**: [en-AU](https://github.com/FoxLee/fvtt-locale-en-au), fr, en-US
 * **Other Credits**: The Monster token in the screenshots is by [Yuikami](https://yuikami.tumblr.com), who makes the cutest token packs ever.
 
@@ -40,7 +41,7 @@ Makes your Journals look just like official 4e books!
 <a href="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png"><img src="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png" width=150></a>
 * Should work for all ProseMirror-based rich text areas.
 * Includes body text, headings, lists, tables, and whatever else I can manage.
-* I haven't worked out how to include selectable styles yet, but you use HTML source editor to take advantage of built-in classes. **New:** Check the included "Example Styling" compendium for how to markup game stuff in journals. Currently supports generic table, "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
+* I haven't worked out how to include selectable styles yet, but you use HTML source editor to take advantage of built-in classes. **New:** Check the included "Example Styling" compendium for how to markup game stuff in journals. Currently supports generic table, "power" (table), "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
 * I dunno how to add journal sheets, but you can toggle the styling package it on/off from the module settings.
 * Also includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
 ### Chat Card Styling
