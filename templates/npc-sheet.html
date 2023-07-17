@@ -333,13 +333,12 @@
 				--}}</div>{{!-- [Close] Vulnerabilities section--}}{{!-- 
 				
 			--}}</div>{{!-- [Close] incoming damage/condition mods --}}
-			
 				
-			{{#if (eq system.details.role.secondary "elite")}}
+			{{#unless (eq system.details.role.secondary "standard")}}{{#unless (eq system.details.role.secondary "minion")}}{{#unless (eq system.details.role.secondary "other")}}
 			
 			<div class="boss-resources">
 				<label class="saves">
-					<span class="label roll-save rollable" title="{{localize 'DND4EBETA.SavingThrow'}}">{{localize 'Fox4e.GroupSaves'}}</span> <span class="roll-save-bonus rollable" title="Adjust Saving Throw Bonuses">+{{system.details.saves.value}}</span>
+					<span class="label roll-save rollable" title="{{localize 'DND4EBETA.SavePrompt'}}">{{localize 'Fox4e.GroupSaves'}}</span>&thinsp;<span class="roll-save-bonus rollable" title="{{localize 'Fox4e.TipBonus'}}">+{{system.details.saves.value}}</span>
 				</label>
 				
 				<span class="action-points">
@@ -347,19 +346,7 @@
 				</span>
 			</div>
 			
-			{{else if (eq system.details.role.secondary "solo")}}
-			
-			<div class="boss-resources">
-				<label class="saves">
-					<span class="label roll-save rollable" title="{{localize 'DND4EBETA.SavingThrow'}}">{{localize 'Fox4e.GroupSaves'}}</span>&thinsp;<span class="roll-save-bonus rollable" title="Adjust Saving Throw Bonuses">+{{system.details.saves.value}}</span>
-				</label>
-				
-				<span class="action-points">
-					<span class="label rest action-point rollable" title="{{localize 'DND4EBETA.ActionPointUse'}}">{{localize "DND4EBETA.ActionPoints"}}</span>&thinsp;<label class="autosize" for="system.actionpoints.value"><input class="number" type="text" name="system.actionpoints.value" value="{{#if system.actionpoints.value}}{{system.actionpoints.value}}{{else}}0{{/if}}" title="{{localize 'DND4EBETA.ActionPointsRemain'}}" data-dtype="Number" onClick="this.select();" /><span class="ruler">{{system.actionpoints.value}}</span></label>
-				</span>
-			</div>
-			
-			{{/if}}
+			{{/unless}}{{/unless}}{{/unless}}
 			
 		</div>
 		
@@ -381,6 +368,16 @@
 				{{/each}}
 				</a>
 			</div>
+			
+			{{#unless (eq system.details.role.secondary "solo")}}{{#unless (eq system.details.role.secondary "elite")}}
+			
+			<div class="saving-throw">
+				<label class="saves">
+					<span class="label roll-save rollable" title="{{localize 'DND4EBETA.SavePrompt'}}">{{localize 'DND4EBETA.SavingThrow'}}</span>
+				</label>
+			</div>
+			
+			{{/unless}}{{/unless}}
 			
 		</div>
 		
