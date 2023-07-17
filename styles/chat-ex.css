@@ -68,18 +68,21 @@
 	width:0.9em;
 	height:0.9em;
 	margin-bottom:-1px;
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center bottom;
 }
 .dice-roll .hit-prediction.probable-hit::before{
 	content:" ";
-	background:url('../images/hit.svg') center bottom no-repeat;
+	background-image:url('../images/hit.svg');
 }
 .dice-roll .hit-prediction.probable-miss::before{
 	content:" ";
-	background:url('../images/miss.svg') center bottom no-repeat;
+	background-image:url('../images/miss.svg');
 }
 .dice-roll .hit-prediction.critical::before{
 	content:" ";
-	background:url('../images/hit-crit.svg') center bottom no-repeat;
+	background-image:url('../images/hit-crit.svg');
 	margin-top:-4px;
 	margin-bottom:-3px;
 	width:1.2em;
@@ -103,6 +106,7 @@
 .chat-message .message-header+.message-content>h4+.dice-roll{
 	padding-top:0;
 	margin-top:-0.3em;
+	position:relative;
 }
 .chat-message .message-content .dice-roll ~ .dice-roll{
 	margin-top:0.5em;
