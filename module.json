@@ -1,6 +1,6 @@
 {
   "title": "Fox's 4e Styling",
-  "description": "Styles sheets, journal entries, chat cards and various other things to mimic official 4e material.",
+  "description": "Styles sheets, journal entries, chat cards and various other things to look like official 4e material.",
   "url": "https://github.com/FoxLee/fox-4e-styling/",
   "manifest": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json",
   "download": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.zip",
@@ -10,19 +10,18 @@
   "authors": [
     {
       "name": "Fox Lee",
-      "url": "https://www.invincible.ink",
-      "discord": "Fox#3590",
+      "discord": "TheArtGremblin",
       "email": "fox@invincible.ink",
-      "flags": {}
+      "url": "https://www.invincible.ink"
     },
     {
       "name": "Gilphe"
     }
   ],
-  "version": "0.10.0",
+  "version": "0.10.2",
   "compatibility": {
     "minimum": "11",
-    "verified": "11.300"
+    "verified": "11.305"
   },
   "relationships": {
     "systems": [
@@ -32,7 +31,7 @@
         "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
         "compatibility": {
           "minimum": "0.4",
-          "verified": "0.4.1"
+          "verified": "0.4.12"
         }
       }
     ]
@@ -72,17 +71,19 @@
       "name": "Français",
       "path": "lang/fr.json",
       "flags": {}
-    }  
+    }
   ],
   "packs": [
-	{
-      "name": "Styling Examples",
+    {
       "label": "Styling Examples",
-      "path": "packs/styling-examples.db",
+      "name": "styling-examples",
       "type": "JournalEntry",
       "system": "dnd4e",
-      "private": false,
-      "flags": {}
+      "path": "packs/styling-examples",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "id": "fox-4e-styling"
