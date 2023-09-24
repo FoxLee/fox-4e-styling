@@ -27,12 +27,12 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 * Auto-generated MM3 style power summary. No need to write your own summary, add extra info to headers or target lines, or any of that stuff. Just get the data right, and your summary should look perfect!
 
 **Tips for Use**
-* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a light-coloured SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—png files will be unchanged.
+* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a light-coloured SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—oher files will be unchanged.
 * Skills entry on the Main tab lists any skill which has a "base" value set, has any bonuses active, or has a total bonus higher than the corresponding raw ability check (configured on the "Manage" tab). **Exception:** Perception will never appear here since it's always in the header.
 * Resistances/Immunities/Vulnerabilities entries in the header will show any damage type with a final value not equal to 0, or with "immunity" checked (configured on the "Manage" tab).
 * Elite and Solo monsters will display Action Points and Saving Throws in the header. For everybody else, you can find them in the "Manage" tab if you need them.
 * If "Advanced Math" is turned on, Ability Scores will appear for editing in the "Manage" tab, to avoid cluttering up the header.
-* In the absence of a monster trait object in the current system build, the sheet collapses *almost* all Feats and Class/Race/Etc Features down into a single "Traits" section. The sole exception is Epic Destiny Features; to maintain continuity with Drac's import code, we're currently using the "destinyFeats" object to store monster lore in a chat-card-friendly format, so they appear on the Lore tab instead.
+* In the absence of a monster trait object in the current system build, the sheet collapses *almost* all Feats and Class/Race/Etc Features down into a single "Traits" section. The sole exception is Epic Destiny Features; to maintain continuity with Drac's import code, we're currently using the "destinyFeats" object to store monster lore in a chat-card-friendly format. Features of this type will appear on the Lore tab instead.
 ### Journal Styling
 Makes your Journals look just like official 4e books!
 
@@ -41,9 +41,10 @@ Makes your Journals look just like official 4e books!
 <a href="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png"><img src="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png" width=150></a>
 * Should work for all ProseMirror-based rich text areas.
 * Includes body text, headings, lists, tables, and whatever else I can manage.
-* I haven't worked out how to include selectable styles yet, but you use HTML source editor to take advantage of built-in classes. **New:** Check the included "Example Styling" compendium for how to markup game stuff in journals. Currently supports generic table, "power" (table), "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
-* I dunno how to add journal sheets, but you can toggle the styling package it on/off from the module settings.
-* Also includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
+* I haven't worked out how to include selectable styles yet, but you can use the HTML source editor to take advantage of built-in classes.
+  * Check the included "Example Styling" compendium for how to markup game stuff in journals. Currently supports generic table, "power" (table), "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
+* I dunno how to add journal sheets, but you can toggle the styling package on/off from the module settings.
+* Includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
 ### Chat Card Styling
 Styles chat item cards to match the core 4e books.
 
@@ -64,9 +65,9 @@ Styles chat item cards to match the core 4e books.
   * `flavour` for text that should look like flavour text. 
   * To use them, enter "source code" mode using the toolbar button in the text editor. Then just add the desired class name to the `p` or `div` element wrapping your text, like so: `<p class="flavour">`. You won't see any difference while editing your item (at least for now) but you should see it in chat next time you use the power.
   * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
-* Includes tweaks for compatibility with the Chat Portrait module.
+* Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance). Feel free to request others if you want them—I'll do what I can!
 ### Token Action HUD Styling
-Tweaks the styling of [Token Action HUD](https://github.com/Drental/fvtt-tokenactionhud) just a little (if you're using Drac's integration).
+Tweaks the styling of [Token Action HUD Classic](https://foundryvtt.com/packages/token-action-hud) just a little (if you're using Drac's integration).
 
 <a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
 
