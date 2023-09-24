@@ -18,10 +18,10 @@
       "name": "Gilphe"
     }
   ],
-  "version": "0.10.2",
+  "version": "0.10.3",
   "compatibility": {
     "minimum": "11",
-    "verified": "11.305"
+    "verified": "11.307"
   },
   "relationships": {
     "systems": [
@@ -31,7 +31,7 @@
         "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
         "compatibility": {
           "minimum": "0.4",
-          "verified": "0.4.12"
+          "verified": "0.4.25"
         }
       }
     ]
@@ -86,5 +86,15 @@
       }
     }
   ],
-  "id": "fox-4e-styling"
+	"id": "fox-4e-styling",
+	"hotReload": {
+		"extensions": [
+			"css",
+			"html"
+		],
+		"paths": [
+			"styles/",
+			"templates/"
+		]
+	}
 }
