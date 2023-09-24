@@ -29,12 +29,10 @@
 	background:url('../../../ui/parchment.jpg') repeat;
 	padding:0 0.8em 0;
 }
-.chat-message.whisper .message-content .chat-card,
-.chat-message.whisper .message-content .dice-roll{
+.chat-message.whisper .message-content :is(.chat-card,.dice-roll){
 	background:#e8e8ef;
 }
-.chat-message.whisper.blind .message-content .chat-card,
-.chat-message.whisper.blind .message-content .dice-roll{
+.chat-message.whisper.blind .message-content :is(.chat-card,.dice-roll){
 	background:#f5eaf5;
 }
 .chat-message:not(.whisper) .message-header{
@@ -61,7 +59,6 @@
 	    flex-shrink:4;
 	white-space:nowrap;
 }
-.dice-roll .hit-prediction::before,
 .dice-roll .hit-prediction::before{
 	display:inline-block;
 	margin-right:2px;
@@ -96,14 +93,14 @@
 }
 .dice-roll .hit-prediction.fumble::before{
 	content:" ";
-	background:url('../images/miss-crit.svg') center bottom no-repeat;
+	background-image:url('../images/miss-crit.svg');
 	margin-top:-4px;
 	margin-bottom:-3px;
 	width:1.2em;
 	height:1.2em;
 }
-.chat-message .message-header+.message-content>.dice-roll:first-child,
-.chat-message .message-header+.message-content>h4+.dice-roll{
+.chat-message .message-header+.message-content>:is(.dice-roll,.dot-report):first-child,
+.chat-message .message-header+.message-content>h4+:is(.dice-roll,.dot-report){
 	padding-top:0;
 	margin-top:-0.3em;
 	position:relative;
@@ -114,8 +111,8 @@
 .chat-message .message-content .dice-roll ~ .dice-roll>.dice-result{
 	margin-top:0.3em;
 }
-.chat-message .dice-roll .dice-formula,
-.chat-message .dice-roll .dice-total{
+.chat-message .dice-roll :is(.dice-formula,.dice-total),
+.chat-message .dot-report{
 	background:#fff;
 	border-radius:0;
 	border:none;
@@ -135,6 +132,11 @@
 .chat-message .dice-roll .dice-formula:not(.dice-tooltip)+.dice-tooltip.expanded{
 	margin:0 -0.8em 0 -0.8em;
 	border-bottom:1px dashed #fff;
+}
+.chat-message .dot-report .dot-result{
+	margin:0.3em 0.8em 0.3em 0.8em;
+	padding-bottom:0.3em;
+	padding-top:0.3em;
 }
 .chat-message .dice-roll .dice-tooltip .dice-rolls{
 	padding:3px;
@@ -175,9 +177,7 @@ h4.chat-portrait-flexrow{
 .chat-message .message-metadata{
 	color:#919191;
 }
-.chat-message .message-metadata:hover,
-.chat-message .message-metadata:active,
-.chat-message .message-metadata:focus{
+.chat-message .message-metadata:is(:hover,:active,:focus){
 	color:#fff;
 }
 .chat-message .dnd4eBeta.chat-card.item-card{
@@ -299,4 +299,48 @@ ul.chat-message.condition-list{
 .chat-message .chat-portrait-message-header-generic .flavor-text.chat-portrait-text-size-name-generic>.chat-portrait-image-size-name-generic[src$="svg"]{
 	-webkit-filter:brightness(0);
 	        filter:brightness(0);
+}
+
+/* DF Chat Enhancements support! */
+.chat-message{
+	--dfce-cm-header-delete-pad:0;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-top){
+	padding-bottom:0;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom){
+	padding-top:0;
+}
+.chat-message.dfce-cm-top .speechmaker~.message-content{
+	padding-bottom:0.2em;
+	border-radius:5px 5px 0 0;
+}
+.chat-message.dfce-cm-middle .speechmaker~.message-content{
+	padding-bottom:0.2em;
+	border-radius:0;
+}
+.chat-message.dfce-cm-bottom .speechmaker~.message-content{
+	border-radius: 0 0 5px 5px;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-content{
+	padding-top:0.2em;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-content::before{
+	content:unset;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-sender,
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header img[class^="chat-portrait"]{
+	border:unset !important;
+	height:0 !important;
+	display:none !important;
+	overflow:hidden !important;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-content{
+	margin-top:0;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-delete{
+	top:0.5em;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-header .message-delete{
+	margin-right:0.4em;
 }

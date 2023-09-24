@@ -128,6 +128,17 @@
 .sheet.fox4e .sheet-body .autosize input:focus+.ruler{
 	opacity:0;
 }
+.sheet.fox4e .image-frame:hover .hover-icon{
+	display:block;
+}
+.sheet.fox4e .image-frame .hover-icon{
+	display:none;
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	color:white;
+}
 
 
 /*---------- Item Lists ----------*/
@@ -677,10 +688,10 @@ sheet.fox4e.npc .sheet-body .head ::placeholder{
 	padding:2px 12px 4px 12px;
 	margin:-1px -12px 2px -12px;
 }
-.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Unprepared"]{
+.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[data-tooltip="Unprepared"]{
 	color:rgba(0,0,0,0.3);
 }
-.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[title="Prepared"]{
+.sheet.fox4e.npc .sheet-body .power-detail.item-toggle[data-tooltip="Prepared"]{
 	color:#000;
 }
 .sheet.fox4e.npc .sheet-body .item-recharge.rollable{
