@@ -10,7 +10,7 @@
 				<h2 class="item-name">{{localize section.label}}</h2>
 				{{#if ../owner}}
 				<div class="item-controls">
-					<a class="item-control power-create" title="{{localize 'DND4EBETA.ItemCreate'}}"
+					<a class="item-control power-create" data-tooltip="{{localize 'DND4EBETA.ItemCreate'}}"
 						{{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
 						<i class="fas fa-plus"></i> {{localize "DND4EBETA.Add"}}
 					</a>
@@ -24,9 +24,9 @@
 				<li class="item flexcol" data-item-id="{{item._id}}" draggable="true">			
 					<div class="item-header flexrow {{#if item.system.useType }}ability-usage--{{item.system.useType}}{{else}}ability-usage--blank{{/if}} {{#if item.system.notAvailable}}not-available{{/if}}">	
 						<div class="item-name flexrow">
-							<img src="{{item.img}}" class="item-image rollable" height="16" width="16" alt="Power icon" title="{{localize 'Fox4e.TipSendChat'}}" />
+							<img src="{{item.img}}" class="item-image rollable" height="16" width="16" alt="Power icon" data-tooltip="{{localize 'Fox4e.TipSendChat'}}" />
 							<div class="power-title">
-								<h4 class="power-detail item-image rollable" title="{{localize 'Fox4e.TipSendChat'}}">{{!--
+								<h4 class="power-detail item-image rollable" data-tooltip="{{localize 'Fox4e.TipSendChat'}}">{{!--
 									--}}{{item.name}}{{!--
 									--}}<span class="keywords">{{!--
 										--}}{{#each item.system.damageType as |name type|}}{{!--
@@ -42,7 +42,7 @@
 									{{#if (eq item.system.useType "recharge")}}
 										<span class="recharge">
 											{{#if item.system.rechargeRoll}}
-												<a class="item-recharge rollable numerical" title="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">	{{!--
+												<a class="item-recharge rollable numerical" data-tooltip="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">	{{!--
 													--}}{{localize 'DND4EBETA.PowerRecharge'}} 
 													<span class="dice d6">{{!--
 														--}}{{#if (lt item.system.rechargeRoll 3)}}2{{/if}}{{!--
@@ -53,7 +53,7 @@
 													--}}</span>{{!--
 												--}}</a>
 											{{else if item.system.rechargeCondition}}
-												<a class="item-recharge rollable" title="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4EBETA.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
+												<a class="item-recharge rollable" data-tooltip="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4EBETA.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
 										{{/if}}
 										</span>
 									{{else}}
@@ -78,8 +78,8 @@
 						
 						{{#if ../../owner}}
 						<div class="item-controls flexrow">
-							<a class="item-control power-detail item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-							<a class="item-control power-detail item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+							<a class="item-control power-detail item-edit" data-tooltip="Edit Item"><i class="fas fa-edit"></i></a>
+							<a class="item-control power-detail item-delete" data-tooltip="Delete Item"><i class="fas fa-trash"></i></a>
 						</div>
 						{{/if}}
 					</div>{{!--Item header close--}}
