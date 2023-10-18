@@ -8,7 +8,8 @@ export default class Fox4eNPCSheet extends ActorSheet4eNPC{
 	static get defaultOptions(){
 		return mergeObject(super.defaultOptions, {
 			classes: ["dnd4e", "sheet", "actor", "npc", "fox4e"],
-			width:436,
+			width:420,
+			height:650
 		});
 	}
 	
@@ -72,6 +73,10 @@ export default class Fox4eNPCSheet extends ActorSheet4eNPC{
 		return "other";
 	}
 	
+	/** @override */
+	setPosition(options={}) {
+		return super.setPosition(options);
+	}
 }
 
 Actors.registerSheet("dnd4eBeta", Fox4eNPCSheet, {
