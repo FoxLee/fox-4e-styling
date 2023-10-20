@@ -2,6 +2,9 @@
 /*--General Stuff and Resets --*/
 :root{
 	--font-journal-body:'DragonBodySerif';
+	--background-page:#fff;
+	--colour-text-link:#12588f;
+	--colour-text-heading:#193d5e;
 }
 .journal-page-content,
 .editor-content[data-engine="prosemirror"],
@@ -29,7 +32,7 @@
 .editor.prosemirror,
 .editor-content[data-engine="prosemirror"],
 .editor-enriched{
-	background:#fff;
+	background:var(--background-page);
 }
 .editor-content[data-engine="prosemirror"].ProseMirror::-webkit-scrollbar-thumb,
 .sheet.journal-entry .scrollable::-webkit-scrollbar-thumb{
@@ -60,6 +63,11 @@
 	line-height:1.1;
 	font-size:1rem;
 }
+.journal-page-content table tbody,
+.editor-content[data-engine="prosemirror"] table tbody,
+.editor-enriched table tbody{
+	color:#000;
+}
 .journal-page-content table tbody tr:nth-child(2n+1),
 .editor-content[data-engine="prosemirror"] table tbody tr:nth-child(2n+1),
 .editor-enriched table tbody tr:nth-child(2n+1){
@@ -83,7 +91,7 @@
 	padding:0;
 	white-space:break-spaces;
 	word-break:inherit;
-	color:#12588f;
+	color:var(--colour-text-link);
 }
 .journal-page-content a.content-link i,
 .journal-page-content a.inline-roll i,
@@ -149,13 +157,13 @@
 .editor-enriched h4,
 .editor-enriched h5,
 .editor-enriched h6{
-	color:#193d5e;
+	color:var(--colour-text-heading);
 	font-family:'DragonHead';
 }
 .journal-page-content h1,
 .editor-content[data-engine="prosemirror"] h1,
 .editor-enriched h1{
-	color:#193d5e;
+	color:var(--colour-text-heading);
 	font-family:DragonTitle;
 	font-size:2.7em;
 	border-bottom:none;
@@ -410,6 +418,7 @@
 .editor-content[data-engine="prosemirror"] div.ritual .flavour,
 .editor-enriched div.ritual .flavour{
 	font-style:oblique;
+	background:unset;
 }
 .journal-page-content div.ritual>.basics,
 .editor-content[data-engine="prosemirror"] div.ritual>.basics,

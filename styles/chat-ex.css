@@ -1,4 +1,6 @@
 .chat-message{
+	--color-text-good:green;
+	--color-text-bad:red;
 	background:none;
 }
 .chat-message:not(.whisper) .message-header{
@@ -24,10 +26,16 @@
 }
 .chat-message .message-content .chat-card{
 	background:none;
+	color:#000;
 }
 .chat-message .message-content .dice-roll{
 	background:url('../../../ui/parchment.jpg') repeat;
 	padding:0 0.8em 0;
+	color:#000;
+}
+.chat-message .message-content .dice-result>.target{
+	margin-top:-0.3em;
+	padding-bottom:0.2em;
 }
 .chat-message.whisper .message-content :is(.chat-card,.dice-roll){
 	background:#e8e8ef;
@@ -42,7 +50,7 @@
 	background:url('../../../ui/parchment.jpg') repeat;
 	color:#000;
 	padding:0.5em 0.8em;
-	margin-top:0.5em;
+	/*margin-top:0.5em;*/
 }
 .chat-message .dice-roll .dice-result>*{
 	-ms-flex-preferred-size:100%;
@@ -102,7 +110,7 @@
 .chat-message .message-header+.message-content>:is(.dice-roll,.dot-report):first-child,
 .chat-message .message-header+.message-content>h4+:is(.dice-roll,.dot-report){
 	padding-top:0;
-	margin-top:-0.3em;
+	/*margin-top:-0.3em;*/
 	position:relative;
 }
 .chat-message .message-content .dice-roll ~ .dice-roll{
@@ -119,7 +127,10 @@
 	margin-bottom:0;
 }
 .chat-message .dice-roll .dice-formula:not(.dice-tooltip){
-	margin:0.3em -0.8em 0 -0.8em;
+	margin:0 -0.8em 0 -0.8em;
+}
+.chat-message .flavor-text~.dice-roll .dice-formula:not(.dice-tooltip){
+	margin-top:0.3em;
 }
 .chat-message .dice-roll .dice-total{
 	margin:0 -0.55em 0 -0.55em;

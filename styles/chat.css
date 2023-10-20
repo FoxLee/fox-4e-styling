@@ -1,19 +1,21 @@
 /*---- All Chat Cards ----*/
 
 .dnd4eBeta.chat-card{
+	--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	text-rendering:optimizeLegibility;
 	--font-primary:'DragonBodySans';
 	font-family:var(--font-primary);
-	margin-top:0.5em;
 }
 .dnd4eBeta.chat-card p{
 	min-height:unset;
 }
-
+.dnd4eBeta.chat-card .card-content{
+	color:#000;
+	line-height:1;
+}
 .dnd4eBeta.chat-card .card-content>p{
 	margin:0;
-	padding:5px;
-	line-height:1;
+	padding:1px 4px;
 }
 .dnd4eBeta.chat-card .card-header h3{
 	text-transform:none;
@@ -37,6 +39,9 @@
 }
 .item-card.ritual .card-header{
 	background:#193d5e;
+}
+.dnd4eBeta.chat-card .card-content .item-summary>:not(.item-details){
+	background:unset;
 }
 .dnd4eBeta.chat-card .item-details p a{
 	text-indent:0;
@@ -116,9 +121,7 @@
 	background:#d3d1ba;
 }
 .dnd4eBeta.chat-card .card-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even){
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:var(--gradient-4e);
 }
 .dnd4eBeta.chat-card .card-buttons{
 	display:-webkit-box;
@@ -143,6 +146,11 @@
 	-ms-flex-preferred-size:100%;
 	    flex-basis:100%;
 }
+.dnd4eBeta.chat-card .card-content a:hover,
+.dnd4eBeta.chat-card .card-content a:active,
+.dnd4eBeta.chat-card .card-content a:focus{
+	color:#4444ff;
+}
 .dnd4eBeta.chat-card a.content-link,
 .dnd4eBeta.chat-card a.inline-roll{
 	border:0;
@@ -150,6 +158,9 @@
 	padding:0;
 	background:none;
 	text-decoration:underline;
+}
+.dnd4eBeta.chat-card a.inline-result i{
+	display:none;
 }
 .dnd4eBeta.chat-card .card-footer{
 	border:none;
@@ -192,30 +203,29 @@
 	-o-object-fit:contain;
 	object-fit:contain;
 }
-.dnd4eBeta.chat-card.power-card .card-content,
-.dnd4eBeta.chat-card.consumable-card .card-content{
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	margin:0;
-}
 .dnd4eBeta.chat-card.power-card .item-summary,
 .dnd4eBeta.chat-card.consumable-card .item-summary{
 	background:#fff;
 }
 .dnd4eBeta.chat-card.power-card.autogen .item-description p,
 .dnd4eBeta.chat-card.power-card.autogen .item-description span,
-.dnd4eBeta.chat-card.power-card.autogen .card-content p,
+.dnd4eBeta.chat-card.power-card.autogen .chat-flavour p,
+.dnd4eBeta.chat-card.power-card.autogen  p.chat-flavour,
+.dnd4eBeta.chat-card.power-card.autogen .card-content>p:first-child,
 .dnd4eBeta.chat-card.consumable-card.autogen .item-description p,
 .dnd4eBeta.chat-card.consumable-card.autogen .item-description span,
-.dnd4eBeta.chat-card.consumable-card.autogen .card-content p{
+.dnd4eBeta.chat-card.consumable-card.autogen .chat-flavour p,
+.dnd4eBeta.chat-card.consumable-card.autogen p.chat-flavour{
 	font-style:italic;
 }
 .dnd4eBeta.chat-card.power-card.autogen .item-description p,
 .dnd4eBeta.chat-card.power-card.autogen .item-details .alt,
 .dnd4eBeta.chat-card.power-card.autogen .item-details .alt~p,
+.dnd4eBeta.chat-card.power-card.autogen .card-content>p:first-child,
 .dnd4eBeta.chat-card.consumable-card.autogen .item-description p,
 .dnd4eBeta.chat-card.consumable-card.autogen .item-details .alt,
 .dnd4eBeta.chat-card.consumable-card.autogen .item-details .alt~p{
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:var(--gradient-4e);
 }
 .dnd4eBeta.chat-card.power-card .item-details span,
 .dnd4eBeta.chat-card.power-card .item-details p,
@@ -259,16 +269,20 @@
 }
 .dnd4eBeta.chat-card.power-card:not(.autogen) .card-content p,
 .dnd4eBeta.chat-card.consumable-card:not(.autogen) .card-content p{
-	line-height:1.2;
+	background:var(--gradient-4e);
 }
 .dnd4eBeta.chat-card.power-card:not(.autogen) .card-content .power-basics,
 .dnd4eBeta.chat-card.consumable-card:not(.autogen) .card-content .power-basics{
 	background:#fff;
+	margin:0;
 }
 .dnd4eBeta.chat-card.power-card:not(.autogen) .card-content .flavour,
 .dnd4eBeta.chat-card.consumable-card:not(.autogen) .card-content .flavour{
 	font-style:italic;
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+.dnd4eBeta.chat-card.power-card.NPC.autogen .card-content>p:first-child:not(.chat-flavour){
+	display:none;
 }
 
 
@@ -280,9 +294,8 @@
 	 -ms-flex-order:-2;
 		  order:-2;
 }
-.dnd4eBeta.chat-card.ritual .card-content{
+.dnd4eBeta.chat-card.ritual .item-summary{
 	background:#fff;
-	margin-top:0;
 }
 .dnd4eBeta.chat-card.ritual .card-content>p:not(:first-child){
 	text-indent:0.5em;
@@ -315,7 +328,7 @@
 	display:flex;
 	-ms-flex-wrap:wrap;
 	    flex-wrap:wrap;
-	padding:3px 6px 6px;
+	padding:3px 6px;
 }
 .dnd4eBeta.chat-card.ritual .card-footer>*{
 	-ms-flex-preferred-size:50%;
@@ -377,11 +390,11 @@
 .dnd4eBeta.chat-card.destinyFeats-card:not(.NPC) .card-header{
 	background:#193d5e;
 }
-.dnd4eBeta.chat-card:not(.power-card,.consumable-card,.ritual,.destinyFeats-card.NPC) .card-content{
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+.dnd4eBeta.chat-card:not(.power-card,.consumable-card,.ritual,.destinyFeats-card.NPC,.tool) .card-content,
+.dnd4eBeta.chat-card.use-other:not(.autogen) .card-content{
+	background:#fff;
 	margin-top:0;
-	padding:2px;
-	padding-bottom:4px;
+	padding:2px 2px 0 2px;
 }
 .dnd4eBeta.chat-card:not(.power-card,.consumable-card,.ritual) .card-content>p{
 	margin-top:2px;
