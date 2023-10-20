@@ -63,6 +63,14 @@ export default class Fox4eStyles{
 			//Append link element to HTML head
 			head.appendChild(link);
 		}
+		if (game.settings.get("dnd4e","darkMode")){
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = './modules/fox-4e-styling/styles/dark-mode.css';
+			//Append link element to HTML head
+			head.appendChild(link);
+		}
 		
 	}
 }
