@@ -88,7 +88,7 @@
 "Fox4e.settings.journal-font.Hint": "Change the base journal font; try sans-serif if you find the default unpleasant to read",
 "Fox4e.settings.style-chat.Hint": "Make item cards in chat look like official 4e material",
 "Fox4e.settings.style-tah.Hint": "[Token Action HUD] If using coloured buttons for powers, tweak the colours to match official 4e",
-"Fox4e.settings.style-chat-ex.Hint": "These have nothing to do with book-accuracy, they're just cute.",
+"Fox4e.settings.style-chat-ex.Hint": "(Requires basic chat styles) These have nothing to do with book-accuracy, they're just cute.",
 "Fox4e.settings.style-global.Hint": "Tweaks various parts of the Foundry interface to work a little better with the 4e look. (May cause unexpected issues with other modules.)",
 "Fox4e.settings.journal-font.Serif": "Serif",
 "Fox4e.settings.journal-font.Sans": "Sans Serif"
