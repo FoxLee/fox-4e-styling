@@ -267,9 +267,32 @@
 .dnd4eBeta.chat-card.consumable-card .item-details>br{
 	display:none;
 }
-.dnd4eBeta.chat-card.power-card:not(.autogen) .card-content p,
-.dnd4eBeta.chat-card.consumable-card:not(.autogen) .card-content p{
+.dnd4eBeta.chat-card.power-card:not(.autogen,.use-other) .card-content>p,
+.dnd4eBeta.chat-card.consumable-card:not(.autogen,.use-other) .card-content>p{
 	background:var(--gradient-4e);
+}
+.dnd4eBeta.chat-card.power-card:not(.autogen).use-other .card-content>p,
+.dnd4eBeta.chat-card.consumable-card:not(.autogen).use-other .card-content>p,
+.dnd4eBeta.chat-card.consumable-card:not(.autogen).use-other .card-content>table{
+	background:#fff;
+}
+.dnd4eBeta.chat-card.power-card:not(.autogen,.use-other) .card-content>p,
+.dnd4eBeta.chat-card.power-card:not(.autogen).use-other .card-content>p,
+.dnd4eBeta.chat-card.consumable-card:not(.autogen).use-other .card-content>p{
+	padding:0.1em 0.3em;
+}
+.dnd4eBeta.chat-card.power-card:not(.autogen).use-other .card-content>p:not(:first-child){
+	text-indent:0.5em;
+}
+.dnd4eBeta.chat-card.power-card:not(.autogen,.use-other) .card-content>p:first-child,
+.dnd4eBeta.chat-card.power-card:not(.autogen).use-other .card-content>p:first-child,
+.dnd4eBeta.chat-card.consumable-card:not(.autogen).use-other .card-content>p:first-child{
+	padding-top:0.3em;
+}
+.dnd4eBeta.chat-card.power-card:not(.autogen,.use-other) .card-content>p:last-of-type,
+.dnd4eBeta.chat-card.power-card:not(.autogen).use-other .card-content>p:last-of-type,
+.dnd4eBeta.chat-card.consumable-card:not(.autogen).use-other .card-content>p:last-of-type{
+	padding-bottom:0.5em;
 }
 .dnd4eBeta.chat-card.power-card:not(.autogen) .card-content .power-basics,
 .dnd4eBeta.chat-card.consumable-card:not(.autogen) .card-content .power-basics{
@@ -390,8 +413,7 @@
 .dnd4eBeta.chat-card.destinyFeats-card:not(.NPC) .card-header{
 	background:#193d5e;
 }
-.dnd4eBeta.chat-card:not(.power-card,.consumable-card,.ritual,.destinyFeats-card.NPC,.tool) .card-content,
-.dnd4eBeta.chat-card.use-other:not(.autogen) .card-content{
+.dnd4eBeta.chat-card:not(.power-card,.consumable-card,.ritual,.destinyFeats-card.NPC,.tool) .card-content{
 	background:#fff;
 	margin-top:0;
 	padding:2px 2px 0 2px;
@@ -417,4 +439,25 @@
 }
 .system-dnd4e .chat-portrait-text-size-name-generic{
 	display:inline-block;
+}
+
+/* DF Chat Enhancements support! */
+.chat-message{
+	--dfce-cm-header-delete-pad:0;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-top){
+	padding-bottom:0;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom){
+	padding-top:0;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-delete{
+	top:0.5em;
+}
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-sender,
+.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header img[class^="chat-portrait"]{
+	border:unset !important;
+	height:0 !important;
+	display:none !important;
+	overflow:hidden !important;
 }

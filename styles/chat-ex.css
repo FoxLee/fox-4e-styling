@@ -201,6 +201,11 @@ h4.chat-portrait-flexrow{
 .chat-message .message-header+.message-content>h4+.dice-roll:first-child .dice-result .flavor-text{
 	margin-top:-0.3em;
 }
+.dnd4eBeta.chat-card .card-content table{
+	margin-top:0;
+	padding-top:0.5em;
+	background:#fff;
+}
 .chat-message .message-content .table-description{
 	background:#fff;
 	padding:0.75em 0.75em 0.85em 0.75em;
@@ -313,15 +318,6 @@ ul.chat-message.condition-list{
 }
 
 /* DF Chat Enhancements support! */
-.chat-message{
-	--dfce-cm-header-delete-pad:0;
-}
-.chat-message:is(.dfce-cm-middle,.dfce-cm-top){
-	padding-bottom:0;
-}
-.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom){
-	padding-top:0;
-}
 .chat-message.dfce-cm-top .speechmaker~.message-content{
 	padding-bottom:0.2em;
 	border-radius:5px 5px 0 0;
@@ -339,18 +335,8 @@ ul.chat-message.condition-list{
 .chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-content::before{
 	content:unset;
 }
-.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-sender,
-.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-header img[class^="chat-portrait"]{
-	border:unset !important;
-	height:0 !important;
-	display:none !important;
-	overflow:hidden !important;
-}
 .chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-content{
 	margin-top:0;
-}
-.chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .message-delete{
-	top:0.5em;
 }
 .chat-message:is(.dfce-cm-middle,.dfce-cm-bottom) .speechmaker~.message-header .message-delete{
 	margin-right:0.4em;
