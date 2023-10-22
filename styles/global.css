@@ -2,9 +2,15 @@
 	line-height:1;
 	padding:0.5em;
 }
-.directory .action-buttons button{
+.directory-header .action-buttons button{
 	height:unset;
 	line-height:1;
+}
+input[type='checkbox']:not(:disabled){
+	cursor:pointer;
+}
+input[type='checkbox']:disabled{
+	cursor:disabled;
 }
 
 
