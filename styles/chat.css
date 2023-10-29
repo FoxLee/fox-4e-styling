@@ -304,8 +304,8 @@
 	font-style:italic;
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 }
-.dnd4eBeta.chat-card.power-card.NPC.autogen .card-content>p:first-child:not(.chat-flavour){
-	display:none;
+.dnd4eBeta.chat-card.power-card.NPC.autogen .card-content>p:not(.chat-flavour){
+	display:none
 }
 
 
