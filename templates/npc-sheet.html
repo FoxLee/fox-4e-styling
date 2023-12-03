@@ -724,7 +724,7 @@
 							{{#each system.skills as |skill s|}}
 							<tr class="skill--block" data-skill="{{s}}">
 								{{#if ../system.advancedCals}}<td class="skill-trained"><a class="training-toggle skill-training" data-tooltip="{{skill.hover}}">{{{skill.icon}}}</a>
-								<input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"></td>{{/if}}
+								<input type="hidden" name="system.skills.{{s}}.training" value="{{skill.training}}" data-dtype="Number"></td>{{/if}}
 								<td class="skill-name"><h4 class="skill-name rollable" data-tooltip="{{localize 'DND4EBETA.Roll'}} {{skill.label}} {{localize 'Fox4e.Check'}}">{{skill.label}}</h4></td>
 								{{#if ../system.advancedCals}}<td class="skill-ability">{{skill.ability}}</td>{{/if}}
 								{{#if ../system.advancedCals}}<td class="skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat skill.total decimals=0 sign=true}}</td>{{/if}}
