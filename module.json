@@ -18,7 +18,7 @@
       "name": "Gilphe"
     }
   ],
-  "version": "0.10.7",
+  "version": "0.11",
   "compatibility": {
     "minimum": "11",
     "verified": "11.315"
@@ -31,7 +31,7 @@
         "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
         "compatibility": {
           "minimum": "0.4",
-          "verified": "0.4.34"
+          "verified": "0.4.39"
         }
       }
     ]
@@ -74,11 +74,22 @@
   ],
   "packs": [
     {
-      "label": "Styling Examples",
-      "name": "styling-examples",
+      "label": "Text Styling Examples",
+      "name": "styling-examples-journals",
       "type": "JournalEntry",
       "system": "dnd4e",
-      "path": "packs/styling-examples",
+      "path": "packs/styling-examples-journals",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Item Styling Examples",
+      "name": "styling-examples-items",
+      "type": "Item",
+      "system": "dnd4e",
+      "path": "packs/styling-examples-items",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
