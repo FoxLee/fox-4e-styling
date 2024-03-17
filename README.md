@@ -51,10 +51,11 @@ Styles chat item cards to match the core 4e books.
 <a href="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png"><img src="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png"><img src="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198209275-159bdd5f-371e-4b42-baff-e72e2064627b.png"><img src="https://user-images.githubusercontent.com/10067730/198209275-159bdd5f-371e-4b42-baff-e72e2064627b.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198209867-1e4277d7-a741-4440-9b25-5befdfb0099c.png"><img src="https://user-images.githubusercontent.com/10067730/198209867-1e4277d7-a741-4440-9b25-5befdfb0099c.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198873758-63eeda18-691b-4770-86cf-ce1d602f946b.png"><img src="https://user-images.githubusercontent.com/10067730/198873758-63eeda18-691b-4770-86cf-ce1d602f946b.png" width=150></a>
+<a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/c8d6a955-5753-47fc-a08c-479bd5695667"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/c8d6a955-5753-47fc-a08c-479bd5695667" width=150></a>
+<a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/bf331086-85d6-4901-a178-490944ed546a"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/bf331086-85d6-4901-a178-490944ed546a" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png"><img src="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png"><img src="https://user-images.githubusercontent.com/10067730/198873696-bbcde3b5-a94e-46f3-a234-cb9736d6e4ee.png" width=150></a>
+<a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806" width=150></a>
+
 * Turn it on/off in the module settings.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
 * Recharge powers have monster header colour, since they almost always come from NPCs.
@@ -65,7 +66,7 @@ Styles chat item cards to match the core 4e books.
   * `flavour` for text that should look like flavour text. 
   * To use them, enter "source code" mode using the toolbar button in the text editor. Then just add the desired class name to the `p` or `div` element wrapping your text, like so: `<p class="flavour">`. You won't see any difference while editing your item (at least for now) but you should see it in chat next time you use the power.
   * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
-* Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance). Feel free to request others if you want them—I'll do what I can!
+* Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat). Feel free to request others if you want them—I'll do what I can!
 ### Token Action HUD Styling
 Tweaks the styling of [Token Action HUD Classic](https://foundryvtt.com/packages/token-action-hud) just a little (if you're using Drac's integration).
 
