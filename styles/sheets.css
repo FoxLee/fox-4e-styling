@@ -256,6 +256,9 @@
 .sheet.fox4e.npc ::-webkit-scrollbar-track{
 	background:#cdcbb5;
 }
+.sheet.fox4e.npc{
+    scrollbar-color:#fff #cdcbb5;
+}
 .sheet.fox4e.npc .section.tabs{
 	border-top:1px solid;
 	border-bottom:1px solid;
@@ -733,7 +736,9 @@ sheet.fox4e.npc .head ::placeholder{
 	text-indent:unset;
 	padding-left:unset;
 }
-
+.sheet.fox4e.npc .powers .item-body p.subheading{
+	display:none;
+}
 
 
 /*---------- Footer Sections ----------*/

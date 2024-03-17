@@ -1,5 +1,13 @@
 /*---- All Chat Cards ----*/
 
+.chat-message{
+	--background-atwill:#619769;
+	--background-encounter:#961334;
+	--background-daily:#4d4d4f;
+	--background-recharge:#70774f;
+	--background-other:#193d5e;
+	--background-item:#d7941d;
+}
 .dnd4eBeta.chat-card{
 	--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	text-rendering:optimizeLegibility;
@@ -199,19 +207,19 @@
 	background:#619769;
 }
 .power-card.use-encounter:not(.NPC) .card-header{
-	background:#961334;
+	background:var(--background-encounter);
 }
 .power-card.use-daily:not(.NPC) .card-header{
-	background:#4d4d4f;
+	background:var(--background-daily);
 }
 .power-card.use-item:not(.NPC) .card-header{
-	background:#d7941d;
+	background:var(--background-item);
 }
 .power-card.use-recharge:not(.NPC) .card-header{
-	background:#70774f;
+	background:var(--background-recharge);
 }
 .power-card.use-other:not(.NPC) .card-header{
-	background:#9271a9;
+	background:var(--background-other);
 }
 .dnd4eBeta.chat-card .card-header img{
 	z-index:0;
@@ -234,10 +242,10 @@
 .dnd4eBeta.chat-card.power-card.autogen:not(.use-item,.NPC) .item-description p,
 .dnd4eBeta.chat-card.power-card.autogen:not(.use-item,.NPC) .item-details .alt,
 .dnd4eBeta.chat-card.power-card.autogen:not(.use-item,.NPC) .item-details .alt~p,
-.dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content>p{
+.dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content p{
 	background:var(--gradient-4e);
 }
-.dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content>p.white{
+.dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content p.white{
 	background:#fff;
 }
 .dnd4eBeta.chat-card.power-card .item-details span,
@@ -269,7 +277,7 @@
 .dnd4eBeta.chat-card.power-card .item-details>br{
 	display:none;
 }
-.dnd4eBeta.chat-card:not(.power-card,.use-other,.ritual,.NPC) .card-content>p{
+.dnd4eBeta.chat-card:not(.power-card,.use-other,.ritual,.NPC) .card-content p{
 	background:var(--gradient-4e);
 }
 .dnd4eBeta.chat-card.power-card:not(.autogen).use-other .card-content>p{
@@ -358,7 +366,6 @@
 	border:none;
 }
 .dnd4eBeta.chat-card.ritual .item-summary>p.flavour{
-	background:var(--gradient-4e);
 	font-style:oblique;
 }
 .dnd4eBeta.chat-card.ritual .item-summary>p:last-of-type{
@@ -452,9 +459,12 @@
 }
 .dnd4eBeta.chat-card.NPC .item-details p,
 .dnd4eBeta.chat-card.NPC:not(.destinyFeats-card) .card-content>p:not(.flavour,.subheading){
-	background:#e8e6d4;
 	text-indent:-0.5em;
 	padding:0em 0.3em 0em 0.8em;
+}
+.dnd4eBeta.chat-card.NPC p,
+.dnd4eBeta.chat-card.NPC:not(.destinyFeats-card) .card-content>p:not(.flavour,.subheading){
+	background:#e8e6d4;
 }
 .dnd4eBeta.chat-card.power-card.NPC .item-details p:last-of-type,
 .dnd4eBeta.chat-card.NPC:not(.destinyFeats-card) .card-content>p:last-of-type{
@@ -484,18 +494,23 @@
 	color:#fff;
 	padding-left:6px;
 	padding-right:6px;
+	font-weight:500;
+	font-size:1.25em;
 }
 .dnd4eBeta.chat-card.destinyFeats-card.NPC .card-content h2{
 	background:#70774f;
 	color:#fff;
 	padding-left:6px;
 	padding-right:6px;
+	font-weight:500;
+	font-size:1.15em;
 }
 .dnd4eBeta.chat-card.destinyFeats-card.NPC .card-content h3{
 	background:#cdcbb5;
 	padding-left:6px;
 	padding-right:6px;
 	font-size:1em;
+	font-weight:500;
 }
 .dnd4eBeta.chat-card.destinyFeats-card.NPC .card-content>p:last-child{
 	padding-bottom:0.3em;
@@ -565,4 +580,39 @@
 	height:0 !important;
 	display:none !important;
 	overflow:hidden !important;
+}
+
+/* Active Effects to Chat support! */
+.ae-to-chat.header{
+	padding:0.25em 0.6em;
+	color:#fff;
+	background:var(--background-other);
+}
+.ae-to-chat.header h3{
+    font-size:1em;
+    border-bottom:unset;
+	margin:0;
+}
+.ae-to-chat.content .effect-list{
+	border:unset;
+	border-radius:0;
+	margin:0;
+	padding:0;
+	background:#fff;
+	color:#000;
+}
+img.effect-icon.chat-message{
+	display:block;
+}
+.ae-to-chat.content .effect-list li{
+	align-items:center;
+}
+.ae-to-chat.content .effect-list li:not(:first-child){
+	margin-top:0.08em;
+}
+.ae-to-chat.content .effect-list li:nth-child(odd){
+	background:#d3d1ba;
+}
+.ae-to-chat.content .effect-list li:nth-child(even){
+	background:var(--gradient-4e);
 }
