@@ -418,7 +418,7 @@
 					<div class="items flexrow">
 						{{#each system.skills as |skill s|}}
 							{{#unless (eq s "prc")}}
-								{{#if (skillWanted skill ../system.details.level ../system.halfLevelOptions)}}
+								{{#if (skillWanted skill ../system.details.level ../system.halfLevelOptions ../system.advancedCals)}}
 								<span class="skill-block flexrow" data-skill="{{s}}">
 									<span class="skill-name rollable" data-tooltip="{{localize 'DND4EBETA.Roll'}} {{skill.label}} {{localize 'Fox4e.Check'}}">{{skill.label}}&thinsp;{{numberFormat skill.total decimals=0 sign=true}}</span>
 								</span> 
