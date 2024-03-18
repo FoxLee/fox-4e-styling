@@ -56,6 +56,7 @@
 	border:unset;
 	margin:auto;
 }
+.sheet.fox4e .window-content input,
 .sheet.fox4e .window-content input[type="text"],
 .sheet.fox4e .window-content input[type="number"],
 .sheet.fox4e .window-content input[type="password"],
@@ -445,7 +446,7 @@
 .sheet.fox4e.npc .head{
 	background-color:#4e5c2e;
 	color:#fff;
-	padding:1px 12px 4px 6px;
+	padding:1px 12px 1px 6px;
 }
 .sheet.fox4e.npc .head ::-webkit-input-placeholder,
 .sheet.fox4e.npc .head ::-moz-placeholder,
@@ -461,6 +462,11 @@ sheet.fox4e.npc .head ::placeholder{
 }
 .sheet.fox4e.npc .head>.flexcol>.flexrow>*:nth-child(2){
 	text-align:right;
+}
+.sheet.fox4e.npc .head .image-frame{
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:0;
 }
 .sheet.fox4e.npc .head .portrait{
 	width:3em;
@@ -570,7 +576,9 @@ sheet.fox4e.npc .head ::placeholder{
 .sheet.fox4e.npc .vitals>.right{
 	text-align:right;
 }
-.sheet.fox4e.npc .vitals .defences>span{
+.sheet.fox4e.npc .vitals .defences>span,
+.sheet.fox4e.npc .vitals .perception,
+.sheet.fox4e.npc .vitals .saviong-throw{
 	white-space:nowrap;
 }
 .sheet.fox4e.npc .movement>span:not(:last-child)::after,

@@ -313,6 +313,7 @@
 	font-family:'DragonbodySans';
 	max-width:500px;
 	font-weight:300;
+	color:#000;
 }
 .journal-page-content .rules-block p+p,
 .journal-page-content .rules-block ul+p,
