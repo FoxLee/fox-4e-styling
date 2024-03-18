@@ -54,11 +54,14 @@ Handlebars.registerHelper("hasLore", function(lunchbox){
 	return snacking;
 });
 
-Handlebars.registerHelper("skillWanted", function(skill,level,addLvHalf){
+Handlebars.registerHelper("skillWanted", function(skill,level,addLvHalf,baseline){
 	var wanted = false;
-	var avgMod = skill.mod;
-	if(!addLvHalf){
-		avgMod += Math.floor(level/2);
+	var avgMod = 0;
+	if(baseline){
+		avgMod += skill.mod;
+		if(!addLvHalf){
+			avgMod += Math.floor(level/2);
+		}
 	}
 	
 	if(skill.base != 0 || Object.keys(skill.bonus[0]).length > 0){
