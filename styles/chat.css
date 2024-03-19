@@ -188,9 +188,6 @@
 	background:#fff;
 	margin:0;
 }
-.dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content>p.subheading{
-	background:#fff;
-}
 	
 
 /*---- Power Cards ----*/
@@ -260,6 +257,12 @@
 	padding:0.15em 0.3em 0.15em 0.8em;
 }
 .dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content p.white{
+	background:#fff;
+}
+.dnd4eBeta.chat-card.power-card:not(.NPC,.autogen,.use-item) .card-content p:not(.power-basics,.basics,.white){
+	background:var(--gradient-4e);
+}
+.dnd4eBeta.chat-card.power-card:not(.use-item,.NPC) .card-content>p.subheading{
 	background:#fff;
 }
 .dnd4eBeta.chat-card.power-card .item-details span,
