@@ -46,7 +46,7 @@ export default class Fox4eStyles{
 			head.appendChild(link);
 		}
 		
-		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
+		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_STYLES) && game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
