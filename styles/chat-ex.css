@@ -50,7 +50,6 @@
 	background:url('../../../ui/parchment.jpg') repeat;
 	color:#000;
 	padding:0.5em 0.8em;
-	/*margin-top:0.5em;*/
 }
 .chat-message .dice-roll .dice-result>*{
 	-ms-flex-preferred-size:100%;
@@ -110,7 +109,6 @@
 .chat-message .message-header+.message-content>:is(.dice-roll,.dot-report):first-child,
 .chat-message .message-header+.message-content>h4+:is(.dice-roll,.dot-report){
 	padding-top:0;
-	/*margin-top:-0.3em;*/
 	position:relative;
 }
 .chat-message .message-content .dice-roll ~ .dice-roll{
@@ -163,12 +161,12 @@
 	border:none;
 	background:#fff;
 }
-.dnd4eBeta.chat-card .card-buttons button,
+.dnd4e.chat-card .card-buttons button,
 .chat-message .fakechatbutton{
 	background:url('../../../ui/parchment.jpg') repeat;
 	color:#000;
 }
-.dnd4eBeta.chat-card .card-buttons button{
+.dnd4e.chat-card .card-buttons button{
 	margin:2px;
 }
 .chat-message .fakechatbutton:nth-child(odd):not(:last-child){
@@ -191,7 +189,7 @@ h4.chat-portrait-flexrow{
 .chat-message .message-metadata:is(:hover,:active,:focus){
 	color:#fff;
 }
-.chat-message .dnd4eBeta.chat-card.item-card{
+.chat-message .dnd4e.chat-card.item-card{
 	background:none;
 }
 .chat-message .message-header{
@@ -200,11 +198,6 @@ h4.chat-portrait-flexrow{
 }
 .chat-message .message-header+.message-content>h4+.dice-roll:first-child .dice-result .flavor-text{
 	margin-top:-0.3em;
-}
-.dnd4eBeta.chat-card .card-content table{
-	margin-top:0;
-	padding-top:0.5em;
-	background:#fff;
 }
 .chat-message .message-content .table-description{
 	background:#fff;
@@ -236,13 +229,23 @@ h4.chat-portrait-flexrow{
 	border:0;
 }
 
+
+/* Effects Tray */
+
+.chat-message .card-buttons+.effects-tray{
+    margin-top:-3px;
+    margin-left:0.18em;
+    margin-right:0.18em;
+}
+
+
 /* Chat Portrait support! */
 
 .message img.chat-portrait-message-portrait-generic{
 	margin-bottom:0;
 }
 .chat-message .message-header.chat-portrait-message-header-generic .flavor-text,
-.chat-message h4[class^="chat-portrait"]~.dnd4eBeta.chat-card{
+.chat-message h4[class^="chat-portrait"]~.dnd4e.chat-card{
 	margin-top:0;
 }
 

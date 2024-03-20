@@ -3,16 +3,28 @@
 	--colour-text-link:#12588f;
 	--colour-text-heading:#a8b9ca;
 }
-
 .sheet.fox4e.npc .window-content a:hover,
 .sheet.fox4e.npc button{
 	color:#000;
 }
-.sheet.fox4e.npc input[type="checkbox"]{
+.sheet.fox4e.npc input[type="checkbox"]:input(.covered){
 	filter:unset;
 	opacity:1;
 }
 .sheet.fox4e.npc .editable .rollable:hover,
 .sheet.fox4e.npc .rollable:hover{
 	color:#000;
+}
+.chat-message .effects-tray:not(.collapsed){
+	background:var(--color-bg-btn-minor-inactive);
+	color:var(--color-text-light-primary);
+}
+.chat-message .effects-tray.collapsed,
+.dnd4e.chat-card .card-buttons button,
+.chat-message .fakechatbutton{
+	background:var(--color-bg-btn-minor-inactive);
+	color:var(--color-text-light-primary);
+}
+.dnd4e .name-stacked .subtitle{
+	color:var(--color-text-light-secondary);
 }
