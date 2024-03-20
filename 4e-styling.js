@@ -10,7 +10,8 @@ export default class Fox4eStyles{
 		TAH_STYLES: 'style-tah',
 		JOURNAL_FONT: 'journal-font',
 		GLOBAL_STYLES: 'style-global',
-		CHAT_EX_STYLES: 'style-chat-ex'
+		CHAT_EX_STYLES: 'style-chat-ex',
+		CHAT_OLD: 'style-chat-old'
 	}
 
 	static loadCSS() {
@@ -63,6 +64,7 @@ export default class Fox4eStyles{
 			//Append link element to HTML head
 			head.appendChild(link);
 		}
+		
 		if (game.settings.get("dnd4e","darkMode")){
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
@@ -81,13 +83,18 @@ Hooks.once('init', () => {
 });
 
 Hooks.on('renderChatMessage', function(message, html, data){
-	if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
+	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
 		if(!message.isRoll){
 			if(message.content){
 				if(!message.content.startsWith("<div")){
 					html.prepend('<span class="speechmaker" style="display:none !important;">');
 				}
 			}
+		}
+	}
+	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
+		if(message.content){
+			html[0].innerHTML = html[0].innerHTML.replace('dnd4eBeta','dnd4e');
 		}
 	}
 });

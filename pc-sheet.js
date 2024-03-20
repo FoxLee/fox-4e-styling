@@ -21,13 +21,13 @@ export default class Fox4eSheet extends ActorSheet4e{
 
 	static get defaultOptions(){
 		return mergeObject(super.defaultOptions, {
-			classes: ["dnd4e", "sheet", "actor", "pc", "fox4e"],
+			classes: ["sheet", "actor", "pc", "fox4e"],
 		});
 	}
 
 }
 
-Actors.registerSheet("dnd4eBeta", Fox4eSheet, {
+Actors.registerSheet("dnd4e", Fox4eSheet, {
 	types: ["Player Character"],
 	label: "(NOT READY YET) Core book inspired"
 });
