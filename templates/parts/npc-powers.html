@@ -10,9 +10,9 @@
 				<h2 class="item-name">{{localize section.label}}</h2>
 				{{#if ../owner}}
 				<div class="item-controls">
-					<a class="item-control power-create" data-tooltip="{{localize 'DND4EBETA.ItemCreate'}}"
+					<a class="item-control power-create" data-tooltip="{{localize 'DND4E.ItemCreate'}}"
 						{{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-						<i class="fas fa-plus"></i> {{localize "DND4EBETA.Add"}}
+						<i class="fas fa-plus"></i> {{localize "DND4E.Add"}}
 					</a>
 				</div>
 				{{/if}}
@@ -43,7 +43,7 @@
 										<span class="recharge">
 											{{#if item.system.rechargeRoll}}
 												<a class="item-recharge rollable numerical" data-tooltip="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">	{{!--
-													--}}{{localize 'DND4EBETA.PowerRecharge'}} 
+													--}}{{localize 'DND4E.PowerRecharge'}} 
 													<span class="dice d6">{{!--
 														--}}{{#if (lt item.system.rechargeRoll 3)}}2{{/if}}{{!--
 														--}}{{#if (lt item.system.rechargeRoll 4)}}3{{/if}}{{!--
@@ -53,7 +53,7 @@
 													--}}</span>{{!--
 												--}}</a>
 											{{else if item.system.rechargeCondition}}
-												<a class="item-recharge rollable" data-tooltip="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4EBETA.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
+												<a class="item-recharge rollable" data-tooltip="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4E.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
 										{{/if}}
 										</span>
 									{{else}}
@@ -106,20 +106,20 @@
 							
 							{{#if item.system.requirement}}
 								<p class="requirements">
-								<span class="label">{{localize 'DND4EBETA.Requirements'}}:</span> {{item.system.requirement}}
+								<span class="label">{{localize 'DND4E.Requirements'}}:</span> {{item.system.requirement}}
 								</p>
 							{{/if}}
 							
 							{{#if item.system.trigger}}
 								<p class="trigger">
-								<span class="label">{{localize 'DND4EBETA.Trigger'}}:</span> {{item.system.trigger}}
+								<span class="label">{{localize 'DND4E.Trigger'}}:</span> {{item.system.trigger}}
 								</p>
 							{{/if}}
 							
 							{{#if item.system.effect.detail}}
 								<div class="effect {{#if item.system.postEffect}} post{{/if}}">
 									<span class="label">{{!--
-										--}}{{localize "DND4EBETA.Effect"}}{{!--
+										--}}{{localize "DND4E.Effect"}}{{!--
 										--}}{{#unless item.system.attack.isAttack}}{{!--
 											--}}{{#if (eq ../name "triggered-actions")}}
 												<span class="action">{{!--
@@ -138,11 +138,11 @@
 											--}}<span class="range">{{!--
 												--}}{{lookup ../../config.rangeType item.system.rangeType}}{{!--
 													--}}{{#if (eq item.system.rangeType "rangeBlast")}} 
-														{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+														{{item.system.area}} {{localize 'DND4E.RangeWithin'}} 
 													{{else if (eq item.system.rangeType "rangeBurst")}} 
-														{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+														{{item.system.area}} {{localize 'DND4E.RangeWithin'}} 
 													{{else if (eq item.system.rangeType "wall")}} 
-														{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}}
+														{{item.system.area}} {{localize 'DND4E.RangeWithin'}}
 													{{/if}}{{!--
 													--}}{{#if (eq item.system.rangeType "special")}}{{!--
 													--}}{{else if (eq item.system.rangeType "closeBlast")}} 
@@ -169,13 +169,13 @@
 							
 							{{#if item.system.special}}
 								<p class="special{{#if item.system.postSpecial}} post{{/if}}">
-									<span class="label">{{localize 'DND4EBETA.Special'}}:</span> {{item.system.special}}{{#each item.system.specialAdd.parts as |entry i|}}; {{entry}}{{/each}}
+									<span class="label">{{localize 'DND4E.Special'}}:</span> {{item.system.special}}{{#each item.system.specialAdd.parts as |entry i|}}; {{entry}}{{/each}}
 								</p>
 							{{/if}}
 							
 							{{#if item.system.attack.isAttack}}
 								<p class="attack">
-									<span class="label">{{localize 'DND4EBETA.Attack'}}{{!--
+									<span class="label">{{localize 'DND4E.Attack'}}{{!--
 										--}}{{#if (eq ../name "triggered-actions")}}
 											<span class="action">{{!--
 												--}}({{lookup ../../config.abilityActivationTypes item.system.actionType}}){{!--
@@ -192,11 +192,11 @@
 											{{lookup ../../config.rangeType item.system.rangeType}} 
 											
 											{{#if (eq item.system.rangeType "rangeBlast")}} 
-												{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+												{{item.system.area}} {{localize 'DND4E.RangeWithin'}} 
 											{{else if (eq item.system.rangeType "rangeBurst")}} 
-												{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}} 
+												{{item.system.area}} {{localize 'DND4E.RangeWithin'}} 
 											{{else if (eq item.system.rangeType "wall")}}
-												{{item.system.area}} {{localize 'DND4EBETA.RangeWithin'}}
+												{{item.system.area}} {{localize 'DND4E.RangeWithin'}}
 											{{/if}}
 											
 											{{#if (eq item.system.rangeType "special")}}
@@ -215,7 +215,7 @@
 									
 									<span class="tohit">{{!--
 										--}}{{numberFormat (form item.system.attack.formula actor this) sign=true}}&thinsp;{{!--
-										--}}{{localize 'DND4EBETA.VS'}}&thinsp;{{lookup ../../config.def item.system.attack.def}}{{!--
+										--}}{{localize 'DND4E.VS'}}&thinsp;{{lookup ../../config.def item.system.attack.def}}{{!--
 									--}}</span>
 									
 								</p>{{!-- [Close] If it's an Attack --}}	
@@ -223,13 +223,13 @@
 							
 							{{#if item.system.hit.detail}}
 								<p class="hit">
-									<span class="label">{{localize 'DND4EBETA.Hit'}}:</span> {{item.system.hit.detail}}
+									<span class="label">{{localize 'DND4E.Hit'}}:</span> {{item.system.hit.detail}}
 								</p>
 							{{/if}}
 							
 							{{#if item.system.miss.detail}}
 								<p class="miss">
-									<span class="label">{{localize 'DND4EBETA.Miss'}}:</span> {{item.system.miss.detail}}
+									<span class="label">{{localize 'DND4E.Miss'}}:</span> {{item.system.miss.detail}}
 								</p>
 							{{/if}}
 							
@@ -237,9 +237,9 @@
 								{{#if (ne item.system.sustain.actionType "none")}}
 									<p class="sustain">
 										<span class="label">{{!--
-											--}}{{localize 'DND4EBETA.Sustain'}} 
+											--}}{{localize 'DND4E.Sustain'}} 
 											{{#if (eq item.system.sustain.actionType "none")}}{{!--
-												--}}{{localize 'DND4EBETA.NoActionShort'}}{{!--
+												--}}{{localize 'DND4E.NoActionShort'}}{{!--
 											--}}{{else if (eq item.system.sustain.actionType "standard")}}{{!--
 												--}}{{localize 'Fox4e.ActStandard'}}{{!--
 											--}}{{else if (eq item.system.sustain.actionType "move")}}{{!--
