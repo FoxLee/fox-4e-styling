@@ -159,17 +159,13 @@
 										--}}{{/unless}}{{!--
 									--}}{{/unless}}
 									
-									{{#if item.system.effectHTML}}{{!--
-										--}}{{{item.system.effect.detail}}}{{!--
-									--}}{{else}}{{!--
-										--}}{{item.system.effect.detail}}{{!--
-									--}}{{/if}}
+									{{{item.system.effect.detail}}}
 								</div>
 							{{/if}}
 							
 							{{#if item.system.special}}
 								<p class="special{{#if item.system.postSpecial}} post{{/if}}">
-									<span class="label">{{localize 'DND4E.Special'}}:</span> {{item.system.special}}{{#each item.system.specialAdd.parts as |entry i|}}; {{entry}}{{/each}}
+									<span class="label">{{localize 'DND4E.Special'}}:</span> {{{item.system.special}}}{{#each item.system.specialAdd.parts as |entry i|}}; {{{entry}}}{{/each}}
 								</p>
 							{{/if}}
 							
@@ -223,13 +219,13 @@
 							
 							{{#if item.system.hit.detail}}
 								<p class="hit">
-									<span class="label">{{localize 'DND4E.Hit'}}:</span> {{item.system.hit.detail}}
+									<span class="label">{{localize 'DND4E.Hit'}}:</span> {{{item.system.hit.detail}}}
 								</p>
 							{{/if}}
 							
 							{{#if item.system.miss.detail}}
 								<p class="miss">
-									<span class="label">{{localize 'DND4E.Miss'}}:</span> {{item.system.miss.detail}}
+									<span class="label">{{localize 'DND4E.Miss'}}:</span> {{{item.system.miss.detail}}}
 								</p>
 							{{/if}}
 							
@@ -252,7 +248,7 @@
 												--}}{{lookup ../../config.abilityActivationTypes item.system.sustain.actionType}}{{!--
 											--}}{{/if}}{{!--
 										--}}</span>: 
-										{{item.system.sustain.detail}}
+										{{{item.system.sustain.detail}}}
 									</p>
 								{{/if}}
 							{{/if}}
