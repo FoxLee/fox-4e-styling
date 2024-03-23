@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Foundry-v11-informational)
 ![](https://img.shields.io/badge/Foundry-v10-informational)
 
-# Fox's 4e Styling for Foundry VTT (BETA)
+# Fox's 4e Aesthetics for Foundry VTT (BETA)
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta). French translation provided by [Gilphe](https://github.com/Gilphe)
@@ -57,6 +57,7 @@ Styles chat item cards to match the core 4e books.
 <a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806" width=150></a>
 
 * Turn it on/off in the module settings.
+* **NEW:** Add text to the automatic tooltips for calculated values on chat cards, so you can check which attributes they include. For instructions on usage see the "New Features" in the included "Text Styling Examples" compendium.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
 * Recharge powers have monster header colour, since they almost always come from NPCs.
 * I gave rituals a purple header cus, I dunno, I like it.
