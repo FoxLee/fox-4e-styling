@@ -93,8 +93,12 @@ Hooks.on('renderChatMessage', function(message, html, data){
 		}
 	}
 	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
-		if(message.content){
+		if(html){
 			html[0].innerHTML = html[0].innerHTML.replace('dnd4eBeta','dnd4e');
 		}
+	}
+	if(html){
+		const newHTML = html[0].innerHTML.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');
+		html[0].innerHTML = newHTML;
 	}
 });
