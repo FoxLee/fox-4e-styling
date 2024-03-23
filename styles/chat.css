@@ -173,7 +173,11 @@
 	text-indent:0;
 	padding:0;
 	background:none;
-	text-decoration:underline;
+	text-decoration:none;
+	background-image:linear-gradient(to right, #000 20%, transparent 20%);
+	background-position:0 1.08em;
+	background-repeat:repeat-x;
+	background-size:1px 1px;
 }
 .dnd4e.chat-card a.inline-result i{
 	display:none;
