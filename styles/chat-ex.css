@@ -249,6 +249,17 @@ h4.chat-portrait-flexrow{
 	margin-top:0;
 }
 
+/* Simply Portraits support */
+
+.chat-message .message-header:has(>img.simply-portraits)~.message-content :nth-child(1 of .dice-roll) .dice-result>.target{
+	margin-top:-0.3em;
+	padding-top:0em;
+	padding-bottom:0.2em;
+}
+.chat-message .message-header:has(>img.simply-portraits){
+	padding-bottom:0px !important;
+}
+
 /* Enchanced Conditions support! */
 
 .chat-message .enhanced-conditions.header{
