@@ -14,64 +14,6 @@ export default class Fox4eNPCSheet extends ActorSheet4eNPC{
 	}
 	
    static unsupportedItemTypes = new Set('ritual');
-		
-	_generatePowerGroups() {
-		const actorData = this.object.system;
-		
-		return {
-			standard: { 
-				name: "standard-actions",
-				label: "Fox4e.GroupStandard", 
-				items: [], 
-				dataset: {
-					type: "standard"
-				} 
-			},
-			move: {
-				name: "move-actions",
-				label: "Fox4e.GroupMove", 
-				items: [], 
-				dataset: {
-					type: "move"
-				} 
-			},
-			minor: {
-				name: "minor-actions",
-				label: "Fox4e.GroupMinor", 
-				items: [], 
-				dataset: {
-					type: "minor"
-				} 
-			},
-			triggered: { 
-				name: "triggered-actions",
-				label: "Fox4e.GroupTriggered", 
-				items: [], 
-				dataset: {
-					type: "triggered"
-				} 
-			},
-			other: { 
-				name: "other-actions",
-				label: "Fox4e.GroupOther", 
-				items: [], 
-				dataset: {
-					type: "other"
-				} 
-			}
-		};
-
-	}
-	
-	_groupPowers(power, powerGroups) {
-		if(power.system.trigger){
-			return "triggered";
-		}
-		else if(Object.keys(powerGroups).includes(power.system.actionType)){
-			return power.system.actionType;
-		}	
-		return "other";
-	}
 	
 	/** @override */
 	setPosition(options={}) {
