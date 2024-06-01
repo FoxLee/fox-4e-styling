@@ -268,7 +268,7 @@
 .dnd4e.power-card:not(.use-item,.NPC,.ritual) .alt+ul{
 	background:var(--gradient-4e);
 }
-.dnd4e.power-card:not(.use-item,.NPC) :is(.item-details,.card-content)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.alt,.effects-tray,.power-buttons){
+.dnd4e.power-card:not(.use-item,.NPC) :is(.item-details,.card-content)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.alt,.effects-tray,.card-buttons){
 	background:var(--gradient-4e);
 	text-indent:1em;
 	padding-top:0;
