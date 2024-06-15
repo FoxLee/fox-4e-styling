@@ -83,13 +83,20 @@ Hooks.once('init', () => {
 });
 
 Hooks.on('renderChatMessage', function(message, html, data){
+	console.log(message);
+	console.log(html);
+	console.log(data);
 	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
 		if(!message.isRoll){
-			if(message.content){
-				if(!message.content.startsWith("<div")){
-					html.prepend('<span class="speechmaker" style="display:none !important;">');
-				}
+			let newHTML = html[0].innerHTML;
+			if( data?.cssClass=="ic" || (!message.speaker?.actor && !message.content.startsWith("<"))){
+				html[0].className += ' speech';
+			}else if(!message.speaker?.actor){
+				html[0].className += ' notice';
+			}else if(!message.content.startsWith("<")){
+				html[0].className += ' notice char-update';
 			}
+			html[0].innerHTML = newHTML;
 		}
 	}
 	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
