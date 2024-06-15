@@ -18,7 +18,7 @@
       "name": "Gilphe"
     }
   ],
-  "version": "0.18",
+  "version": "0.2",
   "compatibility": {
     "minimum": "11",
     "verified": "11.315"
@@ -31,7 +31,7 @@
         "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
         "compatibility": {
           "minimum": "0.4.53",
-          "verified": "0.4.56"
+          "verified": "0.4.58"
         }
       }
     ]
