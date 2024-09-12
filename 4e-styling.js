@@ -8,9 +8,9 @@ export default class Fox4eStyles{
 		JOURNAL_STYLES: 'style-journal',
 		CHAT_STYLES: 'style-chat',
 		TAH_STYLES: 'style-tah',
+		VAE_STYLES: 'style-vae',
 		JOURNAL_FONT: 'journal-font',
 		GLOBAL_STYLES: 'style-global',
-		CHAT_EX_STYLES: 'style-chat-ex',
 		CHAT_OLD: 'style-chat-old'
 	}
 
@@ -23,7 +23,6 @@ export default class Fox4eStyles{
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = './modules/fox-4e-styling/styles/journal.css';
-			//Append link element to HTML head
 			head.appendChild(link);
 		
 			document.querySelector(':root').style.setProperty('--font-journal-body', game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.JOURNAL_FONT));
@@ -34,7 +33,6 @@ export default class Fox4eStyles{
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = './modules/fox-4e-styling/styles/chat.css';
-			//Append link element to HTML head
 			head.appendChild(link);
 		}
 		
@@ -43,16 +41,6 @@ export default class Fox4eStyles{
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = './modules/fox-4e-styling/styles/tah.css';
-			//Append link element to HTML head
-			head.appendChild(link);
-		}
-		
-		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_STYLES) && game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
-			var link = document.createElement('link');
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = './modules/fox-4e-styling/styles/chat-ex.css';
-			//Append link element to HTML head
 			head.appendChild(link);
 		}
 		
@@ -61,7 +49,14 @@ export default class Fox4eStyles{
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = './modules/fox-4e-styling/styles/global.css';
-			//Append link element to HTML head
+			head.appendChild(link);
+		}
+		
+		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.VAE_STYLES)){
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = './modules/fox-4e-styling/styles/vae.css';
 			head.appendChild(link);
 		}
 		
@@ -69,9 +64,16 @@ export default class Fox4eStyles{
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = './modules/fox-4e-styling/styles/dark-mode.css';
-			//Append link element to HTML head
+			link.href = './modules/fox-4e-styling/styles/sheets-dark.css';
 			head.appendChild(link);
+		
+			if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_STYLES)){
+				var link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = './modules/fox-4e-styling/styles/chat-dark.css';
+				head.appendChild(link);
+			}
 		}
 		
 	}
@@ -82,27 +84,22 @@ Hooks.once('init', () => {
 	Fox4eStyles.loadCSS();
 });
 
+Hooks.on('renderSettingsConfig', () => {
+	var target = document.querySelector(`[data-setting-id="fox-4e-styling\.style-journal"]`);
+	var theString = `<p class="notes"><strong>${game.i18n.localize("Fox4e.settings.style-chat-ex.Moved")}</strong> ${game.i18n.localize("Fox4e.settings.style-chat-ex.MovedDetail")}</p>`;
+	
+	var extraInfo = document.createElement('div');
+	extraInfo.className = 'notification';
+	extraInfo.style.cssText = 'background:unset;text-shadow:unset;';
+	extraInfo.innerHTML = theString;
+	target.before(extraInfo);
+});
+
 Hooks.on('renderChatMessage', function(message, html, data){
-	console.log(message);
-	console.log(html);
-	console.log(data);
-	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_EX_STYLES)){
-		if(!message.isRoll){
-			let newHTML = html[0].innerHTML;
-			if( data?.cssClass=="ic" || (!message.speaker?.actor && !message.content.startsWith("<"))){
-				html[0].className += ' speech';
-			}else if(!message.speaker?.actor){
-				html[0].className += ' notice';
-			}else if(!message.content.startsWith("<")){
-				html[0].className += ' notice char-update';
-			}
-			html[0].innerHTML = newHTML;
-		}
-	}
 	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
-		if(html){
-			html[0].innerHTML = html[0].innerHTML.replace('dnd4eBeta','dnd4e');
-		}
+		html[0].classList.remove('dnd4eBeta');
+		html[0].classList.add('dnd4e');
+		//html[0].innerHTML = html[0].innerHTML.replace('dnd4eBeta','dnd4e');
 	}
 	if(html){
 		const newHTML = html[0].innerHTML.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');

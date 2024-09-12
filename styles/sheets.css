@@ -21,8 +21,13 @@
 }
 .sheet.fox4e .window-content form{
 	height:100%;
+	display:-webkit-box;
+	display:-ms-flexbox;
 	display:flex;
-	flex-direction:column;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
 }
 .sheet.fox4e .window-content .flexrow,
 .sheet.fox4e .window-content .flexcol{
@@ -314,7 +319,9 @@
 	-webkit-box-align:center;
 	    -ms-flex-align:center;
 	        align-items:center;
-	justify-content:space-between;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
 }
 .sheet.fox4e.npc h2.subsection,
 .sheet.fox4e.npc .subsection h2{
@@ -349,7 +356,9 @@
 	background:#cdcbb5;
 	-ms-flex-preferred-size:100%;
 	    flex-basis:100%;
-	justify-content:space-between;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
 }
 .sheet.fox4e.npc .item-name h4{
 	margin-top:0;
@@ -448,6 +457,9 @@
 	color:#fff;
 	padding:1px 12px 1px 6px;
 }
+sheet.fox4e.npc .head ::-webkit-input-placeholder{
+	color:rgba(255,255,255,0.3);
+}
 .sheet.fox4e.npc .head ::-webkit-input-placeholder,
 .sheet.fox4e.npc .head ::-moz-placeholder,
 .sheet.fox4e.npc .head :-ms-input-placeholder,
@@ -473,7 +485,7 @@ sheet.fox4e.npc .head ::placeholder{
 	max-width:3em;
 	margin-right:4px;
 	border:none;
-	height:auto;
+	height:3em;
 	-o-object-fit:contain;
 	   object-fit:contain;
 }
@@ -1087,6 +1099,10 @@ sheet.fox4e.npc .head ::placeholder{
 
 /*---------- Header Banner ----------*/
 
+sheet.fox4e.pc .char-title ::-webkit-input-placeholder{
+	color:rgba(255,255,255,0.3);
+}
+
 .sheet.fox4e.pc .char-title ::-webkit-input-placeholder,
 .sheet.fox4e.pc .char-title ::-moz-placeholder,
 .sheet.fox4e.pc .char-title :-ms-input-placeholder,
@@ -1102,8 +1118,12 @@ sheet.fox4e.pc .char-title ::placeholder{
 	padding:0.5em 0.8em 0.8em 0.5em;
 	border:2px solid #c2ae41;
 	border-left:none;
+	display:-webkit-box;
+	display:-ms-flexbox;
 	display:flex;
-	align-items:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 	margin-right:1em;
 	border-radius:0 20px 0 0;
 	margin-bottom:1.3em;
@@ -1175,11 +1195,13 @@ sheet.fox4e.pc .char-title ::placeholder{
 	position:relative;
 	top:0.5em;
 	margin:0.5em;
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 50%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), color-stop(50%, rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 50%);
 	padding:0.5em 1em;
-	justify-content:space-between;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
 }
 .sheet.fox4e.pc .vitals>hr{
 	border-right:1px dotted #fff;
@@ -1194,21 +1216,29 @@ sheet.fox4e.pc .char-title ::placeholder{
 	text-align:right;
 	margin-top:1px;
 	margin-bottom:1px;
-	box-shadow:inset 0 -1px rgba(0,0,0,0.1);
+	-webkit-box-shadow:inset 0 -1px rgba(0,0,0,0.1);
+	        box-shadow:inset 0 -1px rgba(0,0,0,0.1);
 }
 .sheet.fox4e.pc .vitals .attribute-box{
-	align-items:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 	background:transparent top center no-repeat;
 	background-size:contain;
 	width:26px;
 	padding-top:1px;
-	flex-direction:column-reverse;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:reverse;
+	    -ms-flex-direction:column-reverse;
+	        flex-direction:column-reverse;
 }
 .sheet.fox4e.pc .vitals .temp-hp{
 	text-align:right;
 }
 .sheet.fox4e.pc .vitals .flexrow.surges{
-	align-items:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 }
 .sheet.fox4e.pc .vitals .label.left{
 	text-align:right;
@@ -1216,10 +1246,13 @@ sheet.fox4e.pc .char-title ::placeholder{
 	margin-right:4px;
 }
 .sheet.fox4e.pc .vitals .rest.flexrow{
-	justify-content:stretch;
+	-webkit-box-pack:stretch;
+	    -ms-flex-pack:stretch;
+	        justify-content:stretch;
 }
 .sheet.fox4e.pc .vitals .rest.flexrow>*{
-	flex-basis:50%;
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
 }
 .sheet.fox4e.pc .vitals .attribute-defenses .attribute-box{
 	background-image:url('../images/box_defence.svg');
@@ -1228,14 +1261,19 @@ sheet.fox4e.pc .char-title ::placeholder{
 	margin-left:0.5em;
 }
 .sheet.fox4e.pc .vitals .section--saves{
-	align-items:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 	margin-top:1em;
 }
 .sheet.fox4e.pc .vitals .section--saves img{
 	border:none;
 }
 .sheet.fox4e.pc .vitals .tracking-surges.attribute-box{
-	flex-direction:row-reverse;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:reverse;
+	    -ms-flex-direction:row-reverse;
+	        flex-direction:row-reverse;
 	width:auto;
 }
 .sheet.fox4e.pc .vitals .tracking-surges.attribute-box>.attribute-value{
@@ -1248,11 +1286,17 @@ sheet.fox4e.pc .char-title ::placeholder{
 	max-width:45px;
 }
 .sheet.fox4e.pc .vitals .tracking-2w.attribute-box{
-	flex-direction:row-reverse;
-	align-items:center;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:reverse;
+	    -ms-flex-direction:row-reverse;
+	        flex-direction:row-reverse;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
 }
 .sheet.fox4e.pc .vitals .rest .button{
-	flex-basis:unset;
+	-ms-flex-preferred-size:unset;
+	    flex-basis:unset;
 	padding:0;
 	height:auto;
 	width:auto;
@@ -1263,13 +1307,16 @@ sheet.fox4e.pc .char-title ::placeholder{
 	width:1.1rem;
 	border:none;
 	margin:0.1rem;
-	object-fit:contain;
+	-o-object-fit:contain;
+	   object-fit:contain;
 }
 .sheet.fox4e.pc .vitals .rest .button .label{
 	display:none;
 }
 .sheet.fox4e.pc .vitals .rest.flexrow{
-	justify-content:space-between;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
 }
 .sheet.fox4e.pc .vitals .health-sidebar{
 	margin-left:1em;

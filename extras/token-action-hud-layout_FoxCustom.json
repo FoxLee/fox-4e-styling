@@ -1,0 +1,704 @@
+{
+	"powers": {
+		"id": "powers",
+		"name": "Powers",
+		"listName": "Powers",
+		"selected": true,
+		"level": 1,
+		"order": 0,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "custom"
+	},
+	"checks": {
+		"id": "checks",
+		"name": "Checks",
+		"listName": "Checks",
+		"selected": true,
+		"level": 1,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "custom"
+	},
+	"items": {
+		"id": "items",
+		"name": "Items & Rituals",
+		"listName": "Items",
+		"selected": true,
+		"level": 1,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "custom"
+	},
+	"gear": {
+		"id": "gear",
+		"name": "Gear",
+		"listName": "Gear",
+		"selected": true,
+		"level": 1,
+		"order": 3,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "custom"
+	},
+	"features": {
+		"id": "features",
+		"name": "Feats & Features",
+		"listName": "Features",
+		"selected": true,
+		"level": 1,
+		"order": 4,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "custom"
+	},
+	"status": {
+		"id": "status",
+		"name": "Status",
+		"listName": "Status",
+		"selected": true,
+		"level": 1,
+		"order": 5,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "system"
+	},
+	"utility": {
+		"id": "utility",
+		"name": "Utility",
+		"listName": "Utility",
+		"selected": true,
+		"level": 1,
+		"order": 6,
+		"settings": {
+			"showTitle": true,
+			"style": "tab"
+		},
+		"type": "custom"
+	},
+	"powers_standardPower": {
+		"id": "standardPower",
+		"name": "Standard Action",
+		"listName": "Group: Standard Action",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_movePower": {
+		"id": "movePower",
+		"name": "Move Action",
+		"listName": "Group: Move Action",
+		"selected": true,
+		"level": 2,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_minorPower": {
+		"id": "minorPower",
+		"name": "Minor Action",
+		"listName": "Group: Minor Action",
+		"selected": true,
+		"level": 2,
+		"order": 3,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_freePower": {
+		"id": "freePower",
+		"name": "Free Action",
+		"listName": "Group: Free Action",
+		"selected": true,
+		"level": 2,
+		"order": 4,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_reactionPower": {
+		"id": "reactionPower",
+		"name": "Immediate Reaction",
+		"listName": "Group: Immediate Reaction",
+		"selected": true,
+		"level": 2,
+		"order": 5,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_interruptPower": {
+		"id": "interruptPower",
+		"name": "Immediate Interrupt",
+		"listName": "Group: Immediate Interrupt",
+		"selected": true,
+		"level": 2,
+		"order": 6,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_triggeredPower": {
+		"id": "triggeredPower",
+		"name": "Triggered Action",
+		"listName": "Group: Triggered Action",
+		"selected": true,
+		"level": 2,
+		"order": 5,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_opportunityPower": {
+		"id": "opportunityPower",
+		"name": "Opportunity Action",
+		"listName": "Group: Opportunity Action",
+		"selected": true,
+		"level": 2,
+		"order": 7,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_inherentPower": {
+		"id": "inherentPower",
+		"name": "Inherent Powers",
+		"listName": "Group: Inherent",
+		"selected": true,
+		"level": 2,
+		"order": 8,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_classPower": {
+		"id": "classPower",
+		"name": "Class Powers",
+		"listName": "Group: Class",
+		"selected": true,
+		"level": 2,
+		"order": 9,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_racePower": {
+		"id": "racePower",
+		"name": "Heritage Powers",
+		"listName": "Group: Heritage",
+		"selected": true,
+		"level": 2,
+		"order": 10,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_paragonPower": {
+		"id": "paragonPower",
+		"name": "Paragon Path Powers",
+		"listName": "Group: Paragon Path",
+		"selected": true,
+		"level": 2,
+		"order": 11,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_epicPower": {
+		"id": "epicPower",
+		"name": "Epic Destiny Powers",
+		"listName": "Group: Epic Destiny",
+		"selected": true,
+		"level": 2,
+		"order": 12,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_themePower": {
+		"id": "themePower",
+		"name": "Theme Powers",
+		"listName": "Group: Theme",
+		"selected": true,
+		"level": 2,
+		"order": 13,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_featPower": {
+		"id": "featPower",
+		"name": "Feat Powers",
+		"listName": "Group: Feat",
+		"selected": true,
+		"level": 2,
+		"order": 14,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_attackPower": {
+		"id": "attackPower",
+		"name": "Attack Powers",
+		"listName": "Group: Attack",
+		"selected": true,
+		"level": 2,
+		"order": 15,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_utilityPower": {
+		"id": "utilityPower",
+		"name": "Utility Powers",
+		"listName": "Group: Utility",
+		"selected": true,
+		"level": 2,
+		"order": 16,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_featurePower": {
+		"id": "featurePower",
+		"name": "Features",
+		"listName": "Group: Feature",
+		"selected": true,
+		"level": 2,
+		"order": 17,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_atwillPower": {
+		"id": "atwillPower",
+		"name": "At-Will Powers",
+		"listName": "Group: At-Will",
+		"selected": true,
+		"level": 2,
+		"order": 18,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_encounterPower": {
+		"id": "encounterPower",
+		"name": "Encounter Powers",
+		"listName": "Group: Encounter",
+		"selected": true,
+		"level": 2,
+		"order": 19,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_dailyPower": {
+		"id": "dailyPower",
+		"name": "Daily Powers",
+		"listName": "Group: Daily",
+		"selected": true,
+		"level": 2,
+		"order": 20,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_itemPower": {
+		"id": "itemPower",
+		"name": "Item Powers",
+		"listName": "Group: Item",
+		"selected": true,
+		"level": 2,
+		"order": 21,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_rechargePower": {
+		"id": "rechargePower",
+		"name": "Recharge Powers",
+		"listName": "Group: Recharge",
+		"selected": true,
+		"level": 2,
+		"order": 22,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"powers_otherPower": {
+		"id": "otherPower",
+		"name": "Other Powers",
+		"listName": "Group: Other",
+		"selected": true,
+		"level": 2,
+		"order": 23,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"checks_abilities": {
+		"id": "abilities",
+		"name": "Ability Checks",
+		"listName": "Group: Ability",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"checks_skills": {
+		"id": "skills",
+		"name": "Skill Checks",
+		"listName": "Group: Skills",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"items_consumable": {
+		"id": "consumable",
+		"name": "Consumables & Trinkets",
+		"listName": "Group: Consumable",
+		"selected": true,
+		"level": 2,
+		"order": 0,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"items_tool": {
+		"id": "tool",
+		"name": "Tools",
+		"listName": "Group: Tool",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"items_rituals": {
+		"id": "ritual",
+		"name": "Rituals",
+		"listName": "Group: Rituals",
+		"selected": true,
+		"level": 2,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"gear_weapon": {
+		"id": "weapon",
+		"name": "Weapons",
+		"listName": "Group: Weapon",
+		"selected": true,
+		"level": 2,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"gear_equipment": {
+		"id": "equipment",
+		"name": "Other Equipment",
+		"listName": "Group: Equipment",
+		"selected": true,
+		"level": 2,
+		"order": 3,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"gear_container": {
+		"id": "container",
+		"name": "Containers",
+		"listName": "Group: Container",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"gear_loot": {
+		"id": "loot",
+		"name": "Loot & Misc",
+		"listName": "Group: Loot",
+		"selected": true,
+		"level": 2,
+		"order": 6,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"features_classFeats": {
+		"id": "classFeats",
+		"name": "Class Features",
+		"listName": "Group: Class Features",
+		"selected": true,
+		"level": 2,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"features_raceFeats": {
+		"id": "raceFeats",
+		"name": "Heritage Features",
+		"listName": "Group: Heritage Features",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"features_pathFeats": {
+		"id": "pathFeats",
+		"name": "Paragon Path Features",
+		"listName": "Group: Paragon",
+		"selected": true,
+		"level": 2,
+		"order": 3,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"features_destinyFeats": {
+		"id": "destinyFeats",
+		"name": "Epic Destiny Features",
+		"listName": "Group: Epic",
+		"selected": true,
+		"level": 2,
+		"order": 4,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"features_feat": {
+		"id": "feat",
+		"name": "Feats",
+		"listName": "Group: Feats",
+		"selected": true,
+		"level": 2,
+		"order": 5,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"status_conditions": {
+		"id": "conditions",
+		"name": "Conditions",
+		"listName": "Group: Conditions",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"status_temporary-effects": {
+		"id": "temporary-effects",
+		"name": "Temporary Effects",
+		"listName": "Group: Temporary Effects",
+		"selected": true,
+		"level": 2,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"status_passive-effects": {
+		"id": "passive-effects",
+		"name": "Passive Effects",
+		"listName": "Group: Passive Effects",
+		"selected": true,
+		"level": 2,
+		"order": 3,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"utility_combat": {
+		"id": "combat",
+		"name": "Combat",
+		"listName": "Group: Combat",
+		"selected": true,
+		"level": 2,
+		"order": 1,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"utility_saves": {
+		"id": "saves",
+		"name": "Saving Throws",
+		"listName": "Group: Saving Throws",
+		"selected": true,
+		"level": 2,
+		"order": 2,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"utility_heal": {
+		"id": "healing",
+		"name": "Healing",
+		"listName": "Group: Healing",
+		"selected": true,
+		"level": 2,
+		"order": 3,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"utility_token": {
+		"id": "token",
+		"name": "Token",
+		"listName": "Group: Token",
+		"selected": true,
+		"level": 2,
+		"order": 4,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"utility_rests": {
+		"id": "rests",
+		"name": "Rests",
+		"listName": "Group: Rests",
+		"selected": true,
+		"level": 2,
+		"order": 5,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	},
+	"utility_utility": {
+		"id": "utility",
+		"name": "Utilities",
+		"listName": "Group: Utility",
+		"selected": true,
+		"level": 2,
+		"order": 6,
+		"settings": {
+			"showTitle": true,
+			"style": "list"
+		},
+		"type": "system"
+	}
+}

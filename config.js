@@ -41,6 +41,15 @@ export function registerConfigs() {
 		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.TAH_STYLES}.Hint`,
 		onChange: debouncedReload
 	});
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.VAE_STYLES, {
+		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.VAE_STYLES}.Name`,
+		default: true,
+		type: Boolean,
+		scope: 'client',
+		config: true,
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.VAE_STYLES}.Hint`,
+		onChange: debouncedReload
+	});
 	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.GLOBAL_STYLES, {
 		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.GLOBAL_STYLES}.Name`,
 		default: true,
@@ -48,15 +57,6 @@ export function registerConfigs() {
 		scope: 'client',
 		config: true,
 		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.GLOBAL_STYLES}.Hint`,
-		onChange: debouncedReload
-	});
-	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.CHAT_EX_STYLES, {
-		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.CHAT_EX_STYLES}.Name`,
-		default: true,
-		type: Boolean,
-		scope: 'client',
-		config: true,
-		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.CHAT_EX_STYLES}.Hint`,
 		onChange: debouncedReload
 	});
 	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.CHAT_OLD, {

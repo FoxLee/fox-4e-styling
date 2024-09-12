@@ -1,0 +1,61 @@
+*.chat-message{
+	--background-container:url('../../../systems/dnd4e/icons/ui/parchment-dark.png') repeat;
+	--background-button:url('../../../systems/dnd4e/icons/ui/parchment-dark.png') repeat;
+	--background-alternate:rgba(0,0,0,0.2);
+}
+.chat-message .dnd4e{
+	--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+.chat-message.emote{
+	background:var(--background-container);
+}
+.chat-message:not(.narrator-chat) .message-content{
+    color:var(--color-text-light-primary);
+}
+.chat-message .dnd4e.chat-card .effects-tray{
+	background:unset;
+}
+.chat-message .dnd4e.chat-card .effects-tray .roboto-upper,
+.chat-message .dnd4e.chat-card .card-buttons button,
+.chat-message .fakechatbutton{
+	background:var(--background-button);
+	color:var(--color-text-light-primary);
+}
+.chat-message:not(.burble) .table-draw .dice-roll{
+    color:var(--color-text-light-primary);
+}
+.dnd4e .name-stacked .subtitle{
+	color:var(--color-text-light-secondary);
+}
+.chat-message .item-piles-chat-card ul{
+	color:#000;
+}
+.chat-message:not(.burble) .item-piles-chat-card img[src$=".svg"] {
+    -webkit-filter:brightness(255);
+            filter:brightness(255);
+}
+.chat-message:not(.burble) .dnd4e.chat-card .card-buttons button,
+.chat-message:not(.burble) .fakechatbutton{
+    background:var(--background-alternate);
+}
+
+/*---- Burble support! ----*/
+.chat-message.burble.notice .message-header .flavor-text{
+    background:#5d1232;
+    color:#fff;
+}
+.chat-message.burble .dnd4e.chat-card.NPC .effects-tray{
+	background:unset;
+}
+.chat-message.burble .dnd4e.chat-card:not(.NPC) .effects-tray .roboto-upper,
+.chat-message.burble .dnd4e.chat-card:not(.NPC) .card-buttons button,
+.chat-message.burble .dnd4e.chat-card.NPC .effects-tray .roboto-upper,
+.chat-message.burble .dnd4e.chat-card.NPC .card-buttons button,
+.chat-message.burble .fakechatbutton{
+	background:var(--background-button);
+	color:var(--color-text-light-primary);
+}
+.chat-message.burble .dnd4e.chat-card .effects-tray .effects .effect>button,
+.chat-message.burble.emote .message-content{
+	color:#000;
+}

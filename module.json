@@ -1,102 +1,105 @@
 {
-  "title": "Fox's 4e Aesthetics",
-  "description": "Overhauls sheets, journal entries, chat cards and various other things to look like official 4e material.",
-  "url": "https://github.com/FoxLee/fox-4e-styling/",
-  "manifest": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json",
-  "download": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.zip",
-  "license": "https://github.com/FoxLee/fox-4e-styling/blob/main/LICENSE",
-  "readme": "https://github.com/FoxLee/fox-4e-styling/blob/main/README.md",
-  "bugs": "https://github.com/FoxLee/fox-4e-styling/issues",
-  "authors": [
-    {
-      "name": "Fox Lee",
-      "discord": "TheArtGremblin",
-      "email": "fox@invincible.ink",
-      "url": "https://www.invincible.ink"
-    },
-    {
-      "name": "Gilphe"
-    }
-  ],
-  "version": "0.2",
-  "compatibility": {
-    "minimum": "11",
-    "verified": "11.315"
-  },
-  "relationships": {
-    "systems": [
-      {
-        "id": "dnd4e",
-        "type": "system",
-        "manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
-        "compatibility": {
-          "minimum": "0.4.53",
-          "verified": "0.4.58"
-        }
-      }
-    ]
-  },
-  "styles": [
-    "fonts/dragonbody-sans.css",
-    "fonts/dragonbody-serif.css",
-    "fonts/dragonhead.css",
-    "fonts/dragontitle.css",
-    "fonts/4ed6.css",
-    "styles/sheets.css"
-  ],
-  "scripts": [
-    "scripts/helpers.js"
-  ],
-  "esmodules": [
-    "4e-styling.js",
-    "pc-sheet.js",
-    "npc-sheet.js"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en-us.json",
-      "flags": {}
-    },
-    {
-      "lang": "en-AU",
-      "name": "English",
-      "path": "lang/en-au.json",
-      "flags": {}
-    },
-    {
-      "lang": "fr",
-      "name": "Français",
-      "path": "lang/fr.json",
-      "flags": {}
-    }
-  ],
-  "packs": [
-    {
-      "label": "Text Styling Examples",
-      "name": "styling-examples-journals",
-      "type": "JournalEntry",
-      "system": "dnd4e",
-      "path": "packs/styling-examples-journals",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
-    },
-    {
-      "label": "Item Styling Examples",
-      "name": "styling-examples-items",
-      "type": "Item",
-      "system": "dnd4e",
-      "path": "packs/styling-examples-items",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
-    }
-  ],
 	"id": "fox-4e-styling",
+	"title": "Fox's 4e Aesthetics",
+	"description": "Overhauls sheets, journal entries, chat cards and various other things to look like official 4e material.",
+	"url": "https://github.com/FoxLee/fox-4e-styling/",
+	"manifest": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json",
+	"download": "https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.zip",
+	"license": "https://github.com/FoxLee/fox-4e-styling/blob/main/LICENSE",
+	"readme": "https://github.com/FoxLee/fox-4e-styling/blob/main/README.md",
+	"bugs": "https://github.com/FoxLee/fox-4e-styling/issues",
+	"authors": [
+		{
+			"name": "Fox Lee",
+			"discord": "TheArtGremblin",
+			"email": "fox@invincible.ink",
+			"url": "https://www.invincible.ink"
+		},
+		{
+			"name": "Gilphe"
+		}
+	],
+	"version": "1.0",
+	"compatibility": {
+		"minimum": "11",
+		"verified": "11.315"
+	},
+	"relationships": {
+		"systems": [{
+			"id": "dnd4e",
+			"type": "system",
+			"manifest": "https://raw.githubusercontent.com/EndlesNights/dnd4eBeta/main/system.json",
+			"compatibility": {
+				"minimum": "0.4.53",
+				"verified": "0.4.58"
+			}
+		}],
+		"recommends": [{
+			"id": "fox-burble",
+			"type": "module",
+			"manifest": "https://github.com/FoxLee/burble/releases/latest/download/module.json"
+		}]
+	},
+	"styles": [
+		"fonts/dragonbody-sans.css",
+		"fonts/dragonbody-serif.css",
+		"fonts/dragonhead.css",
+		"fonts/dragontitle.css",
+		"fonts/4ed6.css",
+		"styles/sheets.css"
+	],
+	"scripts": [
+		"scripts/helpers.js"
+	],
+	"esmodules": [
+		"4e-styling.js",
+		"pc-sheet.js",
+		"npc-sheet.js"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en-us.json",
+			"flags": {}
+		},
+		{
+			"lang": "en-AU",
+			"name": "English",
+			"path": "lang/en-au.json",
+			"flags": {}
+		},
+		{
+			"lang": "fr",
+			"name": "Français",
+			"path": "lang/fr.json",
+			"flags": {}
+		}
+	],
+	"packs": [
+		{
+			"label": "Styling Manual",
+			"name": "styling-manual",
+			"type": "JournalEntry",
+			"system": "dnd4e",
+			"path": "packs/styling-manual",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			}
+		},
+		{
+			"label": "Item Styling Examples",
+			"name": "styling-examples-items",
+			"type": "Item",
+			"system": "dnd4e",
+			"path": "packs/styling-examples-items",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			}
+		}
+	],
 	"hotReload": {
 		"extensions": [
 			"css",

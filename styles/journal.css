@@ -249,8 +249,8 @@
 .journal-page-content .flavour,
 .editor-content[data-engine="prosemirror"] .flavour,
 .editor-enriched .flavour{
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	font-family:'DragonbodySans';
 	font-style:italic;
@@ -305,8 +305,8 @@
 .journal-page-content .rules-block,
 .editor-content[data-engine="prosemirror"] .rules-block,
 .editor-enriched .rules-block{
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	padding:0.8em 1.2em;
 	margin-bottom:1em;
@@ -425,13 +425,18 @@
 .journal-page-content div.ritual>.basics,
 .editor-content[data-engine="prosemirror"] div.ritual>.basics,
 .editor-enriched div.ritual>.basics{
+	display:-webkit-box;
+	display:-ms-flexbox;
 	display:flex;
-	justify-content:space-between;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
 }
 .journal-page-content div.ritual>.basics>*,
 .editor-content[data-engine="prosemirror"] div.ritual>.basics>*,
 .editor-enriched div.ritual>.basics>*{
-	flex-basis:48%;
+	-ms-flex-preferred-size:48%;
+	    flex-basis:48%;
 }
 .journal-page-content .ritual .basics ul,
 .editor-content[data-engine="prosemirror"] .ritual .basics ul,
@@ -467,6 +472,7 @@
 	border:none;
 	margin-top:1rem;
 	margin-bottom:1rem;
+	table-layout:auto;
 }
 .journal-page-content table thead,
 .editor-content[data-engine="prosemirror"] table thead,
@@ -492,16 +498,16 @@
 .journal-page-content table tr.flavour,
 .editor-content[data-engine="prosemirror"] table tr.flavour,
 .editor-enriched table tr.flavour{
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 	font-style:oblique;
 }
 .journal-page-content table tbody tr:nth-child(odd),
 .editor-content[data-engine="prosemirror"] table tbody tr:nth-child(odd),
 .editor-enriched table tbody tr:nth-child(odd){
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 }
 .journal-page-content table tbody tr:nth-child(even),
@@ -582,8 +588,8 @@
 .journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even),
 .editor-content[data-engine="prosemirror"] table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even),
 .editor-enriched table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even){
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 }
 
@@ -708,8 +714,8 @@
 .journal-page-content table.power tbody tr:not(.basics,.white),
 .editor-content[data-engine="prosemirror"] table.power tbody tr:not(.basics,.white),
 .editor-enriched table.power tbody tr:not(.basics,.white){
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 }
 .journal-page-content table.power tbody tr.basics .sep,
