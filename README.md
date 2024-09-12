@@ -67,35 +67,29 @@ Styles chat item cards to match the core 4e books.
   * `flavour` for text that should look like flavour text. 
   * To use them, enter "source code" mode using the toolbar button in the text editor. Then just add the desired class name to the `p` or `div` element wrapping your text, like so: `<p class="flavour">`. You won't see any difference while editing your item (at least for now) but you should see it in chat next time you use the power.
   * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
-* Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat). Feel free to request others if you want them—I'll do what I can!
+* Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat), [Condition Lab & Triggler](https://foundryvtt.com/packages/condition-lab-triggler) and [Simply Portraits](https://foundryvtt.com/packages/simply-portraits). Feel free to request others if you want them—I'll do what I can!
 ### Token Action HUD Styling
-Tweaks the styling of [Token Action HUD Classic](https://foundryvtt.com/packages/token-action-hud) just a little (if you're using Drac's integration).
+Enhances 4e styling for [Token Action HUD Classic](https://foundryvtt.com/packages/token-action-hud) (requires [Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
 
 <a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
 
 * If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
+* Tooltips with item cards will are styled similarly to chat cards. Unfortunately card styling is more generic than for chat, as there is less information available about what type of card is being displayed (for example, equipment and NPC powers lose their unique colour schemes).
 * Turn it on/off from the module settings.
+
+### Visual Active Effects Styling
+Adds 4e styling for [Visual Active Effects](https://foundryvtt.com/packages/visual-active-effects) effects panel.
+* Styles effect info much like chat cards, using the 4e gradient BG and text styles as in journals.
+* Uses the maroon accent colour from GM books as a header colour.
+
 ### Extra chat styling
-It's got nothing to do with book accuracy. I just think it's cute!
-
-<a href="https://user-images.githubusercontent.com/10067730/198873864-6dd16cd4-69dc-4afd-abb0-0214eda9045e.png"><img src="https://user-images.githubusercontent.com/10067730/198873864-6dd16cd4-69dc-4afd-abb0-0214eda9045e.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198873449-7a145209-4e76-4068-8f90-3f5445024990.png"><img src="https://user-images.githubusercontent.com/10067730/198873449-7a145209-4e76-4068-8f90-3f5445024990.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/204185140-c38c4f43-55f9-445e-9f74-a3eaf5ffbdbf.png"><img src="https://user-images.githubusercontent.com/10067730/204185140-c38c4f43-55f9-445e-9f74-a3eaf5ffbdbf.png" width=150></a>
-
-* Turn it on/off in the module settings.
-* Basically makes your chat cards and dialogue stand out more than system messages.
-* Substantially cuter with the [Chat Portrait](https://foundryvtt.com/packages/chat-portrait) module
-* Includes tweaks for compatibility with Narrator Tools module.
-* Please feel free to ask for tweaks if it causes problems with any modules you use. It's super hard to keep it out of everybody's way by default, but usually trivially easy to fix any given conflict!
+Extra chat styles have been moved into a new system-agnostic module, [Burble](https://github.com/FoxLee/Burble)!
 
 ### To-Do/In Progress
 * New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
   * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I'm in love.
 * New Sheets for all system "items" (powers, feats, gear, etc)
-* <strike>Each set of styling optional (either as settings or as separate sheets)</strike> Done! :D
-* Fix the new NPC sheet's power sorting method, for Token Action HUD. Power sorting is not "set" even though the sheet forces its unique sorting, so TAH retains the last selected value for the actor (for now, swap back to the default sheet and choose "action" sorting to fix).
-  * TAH also doesn't inherit the specific MM3 action groups. Default action sorting is sufficient, but it would be nice for it to be exactly right.
-* <strike>Make condition/special immunities editable on the sheet. Since this was a new addition to support this sheet, I didn't have a built-in edit dialogue to piggyback on, so I had to leave it in the "too hard" basket for now.</strike> Done! :D
+* Fix the new NPC sheet's power sorting method, for Token Action HUD. For now, load a layout preset from the "extras" folder.
 
 ## Installation
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
