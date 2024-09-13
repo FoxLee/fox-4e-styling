@@ -5,8 +5,8 @@
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta). French translation provided by [Gilphe](https://github.com/Gilphe)
-* **Foundry VTT Compatibility**: v11+ (last FVTT 10.x compatible release is v0.9.47)
-* **4e System Compatibility**: v0.4+ (last FVTT 10.x compatible release requires dnd4e0.3.17+)
+* **Foundry VTT Compatibility**: v11.x (last FVTT 10.x compatible release is v0.9.47) (no v12 compatibility yet)
+* **4e System Compatibility**: v0.4.0—0.4.58 (or v0.3.17—0.4.0 for FVTT 10.x)
 * **Languages**: [en-AU](https://github.com/FoxLee/fvtt-locale-en-au), fr, en-US
 * **Other Credits**: The Monster token in the screenshots is by [Yuikami](https://yuikami.tumblr.com), who makes the cutest token packs ever.
 
@@ -42,11 +42,11 @@ Makes your Journals look just like official 4e books!
 * Should work for all ProseMirror-based rich text areas.
 * Includes body text, headings, lists, tables, and whatever else I can manage.
 * I haven't worked out how to include selectable styles yet, but you can use the HTML source editor to take advantage of built-in classes.
-  * Check the included "Example Styling" compendium for how to markup game stuff in journals. Currently supports generic table, "power" (table), "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
+  * Check the included "Styling Manual" compendium for how to markup game stuff in journals. Currently supports generic table, "power" (table), "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
 * I dunno how to add journal sheets, but you can toggle the styling package on/off from the module settings.
 * Includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
-### Chat Card Styling
-Styles chat item cards to match the core 4e books.
+### Chat Styles
+Styles chat messages, in particular item cards, to match the core 4e books.
 
 <a href="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png"><img src="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png"><img src="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png" width=150></a>
@@ -57,7 +57,7 @@ Styles chat item cards to match the core 4e books.
 <a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806" width=150></a>
 
 * Turn it on/off in the module settings.
-* **NEW:** Add text to the automatic tooltips for calculated values on chat cards, so you can check which attributes they include. For instructions on usage see the "New Features" in the included "Text Styling Examples" compendium.
+* Add text to the automatic tooltips for calculated values on chat cards, so you can (for example) check which attributes they include. For instructions on usage see the included "Styling Manual" compendium.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
 * Recharge powers have monster header colour, since they almost always come from NPCs.
 * I gave rituals a purple header cus, I dunno, I like it.
@@ -67,9 +67,11 @@ Styles chat item cards to match the core 4e books.
   * `flavour` for text that should look like flavour text. 
   * To use them, enter "source code" mode using the toolbar button in the text editor. Then just add the desired class name to the `p` or `div` element wrapping your text, like so: `<p class="flavour">`. You won't see any difference while editing your item (at least for now) but you should see it in chat next time you use the power.
   * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
+  * Alternatively, if you know what you're doing you can inspect the markup output for the auto-generated chat cards and copy the class names as required. This should work more or less seamlessly.
+* As of 1.0, Chat Styles incorporates the styles formerly called "Extra" that don't relate to the speech bubble effect.
 * Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat), [Condition Lab & Triggler](https://foundryvtt.com/packages/condition-lab-triggler) and [Simply Portraits](https://foundryvtt.com/packages/simply-portraits). Feel free to request others if you want them—I'll do what I can!
 ### Token Action HUD Styling
-Enhances 4e styling for [Token Action HUD Classic](https://foundryvtt.com/packages/token-action-hud) (requires [Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
+Enhances 4e styling for [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core) (requires [Drac's Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
 
 <a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
 
