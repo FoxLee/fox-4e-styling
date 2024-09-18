@@ -3,6 +3,8 @@
 
 # Fox's 4e Aesthetics for Foundry VTT (BETA)
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
+
+<a href="https://github.com/user-attachments/assets/27b66dfe-2661-4fe1-b616-a96460b5d0f5"><img src="https://github.com/user-attachments/assets/27b66dfe-2661-4fe1-b616-a96460b5d0f5" height=300></a>
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta). French translation provided by [Gilphe](https://github.com/Gilphe)
 * **Foundry VTT Compatibility**: v11.x (last FVTT 10.x compatible release is v0.9.47) (no v12 compatibility yet)
@@ -48,14 +50,7 @@ Makes your Journals look just like official 4e books!
 ### Chat Styles
 Styles chat messages, in particular item cards, to match the core 4e books.
 
-<a href="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png"><img src="https://user-images.githubusercontent.com/10067730/198873614-a70582b0-70c8-44ca-b9d3-f6a2a8c4f786.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png"><img src="https://user-images.githubusercontent.com/10067730/198209252-45e3e2a4-f31e-420c-999b-65196650d3e4.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198209275-159bdd5f-371e-4b42-baff-e72e2064627b.png"><img src="https://user-images.githubusercontent.com/10067730/198209275-159bdd5f-371e-4b42-baff-e72e2064627b.png" width=150></a>
-<a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/c8d6a955-5753-47fc-a08c-479bd5695667"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/c8d6a955-5753-47fc-a08c-479bd5695667" width=150></a>
-<a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/bf331086-85d6-4901-a178-490944ed546a"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/bf331086-85d6-4901-a178-490944ed546a" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png"><img src="https://user-images.githubusercontent.com/10067730/198873808-7245deea-cb90-44b5-a818-672cd74b6506.png" width=150></a>
-<a href="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806"><img src="https://github.com/FoxLee/fox-4e-styling/assets/10067730/177a18e6-4d3e-4d92-a9a0-2408871a3806" width=150></a>
-
+<a href="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f"><img src="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f" height=300></a>
 * Turn it on/off in the module settings.
 * Add text to the automatic tooltips for calculated values on chat cards, so you can (for example) check which attributes they include. For instructions on usage see the included "Styling Manual" compendium.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
@@ -70,22 +65,32 @@ Styles chat messages, in particular item cards, to match the core 4e books.
   * Alternatively, if you know what you're doing you can inspect the markup output for the auto-generated chat cards and copy the class names as required. This should work more or less seamlessly.
 * As of 1.0, Chat Styles incorporates the styles formerly called "Extra" that don't relate to the speech bubble effect.
 * Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat), [Condition Lab & Triggler](https://foundryvtt.com/packages/condition-lab-triggler) and [Simply Portraits](https://foundryvtt.com/packages/simply-portraits). Feel free to request others if you want them—I'll do what I can!
+
+<a href="https://github.com/user-attachments/assets/0f8bf77b-8368-45aa-b71f-ad19757c803f"><img src="https://github.com/user-attachments/assets/0f8bf77b-8368-45aa-b71f-ad19757c803f" height=200></a>
+
+
 ### Token Action HUD Styling
 Enhances 4e styling for [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core) (requires [Drac's Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
 
-<a href="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png"><img src="https://user-images.githubusercontent.com/10067730/198206272-96f3e1fd-7980-432b-8d8b-15c98d007aa8.png" width=150></a>
-
+<a href="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9"><img src="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9" height=300></a>
 * If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
 * Tooltips with item cards will are styled similarly to chat cards. Unfortunately card styling is more generic than for chat, as there is less information available about what type of card is being displayed (for example, equipment and NPC powers lose their unique colour schemes).
 * Turn it on/off from the module settings.
 
 ### Visual Active Effects Styling
 Adds 4e styling for [Visual Active Effects](https://foundryvtt.com/packages/visual-active-effects) effects panel.
+
+<a href="https://github.com/user-attachments/assets/4923fc64-c627-45fd-9872-ae73c413c2dc"><img src="https://github.com/user-attachments/assets/4923fc64-c627-45fd-9872-ae73c413c2dc" height=200></a>
 * Styles effect info much like chat cards, using the 4e gradient BG and text styles as in journals.
 * Uses the maroon accent colour from GM books as a header colour.
 
 ### Extra chat styling
 Extra chat styles have been moved into a new system-agnostic module, [Burble](https://github.com/FoxLee/Burble)!
+
+<a href="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85"><img src="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85" height=300></a>
+
+In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF Chat Enhancement's combined messages.
+
 
 ### To-Do/In Progress
 * New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
