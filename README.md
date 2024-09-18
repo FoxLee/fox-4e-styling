@@ -10,7 +10,7 @@ Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, ite
 * **Foundry VTT Compatibility**: v11.x (last FVTT 10.x compatible release is v0.9.47) (no v12 compatibility yet)
 * **4e System Compatibility**: v0.4.0—0.4.58 (or v0.3.17—0.4.0 for FVTT 10.x)
 * **Languages**: [en-AU](https://github.com/FoxLee/fvtt-locale-en-au), fr, en-US
-* **Other Credits**: The Monster token in the screenshots is by [Yuikami](https://yuikami.tumblr.com), who makes the cutest token packs ever.
+* **Example Images**: **Assets used in these examples are used for demonstration only and are not included with the module.** Non-core tokens are by [Yuikami](https://yuikami.tumblr.com), battlemaps are by [Cze & Peku](https://www.patreon.com/czepeku).
 
 ## Features
 ### Core style NPC sheet
