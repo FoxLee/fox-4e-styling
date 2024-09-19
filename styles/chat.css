@@ -17,14 +17,18 @@
 	--colour-text-inside:#484a3d;
 	--background-row-odd:#d3d1ba;
 	--background-row-even:var(--gradient-4e);
+	border-width:1px;
 }
-.chat-message:not(.narrator-chat) .message-content{
+.chat-message .message-content{
 	--font-primary:'DragonBodySans';
 	font-family:var(--font-primary);
-	color:#000;
 	line-height:1;
 }
-.chat-message.emote{
+.chat-message:not(.narrator-chat) .message-content{
+	color:#000;
+	margin-top:3px;
+}
+.chat-message.emote .message-content{
 	font-style:italic;
 }
 .chat-message .message-header{
@@ -44,9 +48,6 @@
     text-transform:uppercase;
     font-size:0.7rem;
     font-weight:500;
-}
-.chat-message .message-content{
-	margin-top:3px;
 }
 .chat-message .message-content p{
 	margin:0;
@@ -188,6 +189,10 @@
 /*------------------------------------------------------------------*/
 .chat-message .table-draw{
 	color:#000;
+}
+.chat-message .table-draw .table-description{
+	font-size:revert;
+	border-top:unset;
 }
 .chat-message .table-draw .table-results .table-result{
 	border-bottom:1px solid #fff;
@@ -650,7 +655,7 @@
 .dnd4e.chat-card.backpack-card .card-header{
 	background:#d7941d;
 }
-.dnd4e:is(.equipment-card,.weapon-card,.consumable-card,.chat-card.tool,.backpack-card) .card-content>p:not(.subheading,.flavour),
+.dnd4e:is(.equipment-card,.weapon-card,.consumable-card,.chat-card.tool,.backpack-card) :is(.item-summary,.card-content)>:is(p,ol,ul,span):not(.subheading,.flavour),
 .dnd4e.power-card.use-item .card-content>p,
 .dnd4e.power-card.use-item .card-content .item-summary p,
 .dnd4e.power-card.use-item .card-content .item-summary p.alt,
@@ -707,11 +712,6 @@
 .dnd4e.power-card:not(.use-item,.NPC) .card-content p:is(.requirements,.trigger,.target,.attack){
 	background:#fff;
 }
-.dnd4e:is(.consumable-card,.chat-card.tool) .item-summary b,
-.dnd4e.power-card.use-item .item-summary b{
-	font-weight:normal;
-	font-style:oblique;
-}
 .dnd4e.chat-card.tool .card-footer{
 	display:none;
 }
@@ -764,10 +764,6 @@
 .dnd4e.power-card.NPC .card-content>p.subheading{
 	background:#cdcbb5;
 }
-.dnd4e.power-card.NPC.autogen .item-details b{
-	font-weight:normal;
-	font-style:oblique;
-}
 .dnd4e.chat-card:not(.power-card).NPC .item-summary{
 	background-color:#4e5c2e;
 }
@@ -814,6 +810,11 @@
 	background:#5b1e34;
 }
 
+
+/*------------------------------------------------------------------*/
+/*---- 3RD PARTY MODULE SUPPORT ------------------------------------*/
+/*------------------------------------------------------------------*/
+
 /*---- Item Piles support ----*/
 /*------------------------------------------------------------------*/
 .chat-message .item-piles-chat-card{
@@ -824,9 +825,11 @@
     padding-left:0;
 }
 .chat-message .item-piles-chat-card li{
-	border-bottom:1px solid #fff;
 	border-radius:0;
 	margin:0;
+}
+.chat-message .item-piles-chat-card li:not(:last-child){
+	border-bottom:1px solid #fff;
 }
 .chat-message .item-piles-chat-card li img{
     background-color:unset;
@@ -840,6 +843,10 @@
 .chat-message .item-piles-chat-card img[src$=".svg"] {
 	-webkit-filter:brightness(0);
 	        filter:brightness(0);
+}
+.chat-message .item-piles-chat-card hr{
+	border-top:1px dotted #9f9275;
+	border-bottom:unset;
 }
 
 /*---------- Chat Portrait support ----------*/
@@ -940,6 +947,15 @@ img.effect-icon.chat-message{
 }
 .ae-to-chat.content .effect-list li:nth-child(even){
 	background:var(--gradient-4e);
+}
+
+/*---- Narrator Tools support ----*/
+/*------------------------------------------------------------------*/
+#chat-log .message.narrator-chat{
+	border-width:0;
+}
+#chat-log .message.narrator-notification{
+    background:#462b37;
 }
 
 /*---- Tweaks for VAE condition summary to chat ----*/
@@ -1103,8 +1119,66 @@ img.effect-icon.chat-message{
 }
 .chat-message .chat-portrait-message-header-generic .flavor-text.chat-portrait-text-size-name-generic img{
 	position:absolute;
-	bottom:calc(-25px - 1em);
+	bottom:calc(-23px - 1em);
+	width:32px;
+	height:32px;
 }
 .chat-message .chat-portrait-flexrow~.item-piles-chat-card>.item-piles-chat-card-title>p:first-child{
 	margin-left:calc(40px);
+}
+
+/* Narrator Tools + DF Chat Combine Make Friends */
+/*------------------------------------------------------------------*/
+.chat-message.narrator-chat:not(.burble){
+	border-radius:5px;
+}
+.chat-message.narrator-chat:is(.dfce-cm-top,.dfce-cm-middle,.dfce-cm-bottom){
+	margin-bottom:3px;
+}
+.chat-message.narrator-chat:is(.dfce-cm-top,.dfce-cm-middle){
+	padding-bottom:5px;
+}
+.chat-message.narrator-chat:is(.dfce-cm-bottom,.dfce-cm-middle){
+	padding-top:5px;
+}
+.chat-message.narrator-chat:is(.narrator-description,.narrator-notification)+.narrator-narrative:is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat:is(.narrator-narrative,.narrator-notification)+.narrator-description:is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat:is(.narrator-description,.narrator-narrative)+.narrator-notification:is(.dfce-cm-middle,.dfce-cm-bottom){
+	margin-top:3px;
+}
+.chat-message.narrator-chat:is(.narrator-narrative+.narrator-narrative):is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat:is(.narrator-notification+.narrator-notification):is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat:is(.narrator-description+.narrator-description):is(.dfce-cm-middle,.dfce-cm-bottom){
+	margin-top:-10px;
+	padding-top:10px;
+}
+#chat-log .chat-message.narrator-chat.burble{
+    background:var(--gradient-4e);
+}
+#chat-log .chat-message.narrator-description.burble{
+    background:var(--gradient-4e-item);
+}
+#chat-log .chat-message.narrator-notification.burble{
+	background:#f3f3ed;
+}
+.chat-message.narrator-chat.burble{
+    margin:8px;
+	border-radius:0;
+}
+.chat-message.narrator-chat.burble .message-content{
+    background:unset;
+}
+.chat-message.narrator-chat.burble.narrator-notification .message-content{
+	color:#484a3d;
+}
+.chat-message.narrator-chat.burble:is(.narrator-description,.narrator-notification)+.narrator-narrative:is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat.burble:is(.narrator-narrative,.narrator-notification)+.narrator-description:is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat.burble:is(.narrator-description,.narrator-narrative)+.narrator-notification:is(.dfce-cm-middle,.dfce-cm-bottom){
+	margin-top:0.5em;
+}
+.chat-message.narrator-chat.burble:is(.narrator-narrative+.narrator-narrative):is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat.burble:is(.narrator-notification+.narrator-notification):is(.dfce-cm-middle,.dfce-cm-bottom),
+.chat-message.narrator-chat.burble:is(.narrator-description+.narrator-description):is(.dfce-cm-middle,.dfce-cm-bottom){
+	margin-top:-11;
+	padding-top:0;
 }

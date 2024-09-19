@@ -31,21 +31,29 @@ input[type='checkbox']:disabled{
 	cursor:disabled;
 }
 
-
-/* Making Chat Portrait play nicely with Item Piles. Yeesh! */
-
-.chat-message .chat-portrait-message-header-generic .flavor-text.chat-portrait-text-size-name-generic>.chat-portrait-image-size-name-generic{
-	border:unset;
-	position:absolute;
-	bottom:-3rem;
+/* Forms */
+.window-app{
+    --font-size-12:0.9rem;
 }
-.chat-message .chat-portrait-message-header-generic~.message-content .item-piles-chat-card-title>p:first-child::before{
-	width:42px;
-	height:42px;
-	content:'';
-	display:block;
-	float:left;
+.dnd4e.sheet .sheet-header .header-details{
+    font-family:'DragonBodySans';
+    font-size:1rem;
 }
-.chat-message .chat-portrait-message-header-generic~.message-content .item-piles-chat-card-title>p .fa-arrow-right{
-	margin-left:0;
+.sheet header.sheet-header h1 input,
+.dnd4e .sheet-header .charname input{
+    font-size:1.3rem;
+}
+.dnd4e.sheet.item .sheet-header .item-subtitle,
+.dnd4e.sheet.item .sheet-header .item-subtitle .item-type,
+.dnd4e.sheet.item .sheet-header .item-subtitle .item-status{
+    font-size:0.8rem;
+	text-transform:uppercase;
+}
+.dnd4e.sheet .sheet-navigation{
+    font-family:'DragonBodySans';
+    font-size:0.75rem;
+	text-transform:uppercase;
+}
+.dnd4e.sheet.item .sheet-navigation .item{
+    font-size:0.75rem;
 }
