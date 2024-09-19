@@ -72,7 +72,7 @@ Styles chat messages, in particular item cards, to match the core 4e books.
 ### Token Action HUD Styling
 Enhances 4e styling for [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core) (requires [Drac's Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
 
-<a href="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9"><img src="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9" height=300></a>
+<a href="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9"><img src="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9" height=300 style="height:auto;width:100%;max-width:830px"></a>
 * If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
 * Tooltips with item cards will are styled similarly to chat cards. Unfortunately card styling is more generic than for chat, as there is less information available about what type of card is being displayed (for example, equipment and NPC powers lose their unique colour schemes).
 * Turn it on/off from the module settings.
@@ -87,7 +87,7 @@ Adds 4e styling for [Visual Active Effects](https://foundryvtt.com/packages/visu
 ### Extra chat styling
 Extra chat styles have been moved into a new system-agnostic module, [Burble](https://github.com/FoxLee/Burble)!
 
-<a href="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85"><img src="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85" height=300></a>
+<a href="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85"><img src="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85" height=300 style="height:auto;width:100%;max-width:830px"></a>
 
 In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF Chat Enhancement's combined messages.
 
