@@ -21,10 +21,6 @@ export default class Fox4eNPCSheet extends ActorSheet4eNPC{
 	}
 }
 
-Actors.registerSheet("dnd4e", Fox4eNPCSheet, {
-	types: ["NPC"],
-	label: "Core book style"
-});
 
 /**
  * Define a set of template paths to pre-load
@@ -32,7 +28,6 @@ Actors.registerSheet("dnd4e", Fox4eNPCSheet, {
  * @return {Promise}
  */
 export const Fox_LoadHandlebarTemplates = async function() {
-	
 	// Define template paths to load
 	const templatePaths = [	
 	"modules/fox-4e-styling/templates/parts/npc-traits.html",
@@ -45,5 +40,9 @@ export const Fox_LoadHandlebarTemplates = async function() {
 };
 
 Hooks.once( "init", function() {
-  Fox_LoadHandlebarTemplates();
+	Fox_LoadHandlebarTemplates();
+	Actors.registerSheet("dnd4e", Fox4eNPCSheet, {
+		types: ["NPC"],
+		label: game.i18n.localize('Fox4e.defs.sheet.NPC')
+	});
 });
