@@ -2,9 +2,34 @@
 /*--General Stuff and Resets --*/
 :root{
 	--font-journal-body:'DragonBodySerif';
+}
+.sheet.journal-sheet{
 	--background-page:#fff;
-	--colour-text-link:#12588f;
-	--colour-text-heading:#193d5e;
+	--color-text-hyperlink:#193d5e;
+	--colour-text-h1:#193d5e;
+	--colour-text-h2:#193d5e;
+	--colour-text-h3:#193d5e;
+	--colour-text-hetc:#193d5e;
+	--colour-banner-bg:#193d5e;
+	--gradient-4e:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+		--gradient-4e:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+		--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+.sheet.journal-sheet.fox4e.gm-book{
+	--color-text-hyperlink:#7f525b;
+	--colour-text-h1:#7f525b;
+	--colour-text-h2:#5b1f34;
+	--colour-text-h3:#5b1f34;
+	--colour-text-hetc:#7f525b;
+	--colour-banner-bg:#5d1232;
+}
+.sheet.journal-sheet.fox4e.monster-book{
+	--color-text-hyperlink:#777d57;
+	--colour-text-h1:#70764e;
+	--colour-text-h2:#4d5b2d;
+	--colour-text-h3:#4d5b2d;
+	--colour-text-hetc:#777d57;
+	--colour-banner-bg:#4d5b2d;
 }
 .journal-page-content,
 .editor-content[data-engine="prosemirror"],
@@ -19,16 +44,16 @@
 	margin:0;
 	padding:0 1em;
 }
-.journal-page-header+.journal-page-content{
+.journal-page-header+.journal-entry-page{
 	padding-top:0;
 }
-.sheet.journal-entry .journal-entry-page + .journal-entry-page{
+.sheet.journal-entry .journal-entry-page+.journal-entry-page{
 	margin-top:0;
 }
 .sheet.journal-entry .journal-entry-pages>.journal-entry-page:not(:last-child){
 	padding-bottom:0;
 }
-.sheet.journal-entry .journal-entry-content,
+.sheet.journal-sheet .journal-entry-content,
 .editor.prosemirror,
 .editor-content[data-engine="prosemirror"],
 .editor-enriched{
@@ -43,73 +68,38 @@
 .sheet.journal-entry .scrollable::-webkit-scrollbar-track{
 	background:rgba(0,0,0,0.06);
 }
-.journal-page-content table thead tr:nth-child(even),
-.editor-content[data-engine="prosemirror"] table thead tr:nth-child(even),
-.editor-enriched table thead tr:nth-child(even){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table thead tr:nth-child(even){
 	background:none;
 }
-.journal-page-content p,
-.journal-page-content ol,
-.journal-page-content ul,
-.journal-page-content figure figcaption,
-.editor-content[data-engine="prosemirror"] p,
-.editor-content[data-engine="prosemirror"] ol,
-.editor-content[data-engine="prosemirror"] ul,
-.editor-content[data-engine="prosemirror"] figure figcaption,
-.editor-enriched p,
-.editor-enriched ol,
-.editor-enriched ul,
-.editor-enriched figure figcaption{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(p,ol,ul,figure figcaption){
 	line-height:1.1;
 	font-size:1rem;
 }
-.journal-page-content table tbody,
-.editor-content[data-engine="prosemirror"] table tbody,
-.editor-enriched table tbody{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody{
 	color:#000;
+    border-bottom:unset;
 }
-.journal-page-content table tbody tr:nth-child(2n+1),
-.editor-content[data-engine="prosemirror"] table tbody tr:nth-child(2n+1),
-.editor-enriched table tbody tr:nth-child(2n+1){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(2n+1){
 	background:unset;
 }
-.journal-entry-page figure figcaption,
-.editor-content[data-engine="prosemirror"] figure figcaption,
-.editor-enriched figure figcaption{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) figure figcaption{
 	font-weight:normal;
 	font-style:italic;
 }
-.journal-page-content a.content-link,
-.journal-page-content a.inline-roll,
-.editor-content[data-engine="prosemirror"] a.content-link,
-.editor-content[data-engine="prosemirror"] a.inline-roll,
-.editor-enriched a.content-link,
-.editor-enriched a.inline-roll{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) a:is(.content-link,.inline-roll){
 	background:none;
 	border:none;
 	text-decoration:underline;
 	padding:0;
 	white-space:break-spaces;
 	word-break:inherit;
-	color:var(--colour-text-link);
+	color:var(--color-text-hyperlink);
 }
-.journal-page-content a.content-link i,
-.journal-page-content a.inline-roll i,
-.editor-content[data-engine="prosemirror"] a.content-link i,
-.editor-content[data-engine="prosemirror"] a.inline-roll i,
-.editor-enriched a.content-link i,
-.editor-enriched a.inline-roll i{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) a:is(.content-link,.inline-roll) i{
 	margin-right:0;
+	font-size:0.75em;
 }
-.journal-page-content .fa-file-alt::before,
-.journal-page-content .fa-file-lines::before,
-.journal-page-content .fa-file-text::before,
-.editor-content[data-engine="prosemirror"] .fa-file-alt::before,
-.editor-content[data-engine="prosemirror"] .fa-file-lines::before,
-.editor-content[data-engine="prosemirror"] .fa-file-text::before,
-.editor-enriched .fa-file-alt::before,
-.editor-enriched .fa-file-lines::before,
-.editor-enriched .fa-file-text::before{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(.fa-file-alt,.fa-file-lines,.fa-file-text)::before{
 	content:unset;
 }
 
@@ -121,153 +111,103 @@
 	-webkit-box-flex:0;
 	    -ms-flex:none;
 	        flex:none;
-	margin:1rem 1rem 0 -1px;
+	margin:1rem 0.4rem 0 -1px;
 }
-.sheet.journal-entry .journal-header .title,
-.editable .journal-header .title,
-.editor-enriched .journal-header .title{
+.sheet.journal-sheet .window-content input[type="text"].title,
+.sheet.fox4e .window-content input[type="text"].title,
+.sheet.journal-page-content .title{
 	font-family:DragonTitle;
-	background-color:#193d5e;
+    font-size:2.8rem;
+	background-color:var(--colour-banner-bg);
 	color:#fff;
-	padding:0.4em 0.8em;
+	padding:0.8rem 1.2rem;
 	font-variant:normal;
 	font-weight:bold;
 	font-variant:small-caps;
-	margin-bottom:0.4em;
 	border-radius:0 20px 0 0;
 	border:2px solid #c2ae41;
 	border-left:none;
 	margin-top:0;
+    line-height:1;
+    height:auto;
+    text-align:left;
 }
-.journal-page-content h2,
-.journal-page-content h3,
-.journal-page-content h4,
-.journal-page-content h5,
-.journal-page-content h6,
-.editor-content[data-engine="prosemirror"] h2,
-.editor-content[data-engine="prosemirror"] h3,
-.editor-content[data-engine="prosemirror"] h4,
-.editor-content[data-engine="prosemirror"] h5,
-.editor-content[data-engine="prosemirror"] h6,
-.journal-page-header h1,
-.journal-page-header h2,
-.journal-page-header h3,
-.editor-enriched h2,
-.editor-enriched h3,
-.editor-enriched h4,
-.editor-enriched h5,
-.editor-enriched h6{
-	color:var(--colour-text-heading);
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) :is(h1,h2,h3,h4,h5,h6):is(:not(:first-child),:first-child){
+	color:var(--colour-text-hetc);
 	font-family:'DragonHead';
+	line-height:1;
 }
-.journal-page-content h1,
-.editor-content[data-engine="prosemirror"] h1,
-.editor-enriched h1{
-	color:var(--colour-text-heading);
-	font-family:DragonTitle;
-	font-size:2.7em;
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h1:is(:not(:first-child),:first-child){
+	color:var(--colour-text-h1);
+	font-size:3.5em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:500;
+	margin:1rem 0 0.5rem;
+}
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h2:is(:not(:first-child),:first-child){
+	color:var(--colour-text-h2);
+	font-size:2.6em;
+	font-variant:small-caps;
 	border-bottom:none;
 	font-weight:bold;
 	margin:1rem 0 0.5rem;
-	font-variant:small-caps;
 }
-.journal-page-header h1{
-	font-family:DragonTitle;
-	font-size:2.7em;
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h3:is(:not(:first-child),:first-child){
+	color:var(--colour-text-h3);
+	font-size:2.2em;
 	border-bottom:none;
-	font-weight:bold;
-	margin:0 0.5rem 0 0.5rem;
-	font-variant:small-caps;
+	margin:1rem 0 0.5rem;
 }
-.journal-page-content h2,
-.editor-content[data-engine="prosemirror"] h2,
-.editor-enriched h2{
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h4:is(:not(:first-child),:first-child){
 	font-size:2em;
-	font-variant:small-caps;
-	border-bottom:none;
-	font-weight:600;
 	margin:1rem 0 0.5rem;
+	font-style:normal;
 }
-.journal-page-header h2{
-	font-size:2em;
-	font-variant:small-caps;
-	border-bottom:none;
-	font-weight:600;
-	margin:1rem 0 0.5rem;
-	border-bottom:none;
-}
-.journal-page-content h3,
-.editor-content[data-engine="prosemirror"] h3,
-.editor-enriched h3{
-	font-size:1.8em;
-	font-variant:small-caps;
-	border-bottom:none;
-	font-weight:600;
-	margin:1rem 0 0.5rem;
-}
-.journal-page-header h3{
-	font-size:1.8em;
-	font-variant:small-caps;
-	border-bottom:none;
-	font-weight:600;
-	margin:1rem 0 0.5rem;
-	border-bottom:none;
-}
-.journal-page-content h4,
-.editor-content[data-engine="prosemirror"] h4,
-.editor-enriched h4{
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h5:is(:not(:first-child),:first-child){
 	font-size:1.7em;
+	font-weight:500;
 	margin:1rem 0 0.5rem;
-	font-weight:400;
 }
-.journal-page-content h5,
-.editor-content[data-engine="prosemirror"] h5,
-.editor-enriched h5{
-	font-size:1.5em;
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h6:is(:not(:first-child),:first-child){
+	font-size:1.4em;
 	margin:1rem 0 0.5rem;
-	font-weight:400;
 }
-.journal-page-content h6,
-.editor-content[data-engine="prosemirror"] h6,
-.editor-enriched h6{
-	font-size:1.35em;
-	margin:1rem 0 0.5rem;
-	font-weight:400;
-}
-.journal-page-content h1+p::first-letter{
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h1+p::first-letter{
     float:none;
     font-family:inherit;
     font-size:inherit;
     color:inherit;
     line-height:inherit;
 }
-.journal-page-content .first-words{
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) .first-words{
     font-family:DragonTitle;
     font-size:1.5em;
     font-weight:bold;
 }
-.journal-page-content .flavour,
-.editor-content[data-engine="prosemirror"] .flavour,
-.editor-enriched .flavour{
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) .flavour{
+	background:var(--gradient-4e);
 	font-family:'DragonbodySans';
 	font-style:italic;
 	color:#000;
 }
+.sheet.journal-sheet .journal-entry-page .journal-page-header{
+	margin:1rem 0.8rem 0 0.8rem;
+}
+.sheet.journal-sheet .journal-entry-page .journal-page-header h1{
+	margin:0;
+}
+.sheet.journal-sheet .journal-entry-page .journal-page-header+.journal-page-content{
+	padding-top:0.2rem;
+}
 
 /*-----------*/
 /*-- Lists --*/
-.journal-page-content ul,
-.editor-content[data-engine="prosemirror"] ul,
-.editor-enriched ul{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) ul{
   list-style:none outside;
   position:relative;
 }
-.journal-page-content ul li::before,
-.editor-content[data-engine="prosemirror"] ul li::before,
-.editor-enriched ul li::before{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) ul li::before{
   display:block;
   margin-left:-1.3em;
   margin-right:0.4em;
@@ -275,39 +215,26 @@
   content:'\2726';
   position:absolute;
 }
-.journal-page-content ul li,
-.editor-content[data-engine="prosemirror"] ul li,
-.editor-enriched ul li,
-.journal-page-content ol li,
-.editor-content[data-engine="prosemirror"] ol li,
-.editor-enriched ol li{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(ul,ol) li{
     margin-bottom:0.5em;
 }
 
 /*------------*/
 /*-- Asides --*/
-.journal-page-content .aside,
-.editor-content[data-engine="prosemirror"] .aside,
-.editor-enriched .aside{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .aside{
 	background-color:#e8e5d4;
 	padding:1.5em 2em;
 	margin-bottom:1em;
 }
-.journal-page-content .aside h2,
-.editor-content[data-engine="prosemirror"] .aside h2,
-.editor-enriched .aside h2{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .aside h2{
 	font-family:DragonTitle;
 	font-weight:bold;
 }
 
 /*------------------*/
 /*-- Rules Blocks --*/
-.journal-page-content .rules-block,
-.editor-content[data-engine="prosemirror"] .rules-block,
-.editor-enriched .rules-block{
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block{
+	backgorund:var(--gradient-4e);
 	padding:0.8em 1.2em;
 	margin-bottom:1em;
 	font-family:'DragonbodySans';
@@ -315,116 +242,65 @@
 	font-weight:300;
 	color:#000;
 }
-.journal-page-content .rules-block p+p,
-.journal-page-content .rules-block ul+p,
-.journal-page-content .rules-block ol+p,
-.editor-content[data-engine="prosemirror"] .rules-block p+p,
-.editor-content[data-engine="prosemirror"] .rules-block ul+p,
-.editor-content[data-engine="prosemirror"] .rules-block ol+p,
-.editor-enriched .rules-block p+p,
-.editor-enriched .rules-block ul+p,
-.editor-enriched .rules-block ol+p{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block :is(p,ul,ol)+p{
     text-indent:0;
 }
-.journal-page-content .rules-block h1,
-.journal-page-content .rules-block h2,
-.journal-page-content .rules-block h3,
-.journal-page-content .rules-block h4,
-.journal-page-content .rules-block h5,
-.journal-page-content .rules-block h6,
-.editor-content[data-engine="prosemirror"] .rules-block h1,
-.editor-content[data-engine="prosemirror"] .rules-block h2,
-.editor-content[data-engine="prosemirror"] .rules-block h3,
-.editor-content[data-engine="prosemirror"] .rules-block h4,
-.editor-content[data-engine="prosemirror"] .rules-block h5,
-.editor-content[data-engine="prosemirror"] .rules-block h6,
-.editor-enriched .rules-block h1,
-.editor-enriched .rules-block h2,
-.editor-enriched .rules-block h3,
-.editor-enriched .rules-block h4,
-.editor-enriched .rules-block h5,
-.editor-enriched .rules-block h6{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block :is(h1,h2,h3,h4,h5,h6){
 	font-family:'DragonBodySans';
 	color:#000;
 	text-transform:uppercase;
 	font-variant:unset;
 	font-weight:bold;
 }
-.journal-page-content .rules-block h2,
-.editor-content[data-engine="prosemirror"] .rules-block h2,
-.editor-enriched .rules-block h2{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h2{
     font-size:1.2em;
 }
-.journal-page-content .rules-block h3,
-.editor-content[data-engine="prosemirror"] .rules-block h3,
-.editor-enriched .rules-block h3{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h3{
     font-size:1.2em;
 }
-.journal-page-content .rules-block h4,
-.editor-content[data-engine="prosemirror"] .rules-block h4,
-.editor-enriched .rules-block h4{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h4{
     font-size:1.1em;
 }
-.journal-page-content .rules-block h5,
-.editor-content[data-engine="prosemirror"] .rules-block h5,
-.editor-enriched .rules-block h5{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h5{
     font-size:1.1em;
 }
-.journal-page-content .rules-block h6,
-.editor-content[data-engine="prosemirror"] .rules-block h6,
-.editor-enriched .rules-block h6{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h6{
     font-size:1em;
 }
-.journal-page-content .rules-block.traits ul,
-.editor-content[data-engine="prosemirror"] .rules-block.traits ul,
-.editor-enriched .rules-block.traits ul{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul{
     font-size:1em;
     list-style-type:none outside;
     padding-left:0;
 }
-.journal-page-content .rules-block.traits ul li::before,
-.editor-content[data-engine="prosemirror"] .rules-block.traits ul li::before,
-.editor-enriched .rules-block.traits ul li::before{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul li::before{
     content:unset;
 }
-.journal-page-content .rules-block.traits ul li,
-.editor-content[data-engine="prosemirror"] .rules-block.traits ul li,
-.editor-enriched .rules-block.traits ul li{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul li{
     padding-left:1em;
     text-indent:-1em;
     margin-bottom:0;
 }
-.journal-page-content .rules-block.traits ul li p,
-.editor-content[data-engine="prosemirror"] .rules-block.traits ul li p,
-.editor-enriched .rules-block.traits ul li p{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul li p{
     margin-top:0;
     margin-bottom:0.2em;
 }
 
 /*-----------------*/
 /*---- Rituals ----*/
-.journal-page-content div.ritual,
-.editor-content[data-engine="prosemirror"] div.ritual,
-.editor-enriched div.ritual{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual{
 	font-family:'DragonbodySans';
 	max-width:500px;
 	font-weight:300;
 }
-.journal-page-content div.ritual h1,
-.editor-content[data-engine="prosemirror"] div.ritual h1,
-.editor-enriched div.ritual h1{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual h1{
 	font-family:'Dragonhead';
 	font-size:1.8em;
 }
-.journal-page-content div.ritual .flavour,
-.editor-content[data-engine="prosemirror"] div.ritual .flavour,
-.editor-enriched div.ritual .flavour{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual .flavour{
 	font-style:oblique;
 	background:unset;
 }
-.journal-page-content div.ritual>.basics,
-.editor-content[data-engine="prosemirror"] div.ritual>.basics,
-.editor-enriched div.ritual>.basics{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual>.basics{
 	display:-webkit-box;
 	display:-ms-flexbox;
 	display:flex;
@@ -432,40 +308,28 @@
 	    -ms-flex-pack:justify;
 	        justify-content:space-between;
 }
-.journal-page-content div.ritual>.basics>*,
-.editor-content[data-engine="prosemirror"] div.ritual>.basics>*,
-.editor-enriched div.ritual>.basics>*{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual>.basics>*{
 	-ms-flex-preferred-size:48%;
 	    flex-basis:48%;
 }
-.journal-page-content .ritual .basics ul,
-.editor-content[data-engine="prosemirror"] .ritual .basics ul,
-.editor-enriched .ritual .basics ul{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics ul{
   position:static;
   padding-left:0;
 }
-.journal-page-content .ritual .basics ul li::before,
-.editor-content[data-engine="prosemirror"] .ritual .basics ul li::before,
-.editor-enriched .ritual .basics ul li::before{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics ul li::before{
   content:unset;
 }
-.journal-page-content .ritual .basics ul li,
-.editor-content[data-engine="prosemirror"] .ritual .basics ul li,
-.editor-enriched .ritual .basics ul li{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics ul li{
     margin-bottom:0;
 }
-.journal-page-content .ritual table,
-.editor-content[data-engine="prosemirror"] .ritual table,
-.editor-enriched .ritual table{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual table{
 	font-weight:400;
 }
 
 
 /*----------------*/
 /*---- Tables ----*/
-.journal-page-content table,
-.editor-content[data-engine="prosemirror"] table,
-.editor-enriched table{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table{
 	font-family:'DragonbodySans';
 	font-size:1rem;
 	border-collapse:collapse;
@@ -474,259 +338,151 @@
 	margin-bottom:1rem;
 	table-layout:auto;
 }
-.journal-page-content table thead,
-.editor-content[data-engine="prosemirror"] table thead,
-.editor-enriched table thead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table thead{
 	border-bottom:0;
 	text-shadow:unset;
 	text-align:left;
 	color:#fff;
 }
-.journal-page-content table th,
-.journal-page-content table td,
-.editor-content[data-engine="prosemirror"] th,
-.editor-content[data-engine="prosemirror"] td,
-.editor-enriched th,
-.editor-enriched td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table :is(th,td){
 	padding:0.25em 0.6em;
 }
-.journal-page-content table tr.subhead,
-.editor-content[data-engine="prosemirror"] table tr.subhead,
-.editor-enriched table tr.subhead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.subhead{
 	color:#fff;
 }
-.journal-page-content table tr.flavour,
-.editor-content[data-engine="prosemirror"] table tr.flavour,
-.editor-enriched table tr.flavour{
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.flavour{
+	backgorund:var(--gradient-4e);
 	font-style:oblique;
 }
-.journal-page-content table tbody tr:nth-child(odd),
-.editor-content[data-engine="prosemirror"] table tbody tr:nth-child(odd),
-.editor-enriched table tbody tr:nth-child(odd){
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(odd){
+	backgorund:var(--gradient-4e);
 }
-.journal-page-content table tbody tr:nth-child(even),
-.editor-content[data-engine="prosemirror"] table tbody tr:nth-child(even),
-.editor-enriched table tbody tr:nth-child(even){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(even){
 	background:#fff;
 }
-.journal-page-content table tr,
-.journal-page-content table td,
-.editor-content[data-engine="prosemirror"] table tr,
-.editor-content[data-engine="prosemirror"] table td,
-.editor-enriched table tr,
-.editor-enriched table td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table :is(tr,td){
 	border:0;
 }
-.journal-page-content table tfoot,
-.editor-content[data-engine="prosemirror"] table tfoot,
-.editor-enriched table tfoot{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tfoot{
 	font-size:0.8rem;
 }
-.journal-page-content table tfoot tr td,
-.editor-content[data-engine="prosemirror"] table tfoot tr td,
-.editor-enriched table tfoot tr td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tfoot tr td{
 	padding-left:4px;
 	padding-right:4px;
 }
-.journal-page-content table tbody tr.has-rider td,
-.editor-content[data-engine="prosemirror"] table tbody tr.has-rider td,
-.editor-enriched table tbody tr.has-rider td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr.has-rider td{
 	padding-bottom:0;
 }
-.journal-page-content table tr.rider td,
-.editor-content[data-engine="prosemirror"] table tr.rider td,
-.editor-enriched table tr.rider td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.rider td{
 	padding-top:0;
 }
-.journal-page-content table tr.rider:not(.final) td,
-.editor-content[data-engine="prosemirror"] table tr.rider:not(.final) td,
-.editor-enriched table tr.rider:not(.final) td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.rider:not(.final) td{
 	padding-bottom:0;
 }
-.journal-page-content table tr.rider td:first-child,
-.editor-content[data-engine="prosemirror"] table tr.rider td:first-child,
-.editor-enriched table tr.rider td:first-child{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.rider td:first-child{
 	padding-left:1.5em;
 }
-.journal-page-content table tbody tr.white,
-.editor-content[data-engine="prosemirror"] table tbody tr.white,
-.editor-enriched table tbody tr.white{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr.white{
 	background:#fff;
 }
 
 
 /*-------------------------*/
 /*-- Generic Alternating --*/
-.journal-page-content table:not(.power,.item,.hazard,.monster),
-.editor-content[data-engine="prosemirror"] table:not(.power,.item,.hazard,.monster),
-.editor-enriched table:not(.power,.item,.hazard,.monster){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster){
 	border-collapse:collapse;
 	border:none;
 }
-.journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr,
-.editor-content[data-engine="prosemirror"] table:not(.power,.item,.hazard,.monster) tbody tr,
-.editor-enriched table:not(.power,.item,.hazard,.monster) tbody tr{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) tbody tr{
 	border-bottom:2px solid rgba(255,255,255,0);
 	position:relative;
 }
-.journal-page-content table:not(.power,.item,.hazard,.monster) thead,
-.editor-content[data-engine="prosemirror"] table:not(.power,.item,.hazard,.monster) thead,
-.editor-enriched table:not(.power,.item,.hazard,.monster) thead{
-	background:#193d5e;
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) thead{
+	background:var(--colour-banner-bg);
 }
-.journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd),
-.editor-content[data-engine="prosemirror"] table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd),
-.editor-enriched table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd){
 	background:#d3d1ba;
 }
-.journal-page-content table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even),
-.editor-content[data-engine="prosemirror"] table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even),
-.editor-enriched table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even){
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even){
+	background:var(--gradient-4e);
 }
 
 /*-------------------------*/
 /*--------- Item ----------*/
-.journal-page-content table.item,
-.editor-content[data-engine="prosemirror"] table.item,
-.editor-enriched table.item{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item{
 	border-collapse:collapse;
 	border:none;
 	max-width:500px;
 }
-.journal-page-content table.item thead,
-.journal-page-content table.item tr.subhead,
-.editor-content[data-engine="prosemirror"] table.item thead,
-.editor-content[data-engine="prosemirror"] table.item tr.subhead,
-.editor-enriched table.item thead,
-.editor-enriched table.item tr.subhead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(thead,tr.subhead){
 	background:#d9951c;
 }
-.journal-page-content table.item thead tr:first-child th:first-child,
-.editor-content[data-engine="prosemirror"] table.item thead tr:first-child th:first-child,
-.editor-enriched table.item thead tr:first-child th:first-child{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item thead tr:first-child th:first-child{
 	font-size:1.2rem;
 }
-.journal-page-content table.item thead td:not(:first-child),
-.journal-page-content table.item tr.subhead td:not(:first-child),
-.editor-content[data-engine="prosemirror"] table.item thead td:not(:first-child),
-.editor-content[data-engine="prosemirror"] table.item tr.subhead td:not(:first-child),
-.editor-enriched table.item thead td:not(:first-child),
-.editor-enriched table.item tr.subhead td:not(:first-child){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(thead,tr.subhead) td:not(:first-child){
 	text-align:right;
 }
-.journal-page-content table.item tr.pricing,
-.journal-page-content table.item tr.detail,
-.editor-content[data-engine="prosemirror"] table.item tr.pricing,
-.editor-content[data-engine="prosemirror"] table.item tr.detail,
-.editor-enriched table.item tr.pricing,
-.editor-enriched table.item tr.detail{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item tr:is(.pricing,.detail){
 	background:#fff;
 }
-.journal-page-content table.item tr.pricing~tr.pricing td,
-.journal-page-content table.item tr.detail~tr.detail td,
-.editor-content[data-engine="prosemirror"] table.item tr.pricing~tr.pricing td,
-.editor-content[data-engine="prosemirror"] table.item tr.detail~tr.detail td,
-.editor-enriched table.item tr.pricing~tr.pricing td,
-.editor-enriched table.item tr.detail~tr.detail td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(tr.pricing~tr.pricing,tr.detail~tr.detail) td{
 	padding-top:0;
 }
 
 /*-------------------------*/
 /*-------- Powers ---------*/
-.journal-page-content table.power,
-.editor-content[data-engine="prosemirror"] table.power,
-.editor-enriched table.power{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power{
 	border-collapse:collapse;
 	border:none;
 	max-width:500px;
 }
-.journal-page-content table.power.atwill thead,
-.editor-content[data-engine="prosemirror"] table.power.atwill thead,
-.editor-enriched table.power.atwill thead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.atwill thead{
 	background:#619769;
 }
-.journal-page-content table.power.encounter thead,
-.editor-content[data-engine="prosemirror"] table.power.encounter thead,
-.editor-enriched table.power.encounter thead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.encounter thead{
 	background:#961334;
 }
-.journal-page-content table.power.daily thead,
-.editor-content[data-engine="prosemirror"] table.power.daily thead,
-.editor-enriched table.power.daily thead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.daily thead{
 	background:#4d4d4f;
 }
-.journal-page-content table.power.item thead,
-.editor-content[data-engine="prosemirror"] table.power.item thead,
-.editor-enriched table.power.item thead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.item thead{
 	background:#d9951c;
 }
-.journal-page-content table.power.recharge thead,
-.editor-content[data-engine="prosemirror"] table.power.recharge thead,
-.editor-enriched table.power.recharge thead{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.recharge thead{
 	background:#193d5e;
 }
-.journal-page-content table.power.misc thead,
-.editor-content[data-engine="prosemirror"] table.power.misc thead,
-.editor-enriched table.power.misc thead{
+.:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.misc thead{
 	background:#9271a9;
 }
-.journal-page-content table.power thead th:nth-child(2),
-.editor-content[data-engine="prosemirror"] table.power thead th:nth-child(2),
-.editor-enriched table.power thead th:nth-child(2){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power thead th:nth-child(2){
 	font-size:0.85rem;
 	font-weight:normal;
 	text-align:right;
 }
-.journal-page-content table.power thead th:first-child,
-.editor-content[data-engine="prosemirror"] table.power thead th:first-child,
-.editor-enriched table.power thead th:first-child{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power thead th:first-child{
 	font-size:1.2rem;
 }
-.journal-page-content table.power tbody tr.basics,
-.editor-content[data-engine="prosemirror"] table.power tbody tr.basics,
-.editor-enriched table.power tbody tr.basics{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics{
 	background:#fff;
 }
-.journal-page-content table.power tbody tr.basics,
-.editor-content[data-engine="prosemirror"] table.power tbody tr.basics,
-.editor-enriched table.power tbody tr.basics{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics{
 	background:#fff;
 }
-.journal-page-content table.power tbody tr.basics:not(.final) td,
-.editor-content[data-engine="prosemirror"] table.power tbody tr.basics:not(.final) td,
-.editor-enriched table.power tbody tr.basics:not(.final) td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics:not(.final) td{
 	padding-bottom:0;
 }
-.journal-page-content table.power tbody tr.basics~tr.basics td,
-.editor-content[data-engine="prosemirror"] table.power tbody tr.basics~tr.basics td,
-.editor-enriched table.power tbody tr.basics~tr.basics td{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics~tr.basics td{
 	padding-top:0;
 }
-.journal-page-content table.power tbody tr:not(.basics,.white),
-.editor-content[data-engine="prosemirror"] table.power tbody tr:not(.basics,.white),
-.editor-enriched table.power tbody tr:not(.basics,.white){
-	background:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
-	background:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
-	background:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr:not(.basics,.white){
+	backgorund:var(--gradient-4e);
 }
-.journal-page-content table.power tbody tr.basics .sep,
-.editor-content[data-engine="prosemirror"] table.power tbody tr.basics .sep,
-.editor-enriched table.power tbody tr.basics .sep{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics .sep{
 	margin-left:0.4em;
 	margin-right:0.4em;
 }
-.journal-page-content table.power tbody tr.basics~tr.basics .sep,
-.editor-content[data-engine="prosemirror"] table.power tbody tr.basics~tr.basics .sep,
-.editor-enriched table.power tbody tr.basics~tr.basics .sep{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics~tr.basics .sep{
 	color:rgba(255,255,255,0);
 	display:inline-block;
 	width:1.5em;
@@ -735,20 +491,14 @@
 
 /*----------------*/
 /*-- Misc Other --*/
-.journal-page-content code,
-.editor-content[data-engine="prosemirror"] code,
-.editor-enriched code{
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) code{
 	white-space:pre-wrap;
 }
-.journal-page-content img:not(.no-margin),
-.editor-content[data-engine="prosemirror"] img:not(.no-margin),
-.editor-enriched img:not(.no-margin){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-margin){
 	margin-top:1rem;
 	margin-bottom:1rem;
 }
-.journal-page-content img:not(.no-border),
-.editor-content[data-engine="prosemirror"] img:not(.no-border),
-.editor-enriched img:not(.no-border){
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-border){
 	border:unset;
 }
 
