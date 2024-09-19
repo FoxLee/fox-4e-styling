@@ -50,7 +50,7 @@ Makes your Journals look just like official 4e books!
 ### Chat Styles
 Styles chat messages, in particular item cards, to match the core 4e books.
 
-<a href="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f"><img src="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f" height=300></a>
+<a href="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f"><img src="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f" height=300 style="height:auto;width:100%;max-width:830px"></a>
 * Turn it on/off in the module settings.
 * Add text to the automatic tooltips for calculated values on chat cards, so you can (for example) check which attributes they include. For instructions on usage see the included "Styling Manual" compendium.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
@@ -72,7 +72,7 @@ Styles chat messages, in particular item cards, to match the core 4e books.
 ### Token Action HUD Styling
 Enhances 4e styling for [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core) (requires [Drac's Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
 
-<a href="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9"><img src="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9" height=300 style="height:auto;width:100%;max-width:830px"></a>
+<a href="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9"><img src="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9" height=300></a>
 * If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
 * Tooltips with item cards will are styled similarly to chat cards. Unfortunately card styling is more generic than for chat, as there is less information available about what type of card is being displayed (for example, equipment and NPC powers lose their unique colour schemes).
 * Turn it on/off from the module settings.
