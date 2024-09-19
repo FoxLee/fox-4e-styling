@@ -50,7 +50,7 @@ Makes your Journals look just like official 4e books!
 ### Chat Styles
 Styles chat messages, in particular item cards, to match the core 4e books.
 
-<a href="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f"><img src="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f" height=300 style="height:auto;width:100%;max-width:830px"></a>
+<a href="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f"><img src="https://github.com/user-attachments/assets/8961e226-2b68-4cf9-893f-915b9c483a3f" height=217 style="height:auto;width:100%;max-width:830px"></a>
 * Turn it on/off in the module settings.
 * Add text to the automatic tooltips for calculated values on chat cards, so you can (for example) check which attributes they include. For instructions on usage see the included "Styling Manual" compendium.
 * Chat cards for "destinyFeats" sent by NPC actors are styled after monster stat blocks, as per the workaround in use on the NPC character sheet.
@@ -87,7 +87,7 @@ Adds 4e styling for [Visual Active Effects](https://foundryvtt.com/packages/visu
 ### Extra chat styling
 Extra chat styles have been moved into a new system-agnostic module, [Burble](https://github.com/FoxLee/Burble)!
 
-<a href="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85"><img src="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85" height=300 style="height:auto;width:100%;max-width:830px"></a>
+<a href="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85"><img src="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85" height=250 style="height:auto;width:100%;max-width:830px"></a>
 
 In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF Chat Enhancement's combined messages.
 
