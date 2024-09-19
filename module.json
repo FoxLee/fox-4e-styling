@@ -19,7 +19,7 @@
 			"name": "Gilphe"
 		}
 	],
-	"version": "1.0",
+	"version": "1.0.1",
 	"compatibility": {
 		"minimum": "11",
 		"verified": "11.315"
@@ -53,6 +53,7 @@
 	],
 	"esmodules": [
 		"4e-styling.js",
+		"journal-sheets.js",
 		"pc-sheet.js",
 		"npc-sheet.js"
 	],
