@@ -94,6 +94,7 @@ In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF C
   * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I'm in love.
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * Fix the new NPC sheet's power sorting method, for Token Action HUD. For now, load a layout preset from the "extras" folder.
+* Work out a way to separate journal styling from journal-like rich text areas in other sheets. Ideally I would like to have the journal styling based entirely on sheet sleection, and have rich text on other sheets be its own toggle. But at the moment I don't know how to make the pop-out journal editor aware of the selected sheet, which means I have to target the editor itself, which means all instances of the editor :\
 
 ## Installation
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
