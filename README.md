@@ -61,7 +61,7 @@ Styles chat messages, in particular item cards, to match the core 4e books.
   * They will probably look okay with some elements other than p or div too, but consider these "unsupported".
   * Alternatively, if you know what you're doing you can inspect the markup output for the auto-generated chat cards and copy the class names as required. This should work more or less seamlessly.
 * As of 1.0, Chat Styles incorporates the styles formerly called "Extra" that don't relate to the speech bubble effect.
-* Includes compatibility tweaks for: [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat), [Condition Lab & Triggler](https://foundryvtt.com/packages/condition-lab-triggler) and [Simply Portraits](https://foundryvtt.com/packages/simply-portraits). Feel free to request others if you want them—I'll do what I can!
+* Includes compatibility tweaks for: [Burble](https://github.com/FoxLee/Burble), [Chat Portrait](https://foundryvtt.com/packages/chat-portrait), [Narrator Tools](https://foundryvtt.com/packages/narrator-tools), [DragonFlagon Chat Enhancements](https://foundryvtt.com/packages/df-chat-enhance), [Active Effects to Chat](https://github.com/BadIdeasBureau/ae-to-chat), [Condition Lab & Triggler](https://foundryvtt.com/packages/condition-lab-triggler) and [Simply Portraits](https://foundryvtt.com/packages/simply-portraits). Feel free to request others if you want them—I'll do what I can!
 
 <a href="https://github.com/user-attachments/assets/0f8bf77b-8368-45aa-b71f-ad19757c803f"><img src="https://github.com/user-attachments/assets/0f8bf77b-8368-45aa-b71f-ad19757c803f" height=200></a>
 
@@ -94,7 +94,7 @@ In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF C
   * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I'm in love.
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * Fix the new NPC sheet's power sorting method, for Token Action HUD. For now, load a layout preset from the "extras" folder.
-* Work out a way to separate journal styling from journal-like rich text areas in other sheets. Ideally I would like to have the journal styling based entirely on sheet sleection, and have rich text on other sheets be its own toggle. But at the moment I don't know how to make the pop-out journal editor aware of the selected sheet, which means I have to target the editor itself, which means all instances of the editor :\
+* Work out a way to separate journal styling from journal-like rich text areas in other sheets. Ideally I would like to have the journal styling based entirely on sheet selection, and have rich text on other sheets be its own toggle. But at the moment I don't know how to make the pop-out journal editor aware of the selected sheet, which means I have to target the editor itself, which means all instances of the editor :\
 
 ## Installation
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
