@@ -1,34 +1,30 @@
-/*-----------------------------*/
-/*--General Stuff and Resets --*/
+/*------------------------------*/
+/*-- General Stuff and Resets --*/
 :root{
 	--font-journal-body:'DragonBodySerif';
 }
 .sheet.journal-sheet{
 	--background-page:#fff;
-	--color-text-hyperlink:#193d5e;
-	--colour-text-h1:#193d5e;
-	--colour-text-h2:#193d5e;
-	--colour-text-h3:#193d5e;
-	--colour-text-hetc:#193d5e;
-	--colour-banner-bg:#193d5e;
 	--gradient-4e:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 		--gradient-4e:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
 		--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	--colour-sidebar-bg:#f2f2ec;
+	--colour-sidebar-text:#48442e;
+	--colour-text-1:#163d5d;
+	--colour-text-2:#4c5b78;
+	--colour-text-3:#56627e;
+	--colour-banner-bg:#193d5e;
 }
 .sheet.journal-sheet.fox4e.gm-book{
-	--color-text-hyperlink:#7f525b;
-	--colour-text-h1:#7f525b;
-	--colour-text-h2:#5b1f34;
-	--colour-text-h3:#5b1f34;
-	--colour-text-hetc:#7f525b;
+	--colour-text-1:#5b1f34;
+	--colour-text-2:#7f525b;
+	--colour-text-3:#9c7a81;
 	--colour-banner-bg:#5d1232;
 }
 .sheet.journal-sheet.fox4e.monster-book{
-	--color-text-hyperlink:#777d57;
-	--colour-text-h1:#70764e;
-	--colour-text-h2:#4d5b2d;
-	--colour-text-h3:#4d5b2d;
-	--colour-text-hetc:#777d57;
+	--colour-text-1:#4d5b2d;
+	--colour-text-2:#70764e;
+	--colour-text-3:#777d57;
 	--colour-banner-bg:#4d5b2d;
 }
 .journal-page-content,
@@ -68,23 +64,21 @@
 .sheet.journal-entry .scrollable::-webkit-scrollbar-track{
 	background:rgba(0,0,0,0.06);
 }
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table thead tr:nth-child(even){
-	background:none;
-}
+
+/*-------------------*/
+/*-- Misc Elements --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(p,ol,ul,figure figcaption){
 	line-height:1.1;
 	font-size:1rem;
 }
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody{
-	color:#000;
-    border-bottom:unset;
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) p{
+	margin:0.1em 0;
 }
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(2n+1){
-	background:unset;
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) p:not(:first-child){
+	text-indent:1em;
 }
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) figure figcaption{
-	font-weight:normal;
-	font-style:italic;
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(h1,h2,h3,h4,h5,h6)+p:not(:first-child){
+	text-indent:0;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) a:is(.content-link,.inline-roll){
 	background:none;
@@ -93,7 +87,10 @@
 	padding:0;
 	white-space:break-spaces;
 	word-break:inherit;
-	color:var(--color-text-hyperlink);
+	color:var(--colour-text-3);
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) a[href]{
+	color:var(--colour-text-3);
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) a:is(.content-link,.inline-roll) i{
 	margin-right:0;
@@ -102,11 +99,37 @@
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(.fa-file-alt,.fa-file-lines,.fa-file-text)::before{
 	content:unset;
 }
-
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) figure figcaption{
+	font-weight:normal;
+	font-style:italic;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) blockquote{
+	font-size:2em;
+    margin:1em;
+	padding:0;
+    border-left:unset;
+	text-align:justify;
+	color:var(--colour-text-3);
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) blockquote p{
+	font-size:0.85em;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) blockquote em{
+	font-style:normal;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) code{
+	white-space:pre-wrap;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-margin){
+	margin-top:1rem;
+	margin-bottom:1rem;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-border){
+	border:unset;
+}
 
 /*-----------------------------*/
 /*-- Headings and Beginnings --*/
-
 .journal-sheet .journal-header{
 	-webkit-box-flex:0;
 	    -ms-flex:none;
@@ -133,12 +156,12 @@
     text-align:left;
 }
 :is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) :is(h1,h2,h3,h4,h5,h6):is(:not(:first-child),:first-child){
-	color:var(--colour-text-hetc);
+	color:var(--colour-text-3);
 	font-family:'DragonHead';
 	line-height:1;
 }
 :is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h1:is(:not(:first-child),:first-child){
-	color:var(--colour-text-h1);
+	color:var(--colour-text-2);
 	font-size:3.5em;
 	font-variant:small-caps;
 	border-bottom:none;
@@ -146,7 +169,7 @@
 	margin:1rem 0 0.5rem;
 }
 :is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h2:is(:not(:first-child),:first-child){
-	color:var(--colour-text-h2);
+	color:var(--colour-text-1);
 	font-size:2.6em;
 	font-variant:small-caps;
 	border-bottom:none;
@@ -154,7 +177,7 @@
 	margin:1rem 0 0.5rem;
 }
 :is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) h3:is(:not(:first-child),:first-child){
-	color:var(--colour-text-h3);
+	color:var(--colour-text-1);
 	font-size:2.2em;
 	border-bottom:none;
 	margin:1rem 0 0.5rem;
@@ -203,40 +226,32 @@
 
 /*-----------*/
 /*-- Lists --*/
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(ul,ol){
+	padding:0 0 0 2.4em;
+}
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) ul{
-  list-style:none outside;
-  position:relative;
+	list-style-type:none;
+	position:relative;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) ul li::before{
-  display:block;
-  margin-left:-1.3em;
-  margin-right:0.4em;
-  font-size:1em;
-  content:'\2726';
-  position:absolute;
+	display:block;
+	margin-left:-1.3em;
+	margin-right:0.4em;
+	font-size:1em;
+	content:'\2726';
+	position:absolute;
+	color:var(--colour-text-1);
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(ul,ol) li{
     margin-bottom:0.5em;
 }
 
-/*------------*/
-/*-- Asides --*/
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .aside{
-	background-color:#e8e5d4;
-	padding:1.5em 2em;
-	margin-bottom:1em;
-}
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .aside h2{
-	font-family:DragonTitle;
-	font-weight:bold;
-}
-
 /*------------------*/
 /*-- Rules Blocks --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block{
-	backgorund:var(--gradient-4e);
-	padding:0.8em 1.2em;
-	margin-bottom:1em;
+	background:var(--gradient-4e);
+	padding:1em 1.2em;
+	margin:1em 0;
 	font-family:'DragonbodySans';
 	max-width:500px;
 	font-weight:300;
@@ -251,6 +266,9 @@
 	text-transform:uppercase;
 	font-variant:unset;
 	font-weight:bold;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block>:is(h1,h2,h3,h4,h5,h6):first-child{
+	margin-top:0;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h2{
     font-size:1.2em;
@@ -285,8 +303,44 @@
     margin-bottom:0.2em;
 }
 
-/*-----------------*/
-/*---- Rituals ----*/
+/*--------------*/
+/*-- Sidebars --*/
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar{
+	background:var(--colour-sidebar-bg);
+	color:var(--colour-sidebar-text);
+	padding:1em 1.2em;
+	margin:1em auto;
+	font-family:'DragonbodySans';
+	font-weight:300;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar :is(h1,h2,h3,h4,h5,h6){
+	color:var(--colour-sidebar-text);
+	text-transform:uppercase;
+	font-variant:unset;
+	font-weight:500;
+	margin-bottom:0.5rem;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar>:is(h1,h2,h3,h4,h5,h6):first-child{
+	margin-top:0;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h2{
+    font-size:1.2em;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h3{
+    font-size:1.2em;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h4{
+    font-size:1.1em;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h5{
+    font-size:1.1em;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h6{
+    font-size:1em;
+}
+
+/*-------------*/
+/*-- Rituals --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual{
 	font-family:'DragonbodySans';
 	max-width:500px;
@@ -326,9 +380,8 @@
 	font-weight:400;
 }
 
-
-/*----------------*/
-/*---- Tables ----*/
+/*------------*/
+/*-- Tables --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table{
 	font-family:'DragonbodySans';
 	font-size:1rem;
@@ -344,6 +397,10 @@
 	text-align:left;
 	color:#fff;
 }
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody{
+	color:#000;
+    border-bottom:unset;
+}
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table :is(th,td){
 	padding:0.25em 0.6em;
 }
@@ -351,11 +408,17 @@
 	color:#fff;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.flavour{
-	backgorund:var(--gradient-4e);
+	background:var(--gradient-4e);
 	font-style:oblique;
 }
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table thead tr:nth-child(even){
+	background:none;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(2n+1){
+	background:unset;
+}
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(odd){
-	backgorund:var(--gradient-4e);
+	background:var(--gradient-4e);
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(even){
 	background:#fff;
@@ -386,9 +449,8 @@
 	background:#fff;
 }
 
-
-/*-------------------------*/
-/*-- Generic Alternating --*/
+/*----------------------*/
+/*-- Tables - Generic --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster){
 	border-collapse:collapse;
 	border:none;
@@ -407,12 +469,16 @@
 	background:var(--gradient-4e);
 }
 
-/*-------------------------*/
-/*--------- Item ----------*/
+/*--------------------*/
+/*-- Tables - Items --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item{
 	border-collapse:collapse;
 	border:none;
 	max-width:500px;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(th,td){
+	line-height:1;
+    padding:0.2em 0.4em;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(thead,tr.subhead){
 	background:#d9951c;
@@ -430,12 +496,16 @@
 	padding-top:0;
 }
 
-/*-------------------------*/
-/*-------- Powers ---------*/
+/*---------------------*/
+/*-- Tables - Powers --*/
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power{
 	border-collapse:collapse;
 	border:none;
 	max-width:500px;
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power :is(th,td){
+	line-height:1;
+    padding:0.2em 0.4em;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.atwill thead{
 	background:#619769;
@@ -476,7 +546,7 @@
 	padding-top:0;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr:not(.basics,.white){
-	backgorund:var(--gradient-4e);
+	background:var(--gradient-4e);
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics .sep{
 	margin-left:0.4em;
@@ -488,22 +558,13 @@
 	width:1.5em;
 }
 
-
 /*----------------*/
-/*-- Misc Other --*/
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) code{
-	white-space:pre-wrap;
-}
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-margin){
-	margin-top:1rem;
-	margin-bottom:1rem;
-}
-:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-border){
-	border:unset;
+/*-- Rituals --*/
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics+p{
+	text-indent:0;
 }
 
-
-/*----------------*/
+/*-------------------------------*/
 /*-- Third-party compatibility --*/
 form.item-piles-flexcol{
 	height:100%;
