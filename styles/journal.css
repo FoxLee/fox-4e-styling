@@ -15,6 +15,12 @@
 	--colour-text-3:#56627e;
 	--colour-banner-bg:#193d5e;
 }
+.sheet.journal-sheet.fox4e.player-book{
+	--colour-text-1:#163d5d;
+	--colour-text-2:#4c5b78;
+	--colour-text-3:#56627e;
+	--colour-banner-bg:#193d5e;
+}
 .sheet.journal-sheet.fox4e.gm-book{
 	--colour-text-1:#5b1f34;
 	--colour-text-2:#7f525b;

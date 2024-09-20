@@ -1,0 +1,38 @@
+
+.sheet.journal-sheet{
+	--background-page:#49494b;
+	--colour-text-1:#bbc6d7;
+	--colour-text-2:#a6afc7;
+	--colour-text-3:#8e97b2;
+	--colour-sidebar-bg:#3b3a35;
+	--colour-sidebar-text:var(--color-text-light-primary);
+}
+.sheet.journal-sheet.fox4e.player-book{
+	--colour-text-1:#bbc6d7;
+	--colour-text-2:#a6afc7;
+	--colour-text-3:#8e97b2;
+}
+.sheet.journal-sheet.fox4e.gm-book{
+	--colour-text-1:#c5b7ba;
+	--colour-text-2:#ba9da3;
+	--colour-text-3:#a77d8c;
+}
+.sheet.journal-sheet.fox4e.monster-book{
+	--colour-text-1:#ccccab;
+	--colour-text-2:#b7b58a;
+	--colour-text-3:#a3a575;
+}
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) :is(h1,h2,h3,h4,h5,h6){
+    text-shadow:1px 2px 3px rgba(0,0,0,0.5);
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block{
+	color:var(--color-text-light-primary);
+    background:linear-gradient(270deg, #4a4a49 0%, #3b3a35 100%);
+}
+:is(.journal-page-content,.journal-page-header,.editor-enriched,.editor-content[data-engine="prosemirror"]) .ritual .flavour{
+	color:var(--color-text-light-primary);
+}
+:is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) :is(.rules-block,.sidebar) :is(h1,h2,h3,h4,h5,h6){
+	text-shadow:unset;
+	color:var(--color-text-light-primary);
+}
