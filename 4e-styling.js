@@ -74,6 +74,14 @@ export default class Fox4eStyles{
 				link.href = './modules/fox-4e-styling/styles/chat-dark.css';
 				head.appendChild(link);
 			}
+			
+			if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.JOURNAL_STYLES)){
+				var link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = './modules/fox-4e-styling/styles/journal-dark.css';
+				head.appendChild(link);
+			}
 		}
 		
 	}
