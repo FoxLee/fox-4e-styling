@@ -29,7 +29,7 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 * Auto-generated MM3 style power summary. No need to write your own summary, add extra info to headers or target lines, or any of that stuff. Just get the data right, and your summary should look perfect!
 
 **Tips for Use**
-* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a light-coloured SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—oher files will be unchanged.
+* Power icons are not included because of dubious legality; the icon displayed is the image you set for the power. But if you use a light-coloured SVG for the power icon (recommended because it looks better on the chat card), it will turn black in the sheet summary. This only works for SVG files—other files will be unchanged.
 * Skills entry on the Main tab lists any skill which has a "base" value set, has any bonuses active, or has a total bonus higher than the corresponding raw ability check (configured on the "Manage" tab). **Exception:** Perception will never appear here since it's always in the header.
 * Resistances/Immunities/Vulnerabilities entries in the header will show any damage type with a final value not equal to 0, or with "immunity" checked (configured on the "Manage" tab).
 * Elite and Solo monsters will display Action Points and Saving Throws in the header. For everybody else, you can find them in the "Manage" tab if you need them.
@@ -41,11 +41,10 @@ Makes your Journals look just like official 4e books!
 <a href="https://user-images.githubusercontent.com/10067730/198205657-7e8f3463-8add-4b76-9fc1-ca126761af6c.png"><img src="https://user-images.githubusercontent.com/10067730/198205657-7e8f3463-8add-4b76-9fc1-ca126761af6c.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198205690-6199634a-23aa-4cfa-bbaf-c3749a1404bd.png"><img src="https://user-images.githubusercontent.com/10067730/198205690-6199634a-23aa-4cfa-bbaf-c3749a1404bd.png" width=150></a>
 <a href="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png"><img src="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png" width=150></a>
-* Should work for all ProseMirror-based rich text areas.
-* Includes body text, headings, lists, tables, and whatever else I can manage.
-* I haven't worked out how to include selectable styles yet, but you can use the HTML source editor to take advantage of built-in classes.
+* Offers new journal sheets for player book (royal blue theme), GM book (maroon/wine theme) and monster book (olive green theme). Default journals also use the player theme for now, until I can work out a better way to add them into the editor.
+* Propagates to all ProseMirror-based rich text areas (based mainly on the need to style the editor—hopefully this can be improved in the future). If you want to prevent this, you'll have to deactivate all journal styling for now.
+* I haven't worked out how to add custom blocks to the editor, but you can use the HTML source editor to take advantage of built-in classes.
   * Check the included "Styling Manual" compendium for how to markup game stuff in journals. Currently supports generic table, "power" (table), "item" (table), "ritual" (div) and "rules-block" (div). (Other styles will be forthcoming, and hopefully I can eventually work out how to make them front-end selectable.)
-* I dunno how to add journal sheets, but you can toggle the styling package on/off from the module settings.
 * Includes a selector so you can choose between book-accurate serif font, or the sans-serif version that's more easily readable on many screens.
 ### Chat Styles
 Styles chat messages, in particular item cards, to match the core 4e books.
