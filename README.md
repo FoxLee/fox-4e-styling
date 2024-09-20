@@ -38,9 +38,7 @@ A new NPC sheet based on the official, deliciously compact 4e monster stat block
 ### Journal Styling
 Makes your Journals look just like official 4e books!
 
-<a href="https://user-images.githubusercontent.com/10067730/198205657-7e8f3463-8add-4b76-9fc1-ca126761af6c.png"><img src="https://user-images.githubusercontent.com/10067730/198205657-7e8f3463-8add-4b76-9fc1-ca126761af6c.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198205690-6199634a-23aa-4cfa-bbaf-c3749a1404bd.png"><img src="https://user-images.githubusercontent.com/10067730/198205690-6199634a-23aa-4cfa-bbaf-c3749a1404bd.png" width=150></a>
-<a href="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png"><img src="https://user-images.githubusercontent.com/10067730/198205715-4e35984f-77b4-4478-b04c-90f5ca55bd76.png" width=150></a>
+<a href="https://github.com/user-attachments/assets/cf79b163-f741-41e3-93ec-a1ffbf3d47d2"><img src="https://github.com/user-attachments/assets/cf79b163-f741-41e3-93ec-a1ffbf3d47d2" height=217 width="750" style="height:auto;max-width:100%;width:750px"></a>
 * Offers new journal sheets for player book (royal blue theme), GM book (maroon/wine theme) and monster book (olive green theme). Default journals also use the player theme for now, until I can work out a better way to add them into the editor.
 * Propagates to all ProseMirror-based rich text areas (based mainly on the need to style the editor—hopefully this can be improved in the future). If you want to prevent this, you'll have to deactivate all journal styling for now.
 * I haven't worked out how to add custom blocks to the editor, but you can use the HTML source editor to take advantage of built-in classes.
