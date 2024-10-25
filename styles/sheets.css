@@ -727,6 +727,17 @@ sheet.fox4e.npc .head ::placeholder{
 .sheet.fox4e.actor.npc .powers .usage .dice{
 	font-weight:normal;
 }
+.sheet.fox4e.actor.npc .powers .usage .limited:is(.charges,.other) .sep{
+    display:inline-block;
+    width:2.5px;
+	opacity:0;
+}
+.sheet.fox4e.actor.npc .powers .usage .limited.uses-1:is(.day,.encounter) :is(.limit,.sep){
+	display:none;
+}
+.sheet.fox4e.actor.npc .powers .usage .limited.uses-1:is(.day,.encounter) :is(.limit,.sep){
+	display:none;
+}
 .sheet.fox4e.actor.npc .powers .flavour{
 	font-style:italic;
 	background:rgba(255,255,255,0.4);
