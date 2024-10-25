@@ -26,52 +26,72 @@
 						<div class="item-name flexrow">
 							<img src="{{item.img}}" class="item-image rollable" height="16" width="16" alt="Power icon" data-tooltip="{{localize 'Fox4e.TipSendChat'}}" />
 							<div class="power-title">
-								<h4 class="power-detail item-image rollable" data-tooltip="{{localize 'Fox4e.TipSendChat'}}">{{!--
-									--}}{{item.name}}{{!--
-									--}}<span class="keywords">{{!--
-										--}}{{#each item.system.damageType as |name type|}}{{!--
-											--}}{{#if name}}<span class="keyword">{{lookup ../../../config.damageTypes type}}</span>{{/if}}{{!--
-										--}}{{/each}}{{!--
-										--}}{{#each item.system.effectType as |name type|}}{{!--
-											--}}{{#if name}}<span class="keyword">{{lookup ../../../config.effectTypes type}}</span>{{/if}}{{!--
-										--}}{{/each}}{{!--
-									--}}</span>{{!--
-								--}}</h4>
-								&thinsp;♦&thinsp;
-								<span class="usage power-detail item-uses">
-									{{#if (eq item.system.useType "recharge")}}
+								<h4 class="power-detail item-image rollable" data-tooltip="{{localize 'Fox4e.TipSendChat'}}">
+									{{~item.name~}}
+									<span class="keywords">
+										{{~#each item.system.damageType as |name type|~}}
+											{{~#if name}}<span class="keyword">{{lookup ../../../config.damageTypes type}}</span>{{/if~}}
+										{{~/each~}}
+										{{~#each item.system.effectType as |name type|~}}
+											{{~#if name}}<span class="keyword">{{lookup ../../../config.effectTypes type}}</span>{{/if~}}
+										{{~/each~}}
+									</span>
+								</h4>{{!--
+								--}}&thinsp;♦&thinsp;{{!--
+								--}}<span class="usage power-detail item-uses">
+									{{~#if (eq item.system.useType "recharge")~}}
 										<span class="recharge">
-											{{#if item.system.rechargeRoll}}
-												<a class="item-recharge rollable numerical" data-tooltip="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">	{{!--
-													--}}{{localize 'DND4E.PowerRecharge'}} 
-													<span class="dice d6">{{!--
-														--}}{{#if (lt item.system.rechargeRoll 3)}}2{{/if}}{{!--
-														--}}{{#if (lt item.system.rechargeRoll 4)}}3{{/if}}{{!--
-														--}}{{#if (lt item.system.rechargeRoll 5)}}4{{/if}}{{!--
-														--}}{{#if (lt item.system.rechargeRoll 6)}}5{{/if}}{{!--
-														--}}6{{!--
-													--}}</span>{{!--
-												--}}</a>
-											{{else if item.system.rechargeCondition}}
+											{{~#if item.system.rechargeRoll~}}
+												<a class="item-recharge rollable numerical" data-tooltip="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">
+													{{~localize 'DND4E.PowerRecharge'}} 
+													<span class="dice d6">
+														{{~#if (lt item.system.rechargeRoll 3)}}2{{/if~}}
+														{{~#if (lt item.system.rechargeRoll 4)}}3{{/if~}}
+														{{~#if (lt item.system.rechargeRoll 5)}}4{{/if~}}
+														{{~#if (lt item.system.rechargeRoll 6)}}5{{/if~}}
+														6
+													</span>
+												</a>
+											{{~else if item.system.rechargeCondition~}}
 												<a class="item-recharge rollable" data-tooltip="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4E.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
-										{{/if}}
-										</span>
-									{{else}}
-										{{#if item.system.preparedMaxUses}}
-											<label class="uses autosize" for="item.system.uses.value">{{!--
-												--}}<input class="number" type="text" value="{{item.system.uses.value}}" name="item.system.uses.value" placeholder="0" />{{!--
-												--}}<span class="ruler">{{item.system.uses.value}}</span>{{!--
-											--}}</label> 
-											of {{item.system.preparedMaxUses}}/{{!--
-										--}}{{/if}}{{!--
+											{{~/if~}}
+										</span>{{!--
+									--}}{{~else~}}{{!--
+										--}}<span class="limited {{item.system.uses.per}} uses-{{item.system.preparedMaxUses}}">
 										
-										--}}{{#if item.system.uses.per}}{{!--
-											--}}{{lookup ../../config.limitedUsePeriods item.system.uses.per}}{{!--
-										--}}{{else}}{{!--
-											--}}{{lookup ../../config.powerUseType item.system.useType}}{{!--
-										--}}{{/if}}{{!--
-									--}}{{/if}}{{!-- [Close] Recharge details --}}
-								</span>
+										{{~#if (eq null item.system.preparedMaxUses)~}}
+										{{!-- [Has usage count] NO --}}
+										
+											{{~lookup ../../config.powerUseType item.system.useType~}}
+										
+										{{~else~}}
+										{{!-- [Has usage count] YES --}}{{!--
+											--}}<span class="limit">{{!--
+												--}}<label class="uses autosize" for="item.system.uses.value">{{!--
+													--}}<input class="number" type="text" value="{{item.system.uses.value}}" name="item.system.uses.value" placeholder="0" />{{!--
+													--}}<span class="ruler">{{item.system.uses.value}}</span>{{!--
+												--}}</label>
+												of {{item.system.preparedMaxUses~}}
+											</span>{{!--
+											
+											--}}<span class="sep">/</span>
+											
+											{{~#if item.system.uses.per~}}
+												
+												{{~#if (eq item.system.uses.per "day")}}
+													{{~#if (eq 1 item.system.preparedMaxUses)~}}
+														<span class="interval">{{~lookup ../../config.powerUseType item.system.useType~}}</span>
+													{{~else~}}
+														<span class="interval">{{~#with (lookup ../../config.limitedUsePeriods item.system.uses.per) as |usePer|}}{{usePer.label}}{{/with~}}</span>
+													{{~/if~}}
+												{{~else~}}
+													<span class="interval">{{~#with (lookup ../../config.limitedUsePeriods item.system.uses.per) as |usePer|}}{{usePer.label}}{{/with~}}</span>
+												{{~/if~}}
+											{{~/if~}}												
+											
+										{{~/if}}{{!-- Close [has usage count] --}}
+										</span>
+									{{~/if~}}{{!-- [Close] Usage details --}}
 							</div>
 				
 						</div>
@@ -136,7 +156,7 @@
 									{{#unless item.system.attack.isAttack}}{{!--
 										--}}{{#unless (eq item.system.rangeType "personal")}}{{!--
 											--}}<span class="range">{{!--
-												--}}{{lookup ../../config.rangeType item.system.rangeType}}{{!--
+												--}}{{#with (lookup ../../config.rangeType item.system.rangeType) as |rangeCat|}}{{rangeCat.label}}{{/with}}{{!--
 													--}}{{#if (eq item.system.rangeType "rangeBlast")}} 
 														{{item.system.area}} {{localize 'DND4E.RangeWithin'}} 
 													{{else if (eq item.system.rangeType "rangeBurst")}} 
@@ -185,7 +205,7 @@
 								
 									{{#unless (eq item.system.rangeType "personal")}}
 										<span class="range">
-											{{lookup ../../config.rangeType item.system.rangeType}} 
+											{{#with (lookup ../../config.rangeType item.system.rangeType) as |rangeCat|}}{{rangeCat.label}}{{/with}}
 											
 											{{#if (eq item.system.rangeType "rangeBlast")}} 
 												{{item.system.area}} {{localize 'DND4E.RangeWithin'}} 
@@ -211,7 +231,7 @@
 									
 									<span class="tohit">{{!--
 										--}}{{numberFormat (form item.system.attack.formula actor this) sign=true}}&thinsp;{{!--
-										--}}{{localize 'DND4E.VS'}}&thinsp;{{lookup ../../config.def item.system.attack.def}}{{!--
+										--}}{{localize 'DND4E.VS'}}&thinsp;{{#with (lookup ../../config.defensives item.system.attack.def) as |vsDef|}}{{vsDef.abbreviation}}{{/with}}{{!--
 									--}}</span>
 									
 								</p>{{!-- [Close] If it's an Attack --}}	
