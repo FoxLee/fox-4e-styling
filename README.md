@@ -7,8 +7,8 @@ Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, ite
 <a href="https://github.com/user-attachments/assets/27b66dfe-2661-4fe1-b616-a96460b5d0f5"><img src="https://github.com/user-attachments/assets/27b66dfe-2661-4fe1-b616-a96460b5d0f5" height=300></a>
 * **Author**: [FoxLee](https://github.com/FoxLee)
 * **Contributors**: Built on the work of everybody contributing to the [D&D4e System implementation for Foundry VTT](https://github.com/EndlesNights/dnd4eBeta). French translation provided by [Gilphe](https://github.com/Gilphe)
-* **Foundry VTT Compatibility**: v11.x (last FVTT 10.x compatible release is v0.9.47) (no v12 compatibility yet)
-* **4e System Compatibility**: v0.4.0—0.4.58 (or v0.3.17—0.4.0 for FVTT 10.x)
+* **Foundry VTT Compatibility**: v12.x (last 11.ֶx release is 1.0.1, last 10.x release is 0.9.47)
+* **4e System Compatibility**: v0.5+ (last 0.4.x release is 1.0.1)
 * **Languages**: [en-AU](https://github.com/FoxLee/fvtt-locale-en-au), fr, en-US
 * **Example Images**: **Assets used in these examples are used for demonstration only and are not included with the module.** Non-core tokens are by [Yuikami](https://yuikami.tumblr.com), battlemaps are by [Cze & Peku](https://www.patreon.com/czepeku), additional character portraits are my own art.
 
