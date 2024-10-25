@@ -28,23 +28,15 @@
 					
 					<label for="system.details.role.secondary" class="role secondary cover{{#unless (eq system.details.role.secondary 'standard')}} visible{{/unless}}" data-tooltip="{{localize 'Fox4e.TipRoleSecondary'}}">
 						<select class="covered" name="system.details.role.secondary" tabindex=0>
-							{{#select system.details.role.secondary}}
-							{{#each config.creatureRoleSecond as |label role|}}
-								<option value="{{role}}">{{label}}</option>
-							{{/each}}
-							{{/select}}
+							{{selectOptions config.creatureRoleSecond selected=system.details.role.secondary labelAttr="label"}}
 						</select>
-						<span class="display"> {{lookup config.creatureRoleSecond system.details.role.secondary}} </span>{{!--
+						<span class="display"> {{#with (lookup config.creatureRoleSecond system.details.role.secondary) as |roleSec|}}{{roleSec.label}}{{/with}} </span>{{!--
 					--}}</label>
 					
 					<label for="system.details.role.primary" class="role primary cover" data-tooltip="{{localize 'Fox4e.TipRolePrimary'}}">
 						<select class="covered" name="system.details.role.primary" tabindex=0>
-							{{#select system.details.role.primary}}
-							{{#each config.creatureRole as |label role|}}
-								<option value="{{role}}">{{label}}</option>
-							{{/each}}
-							{{/select}}
-						</select><span class="display">{{lookup config.creatureRole system.details.role.primary}}</a>
+							{{selectOptions config.creatureRole selected=system.details.role.primary labelAttr="label"}}
+						</select><span class="display">{{#with (lookup config.creatureRole system.details.role.primary) as |role|}}{{role.label}}{{/with}}</a>
 					</label>
 					
 					<label for="system.details.role.leader" class="leader cover {{system.details.role.leader}}" data-tooltip="{{localize 'Fox4e.TipLeaderStatus'}}">{{!--
@@ -68,32 +60,20 @@
 				<div class="categories" tabindex=0>{{!--
 					--}}<label for="system.details.size" class="size cover {{system.details.size}}" data-tooltip="{{localize 'Fox4e.TipCreatureSize'}}">{{!--
 						--}}<select class="size covered" name="system.details.size">
-						{{#select system.details.size}}
-						{{#each config.actorSizes as |label size|}}
-							<option value="{{size}}">{{label}}</option>
-						{{/each}}
-						{{/select}}
-					</select>{{lookup config.actorSizes system.details.size}}{{!--
+						{{selectOptions config.actorSizes selected=system.details.size labelAttr="label"}}
+					</select>{{#with (lookup config.actorSizes system.details.size) as |size|}}{{size.label}}{{/with}}{{!--
 					--}}</label>
 					
 					<label for="system.details.origin" class="origin cover {{system.details.origin}}" data-tooltip="{{localize 'Fox4e.TipCreatureOrigin'}}">{{!--
 							--}}<select class="origin covered" name="system.details.origin">
-							{{#select system.details.origin}}
-							{{#each config.creatureOrigin as |label origin|}}
-								<option value="{{origin}}">{{label}}</option>
-							{{/each}}
-							{{/select}}
-						</select>{{lookup config.creatureOrigin system.details.origin}}{{!--
+							{{selectOptions config.creatureOrigin  selected=system.details.origin labelAttr="label"}}
+						</select>{{#with (lookup config.creatureOrigin system.details.origin) as |origin|}}{{origin.label}}{{/with}}{{!--
 					--}}</label>
 					
 					<label for="system.details.type" class="type cover {{system.details.type}}" data-tooltip="{{localize 'Fox4e.TipCreatureType'}}">{{!--
 						--}}<select class="type covered" name="system.details.type">
-						{{#select system.details.type}}
-						{{#each config.creatureType as |label type|}}
-							<option value="{{type}}">{{label}}</option>
-						{{/each}}
-						{{/select}}
-					</select>{{lookup config.creatureType system.details.type}}{{!--
+						{{selectOptions config.creatureType selected=system.details.type labelAttr="label"}}
+					</select>{{#with (lookup config.creatureType system.details.type) as |type|}}{{type.label}}{{/with}}{{!--
 					--}}</label>
 					
 					<label class="subtypes autosize{{#if system.details.other}} visible{{/if}}" tabindex="0" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'Fox4e.CreatureSubtypes'}}">{{!--
