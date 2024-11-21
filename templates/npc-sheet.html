@@ -89,7 +89,7 @@
 				--}}</div>{{!-- [End] Categories	--}}
 				
 				<div class="xp-value">
-					{{localize 'Fox4e.XP'}}
+					{{localize 'DND4E.Exp'}}
 					<label class="xp autosize" for="system.details.exp" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'Fox4e.TipXPAward'}}">{{!--
 						--}}<input id="npc_xp_input" type="text" class="number" name="system.details.exp" value="{{system.details.exp}}" data-dtype="Number" onClick="this.select();" />{{!--
 						--}}<span id="npc_xp_display" class="ruler">{{commfy system.details.exp}}</span>{{!--
@@ -144,62 +144,87 @@
 			<div class="defences">
 				
 				<span class="ac" data-defence="ac">{{!--
-					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.ac.title}} {{localize 'DND4E.Save'}}" for="system.defences.ac.base">{{!--
+					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.ac.title}}" for="system.defences.ac.base">{{!--
 						--}}{{localize 'DND4E.AC'}}{{!--
-					--}}</span>&thinsp;{{!--
+					--}}</span>&thinsp;{{!--					
+					
 					--}}{{#if system.advancedCals}}{{!--
+					
 						--}}<span class="def-total" data-tooltip="{{localize 'DND4E.AC'}}&mdash;{{localize 'Fox4e.TipEditOnManage'}}">{{system.defences.ac.value}}</span>{{!--
+						
 					--}}{{else}}{{!--
-						--}}<label class="ac autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AC'}}">{{!--
-							--}}<input class="number" name="system.defences.ac.base" value="{{system.defences.ac.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
-							--}}<span class="ruler">{{system.defences.ac.base}}</span>{{!--
+				
+						--}}<label class="ac autosize" data-tooltip="{{localize 'DND4E.DefenceACShort'}} {{localize 'DND4EUI.CurrentValue'}} ({{localize 'Fox4e.TipEditBase'}})">{{!--
+							--}}<input id="def_ac_input" class="number" name="system.defences.ac.base" value="{{system.defences.ac.base}}" data-dtype="Number"  onClick="this.select();" placeholder="0" />{{!--
+							--}}<span id="def_ac_display" class="ruler">{{system.defences.ac.value}}</span>{{!--
 						--}}</label>{{!--
+						
 					--}}{{/if}}{{!--
+					
 				--}}</span>,
 
 				<span class="fort" data-defence="fort">{{!--
-					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.fort.title}} {{localize 'DND4E.Save'}}" for="system.defences.fort.base">{{!--
-						--}}{{localize 'Fox4e.DefFortitude'}}{{!--
+					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.fort.title}}" for="system.defences.fort.base">{{!--
+						--}}{{localize 'DND4E.DefenceFortShort'}}{{!--
 					--}}</span>&thinsp;{{!--
+					
 					--}}{{#if system.advancedCals}}{{!--
+					
 						--}}<span class="def-total" data-tooltip="{{system.defences.fort.title}}&mdash;{{localize 'Fox4e.TipEditOnManage'}}">{{system.defences.fort.value}}</span>{{!--
+						
 					--}}{{else}}{{!--
-						--}}<label class="fort autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'Fox4e.DefFortitude'}}">{{!--
+					
+						--}}<label class="fort autosize" data-tooltip="{{localize 'DND4E.DefenceFortShort'}} {{localize 'DND4EUI.CurrentValue'}} ({{localize 'Fox4e.TipEditBase'}})">{{!--
 							--}}<input class="number" name="system.defences.fort.base" value="{{system.defences.fort.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
-							--}}<span class="ruler">{{system.defences.fort.base}}</span>{{!--
+							--}}<span class="ruler">{{system.defences.fort.value}}</span>{{!--
 						--}}</label>{{!--
+						
 					--}}{{/if}}{{!--
+					
 				--}}</span>,
 				
 				<span class="ref" data-defence="ref">{{!--
-					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.ref.title}} {{localize 'DND4E.Save'}}" for="system.defences.ref.base">{{!--
-						--}}{{localize 'Fox4e.DefReflex'}}{{!--
+					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.ref.title}}" for="system.defences.ref.base">{{!--
+						--}}{{localize 'DND4E.DefenceRefShort'}}{{!--
 					--}}</span>&thinsp;{{!--
+					
 					--}}{{#if system.advancedCals}}{{!--
+					
 						--}}<span class="def-total" data-tooltip="{{system.defences.fort.title}}&mdash;{{localize 'Fox4e.TipEditOnManage'}}">{{system.defences.ref.value}}</span>{{!--
+						
 					--}}{{else}}{{!--
-						--}}<label class="ref autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'Fox4e.DefReflex'}}">{{!--
+					
+						--}}<label class="ref autosize" data-tooltip="{{localize 'DND4E.DefenceRefShort'}} {{localize 'DND4EUI.CurrentValue'}} ({{localize 'Fox4e.TipEditBase'}})">{{!--
 							--}}<input class="number" name="system.defences.ref.base" value="{{system.defences.ref.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
-							--}}<span class="ruler">{{system.defences.ref.base}}</span>{{!--
+							--}}<span class="ruler">{{system.defences.ref.value}}</span>{{!--
 						--}}</label>{{!--
+						
 					--}}{{/if}}{{!--
+					
 				--}}</span>, 
 				
 				<span class="wil" data-defence="wil">{{!--
-					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.wil.title}} {{localize 'DND4E.Save'}}" for="system.defences.wil.base">{{!--
+					--}}<span class="label attribute-display def-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.defences.wil.title}}" for="system.defences.wil.base">{{!--
 						--}}{{localize 'DND4E.DefWil'}}{{!--
 					--}}</span>&thinsp;{{!--
+					
 					--}}{{#if system.advancedCals}}{{!--
+					
 						--}}<span class="def-total" data-tooltip="{{localize 'Fox4e.Total'}} {{system.defences.wil.title}}">{{system.defences.wil.value}}</span>{{!--
+						
 					--}}{{else}}{{!--
-					--}}<label class="wil autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.DefWil'}}">{{!--
+					
+						--}}<label class="wil autosize" data-tooltip="{{localize 'DND4E.DefenceWilShort'}} {{localize 'DND4EUI.CurrentValue'}} ({{localize 'Fox4e.TipEditBase'}})">{{!--
 							--}}<input class="number" name="system.defences.wil.base" value="{{system.defences.wil.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
-							--}}<span class="ruler">{{system.defences.wil.base}}</span>{{!--
+							--}}<span class="ruler">{{system.defences.wil.value}}</span>{{!--
 						--}}</label>{{!--
+						
 					--}}{{/if}}{{!--
+					
 				--}}</span>
 				
 			</div>{{!-- [Close] Defences	--}}
+			
 			
 			<div class="movement movement-dialog rollable" data-tooltip="{{localize 'Fox4e.TipMoveConfig'}}">
 				<span>{{!--
@@ -340,7 +365,7 @@
 			</div>
 				
 			<div class="perception" data-skill="prc">
-				<span class="skill-name rollable label" data-tooltip="{{localize 'DND4E.Roll'}} {{system.skills.prc.label}} {{localize 'Fox4e.Check'}}">{{system.skills.prc.label}}</span>&thinsp;<span class="skill-mod skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat system.skills.prc.total decimals=0 sign=true }}</span>
+				<span class="skill-name rollable label" data-tooltip="{{localize 'DND4E.Roll'}} {{system.skills.prc.label}} {{localize 'DND4DE.Check'}}">{{system.skills.prc.label}}</span>&thinsp;<span class="skill-mod skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat system.skills.prc.total decimals=0 sign=true }}</span>
 			</div>
 
 			<div class="senses">
@@ -400,7 +425,7 @@
 							{{#unless (eq s "prc")}}
 								{{#if (skillWanted skill ../system.details.level ../system.halfLevelOptions ../system.advancedCals)}}
 								<span class="skill-block flexrow" data-skill="{{s}}">
-									<span class="skill-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{skill.label}} {{localize 'Fox4e.Check'}}">{{skill.label}}&thinsp;{{numberFormat skill.total decimals=0 sign=true}}</span>
+									<span class="skill-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{skill.label}} {{localize 'DND4E.Check'}}">{{skill.label}}&thinsp;{{numberFormat skill.total decimals=0 sign=true}}</span>
 								</span> 
 								{{/if}}
 							{{/unless}}
@@ -414,33 +439,33 @@
 				<div class="wrapper ability-scores">
 					<span class="ability-score str">
 						<label class="autosize" data-ability="str">
-							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.str.label}} {{localize 'Fox4e.Check'}}">{{localize 'DND4E.AbilStr'}}</span> <input class="value number" name="system.abilities.str.value"data-dtype="Number" value="{{system.abilities.str.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilStr'}}" /><span class="ruler">{{system.abilities.str.value}}</span>
-						</label> <span class="mod" data-tooltip="{{system.abilities.str.label}} {{localize 'Fox4e.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.str.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.str.modHalf decimals=0 sign=true}}{{/if}})</span>
+							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.str.label}} {{localize 'DND4E.Check'}}">{{localize 'DND4E.AbilStr'}}</span> <input class="value number" name="system.abilities.str.value"data-dtype="Number" value="{{system.abilities.str.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilStr'}}" /><span class="ruler">{{system.abilities.str.value}}</span>
+						</label> <span class="mod" data-tooltip="{{system.abilities.str.label}} {{localize 'DND4E.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.str.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.str.modHalf decimals=0 sign=true}}{{/if}})</span>
 					</span>
 					<span class="ability-score dex">
 						<label class="autosize" data-ability="dex">
-							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.dex.label}} {{localize 'Fox4e.Check'}}">{{localize 'DND4E.AbilDex'}}</span> <input class="value number" name="system.abilities.dex.value"data-dtype="Number" value="{{system.abilities.dex.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilDex'}}" /><span class="ruler">{{system.abilities.dex.value}}</span>
-						</label> <span class="mod" data-tooltip="{{system.abilities.dex.label}} {{localize 'Fox4e.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.dex.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.dex.modHalf decimals=0 sign=true}}{{/if}})</span>
+							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.dex.label}} {{localize 'DND4E.Check'}}">{{localize 'DND4E.AbilDex'}}</span> <input class="value number" name="system.abilities.dex.value"data-dtype="Number" value="{{system.abilities.dex.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilDex'}}" /><span class="ruler">{{system.abilities.dex.value}}</span>
+						</label> <span class="mod" data-tooltip="{{system.abilities.dex.label}} {{localize 'DND4E.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.dex.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.dex.modHalf decimals=0 sign=true}}{{/if}})</span>
 					</span>
 					<span class="ability-score wis">
 						<label class="autosize" data-ability="wis">
-							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.wis.label}} {{localize 'Fox4e.Check'}}">{{localize 'DND4E.AbilWis'}}</span> <input class="value number" name="system.abilities.wis.value"data-dtype="Number" value="{{system.abilities.wis.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilWis'}}" /><span class="ruler">{{system.abilities.wis.value}}</span>
-						</label> <span class="mod" data-tooltip="{{system.abilities.wis.label}} {{localize 'Fox4e.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.wis.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.wis.modHalf decimals=0 sign=true}}{{/if}})</span>
+							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.wis.label}} {{localize 'DND4E.Check'}}">{{localize 'DND4E.AbilWis'}}</span> <input class="value number" name="system.abilities.wis.value"data-dtype="Number" value="{{system.abilities.wis.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilWis'}}" /><span class="ruler">{{system.abilities.wis.value}}</span>
+						</label> <span class="mod" data-tooltip="{{system.abilities.wis.label}} {{localize 'DND4E.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.wis.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.wis.modHalf decimals=0 sign=true}}{{/if}})</span>
 					</span>
 					<span class="ability-score con">
 						<label class="autosize" data-ability="con">
-							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.con.label}} {{localize 'Fox4e.Check'}}">{{localize 'DND4E.AbilCon'}}</span> <input class="value number" name="system.abilities.con.value"data-dtype="Number" value="{{system.abilities.con.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilCon'}}" /><span class="ruler">{{system.abilities.con.value}}</span>
-						</label> <span class="mod" data-tooltip="{{system.abilities.con.label}} {{localize 'Fox4e.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.con.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.con.modHalf decimals=0 sign=true}}{{/if}})</span>
+							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.con.label}} {{localize 'DND4E.Check'}}">{{localize 'DND4E.AbilCon'}}</span> <input class="value number" name="system.abilities.con.value"data-dtype="Number" value="{{system.abilities.con.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilCon'}}" /><span class="ruler">{{system.abilities.con.value}}</span>
+						</label> <span class="mod" data-tooltip="{{system.abilities.con.label}} {{localize 'DND4E.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.con.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.con.modHalf decimals=0 sign=true}}{{/if}})</span>
 					</span>
 					<span class="ability-score int">
 						<label class="autosize" data-ability="int">
-							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.int.label}} {{localize 'Fox4e.Check'}}">{{localize 'DND4E.AbilInt'}}</span> <input class="value number" name="system.abilities.int.value"data-dtype="Number" value="{{system.abilities.int.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilInt'}}" /><span class="ruler">{{system.abilities.int.value}}</span>
-						</label> <span class="mod" data-tooltip="{{system.abilities.int.label}} {{localize 'Fox4e.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.int.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.int.modHalf decimals=0 sign=true}}{{/if}})</span>
+							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.int.label}} {{localize 'DND4E.Check'}}">{{localize 'DND4E.AbilInt'}}</span> <input class="value number" name="system.abilities.int.value"data-dtype="Number" value="{{system.abilities.int.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilInt'}}" /><span class="ruler">{{system.abilities.int.value}}</span>
+						</label> <span class="mod" data-tooltip="{{system.abilities.int.label}} {{localize 'DND4E.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.int.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.int.modHalf decimals=0 sign=true}}{{/if}})</span>
 					</span>
 					<span class="ability-score cha">
 						<label class="autosize" data-ability="cha">
-							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.cha.label}} {{localize 'Fox4e.Check'}}">{{localize 'DND4E.AbilCha'}}</span> <input class="value number" name="system.abilities.cha.value"data-dtype="Number" value="{{system.abilities.cha.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilCha'}}" /><span class="ruler">{{system.abilities.cha.value}}</span>
-						</label> <span class="mod" data-tooltip="{{system.abilities.cha.label}} {{localize 'Fox4e.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.cha.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.cha.modHalf decimals=0 sign=true}}{{/if}})</span>
+							<span class="label ability-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{system.abilities.cha.label}} {{localize 'DND4E.Check'}}">{{localize 'DND4E.AbilCha'}}</span> <input class="value number" name="system.abilities.cha.value"data-dtype="Number" value="{{system.abilities.cha.value}}" onfocus="this.select()" placeholder="10" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AbilCha'}}" /><span class="ruler">{{system.abilities.cha.value}}</span>
+						</label> <span class="mod" data-tooltip="{{system.abilities.cha.label}} {{localize 'DND4E.Check'}} {{localize 'DND4E.Modifier'}}">({{#if system.halfLevelOptions}}{{numberFormat system.abilities.cha.mod decimals=0 sign=true}}{{else}}{{numberFormat system.abilities.cha.modHalf decimals=0 sign=true}}{{/if}})</span>
 					</span>
 				</div>
 				
@@ -571,7 +596,7 @@
 									--}}</span>
 									<span class="defence-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{system.defences.ac.value}}</span>
 									<span class="automath">({{!--
-										--}}<span class="base">{{localize 'Fox4e.Base'}}</span>
+										--}}<span class="base">{{localize 'DND4E.Base'}}</span>
 										<label class="ac autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.AC'}}">{{!--
 											--}}<input class="number" name="system.defences.ac.base" value="{{system.defences.ac.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
 											--}}<span class="ruler">{{system.defences.ac.base}}</span>{{!--
@@ -585,8 +610,8 @@
 									--}}</span>
 									<span class="def-total" data-tooltip="{{localize 'Fox4e.Total'}} {{system.defences.fort.title}}">{{system.defences.fort.value}}</span>
 									<span class="automath">({{!--
-										--}}<span class="base">{{localize 'Fox4e.Base'}}</span>
-										<label class="fort autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'Fox4e.DefFortitude'}}">{{!--
+										--}}<span class="base">{{localize 'DND4E.Base'}}</span>
+										<label class="fort autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.DefenceFortShort'}}">{{!--
 											--}}<input class="number" name="system.defences.fort.base" value="{{system.defences.fort.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
 											--}}<span class="ruler">{{system.defences.fort.base}}</span>{{!--
 										--}}</label>{{!--
@@ -599,8 +624,8 @@
 									--}}</span>
 									<span class="def-total" data-tooltip="{{localize 'Fox4e.Total'}} {{system.defences.ref.title}}">{{system.defences.ref.value}}</span>
 									<span class="automath">({{!--
-										--}}<span class="base">{{localize 'Fox4e.Base'}}</span>
-										<label class="ref autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'Fox4e.DefReflex'}}">{{!--
+										--}}<span class="base">{{localize 'DND4E.Base'}}</span>
+										<label class="ref autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.DefenceRefShort'}}">{{!--
 											--}}<input class="number" name="system.defences.ref.base" value="{{system.defences.ref.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
 											--}}<span class="ruler">{{system.defences.ref.base}}</span>{{!--
 										--}}</label>{{!--
@@ -613,8 +638,8 @@
 									--}}</span>
 									<span class="def-total" data-tooltip="{{localize 'Fox4e.Total'}} {{system.defences.wil.title}}">{{system.defences.wil.value}}</span>
 									<span class="automath">({{!--
-										--}}<span class="base">{{localize 'Fox4e.Base'}}</span>
-										<label class="wil autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.DefWil'}}">{{!--
+										--}}<span class="base">{{localize 'DND4E.Base'}}</span>
+										<label class="wil autosize" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.DefWilShort'}}">{{!--
 											--}}<input class="number" name="system.defences.wil.base" value="{{system.defences.wil.base}}" data-dtype="Number" onfocus="this.select()" />{{!--
 											--}}<span class="ruler">{{system.defences.wil.base}}</span>{{!--
 										--}}</label>{{!--
@@ -628,10 +653,10 @@
 					
 					<div class="adds-body">
 						<button class="item-control item-create button" data-tooltip="{{localize 'DND4E.Add'}} {{localize 'Fox4e.Trait'}}" data-type="raceFeats" type="button">
-							<i class="fas fa-plus"></i> {{localize 'Fox4e.TipAddNew'}} {{localize 'Fox4e.Trait'}}
+							<i class="fas fa-plus"></i> {{localize 'DND4EUI.AddNew'}} {{localize 'Fox4e.Trait'}}
 						</button>
-						<button class="item-control power-create button" data-tooltip="{{localize 'DND4E.Add'}} {{localize 'Fox4e.Power'}}" data-type="standard" type="button">
-							<i class="fas fa-plus"></i> {{localize 'Fox4e.TipAddNew'}} {{localize 'Fox4e.Power'}}
+						<button class="item-control power-create button" data-tooltip="{{localize 'DND4E.Add'}} {{localize 'DND4E.Power'}}" data-type="standard" type="button">
+							<i class="fas fa-plus"></i> {{localize 'DND4EUI.AddNew'}} {{localize 'DND4E.Power'}}
 						</button>
 						<button class="item-import button" data-tooltip="Create Power" data-item-type="power" data-type="power" type="button">
 							<i class="fas fa-atlas"></i> {{localize "DND4E.ImportPowers"}}
@@ -696,8 +721,8 @@
 								{{#if system.advancedCals}}<th class="skill-trained"><a class="training-toggle skill-training" data-tooltip="{{skill.hover}}">Train{{Fox4e.Train}}</th>{{/if}}
 								<th class="skill-name">{{localize 'DND4E.Skill'}}</th>
 								{{#if system.advancedCals}}<th class="skill-abil">{{localize 'Fox4e.Stat'}}</th>{{/if}}
-								{{#if system.advancedCals}}<th class="skill-value">{{localize 'Fox4e.Total'}}</th>{{/if}}
-								<th class="skill-base">{{#if system.advancedCals}}{{localize 'Fox4e.Base'}}{{else}}{{localize 'DND4E.Value'}}{{/if}}</th>
+								<th class="skill-value">{{#if system.advancedCals}}{{localize 'Fox4e.Total'}}{{else}}{{localize 'DND4E.Value'}}{{/if}}</th>
+								<th class="skill-base">{{localize 'DND4E.Base'}}</th>
 							</tr>
 						</thead>
 						<tbody class="skills items-list inventory-list">
@@ -705,10 +730,11 @@
 							<tr class="skill--block" data-skill="{{s}}">
 								{{#if ../system.advancedCals}}<td class="skill-trained"><a class="training-toggle skill-training" data-tooltip="{{skill.hover}}">{{{skill.icon}}}</a>
 								<input type="hidden" name="system.skills.{{s}}.training" value="{{skill.training}}" data-dtype="Number"></td>{{/if}}
-								<td class="skill-name"><h4 class="skill-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{skill.label}} {{localize 'Fox4e.Check'}}">{{skill.label}}</h4></td>
+								<td class="skill-name"><h4 class="skill-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{skill.label}} {{localize 'DND4E.Check'}}">{{skill.label}}</h4></td>
 								{{#if ../system.advancedCals}}<td class="skill-ability">{{skill.ability}}</td>{{/if}}
-								{{#if ../system.advancedCals}}<td class="skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat skill.total decimals=0 sign=true}}</td>{{/if}}
-								<td class="skill-mod" data-tooltip="{{#if ../system.advancedCals}}{{localize 'Fox4e.TipAddBonus'}}{{else}}{{localize 'Fox4e.TipEnterNum'}}{{/if}}  {{skill.label}}"><input class="skill-mod" name="system.skills.{{s}}.base" value="{{skill.base}}" data-dtype="Number" size="2" /></td>
+								{{#if ../system.advancedCals}}<td class="skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat skill.value decimals=0 sign=true}}</td>{{else}}
+								<td class="skill-value" data-tooltip="{{localize 'DND4EUI.CurrentValue'}}">{{numberFormat skill.total decimals=0 sign=true}}</td>{{/if}}
+								<td class="skill-base" data-tooltip="{{#if ../system.advancedCals}}{{localize 'Fox4e.TipAddBonus'}}{{else}}{{localize 'Fox4e.TipEnterNum'}}{{/if}}  {{skill.label}}"><input class="skill-base" name="system.skills.{{s}}.base" value="{{skill.base}}" data-dtype="Number" size="2" /></td>
 							</tr>
 							{{/each}}
 						</tbody>
@@ -724,14 +750,14 @@
 							<tr class="res-header">
 								<th class="res-name">{{localize 'DND4E.Type'}}</th>
 								{{#if system.advancedCals}}<th class="res-value">{{localize 'Fox4e.Total'}}</th>{{/if}}
-								<th class="res-bonus">{{#if system.advancedCals}}{{localize 'Fox4e.Base'}}{{else}}{{localize 'DND4E.Value'}}{{/if}}</th>
+								<th class="res-bonus">{{#if system.advancedCals}}{{localize 'DND4E.Base'}}{{else}}{{localize 'DND4E.Value'}}{{/if}}</th>
 								<th class="res-imm">{{localize 'Fox4e.Immune'}}</th>
 							</tr>
 						</thead>
 						<tbody>
 						{{#each system.resistances as |res r|}}
 							<tr class="resistance" data-res="{{r}}">
-								<td class="res-name"><h4 class="res-name">{{#if (eq res.label (localize 'Damage'))}}{{localize 'Fox4e.DamageAll'}}{{else}}{{res.label}}{{/if}}</h4></td>
+								<td class="res-name"><h4 class="res-name">{{#if (eq res.label (localize 'Damage'))}}{{localize 'DND4E.DamageAll'}}{{else}}{{res.label}}{{/if}}</h4></td>
 								{{#if ../system.advancedCals}}<td class="res-value override-{{res.immune}}">{{res.value}}</a></td>{{/if}}
 								<td class="resistances-bonus res-bonus override-{{res.immune}} rollable" data-target="system.resistances" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{res.resBonusValue}}</td>
 								<td class="res-immune">
@@ -742,7 +768,7 @@
 					</table>
 					
 					<div class="res-special">
-						<h3 class="subsection">{{localize 'Fox4e.TabResistancesExtra'}}</h3>
+						<h3 class="subsection">{{localize 'DND4E.UntypedRes'}}</h3>
 						<div class="res-special-body">	
 							<div>
 								<a class="list-string-input label untyped-resistances" data-options="special" data-target="system.untypedResistances.resistances" data-tooltip="{{ localize 'Fox4e.TipEdit' }} {{ localize 'DND4E.UntypedRes'}}">
