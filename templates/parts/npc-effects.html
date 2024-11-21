@@ -6,12 +6,20 @@
 	<div class="flexrow global-mods ">
 		<div class="flexrow columns" data-modifiers="attack">
 			<div class="attack-mod" data-modifiers="attack">
-				<span data-tooltip="{{localize 'Fox4e.TipModifierAttack'}}"><span class="label">{{localize 'DND4E.ModifierAttack'}}</span> {{numberFormat system.modifiers.attack.value decimals=0 sign=true}}</span> 
-				<a class="modifiers-bonus" data-target="system.modifiers" data-tooltip="{{localize 'Fox4e.TipBonus'}}">(<span class="label">{{localize 'Fox4e.Bonus'}}</span> {{numberFormat system.modifiers.attack.bonusValue decimals=0 sign=true}})</a>
+				<span data-tooltip="{{localize 'Fox4e.TipModifierAttack'}}"><span class="label">{{localize 'DND4E.Attack'}}</span> {{numberFormat system.modifiers.attack.value decimals=0 sign=true}}</span> 
+				<a class="modifiers-bonus" data-target="system.modifiers" data-tooltip="{{localize 'Fox4e.TipBonus'}}">(<span class="label">{{localize 'DND4E.Bonus'}}</span> {{numberFormat system.modifiers.attack.bonusValue decimals=0 sign=true}})</a>
 			</div>
 			<div class="damage-mod" data-modifiers="damage">
-				<span data-tooltip="{{localize 'Fox4e.TipModifierDamage'}}"><span class="label">{{localize 'DND4E.ModifierDamage'}}</span> {{numberFormat  system.modifiers.damage.value decimals=0 sign=true}}</span> 
-				<a class="modifiers-bonus" data-target="system.modifiers" data-tooltip="{{localize 'Fox4e.TipBonus'}}">(<span class="label">{{localize 'Fox4e.Bonus'}}</span> {{numberFormat  system.modifiers.damage.bonusValue decimals=0 sign=true}})</a>
+				<span data-tooltip="{{localize 'Fox4e.TipModifierDamage'}}"><span class="label">{{localize 'DND4E.Damage'}}</span> {{numberFormat  system.modifiers.damage.value decimals=0 sign=true}}</span> 
+				<a class="modifiers-bonus" data-target="system.modifiers" data-tooltip="{{localize 'Fox4e.TipBonus'}}">(<span class="label">{{localize 'DND4E.Bonus'}}</span> {{numberFormat  system.modifiers.damage.bonusValue decimals=0 sign=true}})</a>
+			</div>
+			<div class="skills-mod" data-modifiers="skills">
+				<span data-tooltip="{{localize 'Fox4e.TipModifierSkills'}}"><span class="label">{{localize 'Fox4e.SkillChecks'}}</span> {{numberFormat system.modifiers.skills.value decimals=0 sign=true}}</span> 
+				<a class="modifiers-bonus" data-target="system.modifiers" data-tooltip="{{localize 'Fox4e.TipBonus'}}">(<span class="label">{{localize 'DND4E.Bonus'}}</span> {{numberFormat  system.modifiers.skills.bonusValue decimals=0 sign=true}})</a>
+			</div>
+			<div class="defences-mod" data-modifiers="defences">
+				<span data-tooltip="{{localize 'Fox4e.TipModifierDefences'}}"><span class="label">{{localize 'DND4E.Defences'}}</span> {{numberFormat  system.modifiers.defences.value decimals=0 sign=true}}</span> 
+				<a class="modifiers-bonus" data-target="system.modifiers" data-tooltip="{{localize 'Fox4e.TipBonus'}}">(<span class="label">{{localize 'DND4E.Bonus'}}</span> {{numberFormat  system.modifiers.defences.bonusValue decimals=0 sign=true}})</a>
 			</div>
 		</div>
 	</div>

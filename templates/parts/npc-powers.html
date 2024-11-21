@@ -257,13 +257,13 @@
 											{{#if (eq item.system.sustain.actionType "none")}}{{!--
 												--}}{{localize 'DND4E.NoActionShort'}}{{!--
 											--}}{{else if (eq item.system.sustain.actionType "standard")}}{{!--
-												--}}{{localize 'Fox4e.ActStandard'}}{{!--
+												--}}{{localize 'DND4E.ActionStandardBrief'}}{{!--
 											--}}{{else if (eq item.system.sustain.actionType "move")}}{{!--
-												--}}{{localize 'Fox4e.ActMove'}}{{!--
+												--}}{{localize 'DND4E.ActionMoveBrief'}}{{!--
 											--}}{{else if (eq item.system.sustain.actionType "minor")}}{{!--
-												--}}{{localize 'Fox4e.ActMinor'}}{{!--
+												--}}{{localize 'DND4E.ActionMinorBrief'}}{{!--
 											--}}{{else if (eq item.system.sustain.actionType "free")}}{{!--
-												--}}{{localize 'Fox4e.ActFree'}}{{!--
+												--}}{{localize 'DND4E.ActionFreeBrief'}}{{!--
 											--}}{{else}}{{!--
 												--}}{{lookup ../../config.abilityActivationTypes item.system.sustain.actionType}}{{!--
 											--}}{{/if}}{{!--
