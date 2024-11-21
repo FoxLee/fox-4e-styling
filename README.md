@@ -81,6 +81,14 @@ Adds 4e styling for [Visual Active Effects](https://foundryvtt.com/packages/visu
 * Styles effect info much like chat cards, using the 4e gradient BG and text styles as in journals.
 * Uses the maroon accent colour from GM books as a header colour.
 
+### Carousel Combat Tracker Styling
+Adds 4e styling for [Carousel Combat Tracker](https://foundryvtt.com/packages/combat-tracker-dock) carousel and tooltips.
+
+<a href="https://github.com/user-attachments/assets/56f972e4-b8bd-448f-9b6d-879d42d15ca7"><img src="https://github.com/user-attachments/assets/56f972e4-b8bd-448f-9b6d-879d42d15ca7" height=200></a>
+* Styles tooltips much like chat cards, using the 4e gradient BG and text styles as power cards.
+* Uses the maroon accent colour from GM books as a header colour.
+* Tweaks some other CCT styles for better visibility.
+
 ### Extra chat styling
 Extra chat styles have been moved into a new system-agnostic module, [Burble](https://github.com/FoxLee/Burble)!
 
