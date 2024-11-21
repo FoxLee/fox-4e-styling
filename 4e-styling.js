@@ -9,6 +9,7 @@ export default class Fox4eStyles{
 		CHAT_STYLES: 'style-chat',
 		TAH_STYLES: 'style-tah',
 		VAE_STYLES: 'style-vae',
+		CCT_STYLES: 'style-cct',
 		JOURNAL_FONT: 'journal-font',
 		GLOBAL_STYLES: 'style-global',
 		CHAT_OLD: 'style-chat-old'
@@ -60,6 +61,14 @@ export default class Fox4eStyles{
 			head.appendChild(link);
 		}
 		
+		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CCT_STYLES)){
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = './modules/fox-4e-styling/styles/cct.css';
+			head.appendChild(link);
+		}
+		
 		if (game.settings.get("dnd4e","darkMode")){
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
@@ -107,7 +116,6 @@ Hooks.on('renderChatMessage', function(message, html, data){
 	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
 		html[0].classList.remove('dnd4eBeta');
 		html[0].classList.add('dnd4e');
-		//html[0].innerHTML = html[0].innerHTML.replace('dnd4eBeta','dnd4e');
 	}
 	if(html){
 		const newHTML = html[0].innerHTML.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');

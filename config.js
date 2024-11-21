@@ -50,6 +50,15 @@ export function registerConfigs() {
 		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.VAE_STYLES}.Hint`,
 		onChange: debouncedReload
 	});
+	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.CCT_STYLES, {
+		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.CCT_STYLES}.Name`,
+		default: true,
+		type: Boolean,
+		scope: 'client',
+		config: true,
+		hint: `Fox4e.settings.${Fox4eStyles.SETTINGS.CCT_STYLES}.Hint`,
+		onChange: debouncedReload
+	});
 	game.settings.register(Fox4eStyles.ID, Fox4eStyles.SETTINGS.GLOBAL_STYLES, {
 		name: `Fox4e.settings.${Fox4eStyles.SETTINGS.GLOBAL_STYLES}.Name`,
 		default: true,
