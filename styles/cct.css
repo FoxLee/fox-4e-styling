@@ -1,0 +1,68 @@
+#combat-dock{
+	--carousel-font-family:'DragonBodySans';
+	--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+}
+#combat-dock .combatant-wrapper .portrait-initiative{
+	font-size:calc(var(--combatant-portrait-size)*.2);
+    opacity:1;
+}
+#tooltip.combat-dock-tooltip{
+	opacity:1;
+	border:unset;
+	background:var(--gradient-4e);
+	color:#000;
+	font-size:1em;
+}
+#tooltip.combat-dock-tooltip .combat-dock-tooltip-wrapper{
+	font-family:'DragonBodySans';
+	text-shadow:unset;
+	box-shadow:unset;
+	padding:0;
+}
+#tooltip.combat-dock-tooltip .portrait-header{
+    background:#5d1232;
+	color:#fff;
+	text-shadow:unset;
+	font-size:0.75em;
+	padding:0 0.5em 0;
+	margin-bottom:0;
+	line-height:1;
+	font-weight:600;
+}
+#tooltip.combat-dock-tooltip .portrait-header+p:first-of-type{
+	background:#5d1232;
+	margin-top:0;
+	font-size:0.9em;
+	padding:0 0.5em 0.3em;
+	color:#fff;
+	line-height:1;
+	font-weight:500;
+}
+#tooltip.combat-dock-tooltip .portrait-header .initiative{
+	font-size:1.2em;
+}
+#tooltip.combat-dock-tooltip ul:first-of-type{
+	columns:2;
+	font-style:normal;
+	margin-top:0;
+	padding:0.3em;
+	font-weight:600;
+}
+#tooltip.combat-dock-tooltip ul:first-of-type i:not(.icon){
+	font-weight:500;
+	font-style:normal;
+}
+#tooltip.combat-dock-tooltip ul:first-of-type i.icon{
+	text-shadow:none;
+	margin-right:0;
+}
+#tooltip.combat-dock-tooltip ul:last-of-type{
+	padding:0.3em 0.5em 0.3em;
+}
+.portrait-effect .percent-border{
+	background:unset !important;
+}
+#combat-dock .combatant-portrait:hover .combatant-buttons{
+	opacity:1;
+	text-shadow:1px 1px 0 #000;
+}
