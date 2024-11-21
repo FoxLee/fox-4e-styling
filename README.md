@@ -67,7 +67,7 @@ Styles chat messages, in particular item cards, to match the core 4e books.
 
 
 ### Token Action HUD Styling
-Enhances 4e styling for [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core) (requires [Drac's Foundry 4e Tools](https://github.com/draconas1/foundry-4e-tools)).
+Enhances 4e styling for [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core) (requires [TAH 4e System Module](https://github.com/draconas1/token-action-hud-dnd4e)).
 
 <a href="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9"><img src="https://github.com/user-attachments/assets/b1360fd9-8559-4ec4-8153-bd601ab9c1d9" height=300></a>
 * If you have "Colour Powers By Use Type" turned on, tweaks the colours to be book-accurate (matching chat cards and PC sheet).
