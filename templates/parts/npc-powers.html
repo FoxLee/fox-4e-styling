@@ -38,60 +38,7 @@
 									</span>
 								</h4>{{!--
 								--}}&thinsp;♦&thinsp;{{!--
-								--}}<span class="usage power-detail item-uses">
-									{{~#if (eq item.system.useType "recharge")~}}
-										<span class="recharge">
-											{{~#if item.system.rechargeRoll~}}
-												<a class="item-recharge rollable numerical" data-tooltip="{{localize 'Fox4e.TipRechargeRoll'}} {{item.system.rechargeRoll}} {{localize 'Fox4e.OrHigher'}}">
-													{{~localize 'DND4E.PowerRecharge'}} 
-													<span class="dice d6">
-														{{~#if (lt item.system.rechargeRoll 3)}}2{{/if~}}
-														{{~#if (lt item.system.rechargeRoll 4)}}3{{/if~}}
-														{{~#if (lt item.system.rechargeRoll 5)}}4{{/if~}}
-														{{~#if (lt item.system.rechargeRoll 6)}}5{{/if~}}
-														6
-													</span>
-												</a>
-											{{~else if item.system.rechargeCondition~}}
-												<a class="item-recharge rollable" data-tooltip="{{localize 'Fox4e.TipRecharge'}} {{item.system.rechargeCondition}}">{{localize 'DND4E.PowerRecharge'}} {{item.system.rechargeCondition}}</a>
-											{{~/if~}}
-										</span>{{!--
-									--}}{{~else~}}{{!--
-										--}}<span class="limited {{item.system.uses.per}} uses-{{item.system.preparedMaxUses}}">
-										
-										{{~#if (eq null item.system.preparedMaxUses)~}}
-										{{!-- [Has usage count] NO --}}
-										
-											{{~lookup ../../config.powerUseType item.system.useType~}}
-										
-										{{~else~}}
-										{{!-- [Has usage count] YES --}}{{!--
-											--}}<span class="limit">{{!--
-												--}}<label class="uses autosize" for="item.system.uses.value">{{!--
-													--}}<input class="number" type="text" value="{{item.system.uses.value}}" name="item.system.uses.value" placeholder="0" />{{!--
-													--}}<span class="ruler">{{item.system.uses.value}}</span>{{!--
-												--}}</label>
-												of {{item.system.preparedMaxUses~}}
-											</span>{{!--
-											
-											--}}<span class="sep">/</span>
-											
-											{{~#if item.system.uses.per~}}
-												
-												{{~#if (eq item.system.uses.per "day")}}
-													{{~#if (eq 1 item.system.preparedMaxUses)~}}
-														<span class="interval">{{~lookup ../../config.powerUseType item.system.useType~}}</span>
-													{{~else~}}
-														<span class="interval">{{~#with (lookup ../../config.limitedUsePeriods item.system.uses.per) as |usePer|}}{{usePer.label}}{{/with~}}</span>
-													{{~/if~}}
-												{{~else~}}
-													<span class="interval">{{~#with (lookup ../../config.limitedUsePeriods item.system.uses.per) as |usePer|}}{{usePer.label}}{{/with~}}</span>
-												{{~/if~}}
-											{{~/if~}}												
-											
-										{{~/if}}{{!-- Close [has usage count] --}}
-										</span>
-									{{~/if~}}{{!-- [Close] Usage details --}}
+								--}}<span class="usage power-detail item-uses">{{{powerUse item.system}}}</span>
 							</div>
 				
 						</div>
