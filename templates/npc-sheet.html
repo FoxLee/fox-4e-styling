@@ -732,7 +732,7 @@
 								<input type="hidden" name="system.skills.{{s}}.training" value="{{skill.training}}" data-dtype="Number"></td>{{/if}}
 								<td class="skill-name"><h4 class="skill-name rollable" data-tooltip="{{localize 'DND4E.Roll'}} {{skill.label}} {{localize 'DND4E.Check'}}">{{skill.label}}</h4></td>
 								{{#if ../system.advancedCals}}<td class="skill-ability">{{skill.ability}}</td>{{/if}}
-								{{#if ../system.advancedCals}}<td class="skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat skill.value decimals=0 sign=true}}</td>{{else}}
+								{{#if ../system.advancedCals}}<td class="skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{numberFormat skill.total decimals=0 sign=true}}</td>{{else}}
 								<td class="skill-value" data-tooltip="{{localize 'DND4EUI.CurrentValue'}}">{{numberFormat skill.total decimals=0 sign=true}}</td>{{/if}}
 								<td class="skill-base" data-tooltip="{{#if ../system.advancedCals}}{{localize 'Fox4e.TipAddBonus'}}{{else}}{{localize 'Fox4e.TipEnterNum'}}{{/if}}  {{skill.label}}"><input class="skill-base" name="system.skills.{{s}}.base" value="{{skill.base}}" data-dtype="Number" size="2" /></td>
 							</tr>
