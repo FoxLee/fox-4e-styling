@@ -1,0 +1,59 @@
+<div class="active-effects">
+	<h4 class="attribute-name box-title">{{localize 'DND4E.Effects'}}</h4>
+	<ol class="item-list effects-list">
+		{{#each effects as |section sid|}}
+		<li class="items-header flexrow" data-effect-type="{{section.type}}">
+			<h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+			<div class="effect-source">{{localize 'DND4E.Source'}}</div>
+			<div class="effect-source">{{localize 'DND4E.Duration'}}</div>
+			<div class="item-controls effect-controls flexrow">
+				<a class="effect-control" data-action="create" data-tooltip="{{localize 'DND4E.EffectCreate'}}">
+					<i class="fas fa-plus"></i> {{localize "DND4E.Add"}}
+				</a>
+			</div>
+		</li>
+
+		<ol class="item-list">
+			{{#each section.effects as |effect|}}
+			<li class="item effect flexrow" data-effect-id="{{effect.id}}" data-tooltip="{{effect.tooltip}}">
+				<div class="item-name effect-name flexrow">
+					<img class="item-image" src="{{effect.img}}" />
+					<h4>{{effect.name}}</h4>
+				</div>
+				<div class="effect-source">{{getSourceName effect}}</div>
+				{{#if effect._getIsSave}}
+				<a class="effect-duration effect-save rollable"
+					data-tooltip="{{effect.duration.label}}">{{effect.duration.label}}</a>
+				{{else}}
+				<div class="effect-duration">{{effect.duration.label}}
+				</div>
+				{{/if}}
+				<div class="item-controls effect-controls flexrow">
+					<a class="effect-control" data-action="toggle" data-tooltip="{{localize 'DND4E.EffectToggle'}}">
+						<i class="{{#if (isActive this)}}fas fa-power-off{{else}}fas fa-circle-notch{{/if}}"></i>
+					</a>
+					<a class="effect-control" data-action="edit" data-tooltip="{{localize 'DND4E.EffectEdit'}}">
+						<i class="fas fa-edit"></i>
+					</a>
+					{{#if (isActor ../../this)}}
+					{{#if effect.transfer}}
+					<a class="effect-control" data-action="none" data-tooltip="{{localize 'DND4E.EffectFromItem'}}">
+						<i class=""></i>
+					</a>
+					{{else}}
+					<a class="effect-control" data-action="delete" data-tooltip="{{localize 'DND4E.EffectDelete'}}">
+						<i class="fas fa-trash"></i>
+					</a>
+					{{/if}}
+					{{else}}
+					<a class="effect-control" data-action="delete" data-tooltip="{{localize 'DND4E.EffectDelete'}}">
+						<i class="fas fa-trash"></i>
+					</a>
+					{{/if}}
+				</div>
+			</li>
+			{{/each}}
+		</ol>
+		{{/each}}
+	</ol>
+</div>

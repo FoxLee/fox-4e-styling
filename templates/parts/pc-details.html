@@ -1,0 +1,102 @@
+<section class="exp">
+	<span class="label">{{localize 'DND4E.Exp'}}</span>&thinsp;{{!--
+	--}}<label class="xp autosize visible" for="system.details.exp" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.Exp'}}">{{!--
+		--}}<input id="pc_xp_input" type="text" class="number" name="system.details.exp" value="{{system.details.exp}}" data-dtype="Number" onClick="this.select();" />{{!--
+		--}}<span id="pc_xp_display" class="ruler">{{commfy system.details.exp}}</span>{{!--
+	--}}</label>
+</section>
+
+<section class="traits">
+	<div class="flexcol">
+		<div class="detail form-group size">
+			<label>{{localize "DND4E.Size"}}:</label>
+			<select class="actor-size" name="system.details.size">
+				{{selectOptions config.actorSizes selected=system.details.size labelAttr="label"}}
+			</select>
+		</div>
+		<div class="detail form-group origin">
+			<label>{{localize "DND4E.CreatureOrigin"}}:</label>
+			<select class="actor-origin" name="system.details.origin">
+				{{selectOptions config.creatureOrigin selected=system.details.origin labelAttr="label"}}
+			</select>
+		</div>
+		<div class="detail form-group creature-type">
+			<label>{{localize "DND4E.CreatureType"}}:</label>
+			<select class="actor-type" name="system.details.type">
+				{{selectOptions config.creatureType selected=system.details.type labelAttr="label"}}
+			</select>
+		</div>
+		<div class="detail subtypes">
+			<label for="subtypes">{{localize 'DND4E.CreatureSubtypes'}}:</label>
+			<input id="other" type="text" name="system.details.other" value="{{system.details.other}}" data-tooltip="{{localize 'DND4E.CreatureSubtypes'}}"  placeholder="{{localize 'DND4E.CreatureSubtypes'}}" onClick="this.select();"/>
+		</div>
+	</div>
+	
+</section>
+
+
+{{!-- Proficiency --}}
+<div class="proficiencies">
+	<h4 class="attribute-name box-title">{{ localize "DND4E.Proficiency" }}</h4>
+	<a class="trait-selector" data-options="profArmor" data-target="system.details.armourProf">
+		<span>{{ localize "DND4E.Armour" }}</span>
+		<i class="fas fa-edit"></i>
+	</a>
+	<ul class="traits-list proficiency armour">
+	{{#each system.details.armourProf.selected as |v k|}}
+		<li class="tag {{k}}">{{v}}</li>
+	{{/each}}
+	</ul>
+
+	<a class="trait-selector-weapon" data-options="weaponProf" data-target="system.details.weaponProf">
+		<span>{{ localize "DND4E.Weapon" }}</span>
+		<i class="fas fa-edit"></i>
+	</a>
+	<ul class="traits-list proficiency weapons">
+	{{#each system.details.weaponProf.selected as |v k|}}
+		<li class="tag {{k}}">{{v}}</li>
+	{{/each}}
+	</ul>
+</div>
+
+{{!-- Languages --}}
+<div class="languages">
+	<h4 class="attribute-name box-title">{{ localize "DND4E.Languages" }}</h4>
+	<a class="trait-selector" data-options="spoken" data-target="system.languages.spoken">
+		<span>{{ localize "DND4E.Spoken" }}</span>
+		<i class="fas fa-edit"></i>
+	</a>
+	<ul class="traits-list languages spoken" style="list-style-type: none;">
+	{{#each system.languages.spoken.selected as |v k|}}
+		<li class="tag {{k}}">{{v}}</li>
+	{{/each}}
+	</ul>
+	
+	<a class="trait-selector" data-options="script" data-target="system.languages.script">
+		<span>{{ localize "DND4E.Script" }}</span>
+		<i class="fas fa-edit"></i>
+	</a>
+	<ul class="traits-list languages script" style="list-style-type: none;">
+	{{#each system.languages.script.selected as |v k|}}
+		<li class="tag {{k}}">{{v}}</li>
+	{{/each}}
+	</ul>					
+</div>
+
+{{!-- Senses --}}
+<div class="senses">
+	<h4 class="attribute-name box-title">{{ localize "DND4E.SpecialSenses" }}</h4>    
+	<div style="text-align: left;">
+		<a class="trait-selector-senses" data-options="special" data-target="system.senses.special">
+			<span>{{ localize "DND4E.SpecialSenses" }}</span>
+			<i class="fas fa-edit"></i>
+		</a>
+		<ul class="traits-list senses" style="list-style-type: none;">
+		{{#each system.senses.special.selected as |v k|}}
+			<li class="tag {{k}}">{{v}}</li>
+		{{/each}}
+		</ul>
+
+		<input class="senses-arbitrary" type="text" name="system.senses.notes" value="{{system.senses.notes}}" data-tooltip="notes" placeholder="{{localize 'DND4E.Notes'}}" />
+	</div>
+</div>

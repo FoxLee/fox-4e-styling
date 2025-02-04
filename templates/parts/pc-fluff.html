@@ -1,0 +1,26 @@
+<section class="flexrow details">
+	<div class="detail gender">
+		<label for="gender">{{localize 'DND4E.Gender'}}:</label>
+		<input id="gender" type="text" name="system.details.gender" value="{{system.details.gender}}" data-tooltip="{{localize 'DND4E.Gender'}}"  placeholder="{{localize 'DND4E.Gender'}}" onClick="this.select();"/>
+	</div>
+	<div class="detail age">
+		<label for="age">{{localize 'DND4E.Age'}}:</label>
+		<input id="age" type="text" name="system.details.age" value="{{system.details.age}}" data-tooltip="{{localize 'DND4E.Age'}}"  placeholder="{{localize 'DND4E.Age'}}" onClick="this.select();"/>
+	</div>
+	<div class="detail alignment">
+		<label for="alignment">{{localize 'DND4E.Alignment'}}:</label>
+		<input id="alignment" type="text" name="system.details.alignment" value="{{system.details.alignment}}" data-tooltip="{{localize 'DND4E.Alignment'}}"  placeholder="{{localize 'DND4E.Alignment'}}" onClick="this.select();"/>
+	</div>
+	<div class="detail height">
+		<label for="height">{{localize 'DND4E.Height'}}:</label>
+		<input id="height" type="text" name="system.details.height" value="{{system.details.height}}" data-tooltip="{{localize 'DND4E.Height'}}"  placeholder="{{localize 'DND4E.Height'}}" onClick="this.select();"/>
+	</div>
+	<div class="detail weight">
+		<label for="weight">{{localize 'DND4E.Weight'}}:</label>
+		<input id="weight" type="text" name="system.details.weight" value="{{system.details.weight}}" data-tooltip="{{localize 'DND4E.Weight'}}"  placeholder="{{localize 'DND4E.Weight'}}" onClick="this.select();"/>
+	</div>
+</section>
+
+<section class="biography">
+	{{editor biographyHTML target="system.biography" button=true owner=owner editable=editable rollData=rollData engine="prosemirror"}}
+</section>

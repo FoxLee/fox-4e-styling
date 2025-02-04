@@ -1,0 +1,155 @@
+
+{{!-- Health --}}
+<section class="attribute health flexcol">
+	<h2 class="name">{{localize 'DND4E.Health'}}</h2>					
+	<div class="values flexrow">
+		<div class="attribute-box tracking temp label-below">
+			<label class="name label" for="system.attributes.temphp.value">{{localize 'Fox4e.Temp'}}</label>
+			<input class="value number" type="text" name="system.attributes.temphp.value" id="system.attributes.temphp.value" value="{{#if system.attributes.temphp.value}}{{system.attributes.temphp.value}}{{else}}0{{/if}}" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.TempHPTip'}}"  placeholder=0 data-dtype="Number" onClick="this.select();" />
+		</div>
+		<div class="attribute-box tracking current label-below">
+			<label class="name label" for="system.attributes.hp.value">{{localize 'DND4E.HPShort'}}</label>
+			<input class="value number{{#if system.details.isBloodied}} bloodied{{/if}}" type="text" name="system.attributes.hp.value" id="system.attributes.hp.value" value="{{system.attributes.hp.value}}" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.HPCurrent'}}" placeholder="Current" data-dtype="Number" onClick="this.select();" />
+		</div>
+		<div class="attribute-box tracking max label-below">
+			<label class="name health-option rollable label" for="system.attributes.hp.max" data-tooltip="{{localize 'DND4E.HP'}} ({{localize 'Fox4e.TipClickConfig'}})">{{localize 'Fox4e.Max'}}</label>
+			<input class="value number {{#if (eq system.attributes.hp.autototal true)}}health-option rollable disabled{{/if}}" {{#if system.attributes.hp.autototal}}disabled{{/if}} type="text" name="system.attributes.hp.max" value="{{system.attributes.hp.max}}" data-tooltip="{{#if (eq system.attributes.hp.autototal false)}}{{localize 'DND4E.HPTotal'}}: {{localize 'Fox4e.TipEnterNum'}}{{else}}{{localize 'DND4E.HPTotalAuto'}}{{/if}}" placeholder="Total" data-dtype="Number" onClick="this.select();" />
+		</div>
+	</div>
+	
+	<div class="saves flexrow">
+		<img class="death-save rollable" src="icons/svg/d20-grey.svg" width="20" height="20" id="death-save-roll" data-tooltip="{{localize 'DND4E.DeathSavingThrow'}}"/>&thinsp;{{!--
+		--}}<label class="death-save-bonus rollable" data-tooltip="{{localize 'DND4E.DeathSavingThrow'}} ({{localize 'Fox4e.TipClickConfig'}})" for="death-save-roll">{{localize 'DND4E.DeathSave'}}</label>
+		<span class="fails" data-tooltip="Death Save Failures">{{!--
+			--}}<input class="number hidden" type="text" id="fails-number" name="system.details.deathsavefail" value="{{system.details.deathsavefail}}" data-tooltip="Death Save Failures" placeholder="0" data-dtype="Number" />{{!--
+			--}}<img class="icon" name="death-save-1" src="modules/fox-4e-styling/images/skull.svg" height="15" width="15" data-tooltip="{{localize 'Fox4e.TipToggle'}}" onClick="updateSaves(1);" />&thinsp;{{!--
+			--}}<img class="icon" name="death-save-2" src="modules/fox-4e-styling/images/skull.svg" height="15" width="15" data-tooltip="{{localize 'Fox4e.TipToggle'}}" onClick="updateSaves(2);" />&thinsp;{{!--
+			--}}<img class="icon" name="death-save-3" src="modules/fox-4e-styling/images/skull.svg" height="15" width="15" data-tooltip="{{localize 'Fox4e.TipToggle'}}" onClick="updateSaves(3);" />{{!--
+		--}}</span>		
+	</div>
+		
+	<section class="surges">
+		<div class="values flexrow">	
+			<div class="tracking bonus flexcol attribute-box label-below">
+				<label class="surge-bonus rollable label" data-tooltip="{{localize 'DND4E.SurgeValue'}} ({{localize 'Fox4e.TipClickConfig'}})" for="system.details.surgeValue">{{localize 'Fox4e.Value'}}</label>
+				<strong class="value surge-bonus rollable" data-tooltip="{{localize 'DND4E.SurgeValue'}} ({{localize 'Fox4e.TipClickConfig'}})" id="system.details.surgeValue">{{system.details.surgeValue}}</strong>
+			</div>				
+			<div class="attribute-box label-below tracking current flexcol">
+				<label class="display envimental-loss-bonus rollable label" data-tooltip="{{localize 'Fox4e.TipBonus'}} {{localize 'DND4E.SurgeCur'}}">{{localize 'DND4E.HealingSurgesShort'}}</label>
+				<input class="value number" type="text" id="system.details.surges.value" name="system.details.surges.value" value="{{system.details.surges.value}}" data-tooltip="{{localize 'Fox4e.TipEnterNum'}} {{localize 'DND4E.SurgeCur'}}"  placeholder="Current" data-dtype="Number" onClick="this.select();" />
+			</div>			
+			<div class="attribute-box label-below tracking max flexcol">
+				<label class="display max label" data-tooltip="{{localize 'Fox4e.TipBonus'}} {{localize 'DND4E.SurgeCur'}}">{{localize 'Fox4e.Max'}}</label>
+				<input class="value number" type="text" name="system.details.surges.max" id="system.details.surges.max" value="{{system.details.surges.max}}" data-tooltip="{{localize 'DND4E.SurgeDay'}}"  placeholder="Total" data-dtype="Number" onClick="this.select();" />
+			</div>
+		</div>
+	</section>
+		
+	<section class="buttons rest flexrow">
+		<button class="rest heal-menu button" data-tooltip="{{localize 'DND4E.HealingMenu'}}"><img class="button-icon" src="modules/fox-4e-styling/images/hp_health.svg" height="25" width="25" /></button> 
+		<button class="rest second-wind button" data-tooltip="{{localize 'DND4E.SecondWind'}}" {{#if system.details.secondwind}}disabled{{/if}}><img class="button-icon" src="modules/fox-4e-styling/images/hp_sw.svg" height="25" width="25" /></button>
+		<button class="rest short-rest button" data-tooltip="{{localize 'DND4E.RestShort'}}"><img class="button-icon" src="modules/fox-4e-styling/images/hp_rest-short.svg" height="25" width="25" /></button> 
+		<button class="rest long-rest button" data-tooltip="{{localize 'DND4E.RestLong'}}"><img class="button-icon" src="modules/fox-4e-styling/images/hp_rest-long.svg" height="25" width="25" /></button>
+	</section>
+		
+</section>
+
+{{!-- Defences --}}
+<section class="attribute defences flexcol">
+	<h2 class="name">{{localize 'DND4E.Defences'}}</h2>
+	<div class="values flexrow">
+		{{#each system.defences as | def d|}}
+		<div class="attribute-box label-below flexcol" data-defence="{{d}}">
+			<span class="name def-name rollable label" data-tooltip="{{localize 'DND4E.Roll'}} {{def.title}}">{{def.label}}</span>
+			<strong class="value defence-bonus rollable" data-tooltip="{{def.title}} ({{localize 'Fox4e.TipClickConfig'}})">{{def.value}}</strong>
+		</div>
+		{{/each}}
+	</div>
+	<div class="saves flexrow">
+		<img class="roll-save rollable" src="icons/svg/d20-grey.svg" width="20" height="20" id="saving-throw-roll" data-tooltip="{{localize 'DND4E.SavingThrow'}}"/>&thinsp;{{!--
+		--}}<label class="roll-save-bonus rollable" data-tooltip="{{localize 'DND4E.SavingThrow'}} ({{localize 'Fox4e.TipClickConfig'}})" for="saving-throw-roll">{{localize 'DND4E.ActionSave'}}</label>
+	</div>
+</section>
+
+{{!-- Action --}}
+<section class="movement flexcol">
+	<h2>{{localize 'Fox4e.Readiness'}}</h2>
+	<div class="flexrow">{{!-- Columns --}}
+		<div class="attribute-box flexcol initiative">
+			<label class="rollInitiative rollable label below" data-tooltip="{{localize 'Fox4e.TipRollInit'}}">
+				<img class="icon" src="icons/svg/d20-grey.svg" width="10" height="10" />&thinsp;{{!--
+				--}}{{localize 'DND4E.Init'}}
+			</label>
+			<strong class="init-bonus rollable attribute-value" data-tooltip="{{localize 'DND4E.InitiativeScore'}} ({{localize 'Fox4e.TipClickConfig'}})">{{numberFormat system.attributes.init.value decimals=0 sign=true }}</strong>
+		</div>
+		<div class="attribute-box flexcol speed" data-tooltip="{{moveTitle}}<br />({{localize 'Fox4e.TipClickConfig'}})">
+			<label class="movement-dialog rollable label below">{{localize 'DND4E.Speed'}}</label>
+			<strong class="movement-dialog rollable attribute-value">{{numberFormat system.movement.walk.value}}</strong>
+		</div>
+		
+		<div class="attribute-box flexcol action-points">
+			<div class="display label flexrow">
+				<label class="action-point-extra rollable" for="system.actionpoints.value" data-tooltip="{{localize 'DND4E.ActionPointRiders'}}">{{localize 'Fox4e.ActionPointAbbr'}}</label>
+				<a class="action-point" data-tooltip="{{localize 'DND4E.ActionPointUse'}}" {{#if system.actionpoints.encounteruse}}disabled{{/if}}><i class="fa-solid fa-bolt-lightning"></i></a>
+				</div>
+			<input class="number" type="text" name="system.actionpoints.value" id="system.actionpoints.value" value="{{system.actionpoints.value}}" data-tooltip="{{localize 'DND4E.ActionPointsRemain'}}" data-dtype="Number" onClick="this.select();" placeholder="0"/>
+		</div>
+	</div>
+	
+	<div class="senses">
+		<a class="trait-selector-senses" data-options="special" data-target="system.senses.special" data-tooltip="{{ localize 'DND4E.Senses' }} ({{localize 'Fox4e.TipClickConfig'}})">
+			<label>{{localize 'DND4E.Senses'}}</label>
+			<span class="placeholder">{{ localize 'DND4E.Senses' }}<i class="fas fa-edit"></i></span>
+			<ul class="traits-list">
+			{{#each system.senses.special.selected as |v k|}}
+				<li class="tag {{k}}">{{v}}</li>
+			{{/each}}
+			</ul>
+		</a>
+	</div>
+			
+</section>
+
+{{!-- Skills --}}
+<section class="skill-summary flexcol">
+	<h2>{{localize 'Fox4e.KeySkills'}}</h2>
+	<ol class="skill-list">
+	{{#each system.skills as |skill s|}}{{#if skill.training}}
+	{{log skill}}
+		<li class="skill--block {{s}}" data-skill="{{s}}"><span class="skill-name rollable">
+			<span class="name">{{s}}</span>&thinsp;{{!--
+			--}}<span class="bonus total rollable">{{numberFormat skill.total decimals=0 sign=true }}</span>
+		</span></li>
+	{{/if}}{{/each}}
+	</ol>
+</section>{{!-- Senses --}}
+
+<section class="resources flexcol">
+	<h2>{{localize 'Fox4e.Resources'}}</h2>
+	
+	{{#each system.resources as |res|}}
+	{{#if res.label}}
+	<div class="resource attribute-box flexcol">
+		<label class="name label">{{res.label}}</label>
+		<div class="value"><strong class="current">{{res.value}}</strong>/<strong class="max">{{res.max}}</strong></div>
+	</div>
+	{{/if}}	
+	{{/each}}
+	
+</section>{{!-- Resources --}}
+
+
+
+<script>
+	function updateSaves(clickedValue){
+		let target = document.getElementById("fails-number");
+		console.debug(target);
+		console.debug(target.value);
+		
+		if(target.value == clickedValue){
+			document.getElementById("fails-number").setAttribute('value',clickedValue - 1);
+		}else{
+			document.getElementById("fails-number").setAttribute('value',clickedValue);
+		}
+	}
+</script>

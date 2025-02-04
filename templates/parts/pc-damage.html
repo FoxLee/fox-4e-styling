@@ -1,0 +1,63 @@
+{{!-- Resistances --}}
+{{#if system.resistances}}
+<div class="attribute-res resource-full">
+	<h4 class="attribute-name box-title">{{localize 'DND4E.DamResVuln'}}</h4>
+	<ol class="item-list">
+		{{#each system.resistances as |res r|}}
+		<li class="skill flexrow" data-res="{{r}}">
+			<h4 class="res-name">{{res.label}}</h4>
+			<span class="res-mod">{{numberFormat res.value decimals=0 sign=true }}</span>
+			<span class="res-armour">{{localize 'DND4E.Armour'}}: {{res.armour}} </span>
+			<a class="resistances-bonus" data-target="system.resistances"
+				data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.DamRes'}}">{{localize 'DND4E.Bonus'}}:
+				{{res.resBonusValue}}</a>
+			<span class="res-immune">{{localize 'DND4E.Immunity'}}</span>
+			<input type="checkbox" name="system.resistances.{{r}}.immune" data-dtype="Boolean" {{checked res.immune}}
+				data-tooltip="{{localize 'DND4E.Immunity'}}" />
+		</li>
+		{{/each}}
+	</ol>
+
+	{{!-- Condition & Special Resistances --}}
+	<div class="resistances-special">
+
+		<a class="list-string-input untyped-resistances" data-options="special"
+			data-target="system.untypedResistances.resistances">
+			<span>{{ localize "DND4E.UntypedRes" }}</span>
+			<i class="fas fa-edit"></i>
+		</a>
+
+		<ul class="traits-list" style="list-style-type: none;">
+			{{#each system.untypedResistances.resistances as |v k|}}
+			<li class="tag {{k}}">{{v}}</li>
+			{{/each}}
+		</ul>
+
+		<a class="list-string-input untyped-resistances" data-options="special"
+			data-target="system.untypedResistances.vulnerabilities">
+			<span>{{ localize "DND4E.UntypedVuln" }}</span>
+			<i class="fas fa-edit"></i>
+		</a>
+
+		<ul class="traits-list" style="list-style-type: none;">
+			{{#each system.untypedResistances.vulnerabilities as |v k|}}
+			<li class="tag {{k}}">{{v}}</li>
+			{{/each}}
+		</ul>
+
+		<a class="list-string-input untyped-resistances" data-options="special"
+			data-target="system.untypedResistances.immunities">
+			<span>{{ localize "DND4E.UntypedImm" }}</span>
+			<i class="fas fa-edit"></i>
+		</a>
+
+		<ul class="traits-list" style="list-style-type: none;">
+			{{#each system.untypedResistances.immunities as |v k|}}
+			<li class="tag {{k}}">{{v}}</li>
+			{{/each}}
+		</ul>
+	</div>
+
+</div>
+{{/if}}
+</ol>

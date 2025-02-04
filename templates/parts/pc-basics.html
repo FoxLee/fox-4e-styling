@@ -1,0 +1,86 @@
+{{!-- Abilities --}}
+<section class="abilities">
+	<h2>{{localize 'DND4E.AbilityScores'}}</h2>
+	
+		<header class="subsection flexrow">
+			<span>{{localize 'DND4E.MOD'}}</span>
+			{{#unless system.halfLevelOptions}}
+			<span>{{localize 'DND4E.MOD'}}+{{localize 'DND4E.HalfLVL'}}</span>
+			{{/unless}}
+		</header>
+	
+		<ol>
+			{{#each system.abilities as | ability a|}}
+			<li class="attribute ability flexrow" data-ability="{{a}}">
+				<div><input class="score" name="system.abilities.{{a}}.value" type="text" data-dtype="Number" value="{{ability.value}}" onfocus="this.select()" placeholder="10"/></div>
+				<div class="ability-name rollable" data-tooltip="{{ability.label }}">{{ability.label}}</div>
+				<div class="display ability-mod-half" data-tooltip="{{ability.label}}">{{numberFormat ability.mod decimals=0 sign=true}}</div>
+				{{#unless system.halfLevelOptions}}
+				<div class="display ability-mod-half" data-tooltip="{{ability.label }}">{{numberFormat ability.modHalf decimals=0 sign=true}}</div>
+				{{/unless}}
+			</li>
+			{{/each}}
+		</ol>
+		
+</section>
+
+{{!-- Skills --}}
+<section class="section section--skills">
+	<h2>{{localize 'DND4E.Skills'}}</h2>
+	{{#each system.skills as |skill s|}}
+	<div class="skill--block flexrow" data-skill="{{s}}">
+		<a class="training-toggle skill-training" data-tooltip="{{skill.hover}}">{{{skill.icon}}}</a>
+		<h4 class="skill-name rollable">{{skill.label}}</h4>
+		<input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
+		<label class="skill-mod skill-bonus rollable">{{numberFormat skill.total decimals=0 sign=true }}</label>
+	</div>
+	{{/each}}
+</section>
+
+<a class="custom-roll-descriptions" data-tooltip="Change custom descriptions for Skill and Ability roll checks.">Edit Skill & Ability Custom Descriptions.</a>
+
+{{!-- Modifiers --}}
+{{#if system.modifiers}}
+<div class="attribute modifiers global">
+	<h2 class="">{{localize 'DND4E.ModifiersGlobal'}}</h2>
+	<ul class="item-list modifier-list">
+		<div class="global-mods-column flexrow">
+			<li class="flexrow global-mod" data-modifiers="attack">
+				<span
+					data-tooltip="{{localize 'DND4E.ModifierAttack'}} <br />{{#if system.modifiers.attack.warn}}({{localize 'DND4E.ModifierAttackNote'}}){{/if}}"><strong>{{localize
+						'DND4E.Attack'}}:</strong>&nbsp;{{numberFormat system.modifiers.attack.value
+					sign=true}}</span>
+				<a class="modifiers-bonus" data-target="system.modifiers"
+					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierAttack'}}">{{localize
+					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.attack.bonusValue sign=true}}</a>
+			</li>
+			<li class="flexrow global-mod" data-modifiers="damage">
+				<span data-tooltip="{{localize 'DND4E.ModifierDamage'}}"><strong>{{localize
+						'DND4E.Damage'}}:</strong>&nbsp;{{numberFormat system.modifiers.damage.value
+					sign=true}}</span>
+				<a class="modifiers-bonus" data-target="system.modifiers"
+					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierDamage'}}">{{localize
+					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.damage.bonusValue sign=true}}</a>
+			</li>
+		</div>
+		<div class="global-mods-column flexrow">
+			<li class="flexrow global-mod" data-modifiers="skills">
+				<span data-tooltip="{{localize 'DND4E.ModifierSkills'}}"><strong>{{localize
+						'DND4E.Skills'}}:</strong>&nbsp;{{numberFormat system.modifiers.skills.value
+					sign=true}}</span>
+				<a class="modifiers-bonus" data-target="system.modifiers"
+					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierSkills'}}">{{localize
+					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.skills.bonusValue sign=true}}</a>
+			</li>
+			<li class="flexrow global-mod" data-modifiers="defences">
+				<span data-tooltip="{{localize 'DND4E.ModifierDefences'}}"><strong>{{localize
+						'DND4E.Defences'}}:</strong>&nbsp;{{numberFormat system.modifiers.defences.value
+					sign=true}}</span>
+				<a class="modifiers-bonus" data-target="system.modifiers"
+					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierDefences'}}">{{localize
+					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.defences.bonusValue sign=true}}</a>
+			</li>
+		</div>
+	</ul>
+</div>
+{{/if}}

@@ -1,0 +1,59 @@
+{{!-- Action Points --}}
+<section class="attribute action flexcol">
+	<h2 class="name">{{localize 'DND4E.ActionPoints'}}</h2>
+	<div class="sub">
+		<label class="attribute-display label action-point-extra rollable left" for="system.actionpoints.value" data-tooltip="{{localize 'DND4E.ActionPointRiders'}} {{localize 'Fox4e.TipBonus'}}">{{localize 'DND4E.ActionPoints'}}</label>
+	</div>
+	<div class="attribute-sub">
+		<label class="attribute-display-check label left" for="system.actionpoints.encounteruse" data-tooltip="{{localize 'DND4E.ActionPointUsed'}}">{{localize 'DND4E.Used'}}</label>&thinsp;{{!--
+		--}}<input type="checkbox" type="checkbox" name="system.actionpoints.encounteruse" id="system.actionpoints.encounteruse" data-dtype="Boolean" {{checked system.actionpoints.encounteruse}} data-tooltip="Action Point used this encounter?"/>
+	</div>
+	<div class="milestones">
+		<label class="label" for="system.magicItemUse.milestone">Milestones</label>&thinsp;{{!--
+		--}}<input class="number" name="system.magicItemUse.milestone" id="system.magicItemUse.milestone" value="{{system.magicItemUse.milestone}}" data-tooltip="{{localize 'DND4E.Milestones'}}"  placeholder="0" data-dtype="Number" onClick="this.select();">
+	</div>
+	<a class="rest action-point button" data-tooltip="{{localize 'DND4E.ActionPointUse'}}">{{localize "DND4E.ActionPointUse"}}</a>
+</section>
+
+<div class="secwind attribute-box flexrow">
+	<label class="attribute-display-check secondwind-bonus rollable label right" for="system.details.secondwind" data-tooltip="{{localize 'Fox4e.TipBonus'}} {{localize 'DND4E.SecondWindBonus'}}">{{localize 'DND4E.SecondWind'}}</label>&thinsp;{{!--
+	--}}<input type="checkbox" name="system.details.secondwind" id="system.details.secondwind" data-dtype="Boolean" {{checked system.details.secondwind}} data-tooltip="{{localize 'DND4E.SecondWindUsed'}}"/>
+</div>
+	
+<div class="flexrow daily-item-power-use">
+	<div class="daily-item-power-use-counter">
+		<span>{{localize 'DND4E.ItemUseDaily'}}:</span> 
+		<input type="text" name="system.magicItemUse.dailyuse" value="{{system.magicItemUse.dailyuse}}" data-tooltip="{{localize 'DND4E.ItemUseDailyRem'}}"  placeholder="0" data-dtype="Number" onClick="this.select();"/>    
+		<span data-tooltip="{{localize 'DND4E.ItemUseDaily'}}">/ {{system.magicItemUse.perDay}}</span>
+	</div>
+	<div class="daily-item-power-use-check flexrow">
+		<span>{{localize 'DND4E.ItemUseDailyEnc'}}</span>
+		<input type="checkbox" name="system.magicItemUse.encounteruse" data-dtype="Boolean" {{checked system.magicItemUse.encounteruse}} data-tooltip="{{localize 'DND4E.ItemUseDailyEnc'}}">
+	</div>
+	
+</div>
+
+<section class="flexrow resources">
+	{{!-- Custom Resources --}}
+	{{#each system.resources as |res|}}
+	<div class="attributes resource-tracker">
+		<h4 class="resource-name">
+			<input name="system.resources.{{res.name}}.label" type="text" value="{{res.label}}"
+				   placeholder="{{res.placeholder}}" />
+		</h4>
+		<div class="attribute-value flexrow">
+			<input name="system.resources.{{res.name}}.value" type="number" value="{{res.value}}" placeholder="0"/>
+			<span class="sep"> / </span>
+			<input name="system.resources.{{res.name}}.max" type="number" value="{{res.max}}" placeholder="0"/>
+		</div>
+		<footer class="attribute-footer attribute-footer--temp-hp flexrow">
+			<label class="recharge checkbox">
+				{{ localize "DND4E.AbbreviationSR" }} <input name="system.resources.{{res.name}}.sr" type="checkbox" {{checked res.sr}}/>
+			</label>
+			<label class="recharge checkbox">
+				{{ localize "DND4E.AbbreviationLR" }} <input name="system.resources.{{res.name}}.lr" type="checkbox" {{checked res.lr}}/>
+			</label>
+		</footer>
+	</div>
+	{{/each}}
+</section>
