@@ -1,50 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="0 0 31.760139 30.8687"
+   viewBox="0 0 47.625003 36.898418"
    version="1.1"
-   width="31.760139pt"
-   height="30.8687pt"
+   width="47.625004pt"
+   height="36.898418pt"
    id="svg29"
-   sodipodi:docname="box_speed.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview31"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:document-units="pt"
-     showgrid="false"
-     lock-margins="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="8.7165442"
-     inkscape:cx="27.132312"
-     inkscape:cy="-0.63098401"
-     inkscape:window-width="3840"
-     inkscape:window-height="2058"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="Background" />
   <defs
      id="defs2" />
   <g
-     inkscape:groupmode="layer"
      id="Background"
-     inkscape:label="Background"
-     transform="translate(-31.374639,-11.648735)">
+     transform="translate(-59.321707,29.056472)">
     <path
-       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.694488;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
-       d="m 63.134779,27.197236 -8.0846,-15.548501 h -23.67554 l 4.8967,15.548501 -4.8967,15.320199 h 23.67554 z"
-       id="path14" />
+       id="path2"
+       style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:0.759294;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 59.321707,-29.056472 4.116211,18.584911 -4.116211,18.3135093 h 23.559082 l 6.101074,-18.3135093 -6.101074,-18.584911 z m 25.186523,0 6.09961,18.584911 -6.09961,18.3135093 h 8.819824 l 6.101075,-18.3135093 -6.101075,-18.584911 z m 10.353516,0 6.099614,18.584911 -6.099614,18.3135093 h 5.983884 l 6.10108,-18.3135093 -6.10108,-18.584911 z" />
   </g>
 </svg>

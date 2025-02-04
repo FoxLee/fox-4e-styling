@@ -14,7 +14,7 @@
   <sodipodi:namedview
      id="namedview31"
      pagecolor="#505050"
-     bordercolor="#ffffff"
+     bordercolor="#000000"
      borderopacity="1"
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
@@ -43,7 +43,7 @@
      inkscape:label="Background"
      transform="translate(-27.17907,-14.310415)">
     <path
-       style="fill:#ffffff;fill-rule:nonzero;stroke:none;stroke-width:0.694935;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       style="fill:#000000;fill-rule:nonzero;stroke:none;stroke-width:0.694935;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
        d="m 43.353369,42.953315 c 4.591795,-0.7347 16.060995,-10.1015 16.060995,-18.4282 0,-8.3269 -8.9737,-12.91346 -16.060995,-8.51056 -8.02041,-4.10204 -16.174299,0.18366 -16.174299,8.51056 0,8.3267 10.847799,17.5099 16.174299,18.4282 z"
        id="path12" />
   </g>
