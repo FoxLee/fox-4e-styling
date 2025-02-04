@@ -19,7 +19,7 @@
 			"name": "Gilphe"
 		}
 	],
-	"version": "2.2",
+	"version": "2.3",
 	"compatibility": {
 		"minimum": "12",
 		"verified": "12.331"
@@ -46,7 +46,9 @@
 		"fonts/dragonhead.css",
 		"fonts/dragontitle.css",
 		"fonts/4ed6.css",
-		"styles/sheets.css"
+		"styles/sheets.css",
+		"styles/sheets-pc.css",
+		"styles/sheets-npc.css"
 	],
 	"scripts": [
 		"scripts/helpers.js"
