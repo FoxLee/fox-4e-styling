@@ -1,0 +1,807 @@
+/***************************************************/
+/*         NPC SHEETS                              */
+/***************************************************/
+
+/*---------- All Sections ----------*/
+.sheet.fox4e.actor.npc .window-content{
+	background:#e8e6d4;
+	color:#000;
+}
+.sheet.fox4e.actor.npc>form{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+}
+.sheet.fox4e.actor.npc ::-webkit-scrollbar-thumb{
+	background:#fff;
+	border:none;
+}
+.sheet.fox4e.actor.npc ::-webkit-scrollbar-track{
+	background:#cdcbb5;
+}
+.sheet.fox4e.actor.npc{
+    scrollbar-color:#fff #cdcbb5;
+}
+.sheet.fox4e.actor.npc .section.tabs{
+	border-top:1px solid;
+	border-bottom:1px solid;
+	font-size:0.75em;
+	text-transform:uppercase;
+}
+.sheet.fox4e.actor.npc .section.tabs .sheet-tabs.tabs{
+	border:none;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	max-width:30rem;
+}
+.sheet.fox4e.actor.npc .section.tabs .sheet-tabs.tabs .item{
+	padding:4px 6px;
+}
+.sheet.fox4e.actor.npc .sheet-body{
+	overflow-y:auto;
+	-webkit-box-flex:10;
+	    -ms-flex-positive:10;
+	        flex-grow:10;
+	padding-bottom:4px;
+}
+.sheet.fox4e.actor.npc .indented{
+	text-indent:0;
+}
+.sheet.fox4e.actor.npc ul{
+	margin:0;
+	padding:0;
+	list-style:none inside;
+}
+.sheet.fox4e.actor.npc button{
+	border:0;
+	padding:4px 8px 4px 6px;
+	line-height:1em;
+	width:auto;
+	font-size:0.75em;
+	text-transform:uppercase;
+	margin:2px;
+	background:#cdcbb5;
+}
+.sheet.fox4e.actor.npc button:hover,
+.sheet.fox4e.actor.npc button:focus,
+.sheet.fox4e.actor.npc button:active{
+	background:#f4f2e5;
+}
+.sheet.fox4e.actor.npc .subsection{
+	background-color:#70774f;
+	color:#fff;
+	padding:0 12px 1px 6px;
+	margin-top:0;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.actor.npc h2.subsection,
+.sheet.fox4e.actor.npc .subsection h2{
+	font-size:1.2em;
+	font-variant:small-caps;
+	font-weight:500;
+}
+.sheet.fox4e.actor.npc h3.subsection{
+	background:#cdcbb5;
+	color:#000;
+	padding:0 12px 1px 6px;
+	margin-top:0;
+	-webkit-box-align:center;
+		-ms-flex-align:center;
+		align-items:center;
+	line-height:1.25em;
+	font-variant:small-caps;
+}
+.sheet.fox4e.actor.npc input[type='checkbox']{
+	margin-top:-0.55em;
+}
+
+
+/*---------- All Sections — Owned Item Lists ----------*/
+
+.sheet.fox4e.actor.npc .subsection .item-controls .fas,
+.sheet.fox4e.actor.npc .item-controls .item-create .fas{
+	color:#fff;
+}
+.sheet.fox4e.actor.npc .item-header{
+	padding:0 12px 1px 6px;
+	background:#cdcbb5;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.actor.npc .item-name h4{
+	margin-top:0;
+}
+.sheet.fox4e.actor.npc .item-header.not-available,
+.sheet.fox4e.actor.npc .item-header.not-available+.item-body{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.actor.npc .item-summary{
+	display:none !important;
+}
+.sheet.fox4e.actor.npc .item-body{
+	padding:1px 12px 1px 12px;
+	background:#e8e6d4;
+	min-width:100%;
+}
+.sheet.fox4e.actor.npc .item-body p{
+	margin:0;
+}
+.sheet.fox4e.actor.npc .item-body ul{
+	list-style-type:disc;
+	margin: 0.5em 0;
+	padding:0 0 0 1.5em;
+}
+.sheet.fox4e.actor.npc .item-body ul,
+.sheet.fox4e.actor.npc .item-body ol{
+	padding-left:1.5em;
+	list-style-position:outside;
+}
+.sheet.fox4e.actor.npc .item-body .label{
+	font-weight:normal;
+	font-style:italic;
+}
+.sheet.fox4e.actor.npc .item-body.flexcol>*{
+	-webkit-box-ordinal-group:2;
+	    -ms-flex-order:1;
+	        order:1;
+	-webkit-box-flex:unset;
+	    -ms-flex:unset;
+	        flex:unset;
+}
+.sheet.fox4e.actor.npc img.item-image[src$="svg"]{
+	-webkit-filter:brightness(0);
+	        filter:brightness(0);
+}
+
+
+/*---------- All Sections — Tables ----------*/
+
+.sheet.fox4e.actor.npc .tab:not(.lore) table{
+	border:none;
+	background:none;
+	margin:0;
+	border-spacing:0;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) tr{
+   border-bottom:1px solid #e8e6d4;
+	border:none;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table thead{
+	background:#cdcbb5;
+	border-bottom:none;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table thead tr{
+   padding:2px 8px 2px 4px;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table th,
+.sheet.fox4e.actor.npc .tab:not(.lore) table td{
+	padding: 2px 8px 2px 4px;
+	border:none;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table th:first-child,
+.sheet.fox4e.actor.npc .tab:not(.lore) table td:first-child{
+	padding-left:8px;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table thead tr th,
+.sheet.fox4e.actor.npc .tab:not(.lore) table thead tr td{
+	text-shadow:none;
+	font-size:0.75em;
+	text-transform:uppercase;
+	color:#000;
+	font-weight:normal;
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table tbody tr:nth-child(odd){
+	background:rgba(255,255,255,0.4);
+}
+.sheet.fox4e.actor.npc .tab:not(.lore) table tbody tr:nth-child(even){
+	background:unset;
+}
+
+
+/*---------- Header Section ----------*/
+
+.sheet.fox4e.actor.npc .head{
+	background-color:#4e5c2e;
+	color:#fff;
+	padding:1px 12px 1px 6px;
+}
+sheet.fox4e.npc .head ::-webkit-input-placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.actor.npc .head ::-webkit-input-placeholder,
+.sheet.fox4e.actor.npc .head ::-moz-placeholder,
+.sheet.fox4e.actor.npc .head :-ms-input-placeholder,
+.sheet.fox4e.actor.npc .head ::-ms-input-placeholder,
+sheet.fox4e.npc .head ::placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.actor.npc .head>.flexcol>.flexrow{
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.actor.npc .head>.flexcol>.flexrow>*:nth-child(2){
+	text-align:right;
+}
+.sheet.fox4e.actor.npc .head .image-frame{
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:0;
+}
+.sheet.fox4e.actor.npc .head .portrait{
+	width:3em;
+	max-width:3em;
+	margin-right:4px;
+	border:none;
+	height:3em;
+	-o-object-fit:contain;
+	   object-fit:contain;
+}
+.sheet.fox4e.actor.npc .head .header-text{
+	-webkit-box-pack:stretch;
+	    -ms-flex-pack:stretch;
+	        justify-content:stretch;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.actor.npc .head .name{
+	font-weight:bold;
+	font-size:1rem;
+}
+.sheet.fox4e.actor.npc .head .name.autosize{
+	-webkit-box-flex:4;
+	    -ms-flex:4;
+	        flex:4;
+	min-width:1em;
+}
+.sheet.fox4e.actor.npc .head .basics{
+	font-weight:bold;
+}
+.sheet.fox4e.actor.npc .head .level{
+	font-weight:bold;
+	text-align:center;
+}
+.sheet.fox4e.actor.npc .leader input.covered{
+	min-width:2em;
+	height:1.4em;
+	margin:0;
+	width:100%;
+}
+.sheet.fox4e.actor.npc .head .categories,
+.sheet.fox4e.actor.npc .head .xp-value,
+.sheet.fox4e.actor.npc .head .categories input[type="text"],
+.sheet.fox4e.actor.npc .head .xp-value input[type="text"]{
+	font-weight:300;
+}
+.sheet.fox4e.actor.npc .head .categories{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.actor.npc .head .xp-value{
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.npc .type.cover,
+.sheet.fox4e.actor.npc .origin.cover{
+	text-transform:lowercase;
+}
+.sheet.fox4e.actor.npc .head .autosize.empty input{
+	color:rgba(255,255,255,0.3);
+	text-transform:lowercase;
+}
+.sheet.fox4e.actor.npc .autosize.subtypes .ruler{
+	text-transform:lowercase;
+	color:#fff;
+}
+.sheet.fox4e.actor.npc .basics,
+.sheet.fox4e.actor.npc .categories{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.actor.npc .basics{
+	-webkit-box-pack:end;
+	    -ms-flex-pack:end;
+	        justify-content:flex-end;
+}
+.sheet.fox4e.actor.npc .basics>*:not(.secondary):not(.leader):not(:first-child),
+.sheet.fox4e.actor.npc .basics .secondary .display,
+.sheet.fox4e.actor.npc .basics .leader .display,
+.sheet.fox4e.actor.npc .categories>*:not(.subtypes):not(:first-child),
+.sheet.fox4e.actor.npc .categories .subtypes{
+	margin-left:0.2em;
+}
+.sheet.fox4e.actor.npc .basics .leader input:not([checked])+.display,
+.sheet.fox4e.actor.npc .basics label.secondary:not(.visible) .display,
+.sheet.fox4e.actor.npc .categories label.subtypes:not(.visible) .display{
+	display:none;
+}
+.sheet.fox4e.actor.npc .basics:focus-within .leader input:not([checked])+.display,
+.sheet.fox4e.actor.npc .basics:focus-within label.secondary:not(.visible) .display,
+.sheet.fox4e.actor.npc .categories:focus-within label.subtypes:not(.visible) .display{
+	display:inline-block;
+	color:rgba(255,255,255,0.3);
+}
+
+
+/*---------- Vitals Section ----------*/
+
+.sheet.fox4e.actor.npc .vitals{
+	padding:2px 8px 2px 8px;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.actor.npc .vitals>.right{
+	text-align:right;
+}
+.sheet.fox4e.actor.npc .vitals .defences>span,
+.sheet.fox4e.actor.npc .vitals .perception,
+.sheet.fox4e.actor.npc .vitals .saviong-throw{
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.npc .movement>span:not(:last-child)::after,
+.sheet.fox4e.actor.npc .trait-selector-senses>span:not(:last-child):not(.placeholder)::after{
+	content:', ';
+	display:inline;
+}
+.sheet.fox4e.actor.npc .hp .temp input[value="0"],
+.sheet.fox4e.actor.npc .action-points input[value="0"],
+.sheet.fox4e.actor.npc .hp .temp input[value="0"]+.ruler,
+.sheet.fox4e.actor.npc .action-points input[value="0"]+.ruler{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods:not(.dmg-res,.dmg-vuln,.dmg-imm,.spec-imm,.spec-res,.spec-vuln){
+	display:none;
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods>div{
+	display:inline-block;
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods>div{
+	display:inline-block;
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods .label:last-child{
+	display:none;
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods .immunity:not(:last-child)::after,
+.sheet.fox4e.actor.npc .dmg-taken-mods .resistance:not(:last-child)::after,
+.sheet.fox4e.actor.npc .dmg-taken-mods .vulnerability:not(:last-child)::after{
+	content: ',\2009';
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods .immunities:not(:last-child) .immunity:last-child::after,
+.sheet.fox4e.actor.npc .dmg-taken-mods .resistances:not(:last-child) .resistance:last-child::after{
+	content: ';\2009';
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods .bonus-note:first-child::before{
+	content:'(';
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods .bonus-note:last-child::after{
+	content:')';
+}
+.sheet.fox4e.actor.npc .dmg-taken-mods .bonus-note:not(:last-child)::after{
+	content:';';
+}
+.sheet.fox4e.actor.npc .res-mod.reverse{
+	display:inline-block;
+}
+.sheet.fox4e.actor.npc .res-mod.reverse::first-letter{
+	color:rgba(0,0,0,0);
+	margin-right:-5px;
+}
+
+
+/*---------- Traits Section ----------*/
+
+.sheet.fox4e.actor.npc .traits{
+	position:relative;
+}
+.sheet.fox4e.actor.npc .traits>ul>li:first-child .item-control.item-create{
+	position:absolute;
+	top:0;
+	right:10px;
+	display:block;
+	color:#fff;
+}
+.sheet.fox4e.actor.npc .traits>ul>li:not(:first-child)>.item-controls{
+	display:none;
+}
+.sheet.fox4e.actor.npc .traits h3.item-name{
+	display:none;
+}
+.sheet.fox4e.actor.npc .feature-list .item{
+	border-bottom:none;
+	font-size:1em;
+}
+
+
+/*---------- Powers Section ----------*/
+
+.sheet.fox4e.actor.npc .keyword{
+	font-weight:normal;
+	text-transform:lowercase;
+}
+.sheet.fox4e.actor.npc .keyword:not(:last-child)::after{
+	content:', ';
+}
+.sheet.fox4e.actor.npc .keyword:first-child::before{
+	content:' (';
+}
+.sheet.fox4e.actor.npc .keyword:last-child::after{
+	content:')';
+}
+.sheet.fox4e.actor.npc .item-body.flexcol>.attack,
+.sheet.fox4e.actor.npc .item-body.flexcol>.hit,
+.sheet.fox4e.actor.npc .item-body.flexcol>.miss{
+	-webkit-box-ordinal-group:4;
+	    -ms-flex-order:3;
+	        order:3;
+}
+.sheet.fox4e.actor.npc .item-body.flexcol>.effect,
+.sheet.fox4e.actor.npc .item-body.flexcol>.special{
+	-webkit-box-ordinal-group:3;
+	    -ms-flex-order:2;
+	        order:2;
+}
+.sheet.fox4e.actor.npc .item-body.flexcol>.effect.post,
+.sheet.fox4e.actor.npc .item-body.flexcol>.special.post{
+	-webkit-box-ordinal-group:5;
+	    -ms-flex-order:4;
+	        order:4;
+}
+.sheet.fox4e.actor.npc .item-body.flexcol>.sustain{
+	-webkit-box-ordinal-group:6;
+	    -ms-flex-order:5;
+	        order:5;
+}
+.sheet.fox4e.actor.npc .powers .target{
+	text-transform:lowercase;
+}
+.sheet.fox4e.actor.npc .powers .sustain{
+	padding-left:12px;
+}
+.sheet.fox4e.actor.npc .powers .usage{
+	font-weight:bold;
+}
+.sheet.fox4e.actor.npc .powers .usage .dice{
+	font-weight:normal;
+}
+.sheet.fox4e.actor.npc .powers .usage .limited:is(.charges,.other) .sep{
+    display:inline-block;
+    width:2.5px;
+	opacity:0;
+}
+.sheet.fox4e.actor.npc .powers .flavour{
+	font-style:italic;
+	background:rgba(255,255,255,0.4);
+	padding:2px 12px 4px 12px;
+	margin:-1px -12px 2px -12px;
+}
+.sheet.fox4e.actor.npc .power-detail.item-toggle[data-tooltip="Unprepared"]{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.actor.npc .power-detail.item-toggle[data-tooltip="Prepared"]{
+	color:#000;
+}
+.sheet.fox4e.actor.npc .item-recharge.rollable{
+	color:#000;
+}
+.sheet.fox4e.actor.npc .item-recharge.rollable .dice.d6{
+	font-family:'4ed6';
+	letter-spacing:2px;
+}
+.sheet.fox4e.actor.npc .powers .item-body p,
+.sheet.fox4e.actor.npc .powers .item-body div.effect{
+	text-indent:-6px;
+	padding-left:6px;
+}
+.sheet.fox4e.actor.npc .powers .item-body .effect h1,
+.sheet.fox4e.actor.npc .powers .item-body .effect h2,
+.sheet.fox4e.actor.npc .powers .item-body .effect h3,
+.sheet.fox4e.actor.npc .powers .item-body .effect h4,
+.sheet.fox4e.actor.npc .powers .item-body .effect h5,
+.sheet.fox4e.actor.npc .powers .item-body .effect h6{
+	padding-left:0;
+	text-indent:0;
+}
+.sheet.fox4e.actor.npc .powers .item-body .effect p:first-of-type{
+	display:inline;
+	text-indent:unset;
+	padding-left:unset;
+}
+.sheet.fox4e.actor.npc .powers .item-body p.subheading{
+	display:none;
+}
+
+
+/*---------- Footer Sections ----------*/
+
+.sheet.fox4e.actor.npc .checks{
+	background-color:#cdcbb5;
+	padding:2px 8px 2px 8px;
+}
+.sheet.fox4e.actor.npc .skills .items{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.actor.npc .skills .items .label{
+	display:none;
+}
+.sheet.fox4e.actor.npc .skills .items span+.label{
+	display:unset;
+	-webkit-box-ordinal-group:0;
+	    -ms-flex-order:-1;
+	        order:-1;
+}
+.sheet.fox4e.actor.npc .skills .items span:not(:last-child):not(:nth-last-child(2))::after{
+	content:', ';
+	display:inline-block;
+	margin-right:3px;
+}
+.sheet.fox4e.actor.npc .ability-scores{
+	width:100%;
+	max-width:25em;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+	width:100%;
+}
+.sheet.fox4e.actor.npc .ability-scores .ability-score{
+	-ms-flex-preferred-size:6rem;
+	    flex-basis:6rem;
+	text-align:left;
+}
+.sheet.fox4e.actor.npc .ability-scores .ability-score .label{
+	font-weight:bold;
+}
+.sheet.fox4e.actor.npc .ability-scores .ability-score .value{
+	width:1.2em;
+}
+.sheet.fox4e.actor.npc .social{
+	padding:2px 8px 2px 8px;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.actor.npc .alignment{
+	-ms-flex-preferred-size:10rem;
+	    flex-basis:10rem;
+}
+.sheet.fox4e.actor.npc .languages>*:not(.hidden){
+	display:inline;
+}
+.sheet.fox4e.actor.npc .languages>li:not(:last-child)::after{
+	content:', ';
+}
+.sheet.fox4e.actor.npc .other{
+	padding:2px 8px 2px 8px;
+}
+
+
+/*---------- Description Tab ----------*/
+
+.sheet.fox4e.actor.npc .tab.description.active{
+	max-height:100%;
+	height:100vh;
+}
+.sheet.fox4e.actor.npc .editor.prosemirror{
+	height:auto;
+	min-height:50vh;
+}
+.sheet.fox4e.actor.npc .editor.prosemirror ::-webkit-scrollbar-thumb{
+	background:#d3d1ba;
+	border:none;
+}
+.sheet.fox4e.actor.npc .editor.prosemirror ::-webkit-scrollbar-track{
+	background:rgba(0,0,0,0.06);
+}
+.sheet.fox4e.actor.npc .editor:not(.prosemirror) .editor-content{
+	background:#fff;
+	margin:4px 2px 4px 4px;
+	height:auto;
+}
+.sheet.fox4e.actor.npc .editor-content ul{
+	padding:0 0 0 1.5em;
+	list-style:none outside;
+}
+.sheet.fox4e.actor.npc .editor-content table thead tr th,
+.sheet.fox4e.actor.npc .editor-content table thead tr td{
+	font-size:1em;
+	color:#fff;
+	text-transform:none;
+}
+.sheet.fox4e.actor.npc .lore>ul>li:not(:first-child){
+	margin-top:0.5em;
+}
+
+
+/*---------- Manage Tab ----------*/
+
+.sheet.fox4e.actor.npc .tab.manage .columns{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	width:calc(100% - 1px);
+}
+.sheet.fox4e.actor.npc .tab.manage .columns>*{
+	-ms-flex-preferred-size:50%;
+	    flex-basis:50%;
+	-webkit-box-flex:2;
+	    -ms-flex-positive:2;
+	        flex-grow:2;
+}
+.sheet.fox4e.actor.npc .tab.manage .defs-manage,
+.sheet.fox4e.actor.npc .tab.manage .adds-body{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.actor.npc .basics-manage-body,
+.sheet.fox4e.actor.npc .resources-body,
+.sheet.fox4e.actor.npc .adds-body{
+	padding:2px 8px 2px 8px;
+}
+.sheet.fox4e.actor.npc .adds-body .equipment{
+	margin-bottom:0.5rem;
+}
+.sheet.fox4e.actor.npc table.resistances{
+	margin-left:1px;
+}
+.sheet.fox4e.actor.npc .skill-trained{
+	text-align:center;
+}
+.sheet.fox4e.actor.npc th.skill-name,
+.sheet.fox4e.actor.npc th.res-name{
+	text-align:left;
+	font-weight:bold;
+}
+.sheet.fox4e.actor.npc .skill-name h4,
+.sheet.fox4e.actor.npc .res-name h4{
+	font-weight:bold;
+}
+.sheet.fox4e.actor.npc td.skill-mod,
+.sheet.fox4e.actor.npc td.skill-value,
+.sheet.fox4e.actor.npc td.skill-mod>input,
+.sheet.fox4e.actor.npc td.res-bonus,
+.sheet.fox4e.actor.npc td.res-value{
+	text-align:right;
+}
+.sheet.fox4e.actor.npc .resistance h4,
+.sheet.fox4e.actor.npc .skill--block h4{
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	font-style:normal;
+}
+.sheet.fox4e.actor.npc .res-bonus.override-true,
+.sheet.fox4e.actor.npc .res-value.override-true{
+	color:rgba(0,0,0,0.2);
+}
+.sheet.fox4e.actor.npc td.skill-ability{
+	font-size:0.75em;
+	text-transform:uppercase;
+	text-align:center;
+}
+.sheet.fox4e.actor.npc .res-immune{
+	text-align:center;
+}
+.sheet.fox4e.actor.npc .res-special h3{
+	padding-top:0.5em;
+	font-weight:bold;
+	font-size:1.1em;
+}
+.sheet.fox4e.actor.npc .res-special-body{
+	padding:2px 8px 2px 8px;
+	background:#cdcbb5;
+}
+.sheet.fox4e.actor.npc .res-special-body>p:first-child{
+	margin-top:0;
+}
+.sheet.fox4e.actor.npc .res-special-body .traits-list,
+.sheet.fox4e.actor.npc .res-special-body .traits-list>*:not(.hidden){
+	display:inline;
+}
+.sheet.fox4e.actor.npc .res-special-body .traits-list>li:not(:last-child)::after{
+	content:', ';
+}
+
+
+/*---------- Effects Tab ----------*/
+
+.sheet.fox4e.actor.npc .global-mods{
+	padding:4px 8px 4px 8px;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+}
+.sheet.fox4e.actor.npc .global-mods .columns{
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+	-ms-flex-preferred-size:26.5rem;
+	    flex-basis:26.5rem;
+}
+.sheet.fox4e.actor.npc .global-mods .columns>*{
+	-ms-flex-negative:0;
+	    flex-shrink:0;
+}
+.sheet.fox4e.actor.npc .effects-list .subsection{
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+}
+.sheet.fox4e.actor.npc .item.effect{
+	-webkit-box-pack:start;
+	    -ms-flex-pack:start;
+	        justify-content:flex-start;
+	-ms-flex-wrap:wrap;
+	    flex-wrap:wrap;
+}
+.sheet.fox4e.actor.npc .effect-name{
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	text-align:left;
+	-webkit-box-flex:unset;
+	    -ms-flex-positive:unset;
+	        flex-grow:unset;
+	-ms-flex-negative:20;
+	    flex-shrink:20;
+}
+.sheet.fox4e.actor.npc .item-list .effect-name{
+	background:#cdcbb5;
+	padding:2px 8px 2px 8px;
+}
+.sheet.fox4e.actor.npc .item-list .item-details{
+	padding:2px 8px 2px 8px;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+}
+.sheet.fox4e.actor.npc .effect-source{
+	text-align:left;
+}
+.sheet.fox4e.actor.npc .effect-duration{
+	text-align:right;
+}
+.sheet.fox4e.actor.npc .effect-controls{
+	text-align:right;
+	min-width:3rem;
+}
+.sheet.fox4e.actor.npc .item-controls .toggle.on .fas{
+	color:#000;
+}
+.sheet.fox4e.actor.npc .item-name h3{
+	border-bottom:unset;
+	font-size:1em;	
+	margin:0;
+	-ms-flex-preferred-size:100%;
+	    flex-basis:100%;
+	font-weight:bold;
+}
+.sheet.fox4e.actor.npc .effect-save img{
+	height:1em;
+	width:auto;
+	-webkit-filter:brightness(0);
+	        filter:brightness(0);
+	border:0;
+   margin-bottom:-2px;
+	margin-right:2px;
+}

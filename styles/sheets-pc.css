@@ -1,0 +1,896 @@
+
+/***************************************************/
+/*         PC SHEETS                               */
+/***************************************************/
+
+/*---------- All Sections ----------*/
+
+.sheet.fox4e.actor.pc{
+	padding:0;
+	overflow:hidden;
+}
+.sheet.fox4e.actor.pc .window-content{
+	background:#fff;
+}
+.sheet.fox4e.actor.pc .window-resizable-handle{
+	z-index:9;
+}
+.sheet.fox4e.actor.pc .sheet-body{
+	overflow:hidden;
+}
+.sheet.fox4e.actor.pc section.body{
+	position:relative;
+	z-index:1;
+    background:#ffecd3;
+}
+.sheet.fox4e.actor.pc section.body::before{
+	content:'';
+	background:url('../images/bg-1.webp') no-repeat;
+	filter:contrast(50%) brightness(150%);
+    opacity:30%;
+	background-size:cover;
+	height:100%;
+	width:100%;
+	position:absolute;
+	pointer-events:none;
+	z-index:-1;
+}
+.sheet.fox4e.actor.pc .sheet-body .autosize .ruler{
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .sheet-body :is(h3,h4,h5,h6){
+	color:#221f1f;
+	font-family:'DragonBodySans';
+}
+.sheet.fox4e.actor.pc .sheet-body h2{
+	font-family:'DragonBodySans';
+	color:#221f1f;
+	font-size:0.9em;
+	text-transform:uppercase;
+	font-weight:800;
+}
+.sheet.fox4e.actor.pc .sheet-body .button{
+	display:inline-block;
+	white-space:nowrap;
+	margin-top:1px;
+	margin-bottom:1px;
+	padding:0.1rem 0.4rem;
+	background:transparent;
+	border-radius:4px;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #d4bf95;
+	border-right:1px solid #d4bf95;
+	text-transform:uppercase;
+	font-size:0.65rem;
+	text-align:center;
+}
+.sheet.fox4e.actor.pc .sheet-body .label{
+	font-size:0.68rem;
+	text-transform:uppercase;
+	font-weight:400;
+	line-height:1;
+	display:inline-block;
+}
+.sheet.fox4e.actor.pc .sheet-body label.hiding:not(.visible,.required) .display{
+	display:none;
+}
+.sheet.fox4e.actor.pc .sheet-body :is(ul,ol){
+	padding:unset;
+	margin:unset;
+	list-style:none inside;
+}
+
+/*---------- Header Banner ----------*/
+
+.sheet.fox4e.actor.pc header.head{
+	position:relative;
+	flex:6.5em 0 0;
+}
+.sheet.fox4e.actor.pc header.head::before{
+	content:'';
+	position:absolute;
+	display:block;
+	background:url('../images/border-2.webp') repeat-x;
+	background-size:contain;
+	width:100%;
+	height:8px;
+	bottom:-1px;
+	left:0;
+	right:0;
+	z-index:2;
+}
+.sheet.fox4e.actor.pc .char-title ::-webkit-input-placeholder,
+.sheet.fox4e.actor.pc .char-title ::-moz-placeholder,
+.sheet.fox4e.actor.pc .char-title ::-ms-input-placeholder,
+.sheet.fox4e.actor.pc .char-title ::placeholder{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.actor.pc .char-title{
+	position:relative;
+	/*
+	top:1.3em;
+	border:2px solid #c2ae41;
+	margin-right:1em;
+	border-radius:0 20px 0 0;
+	margin-bottom:1.3em;
+	border-bottom:4px solid #c2ae41;
+	*/
+	background:#193d5e;
+	color:#fff;
+	padding:0.5em 0.8em 0.8em 0.5em;
+	border-left:none;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.sheet.fox4e.actor.pc .char-title img.portrait{
+	margin-top:-0.5em;
+	width:100px;
+	height:100px;
+	position:relative;
+	display:block;
+}
+.sheet.fox4e.actor.pc .char-title img.portrait:not(.framed){
+	border:unset;
+	margin-bottom:calc(-1em + 2px);
+	margin-left:-0.8em;
+}
+.sheet.fox4e.actor.pc .char-title img.portrait.framed{
+	border:2px solid #e5d7a0;
+	background:#e5d7a0;
+	margin-bottom:-1em;
+	border-radius:100px;
+	z-index:1;
+}
+.sheet.fox4e.actor.pc .char-title img.portrait.framed::after{
+	content:'';
+	background:url('../images/portrait-frame.png') no-repeat;
+	display:block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:99;
+}
+.sheet.fox4e.actor.pc .char-title .banner-text{
+	margin-left:0.5em;
+}
+.sheet.fox4e.actor.pc .char-title .autosize.empty input,
+.sheet.fox4e.actor.pc .char-title .autosize:not(.visible) .ruler{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.actor.pc .char-title .autosize.name,
+.sheet.fox4e.actor.pc .char-title .autosize>input.name{
+	font-family:'DragonHead';
+	font-variant:small-caps;
+}
+.sheet.fox4e.actor.pc .char-title .autosize>input.name{
+	font-size:2em;
+}
+.sheet.fox4e.actor.pc .char-title section.exp{
+	position:absolute;
+	top:0;
+	right:0;
+	padding:0.5rem 0.8rem;
+}
+.sheet.fox4e.actor.pc .char-title section.level{
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding:0.5rem 0.8rem;
+	font-size:1.2em;
+}
+.sheet.fox4e.actor.pc .char-title:focus-within label.hiding:not(.visible) .display{
+	display:inline-block;
+}
+.sheet.fox4e.actor.pc .char-title label.hiding:not(.visible) .display{
+	color:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.actor.pc .char-title label.paragon.visible::before,
+.sheet.fox4e.actor.pc .char-title label.epic.visible::before,
+.sheet.fox4e.actor.pc .char-title label.paragon.required::before,
+.sheet.fox4e.actor.pc .char-title label.epic.required::before,
+.sheet.fox4e.actor.pc .char-title:focus-within label.paragon::before,
+.sheet.fox4e.actor.pc .char-title:focus-within label.epic::before{
+	content:'\2009\2009/';
+}
+
+
+/*---------- Body ----------*/
+
+.sheet.fox4e.actor.pc .body{
+	width:100%;
+	overflow:hidden;
+	flex:calc(100% - 6.5em) 0 0;
+	align-items:flex-start;
+}
+
+
+/*---------- Header Vitals ----------*/
+
+.sheet.fox4e.actor.pc .vitals{
+    position:relative;
+    background:url(../images/banner-blue.webp) no-repeat bottom center;
+    background-size:cover;
+    left:-0.3em;
+    padding:0 32px;
+    color:#fff;
+    flex:210px 0 0;
+    height:auto;
+    overflow-x:hidden;
+	padding-bottom:5em;
+}
+.sheet.fox4e.actor.pc .vitals :is(h2,h3,h4,h5,h6){
+	color:#d9c676;
+	font-weight:400;
+}
+.sheet.fox4e.actor.pc .vitals h2{
+	color:#e5d7a0;
+	text-align:center;
+	margin-top:0.75em;
+	margin-bottom:0.5em;
+    display:flex;
+    align-items:center;
+	flex:1em 100 100;
+}
+.sheet.fox4e.actor.pc .vitals h2:after,
+.sheet.fox4e.actor.pc .vitals h2:before{
+    background-color:#d9c676;
+    content:"";
+    height:1px;
+    width:100%;
+	flex:1px 100 100;
+}
+.sheet.fox4e.actor.pc .vitals h2:after{
+	margin-left:0.5em;
+}
+.sheet.fox4e.actor.pc .vitals h2:before{
+	margin-right:0.5em;
+}
+.sheet.fox4e.actor.pc .vitals .label{
+	color:#d9c676;
+}
+.sheet.fox4e.actor.pc .vitals input{
+	background:rgba(255,255,255,0.3);
+}
+.sheet.fox4e.actor.pc .vitals input,
+.sheet.fox4e.actor.pc .vitals .attribute-box .attribute-value{
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .vitals .button-icon{
+	filter:invert(1);
+}
+.sheet.fox4e.actor.pc .vitals input[type="text"].number{
+	width:2.1rem;
+	text-align:right;
+	margin-top:1px;
+	margin-bottom:1px;
+	-webkit-box-shadow:inset 0 -1px rgba(0,0,0,0.1);
+	        box-shadow:inset 0 -1px rgba(0,0,0,0.1);
+}
+.sheet.fox4e.actor.pc .vitals .attribute-box{
+	display:flex;
+	flex-direction:column;
+	margin:0.25em;
+	position:relative;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:reverse;
+	    -ms-flex-direction:column-reverse;
+	        flex-direction:column-reverse;
+}
+.sheet.fox4e.actor.pc .vitals .attribute-box::before{
+	content:'';
+	display:block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-size:contain;
+	pointer-events:none;
+	filter:invert(255);
+	opacity:15%;
+	z-index:1;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.sheet.fox4e.actor.pc .vitals .attribute-box.label-below{
+	flex-direction:column-reverse;
+}
+.sheet.fox4e.actor.pc .vitals .attribute-box .label{
+	z-index:2;
+}
+.sheet.fox4e.actor.pc .vitals .attribute-box .value{
+	color:#fff;
+	opacity:100%;
+	line-height:1.1;
+	padding-bottom:2px;
+    font-weight:400;
+	z-index:2;
+}
+.sheet.fox4e.actor.pc .vitals ::-webkit-input-placeholder,
+.sheet.fox4e.actor.pc .vitals ::-moz-placeholder,
+.sheet.fox4e.actor.pc .vitals ::-ms-input-placeholder,
+.sheet.fox4e.actor.pc .vitals ::placeholder{
+	color:rgba(255,255,255,0.3);
+}
+
+/*---------- Vitals - Defences ----------*/
+.sheet.fox4e.actor.pc .vitals .attribute.defences .values{
+	justify-content:center;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.defences .attribute-box .value{
+	font-size:1.5em;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.defences .attribute-box{
+	position:relative;
+    flex:calc(25% - 0.5em) 0 0;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.defences .attribute-box::before{
+	background-image:url('../images/box_defence.svg');
+	background-position:top center;
+}
+.sheet.fox4e.actor.pc .vitals .saves{
+	margin-top:0.4em;
+	margin-bottom:0.6em;
+	text-transform:uppercase;
+    align-items:center;
+	font-size:0.8em;
+	color:#d9c676;
+	justify-content:center;
+	margin-right:1em;
+}
+.sheet.fox4e.actor.pc .vitals .saves img{
+	border:none;
+}
+.sheet.fox4e.actor.pc .vitals .values .tracking{
+	justify-content:flex-start;
+}
+
+/*---------- Vitals - Health----------*/
+.sheet.fox4e.actor.pc .vitals .attribute:is(.health,.surges) .values>.tracking:nth-child(2) label{
+	font-size:1.1em;
+	margin-bottom:-0.2em;
+}
+.sheet.fox4e.actor.pc .vitals .attribute:is(.health,.surges) .values .tracking.current input{
+	font-size:1.5em;
+}
+.sheet.fox4e.actor.pc .vitals .attribute .surge-bonus.value{adding: 0em 0.3em;
+    height:100%;
+    width:100%;
+    display:inline-block;
+    line-height:1.8;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .values{
+	justify-content:space-between;
+	align-items:stretch;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .values .tracking{
+	flex:calc(29% - 0.5em) 0 0;
+	text-align:center;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .values .tracking input{
+	width:100%;
+    flex-grow:100;
+	text-align:center;
+    margin:0;
+	box-shadow:unset;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .values .tracking input:not([value=""]){
+	background:unset;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .values .tracking.current{
+	flex:calc(42% - 0.5em) 0 0;
+}
+.sheet.fox4e.actor.pc .vitals .saves .fails{
+	margin-left:0.5em;
+}
+.sheet.fox4e.actor.pc .vitals .saves .fails .number.hidden{
+	position:absolute;
+	z-index:-99;
+	width:0;
+	overflow:hidden;
+}
+.sheet.fox4e.actor.pc .vitals .saves .fails img{
+	width:0.9em;
+	height:0.9em;
+	margin:2px 0 0;
+	filter:invert(1);
+}
+.sheet.fox4e.actor.pc .vitals .saves .fails .number.hidden~img{
+	opacity:30%;
+	cursor:pointer;
+}
+.sheet.fox4e.actor.pc .vitals .saves .fails .number.hidden[value="1"]~img[name="death-save-1"],
+.sheet.fox4e.actor.pc .vitals .saves .fails .number.hidden[value="2"]~img:is([name="death-save-2"],[name="death-save-1"]),
+.sheet.fox4e.actor.pc .vitals .saves .fails .number.hidden[value="3"]~img:is([name="death-save-3"],[name="death-save-2"],[name="death-save-1"]){
+	opacity:100%;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .attribute-box::before{
+	width:85%;
+	height:85%;
+	background-image:url('../images/box_hp.svg');
+	background-position:top center;
+	top:-1px;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .attribute-box.current::before{
+	width:110%;
+	height:110%;
+	top:-6px;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .surges .attribute-box:is(.current,.max)::before{
+	background-image:url(../images/box_surge.svg);
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .surges .attribute-box:is(.current)::before{
+	top:-10px;
+}
+.sheet.fox4e.actor.pc .vitals .attribute.health .surges .attribute-box:is(.max)::before{
+	top:-3px;
+}
+.sheet.fox4e.actor.pc .vitals .rest button{
+	display:flex;
+	padding:0;
+	font-size:1em;
+	flex:1.6em 0 2;
+	aspect-ratio:1/1;
+	background:url('../images/button-1.webp') no-repeat center center;
+	background-size:contain;
+	border:unset;
+    align-items:center;
+    justify-content:center;
+	margin:0.25em;
+    border-radius:100%;
+}
+.sheet.fox4e.actor.pc .vitals .rest button[disabled]{
+	opacity:80%;
+	filter:saturate(0.1) contrast(0.5) brightness(0.8);
+}
+.sheet.fox4e.actor.pc .vitals .rest button .button-icon{
+	display:block;
+	width:72%;
+	height:72%;
+	border:none;
+	-o-object-fit:contain;
+	   object-fit:contain;
+}
+.sheet.fox4e.actor.pc .vitals .rest.flexrow.buttons{
+	justify-content:space-between;
+	margin-top:0.3em;
+}
+
+/*---------- Vitals - Readiness ----------*/
+.sheet.fox4e.actor.pc .vitals .movement>.flexrow{
+	justify-content:space-between;
+}
+.sheet.fox4e.actor.pc .vitals .attribute-value{
+	font-size:1.3em;
+}
+.sheet.fox4e.actor.pc .vitals .speed .attribute-value{
+}
+.sheet.fox4e.actor.pc .vitals .speed.attribute-box::before{
+	background-image:url('../images/box_speed.svg');
+	background-position:top center;
+	top:-1px;
+}
+.sheet.fox4e.actor.pc .vitals .initiative .label img{
+	display:inline-block;
+	border:unset;
+	height:0.9em;
+	width:auto;
+	top:0.08em;
+	position:relative;
+}
+.sheet.fox4e.actor.pc .vitals .initiative.attribute-box::before{
+	background-image:url('../images/box_initiative.svg');
+	background-position:top center;
+	top:-4px;
+	padding:5px;
+}
+.sheet.fox4e.actor.pc .vitals .action-point-extra.rollable a{
+	display:inline-block;
+	z-index:9;
+}
+.sheet.fox4e.actor.pc .vitals .action-points.attribute-box input{
+	text-align:center;
+}
+.sheet.fox4e.actor.pc .vitals .action-points.attribute-box input:not([value=""]) {
+    background:unset;
+}
+.sheet.fox4e.actor.pc .vitals .action-points.attribute-box::before{
+	background-image:url('../images/box_ap.svg');
+	top:-8px;
+    padding:4px;
+}
+.sheet.fox4e.actor.pc .vitals .action-points.attribute-box a.action-point[disabled]{
+	opacity:80%;
+	filter:saturate(0.1) contrast(0.5) brightness(0.8);
+	cursor:not-allowed;
+}
+.sheet.fox4e.actor.pc .vitals .senses{
+	display:block;
+	text-transform:uppercase;
+	font-size:0.8em;
+	margin:2px;
+}
+.sheet.fox4e.actor.pc .vitals .senses label{
+	color:#d9c676;
+	margin-right:2px;
+}
+.sheet.fox4e.actor.pc .vitals .senses>*,
+.sheet.fox4e.actor.pc .vitals .senses ul,
+.sheet.fox4e.actor.pc .vitals .senses li{
+	display:inline-block;
+}
+.sheet.fox4e.actor.pc .vitals .senses ul.traits-list{
+	padding:unset;
+	margin:unset;
+	list-style:none;
+}
+.sheet.fox4e.actor.pc .vitals .senses ul li:not(:last-child)::after{
+	content:', ';
+	display:inline;
+}
+
+/*---------- Vitals - Skills ----------*/
+.sheet.fox4e.actor.pc .vitals .skill-summary{
+	margin:2px;
+}
+.sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list{
+	text-transform:uppercase;
+	font-size:0.8em;
+}
+.sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list{
+	padding:unset;
+	margin":unset;
+	list-style:none;
+	display:inline;
+}
+.sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list .name{
+	color:#d9c676;
+}
+.sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list li{
+	display:inline;
+}
+.sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list li:not(:last-child)::after{
+	content:', ';
+	display:inline;
+}
+
+/*---------- Vitals - Resources ----------*/
+.sheet.fox4e.actor.pc .vitals .resources .attribute-box::before{
+	background-image:url('../images/box_points.svg');
+	top:-0.4em;
+}
+
+
+/*---------- Sheet-Body ----------*/
+.sheet.fox4e.actor.pc section.main{
+	flex:100% 0 100;
+	overflow:hidden;
+	align-items:stretch;
+    max-height:100%;
+}
+
+
+/*---------- Tabbed Sections ----------*/
+.sheet.fox4e.actor.pc section.tabs-content{
+	height:100%;
+	overflow-y:scroll;
+}
+
+
+/*---------- Tab - Powers ----------*/
+.sheet.fox4e.actor.pc .power{
+	background:var(--background-other);
+	color:#fff;
+	margin-bottom:1px;
+}
+.sheet.fox4e.actor.pc .power.use-atwill{
+	background:var(--background-atwill);
+}
+.sheet.fox4e.actor.pc .power.use-encounter{
+	background:var(--background-encounter);
+}
+.sheet.fox4e.actor.pc .power.use-daily{
+	background:var(--background-daily);
+}
+.sheet.fox4e.actor.pc .power.use-recharge{
+	background:var(--background-recharge);
+}
+.sheet.fox4e.actor.pc .power.use-item{
+	background:var(--background-item);
+}
+.sheet.fox4e.actor.pc .items-header{
+	padding-right:8px;
+	text-transform:uppercase;
+	font-size:0.75em;
+    text-align:center;
+	font-weight:600;
+}
+.sheet.fox4e.actor.pc .power-create{
+	white-space:nowrap;
+    text-align:center;
+}
+.sheet.fox4e.actor.pc .power .power-header{
+    align-items:center;
+	padding-right:8px;
+}
+.sheet.fox4e.actor.pc .sheet-body .power :is(h3,h4,h5,h6){
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-image{
+	flex:34px 0 0;
+	margin-right:0.3em;
+	text-align:center;
+}
+.sheet.fox4e.actor.pc .item-list .power .item-image img{
+	display:block;
+	height:34px;
+	width:34px;
+	border:unset;
+	border-radius:0;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-name{
+	flex:100% 20 20;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-name h4{
+	font-weight:500;
+    font-size:1.1em;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-range{
+	flex:50px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-action{
+	flex:35px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-uses{
+	flex:50px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list .power .item-uses input{
+	width:1em;
+	color:#fff;
+	background:unset;
+	text-align:right;
+	padding:0 2px;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-prep{
+	flex:30px 0 0;
+	text-align:center;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-controls{
+	flex:40px 0 0;
+	justify-content:flex-end;
+	text-align:center;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list .power .item-controls a{
+	color:#fff;
+	margin:3px;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary{
+	color:#000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------- Power Summaries ----------*/
+
+.sheet.fox4e.actor.pc .item-list .item-summary :is(.item-description,.item-details)>p,
+.sheet.fox4e.actor.pc .item-list .item-summary :is(.item-description,.item-details)>:is(span,p,div){
+	margin:0;
+	display:block;
+}
+.sheet.fox4e.actor.pc .item-list .item:not(.ritual) .item-summary :is(.item-description,.item-details)>p{
+	padding:0.1em 0.3em 0.1em 0.3em;
+}
+.sheet.fox4e.actor.pc .item-list .item:not(.ritual) .item-summary :is(.item-description,.item-details)>:is(p,ol,ul,span){
+	background:var(--gradient-4e);
+}
+.sheet.fox4e.actor.pc .item-list .item:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) .item-summary :is(.item-description,.item-details)>p:not(:first-child){
+    text-indent:0.5em;
+}
+.sheet.fox4e.actor.pc .item-list .item:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) .item-summary :is(.item-description,.item-details)>p:not(:first-child)>:is(strong,b):first-of-type{
+	display:inline-block;
+    text-indent:-0.5em;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-summary,.item-details,.card-content)>p:not(:first-child)>:is(strong,b):first-of-type::after{
+	content:' ';
+	display:inline-block;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.autogen) .card-content p:is(.flavour,.chat-flavour,.basics,.power-basics){
+	text-indent:unset;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-description,.item-details)>:is(ol,ul){
+	margin:0;
+	padding:0.1em 0.3em 0.1em 1.8em;
+	background:var(--gradient-4e);
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-description,.item-details)>ul{
+  list-style:none outside;
+  position:relative;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-description,.item-details)>ul li::before{
+  display:block;
+  margin-left:-1em;
+  margin-right:0.4em;
+  font-size:1em;
+  content:'\2726';
+  position:absolute;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary>span+br{
+	display:none;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary :is(.flavour,.chat-flavour){
+    background:var(--gradient-4e);
+	font-style:italic;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary p.indent{
+	padding-left:1.3em;
+}
+
+/*---- Chat Cards - PC Power Cards ----*/
+/*------------------------------------------------------------------*/
+.dnd4e.power-card.use-atwill:not(.NPC) .card-header{
+	background:var(--background-atwill);
+}
+.dnd4e.power-card.use-encounter:not(.NPC) .card-header{
+	background:var(--background-encounter);
+}
+.dnd4e.power-card.use-daily:not(.NPC) .card-header{
+	background:var(--background-daily);
+}
+.dnd4e.power-card.use-item:not(.NPC) .card-header{
+	background:var(--background-item);
+}
+.dnd4e.power-card.use-recharge:not(.NPC) .card-header{
+	background:var(--background-recharge);
+}
+.dnd4e.power-card.use-other:not(.NPC) .card-header{
+	background:var(--background-other);
+}
+.dnd4e.power-card .item-summary{
+	background:#fff;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.NPC,.ritual) .item-summary{
+	background:var(--gradient-4e);
+}	
+.dnd4e.power-card:not(.use-other) .item-details p:not(.flavour,.chat-flavour,.basics,.power-basics),
+.dnd4e.power-card:not(.use-other,.autogen) .card-content>p:not(.flavour,.chat-flavour,.basics,.power-basics){
+	margin:0;
+	text-indent:-0.5em;
+	padding:0.1em 0.3em 0.1em 0.8em;
+}
+.dnd4e.power-card:not(.autogen).use-other .card-content p:not(:first-child){
+	padding-top:0.1em;
+}
+.dnd4e.power-card:not(.autogen).use-other .card-content p:not(:last-child){
+	padding-bottom:0.1em;
+}
+.dnd4e.power-card:not(.autogen).use-other p:not(:first-child){
+	text-indent:0.5em;
+}
+.dnd4e.power-card:not(.use-other) .item-details p:not(.flavour,.chat-flavour,.basics,.power-basics).indent,
+.dnd4e.power-card:not(.use-other,.autogen) .card-content>p:not(.flavour,.chat-flavour,.basics,.power-basics).indent{
+	padding-left:1.3em;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary .item-description p,
+.sheet.fox4e.actor.pc .item-list .item-summary .item-description span,
+.sheet.fox4e.actor.pc .item-list .item-summary .chat-flavour p,
+.sheet.fox4e.actor.pc .item-list .item-summary  p.chat-flavour,
+.dnd4e.power-card.autogen:not(.NPC) .card-content>p:first-child{
+	font-style:italic;
+}
+.dnd4e.power-card:not(.use-item,.NPC,.ritual) .flavour,
+.dnd4e.power-card:not(.use-item,.NPC,.ritual) .chat-flavour,
+.dnd4e.power-card:not(.use-item,.NPC,.ritual) .card-content>p:first-child:not(.item-summary,.white,.basics,.power-basics),
+.dnd4e.power-card:not(.NPC,.autogen,.use-item) .card-content p:not(.power-basics,.basics,.white){
+	background:var(--gradient-4e);
+}
+.dnd4e.power-card:not(.use-item,.NPC) :is(.item-details,.card-content)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.alt,.effects-tray,.card-buttons,.white,.power-basics){
+	background:var(--gradient-4e);
+	text-indent:1em;
+	padding-top:0;
+}
+.dnd4e.power-card:not(.use-item,.NPC) :is(.item-details,.card-content)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.effects-tray,.power-buttons,:last-child){
+	padding-bottom:0;
+}
+.dnd4e.power-card:not(.NPC,.use-item) p:not(.flavour,.chat-flavour).alt-highlight,
+.dnd4e.power-card:not(.NPC,.use-item) :not(.flavour,.chat-flavour).alt{
+	background:var(--gradient-4e);
+}
+.dnd4e.power-card:not(.NPC,.use-item) .item-details>span,
+.dnd4e.power-card:not(.NPC,.use-item) p:not(.flavour,.chat-flavour),
+.dnd4e.power-card:not(.use-item,.NPC) .white,
+.dnd4e.power-card:not(.use-item,.NPC) .card-content>p.subheading,
+.dnd4e.power-card:not(.use-item,.NPC) .white+ul,
+.dnd4e.power-card:not(.NPC,.use-item) p:nth-child(even of .alt-highlight),
+.dnd4e.power-card:not(.NPC,.use-item) .power-basics{
+	background:#fff;
+}
+.dnd4e.power-card .item-details span,
+.dnd4e.power-card .item-details p,
+.dnd4e.power-card .item-description p{
+	margin:0;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary :is(.item-details,.card-content)>:is(.hit,.effect)~ul{
+	margin-top:-0.5em;
+	margin-bottom:0;
+	padding-left:2.2em;
+	padding-bottom:0.3em;
+}
+.dnd4e.power-card.autogen:not(.NPC) :is(.item-details,.card-content)>:is(.hit,.effect)~p+ul{
+	margin-top:0;
+}
+.dnd4e.power-card.autogen:not(.NPC) :is(.item-details,.card-content)>ul li{
+	text-indent:unset;
+}
+.dnd4e.power-card .item-details p:last-child{
+	padding-bottom:0.3em;
+}
+.dnd4e.power-card .item-details span{
+	padding-top:0;
+	padding-bottom:0;
+}
+.dnd4e.power-card .item-details>span{
+	display:block;
+}
+.dnd4e.power-card .item-details>br{
+	display:none;
+}
+.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.use-other,.ritual,.NPC) .card-content p{
+	background:var(--gradient-4e);
+}
+.dnd4e.power-card:not(.autogen).use-other .card-content>p{
+	background:#fff;
+}
+.dnd4e.power-card:not(.autogen,.use-item) .power-basics{
+	background:#fff;
+	margin:0;
+}
+.dnd4e.power-card:not(.autogen).use-other .card-content>p:not(:first-child){
+	padding:0.1em 0.3em 0.1em 0.3em;
+	text-indent:0.5em;
+}
+.dnd4e.power-card:not(.autogen).use-other .card-content>p:first-child{
+	padding:0.1em 0.3em 0.1em 0.3em;
+}
+.dnd4e.power-card:not(.autogen,.use-other,.use-item,.NPC) .card-content>:is(p.div):last-of-type,
+.dnd4e.power-card:not(.autogen).use-other .card-content>:last-of-type,
+.dnd4e.power-card.autogen .item-details>:is(p.div):last-of-type{
+	padding-bottom:0.3em;
+}
