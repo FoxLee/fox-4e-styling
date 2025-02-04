@@ -1,0 +1,162 @@
+<form class="{{cssClass}} sheet-body" autocomplete="off">
+
+	{{!-- Sheet Header --}}
+	<header class="head">
+	
+		<div class="char-title">
+			<img class="portrait" src="{{actor.img}}" alt="{{actor.name}}" data-edit="img" data-tooltip="{{actor.name}}" height="100" width="100"/>
+			
+			<div class="banner-text">
+				<div class="pc-name">{{!--
+					--}}<label class="name autosize{{#if actor.name}} visible{{/if}}" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'DND4E.Name'}}">{{!--
+						--}}<input id="name_input" class="name" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'DND4E.Name'}}" onClick="this.select();" tabindex=0 />{{!--
+						--}}<h1 id="name_display" class="ruler">{{actor.name}}</h1>{{!--
+					--}}</label>{{!--
+				--}}</div>
+		
+				<section class="summary">
+				
+					<span class="level label">{{localize 'Fox4e.Lv'}}</span>
+					<label class="level autosize{{#if system.details.level}} visible{{/if}}" tabindex="0" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'DND4E.Level'}}">{{!--
+						--}}<input id="level_input" class="number" name="system.details.level" type="text" value="{{#if system.details.level}}{{system.details.level}}{{/if}}" placeholder="{{localize 'DND4E.Level'}}" onClick="this.select();" tabindex="0" />{{!--
+						--}}<span id="level_display" class="ruler display">{{!--
+						--}}{{#if system.details.level}}
+							{{system.details.level}}
+						{{else}}
+							{{localize 'DND4E.Level'}}
+						{{/if}}{{!--
+						--}}</span>{{!--
+					--}}</label>
+				
+					<label class="heritage autosize{{#if system.details.race}} visible{{/if}}" tabindex="0" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'Fox4e.Heritage'}}">{{!--
+						--}}<input id="heritage_input" class="heritage" name="system.details.race" type="text" value="{{#if system.details.race}}{{system.details.race}}{{/if}}" placeholder="{{localize 'Fox4e.Heritage'}}" onClick="this.select();" tabindex="0" />{{!--
+						--}}<span id="heritage_display" class="ruler display">{{!--
+						--}}{{#if system.details.race}}
+							{{system.details.race}}
+						{{else}}
+							{{localize 'Fox4e.Heritage'}}
+						{{/if}}{{!--
+						--}}</span>{{!--
+					--}}</label>
+					
+					<label class="class autosize{{#if system.details.class}} visible{{/if}}" tabindex="0" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'DND4E.Class'}}">{{!--
+						--}}<input id="class_input" class="class" name="system.details.class" type="text" value="{{#if system.details.class}}{{system.details.class}}{{/if}}" placeholder="{{localize 'DND4E.Class'}}" onClick="this.select();" tabindex="0" />{{!--
+						--}}<span id="class_display" class="ruler display">{{!--
+						--}}{{#if system.details.class}}
+							{{system.details.class}}
+						{{else}}
+							{{localize 'DND4E.Class'}}
+						{{/if}}{{!--
+						--}}</span>{{!--
+					--}}</label>{{!--
+					
+					--}}<label class="paragon hiding autosize{{#if system.details.paragon}} visible{{/if}}{{#if (gt system.details.level 10)}} required{{/if}}" tabindex="0" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'DND4E.Paragon'}}">{{!--
+						--}}<input id="paragon_input" class="paragon" name="system.details.paragon" type="text" value="{{#if system.details.paragon}}{{system.details.paragon}}{{/if}}" placeholder="{{localize 'DND4E.Paragon'}}" onClick="this.select();" tabindex="0" />{{!--
+						--}}<span id="paragon_display" class="ruler display">{{!--
+						--}}{{#if system.details.paragon}}
+							{{system.details.paragon}}
+						{{else}}
+							{{localize 'DND4E.Paragon'}}
+						{{/if}}{{!--
+						--}}</span>{{!--
+					--}}</label>{{!--
+					
+					--}}<label class="epic hiding autosize{{#if system.details.epic}} visible{{/if}}{{#if (gt system.details.level 20)}} required{{/if}}" tabindex="0" data-tooltip="{{localize 'Fox4e.TipEnterText'}} {{localize 'DND4E.Epic'}}">{{!--
+						--}}<input id="epic_input" class="epic" name="system.details.epic" type="text" value="{{#if system.details.epic}}{{system.details.epic}}{{/if}}" placeholder="{{localize 'DND4E.Epic'}}" onClick="this.select();" tabindex="0" />{{!--
+						--}}<span id="epic_display" class="ruler display">{{!--
+						--}}{{#if system.details.epic}}
+							{{system.details.epic}}
+						{{else}}
+							{{localize 'DND4E.Epic'}}
+						{{/if}}{{!--
+						--}}</span>{{!--
+					--}}</label>						
+				
+				</section>
+			</div>
+			
+			
+		</div>{{!-- End Title Banner --}}
+
+	</header>
+	
+	{{!-- Main --}}
+	<section class="body flexrow">
+	
+		{{!-- Vitals --}}
+		<section class="vitals">
+			{{> "modules/fox-4e-styling/templates/parts/pc-vitals.html"}}				
+		</section>{{!-- End Vitals --}}
+
+		<section class="main flexcol">
+
+			<section class="tabs flexshrink">
+
+				{{!-- Sheet Tab Navigation --}}
+				<nav class="sheet-tabs tabs" data-group="primary">
+					<a class="item" data-tab="basics">{{localize 'Fox4e.Basics'}}</a>
+					<a class="item " data-tab="powers">{{localize 'DND4E.Powers'}}</a>
+					<a class="item" data-tab="biography">{{localize 'DND4E.Biography'}}</a>
+					<a class="item" data-tab="details">{{localize 'DND4E.Details'}}</a>
+					<a class="item" data-tab="inventory">{{localize 'DND4E.Inventory'}}</a>
+					<a class="item" data-tab="features">{{localize 'DND4E.Feats'}}</a>
+					<a class="item" data-tab="damage">{{localize 'DND4E.Damage'}}</a>
+					<a class="item" data-tab="resources">{{localize 'Fox4e.Resources'}}</a>
+					<a class="item" data-tab="effects">{{localize 'DND4E.Effects'}}</a>
+				</nav>
+			</section>
+
+			{{!-- Tab Content --}}
+			<section class="tabs-content">
+
+				{{!-- Basics Tab --}}
+				<div class="tab basics" data-group="primary" data-tab="basics">
+					{{> "modules/fox-4e-styling/templates/parts/pc-basics.html" sections=basics}}
+				</div>
+				
+				{{!-- Powers Tab --}}
+				<div class="tab powers" data-group="primary" data-tab="powers">
+					{{> "modules/fox-4e-styling/templates/parts/pc-powers.html" sections=powers}}
+				</div>
+				
+				{{!-- Biography Tab --}}
+				<div class="tab biography" data-group="primary" data-tab="biography">
+					{{> "modules/fox-4e-styling/templates/parts/pc-fluff.html" sections=biography}}
+				</div>
+
+				{{!-- Details Tab --}}
+				<div class="tab details" data-group="primary" data-tab="details">
+					{{> "modules/fox-4e-styling/templates/parts/pc-details.html" sections=details}}
+				</div>
+		
+				{{!-- Owned Inventory Tab --}}
+				<div class="tab inventory" data-group="primary" data-tab="inventory">
+					{{> "modules/fox-4e-styling/templates/parts/pc-inventory.html" sections=inventory}}
+				</div>
+		
+				{{!-- Feat Tab --}}
+				<div class="tab features" data-group="primary" data-tab="features">
+					{{> "modules/fox-4e-styling/templates/parts/pc-features.html" sections=features}}
+				</div>
+		
+				{{!-- Damage Tab --}}
+				<div class="tab damage flexcol" data-group="primary" data-tab="damage">
+					{{> "modules/fox-4e-styling/templates/parts/pc-damage.html"}}
+				</div>
+		
+				{{!-- Status Tab --}}
+				<div class="tab resources flexcol" data-group="primary" data-tab="resources">
+					{{> "modules/fox-4e-styling/templates/parts/pc-resources.html"}}
+				</div>
+		
+				{{!-- Effects Tab --}}
+				<div class="tab effects flexcol" data-group="primary" data-tab="effects">
+					{{> "modules/fox-4e-styling/templates/parts/pc-effects.html"}}
+				</div>
+			</section>
+			
+		</section>	
+	
+	</section>{{!-- End Body/Main column split --}}
+
+</form>
