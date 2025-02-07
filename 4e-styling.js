@@ -112,77 +112,26 @@ Hooks.on('renderSettingsConfig', () => {
 	target.before(extraInfo);
 });
 
-Hooks.on('renderChatMessage', function(message, html, data){
-	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
-		html[0].classList.remove('dnd4eBeta');
-		html[0].classList.add('dnd4e');
-	}
-	if(html){
-		const newHTML = html[0].innerHTML.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');
-		html[0].innerHTML = newHTML;
-	}
-});
-
-/* "powerUse" Handlebars Helper: outputs usage HTML snippet
-*
-*  Should contain only the usage type (encounter/daily/etc) if
-*    [available uses] or [max uses] = null, [max uses] = 0,
-*    [uses per] = [null] or [""].
-*  For recharge powers, should contain rollable recharge info in
-*    the form of [Recharge x].
-*  For uses-per-interval powers, should contain uses info in the
-*    form of [x of y/interval].
-*
-*	@param {Object} powerData The "system" object of the power
-*	@returns {string} html to be printed.
-*
-/*											*/
-Handlebars.registerHelper('powerUse', function(powerData) {
-	let snippet = game.dnd4e.config.powerUseType[powerData.useType];
-	
-	let useNormalised = powerData.uses.per||"";
-	if(useNormalised == "enc"){
-		useNormalised = "encounter";
-	}else if(useNormalised == "day"){
-		useNormalised = "daily";
-	}
-	
+Hooks.on('renderChatMessage', async function(message, html, data){
 	try{
+		//console.debug(message);
 		
-		// If there is no limited use interval selected, or data is conflicting, just return the usage type label.
-		if(!powerData.uses.per || ( ["day","enc"].includes(powerData.uses.per) && powerData.preparedMaxUses == 1 && useNormalised == powerData.useType ) ){
-			return `<span class="limited ${powerData.uses.per}">${snippet}</span>`;
-		}
+		let newMessage = message;
+		if(newMessage.getFlag('fox-4e-styling', 'updated') == true) return;
+
+		newMessage.setFlag('fox-4e-styling', 'updated', true);		
 		
-		// If it's a recharge power, generate HTML with rollable recharge info
-		if(powerData.useType == "recharge"){
-			snippet = `<span class="recharge">`;
-			if(powerData.rechargeRoll){
-				snippet += `<a class="item-recharge rollable numerical" data-tooltip="${game.i18n.localize( 'Fox4e.TipRechargeRoll')} ${powerData.rechargeRoll} ${game.i18n.localize('Fox4e.OrHigher')}"> ${game.i18n.localize('DND4E.PowerRecharge')} <span class="dice d6">${powerData.rechargeRoll}</span></a>`;
-			}else if(powerData.rechargeCondition){
-				snippet += `<a class="item-recharge rollable" data-tooltip="${game.i18n.localize('Fox4e.TipRecharge')} ${powerData.rechargeCondition}">${game.i18n.localize('DND4E.PowerRecharge')} ${powerData.rechargeCondition}</a>`;
+		if(html){
+			if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
+				newMessage.html[0].classList.remove('dnd4eBeta');
+				newMessage.html[0].classList.add('dnd4e');
 			}
-			snippet += `</span>`;
-			return snippet;
+			newMessage.content = newMessage.content.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');
 		}
+		await message.update({...newMessage});
 		
-		if(powerData.preparedMaxUses != 0){
-			snippet = `<span class="limited ${powerData.uses.per} uses-${powerData.preparedMaxUses}">`;
-			
-			snippet += `<span class="limit"><label class="uses autosize" for="powerData.uses.value"><input class="number" type="text" value="${powerData.uses.value}" name="powerData.uses.value" placeholder="0" /><span class="ruler">${powerData.uses.value}</span></label> of ${powerData.preparedMaxUses}</span><span class="sep">/</span>`;
-	
-			if(powerData.uses.per){
-				snippet += `<span class="interval">${game.dnd4e.config.limitedUsePeriods[powerData.uses.per].label}</span>`;
-			}
-			
-			snippet += `</span>`;
-			return snippet;
-		}
-		
-		return "<!-- Could not interpret usage settings for this power -->";
-		
-	} catch(err) {
-		console.err("Usage helper spat up. Please check input data.");
-		return;
+	}catch(e){
+		console.error(`Message data was missing or sus: ${e}`)
 	}
+	return;
 });
