@@ -94,7 +94,7 @@ Extra chat styles have been moved into a new system-agnostic module, [Burble](ht
 
 <a href="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85"><img src="https://github.com/user-attachments/assets/7bdb0cd8-4bfc-4238-b07a-c26a88c4db85" height=250 style="height:auto;width:100%;max-width:830px"></a>
 
-In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF Chat Enhancement's combined messages.
+In Fox's opinion, the best visuals come from using [Burble](https://github.com/FoxLee/Burble) + [Chat Portrait](https://foundryvtt.com/packages/chat-portrait) + [DF Chat Enhancement](https://foundryvtt.com/packages/df-chat-enhance)'s combined messages.
 
 
 ### To-Do/In Progress
