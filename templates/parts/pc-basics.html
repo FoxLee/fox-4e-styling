@@ -1,86 +1,134 @@
-{{!-- Abilities --}}
-<section class="abilities">
-	<h2>{{localize 'DND4E.AbilityScores'}}</h2>
-	
-		<header class="subsection flexrow">
-			<span>{{localize 'DND4E.MOD'}}</span>
-			{{#unless system.halfLevelOptions}}
-			<span>{{localize 'DND4E.MOD'}}+{{localize 'DND4E.HalfLVL'}}</span>
-			{{/unless}}
-		</header>
-	
-		<ol>
-			{{#each system.abilities as | ability a|}}
-			<li class="attribute ability flexrow" data-ability="{{a}}">
-				<div><input class="score" name="system.abilities.{{a}}.value" type="text" data-dtype="Number" value="{{ability.value}}" onfocus="this.select()" placeholder="10"/></div>
-				<div class="ability-name rollable" data-tooltip="{{ability.label }}">{{ability.label}}</div>
-				<div class="display ability-mod-half" data-tooltip="{{ability.label}}">{{numberFormat ability.mod decimals=0 sign=true}}</div>
-				{{#unless system.halfLevelOptions}}
-				<div class="display ability-mod-half" data-tooltip="{{ability.label }}">{{numberFormat ability.modHalf decimals=0 sign=true}}</div>
-				{{/unless}}
-			</li>
-			{{/each}}
-		</ol>
-		
-</section>
-
-{{!-- Skills --}}
-<section class="section section--skills">
-	<h2>{{localize 'DND4E.Skills'}}</h2>
-	{{#each system.skills as |skill s|}}
-	<div class="skill--block flexrow" data-skill="{{s}}">
-		<a class="training-toggle skill-training" data-tooltip="{{skill.hover}}">{{{skill.icon}}}</a>
-		<h4 class="skill-name rollable">{{skill.label}}</h4>
-		<input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number">
-		<label class="skill-mod skill-bonus rollable">{{numberFormat skill.total decimals=0 sign=true }}</label>
-	</div>
-	{{/each}}
-</section>
-
-<a class="custom-roll-descriptions" data-tooltip="Change custom descriptions for Skill and Ability roll checks.">Edit Skill & Ability Custom Descriptions.</a>
-
-{{!-- Modifiers --}}
-{{#if system.modifiers}}
-<div class="attribute modifiers global">
-	<h2 class="">{{localize 'DND4E.ModifiersGlobal'}}</h2>
-	<ul class="item-list modifier-list">
-		<div class="global-mods-column flexrow">
-			<li class="flexrow global-mod" data-modifiers="attack">
-				<span
-					data-tooltip="{{localize 'DND4E.ModifierAttack'}} <br />{{#if system.modifiers.attack.warn}}({{localize 'DND4E.ModifierAttackNote'}}){{/if}}"><strong>{{localize
-						'DND4E.Attack'}}:</strong>&nbsp;{{numberFormat system.modifiers.attack.value
-					sign=true}}</span>
-				<a class="modifiers-bonus" data-target="system.modifiers"
-					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierAttack'}}">{{localize
-					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.attack.bonusValue sign=true}}</a>
-			</li>
-			<li class="flexrow global-mod" data-modifiers="damage">
-				<span data-tooltip="{{localize 'DND4E.ModifierDamage'}}"><strong>{{localize
-						'DND4E.Damage'}}:</strong>&nbsp;{{numberFormat system.modifiers.damage.value
-					sign=true}}</span>
-				<a class="modifiers-bonus" data-target="system.modifiers"
-					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierDamage'}}">{{localize
-					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.damage.bonusValue sign=true}}</a>
-			</li>
-		</div>
-		<div class="global-mods-column flexrow">
-			<li class="flexrow global-mod" data-modifiers="skills">
-				<span data-tooltip="{{localize 'DND4E.ModifierSkills'}}"><strong>{{localize
-						'DND4E.Skills'}}:</strong>&nbsp;{{numberFormat system.modifiers.skills.value
-					sign=true}}</span>
-				<a class="modifiers-bonus" data-target="system.modifiers"
-					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierSkills'}}">{{localize
-					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.skills.bonusValue sign=true}}</a>
-			</li>
-			<li class="flexrow global-mod" data-modifiers="defences">
-				<span data-tooltip="{{localize 'DND4E.ModifierDefences'}}"><strong>{{localize
-						'DND4E.Defences'}}:</strong>&nbsp;{{numberFormat system.modifiers.defences.value
-					sign=true}}</span>
-				<a class="modifiers-bonus" data-target="system.modifiers"
-					data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.ModifierDefences'}}">{{localize
-					'DND4E.Bonus'}}:&nbsp;{{numberFormat system.modifiers.defences.bonusValue sign=true}}</a>
-			</li>
-		</div>
-	</ul>
+<div class="tab-title">
+	<h2>{{localize 'Fox4e.Basics'}}</h2>
 </div>
-{{/if}}
+
+<div class="flexrow responsive two-up">
+	<div class="column">
+		{{!-- Abilities --}}
+		<section class="ability-scores">
+			<h3>{{localize 'DND4E.AbilityScores'}}</h3>
+			
+			<table class="ability-scores">
+				<thead>
+					<tr class="scores-header">
+						<th class="score-name">{{localize 'DND4E.Ability'}}</th>
+						<th class="score-value">{{localize 'DND4E.Score'}}</th>
+						<th class="score-mod">{{localize 'DND4E.Mod'}}</th>
+					{{#unless system.halfLevelOptions}}
+						<th class="score-check">{{localize 'DND4E.Check'}}</th>
+					{{/unless}}
+					</tr>
+				</thead>
+				
+				<tbody>
+					{{#each system.abilities as |ability a|}}
+					<tr class="attribute ability" data-ability="{{a}}">
+						<td class="score-name ability-name rollable roll-d20" data-tooltip="{{localize 'Fox4e.TipClickRoll'}} {{ability.label}}">{{ability.label}} <span class="score-short">{{ability.name}}</span></td>
+						<td class="score-value"><input class="score" name="system.abilities.{{a}}.value" type="text" data-dtype="Number" value="{{ability.value}}" onfocus="this.select()" placeholder="10" /></td>
+						<td class="score-mod" data-tooltip="{{ability.label}} {{localize 'DND4E.Mod'}}: {{numberFormat ability.mod decimals=0 sign=true}}">{{numberFormat ability.mod decimals=0 sign=true}}</td>
+					{{#unless system.halfLevelOptions}}
+						<td class="score-check" data-tooltip="{{ability.label}} {{localize 'DND4E.Mod'}} + {{localize 'DND4E.HalfLVL'}}: {{numberFormat ability.modHalf decimals=0 sign=true}}">{{numberFormat ability.modHalf decimals=0 sign=true}}</td>
+					{{/unless}}
+					</tr>
+					{{/each}}
+				</tbody>
+				
+			</table>
+		</section><!--- End Ability Scores --->
+
+		{{!-- Proficiencies --}}
+		<section class="proficiencies infobox">
+			<h3 class="attribute-name box-title">{{localize 'Fox4e.Proficiencies'}}</h3>
+			<a class="trait-selector" data-options="profArmor" data-target="system.details.armourProf">
+				<h4>{{localize 'DND4E.Armour'}}</h4>
+				<i class="fas fa-edit"></i>
+			</a>
+			{{#if (laden system.details.armourProf.selected)}}
+				<ul class="traits-list proficiency armour">
+				{{#each system.details.armourProf.selected as |v k|}}
+					<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+				</ul>
+			{{/if}}
+
+			<a class="trait-selector-weapon" data-options="weaponProf" data-target="system.details.weaponProf">
+				<h4>{{localize 'DND4E.Weapon'}}/{{localize 'DND4E.WeaponImplement'}}</h4>
+				<i class="fas fa-edit"></i>
+			</a>
+			{{#if (laden system.details.weaponProf.selected)}}
+				<ul class="traits-list proficiency weapons">
+				{{#each system.details.weaponProf.selected as |v k|}}
+					<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+				</ul>
+			{{/if}}
+		</section>{{!-- End proficiencies --}}
+
+		{{!-- Languages --}}
+		<section class="languages infobox">
+			<h3 class="attribute-name box-title">{{localize 'DND4E.Languages'}}</h3>
+			<a class="trait-selector" data-options="spoken" data-target="system.languages.spoken">
+				<h4>{{localize 'DND4E.Spoken'}}</h4>
+				<i class="fas fa-edit"></i>
+			</a>
+			{{#if (laden system.languages.spoken.selected)}}
+				<ul class="traits-list languages spoken">
+				{{#each system.languages.spoken.selected as |v k|}}
+					<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+				</ul>
+			{{/if}}
+			
+			<a class="trait-selector" data-options="script" data-target="system.languages.script">
+				<h4>{{ localize "DND4E.Script" }}</h4>
+				<i class="fas fa-edit"></i>
+			</a>
+			{{#if (laden system.languages.script.selected)}}
+				<ul class="traits-list languages script">
+				{{#each system.languages.script.selected as |v k|}}
+					<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+				</ul>	
+			{{/if}}			
+		</section>{{!-- End languages --}}
+		
+	</div>
+
+	<div class="column">
+		{{!-- Skills --}}
+		<section class="section skills">
+			<h3>{{localize 'DND4E.Skills'}}</h3>
+			
+			<table class="skills">
+				<thead>
+					<tr class="skills-header">
+						<th class="skill-trained" data-tooltip="{{localize 'DND4E.Trained'}}"><img class="button-icon" src="modules/fox-4e-styling/images/skills_training.svg" height="12" width="12" /></th>
+						<th class="skill-name">{{localize 'DND4E.Skill'}}</th>
+						<th class="skill-ability">{{localize 'Fox4e.Stat'}}</th>
+						<th class="skill-value">{{localize 'DND4E.Mod'}}</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					{{#each system.skills as |skill s|}}
+					<tr class="skill--block" data-skill="{{s}}">
+						<td class="skill-trained"><a class="training-toggle skill-training" data-tooltip="{{skill.hover}} ({{localize 'Fox4e.TipClickCycle'}})">{{{skill.icon}}}</a><input type="hidden" name="system.skills.{{s}}.training" value="{{skill.training}}" data-dtype="Number"></td>
+						<td class="skill-name" data-skill="{{s}}"><h4 class="skill-name rollable roll-d20">{{skill.label}}</h4></td>
+						<td class="skill-ability">{{skill.ability}}</td>
+						<td class="skill-value" data-skill="{{s}}"><input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"> <a class="skill-mod skill-bonus rollable">{{numberFormat skill.total decimals=0 sign=true }}</a></td>
+					</tr>
+					{{/each}}
+				</tbody>
+				
+				<tfoot>
+					<tr>
+						<td colspan="4"><a class="custom-roll-descriptions" data-tooltip="{{localize 'DND4E.CheckDescsLong'}}">{{localize 'DND4E.CheckDescs'}}</a></td>
+					</tr>
+				</tfoot>
+			</table>
+			
+		</section><!--- End Skills --->
+
+	</div>
+
+</div><!--- base colummns ---->

@@ -18,7 +18,7 @@
 	</div>
 	
 	<div class="saves flexrow">
-		<img class="death-save rollable" src="icons/svg/d20-grey.svg" width="20" height="20" id="death-save-roll" data-tooltip="{{localize 'DND4E.DeathSavingThrow'}}"/>&thinsp;{{!--
+		<img class="death-save rollable roll-d20" src="icons/svg/d20-grey.svg" width="20" height="20" id="death-save-roll" data-tooltip="{{localize 'DND4E.DeathSavingThrow'}}"/>&thinsp;{{!--
 		--}}<label class="death-save-bonus rollable" data-tooltip="{{localize 'DND4E.DeathSavingThrow'}} ({{localize 'Fox4e.TipClickConfig'}})" for="death-save-roll">{{localize 'DND4E.DeathSave'}}</label>
 		<span class="fails" data-tooltip="Death Save Failures">{{!--
 			--}}<input class="number hidden" type="text" id="fails-number" name="system.details.deathsavefail" value="{{system.details.deathsavefail}}" data-tooltip="Death Save Failures" placeholder="0" data-dtype="Number" />{{!--
@@ -60,13 +60,13 @@
 	<div class="values flexrow">
 		{{#each system.defences as | def d|}}
 		<div class="attribute-box label-below flexcol" data-defence="{{d}}">
-			<span class="name def-name rollable label" data-tooltip="{{localize 'DND4E.Roll'}} {{def.title}}">{{def.label}}</span>
+			<span class="name def-name rollable label roll-d20" data-tooltip="{{localize 'DND4E.Roll'}} {{def.title}}">{{def.label}}</span>
 			<strong class="value defence-bonus rollable" data-tooltip="{{def.title}} ({{localize 'Fox4e.TipClickConfig'}})">{{def.value}}</strong>
 		</div>
 		{{/each}}
 	</div>
 	<div class="saves flexrow">
-		<img class="roll-save rollable" src="icons/svg/d20-grey.svg" width="20" height="20" id="saving-throw-roll" data-tooltip="{{localize 'DND4E.SavingThrow'}}"/>&thinsp;{{!--
+		<img class="roll-save rollable roll-d20" src="icons/svg/d20-grey.svg" width="20" height="20" id="saving-throw-roll" data-tooltip="{{localize 'DND4E.SavingThrow'}}"/>&thinsp;{{!--
 		--}}<label class="roll-save-bonus rollable" data-tooltip="{{localize 'DND4E.SavingThrow'}} ({{localize 'Fox4e.TipClickConfig'}})" for="saving-throw-roll">{{localize 'DND4E.ActionSave'}}</label>
 	</div>
 </section>
@@ -76,7 +76,7 @@
 	<h2>{{localize 'Fox4e.Readiness'}}</h2>
 	<div class="flexrow">{{!-- Columns --}}
 		<div class="attribute-box flexcol initiative">
-			<label class="rollInitiative rollable label below" data-tooltip="{{localize 'Fox4e.TipRollInit'}}">
+			<label class="rollInitiative rollable label below roll-d20" data-tooltip="{{localize 'Fox4e.TipRollInit'}}">
 				<img class="icon" src="icons/svg/d20-grey.svg" width="10" height="10" />&thinsp;{{!--
 				--}}{{localize 'DND4E.Init'}}
 			</label>
@@ -90,7 +90,7 @@
 		<div class="attribute-box flexcol action-points">
 			<div class="display label flexrow">
 				<label class="action-point-extra rollable" for="system.actionpoints.value" data-tooltip="{{localize 'DND4E.ActionPointRiders'}}">{{localize 'Fox4e.ActionPointAbbr'}}</label>
-				<a class="action-point" data-tooltip="{{localize 'DND4E.ActionPointUse'}}" {{#if system.actionpoints.encounteruse}}disabled{{/if}}><i class="fa-solid fa-bolt-lightning"></i></a>
+				<a class="action-point rollable roll-d20" data-tooltip="{{localize 'DND4E.ActionPointUse'}}" {{#if system.actionpoints.encounteruse}}disabled{{/if}}><i class="fa-solid fa-bolt-lightning"></i></a>
 				</div>
 			<input class="number" type="text" name="system.actionpoints.value" id="system.actionpoints.value" value="{{system.actionpoints.value}}" data-tooltip="{{localize 'DND4E.ActionPointsRemain'}}" data-dtype="Number" onClick="this.select();" placeholder="0"/>
 		</div>
@@ -115,20 +115,20 @@
 	<h2>{{localize 'Fox4e.KeySkills'}}</h2>
 	<ol class="skill-list">
 	{{#each system.skills as |skill s|}}{{#if skill.training}}
-	{{log skill}}
-		<li class="skill--block {{s}}" data-skill="{{s}}"><span class="skill-name rollable">
+		<li class="skill--block {{s}}" data-skill="{{s}}"><span class="skill-name rollable roll-d20">
 			<span class="name">{{s}}</span>&thinsp;{{!--
-			--}}<span class="bonus total rollable">{{numberFormat skill.total decimals=0 sign=true }}</span>
+			--}}<span class="bonus total rollable roll-d20">{{numberFormat skill.total decimals=0 sign=true }}</span>
 		</span></li>
 	{{/if}}{{/each}}
 	</ol>
-</section>{{!-- Senses --}}
+</section>{{!-- End Skills --}}
 
+{{#if showResources}}
 <section class="resources flexcol">
 	<h2>{{localize 'Fox4e.Resources'}}</h2>
 	
 	{{#each system.resources as |res|}}
-	{{#if res.label}}
+	{{#if res.show}}
 	<div class="resource attribute-box flexcol">
 		<label class="name label">{{res.label}}</label>
 		<div class="value"><strong class="current">{{res.value}}</strong>/<strong class="max">{{res.max}}</strong></div>
@@ -136,7 +136,9 @@
 	{{/if}}	
 	{{/each}}
 	
-</section>{{!-- Resources --}}
+</section>
+{{/if}}{{!-- End Resources --}}
+
 
 
 

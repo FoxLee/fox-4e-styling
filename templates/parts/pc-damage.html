@@ -1,63 +1,80 @@
-{{!-- Resistances --}}
+<h2>{{localize 'Fox4e.Resistances'}} &amp; {{localize 'Fox4e.Vulnerabilities'}}</h2>
 {{#if system.resistances}}
-<div class="attribute-res resource-full">
-	<h4 class="attribute-name box-title">{{localize 'DND4E.DamResVuln'}}</h4>
-	<ol class="item-list">
+
+{{!-- Damage Resistances --}}
+<h3>{{localize 'DND4E.DamResVuln'}}</h3>
+<table class="resistances">
+	<thead>
+		<tr>
+			<th class="res-name">Damage Type</th>
+			<th class="res-mod">Value</th>
+			<th class="res-armour">{{localize 'DND4E.Armour'}}</th>
+			<th class="res-bonus">{{localize 'DND4E.Bonus'}}</th>
+			<th class="res-immune">{{localize 'Fox4e.Immune'}}</th>
+		</tr>
+	</thead>
+	<tbody>
 		{{#each system.resistances as |res r|}}
-		<li class="skill flexrow" data-res="{{r}}">
-			<h4 class="res-name">{{res.label}}</h4>
-			<span class="res-mod">{{numberFormat res.value decimals=0 sign=true }}</span>
-			<span class="res-armour">{{localize 'DND4E.Armour'}}: {{res.armour}} </span>
-			<a class="resistances-bonus" data-target="system.resistances"
-				data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.DamRes'}}">{{localize 'DND4E.Bonus'}}:
-				{{res.resBonusValue}}</a>
-			<span class="res-immune">{{localize 'DND4E.Immunity'}}</span>
-			<input type="checkbox" name="system.resistances.{{r}}.immune" data-dtype="Boolean" {{checked res.immune}}
-				data-tooltip="{{localize 'DND4E.Immunity'}}" />
-		</li>
+		<tr class="res" data-res="{{r}}">
+			<td class="res-name">{{res.label}}</td>
+			<td class="res-mod">{{numberFormat res.value decimals=0 sign=true}}</td>
+			<td class="res-armour">{{res.armour}}</td>
+			<td class="res-bonus resistances-bonus" data-target="system.resistances" data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.DamRes'}}">{{res.resBonusValue}}</td>
+			<td class="res-immune"><input type="checkbox" name="system.resistances.{{r}}.immune" data-dtype="Boolean" {{checked res.immune}} data-tooltip="{{localize 'DND4E.Immunity'}}" /></td>
+			
+		</tr>
 		{{/each}}
-	</ol>
+	</tbody>
+</table>
 
-	{{!-- Condition & Special Resistances --}}
-	<div class="resistances-special">
+{{!-- Condition & Special Resistances --}}
+<div class="resistances-special infobox">
+	<h3>{{ localize "DND4E.Special" }}</h3>
 
-		<a class="list-string-input untyped-resistances" data-options="special"
-			data-target="system.untypedResistances.resistances">
-			<span>{{ localize "DND4E.UntypedRes" }}</span>
+	<div>
+		<a class="list-string-input untyped-resistances" data-options="special" data-target="system.untypedResistances.resistances">
+			<span class="h4">{{ localize "DND4E.UntypedRes" }}</span>
 			<i class="fas fa-edit"></i>
 		</a>
 
-		<ul class="traits-list" style="list-style-type: none;">
-			{{#each system.untypedResistances.resistances as |v k|}}
-			<li class="tag {{k}}">{{v}}</li>
-			{{/each}}
-		</ul>
-
-		<a class="list-string-input untyped-resistances" data-options="special"
-			data-target="system.untypedResistances.vulnerabilities">
-			<span>{{ localize "DND4E.UntypedVuln" }}</span>
-			<i class="fas fa-edit"></i>
-		</a>
-
-		<ul class="traits-list" style="list-style-type: none;">
-			{{#each system.untypedResistances.vulnerabilities as |v k|}}
-			<li class="tag {{k}}">{{v}}</li>
-			{{/each}}
-		</ul>
-
-		<a class="list-string-input untyped-resistances" data-options="special"
-			data-target="system.untypedResistances.immunities">
-			<span>{{ localize "DND4E.UntypedImm" }}</span>
-			<i class="fas fa-edit"></i>
-		</a>
-
-		<ul class="traits-list" style="list-style-type: none;">
-			{{#each system.untypedResistances.immunities as |v k|}}
-			<li class="tag {{k}}">{{v}}</li>
-			{{/each}}
-		</ul>
+		{{#if (laden system.untypedResistances.resistances)}}
+			<ul class="traits-list">
+				{{#each system.untypedResistances.resistances as |v k|}}
+				<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+			</ul>
+		{{/if}}
 	</div>
 
+	<div>
+		<a class="list-string-input untyped-resistances" data-options="special" data-target="system.untypedResistances.vulnerabilities">
+			<span class="h4">{{ localize "DND4E.UntypedVuln" }}</span>
+			<i class="fas fa-edit"></i>
+		</a>
+		
+		{{#if (laden system.untypedResistances.vulnerabilities)}}
+			<ul class="traits-list">
+				{{#each system.untypedResistances.vulnerabilities as |v k|}}
+				<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+	</div>
+
+	<div>
+		<a class="list-string-input untyped-resistances" data-options="special" data-target="system.untypedResistances.immunities">
+			<span class="h4">{{ localize "DND4E.UntypedImm" }}</span>
+			<i class="fas fa-edit"></i>
+		</a>
+
+		{{#if (laden system.untypedResistances.immunities)}}
+			<ul class="traits-list">
+				{{#each system.untypedResistances.immunities as |v k|}}
+				<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+	</div>
 </div>
+
 {{/if}}
-</ol>

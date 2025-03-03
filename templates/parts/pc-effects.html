@@ -1,33 +1,39 @@
-<div class="active-effects">
-	<h4 class="attribute-name box-title">{{localize 'DND4E.Effects'}}</h4>
-	<ol class="item-list effects-list">
-		{{#each effects as |section sid|}}
-		<li class="items-header flexrow" data-effect-type="{{section.type}}">
-			<h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
-			<div class="effect-source">{{localize 'DND4E.Source'}}</div>
-			<div class="effect-source">{{localize 'DND4E.Duration'}}</div>
+<h2>{{localize 'DOCUMENT.ActiveEffects'}}</h2>
+<ol class="item-list effects">
+{{#each effects as |section sid|}}
+	<li class="item-group" data-effect-type="{{section.type}}">
+		<div class="items-header flexrow">
+			<h3 class="group-name flexrow">{{localize section.label}}</h3>
+			<div class="item-detail item-source">{{localize 'DND4E.Source'}}</div>
+			<div class="item-detail item-duration">{{localize 'DND4E.Duration'}}</div>
 			<div class="item-controls effect-controls flexrow">
-				<a class="effect-control" data-action="create" data-tooltip="{{localize 'DND4E.EffectCreate'}}">
+				<a class="item-control effect-control" data-action="create" data-tooltip="{{localize 'DND4E.EffectCreate'}}">
 					<i class="fas fa-plus"></i> {{localize "DND4E.Add"}}
 				</a>
 			</div>
-		</li>
+		</div>
 
-		<ol class="item-list">
-			{{#each section.effects as |effect|}}
-			<li class="item effect flexrow" data-effect-id="{{effect.id}}" data-tooltip="{{effect.tooltip}}">
-				<div class="item-name effect-name flexrow">
-					<img class="item-image" src="{{effect.img}}" />
+		<ol class="items-list effect-list">
+		{{#each section.effects as |effect|}}
+			<li class="item item-header effect flexrow" data-effect-id="{{effect.id}}" data-tooltip="{{effect.tooltip}}">
+				<div class="item-image effect-image">
+					<img src="{{effect.img}}" width="26" height="26" />
+				</div>
+				
+				<div class="item-name effect-name">
 					<h4>{{effect.name}}</h4>
 				</div>
-				<div class="effect-source">{{getSourceName effect}}</div>
+				
+				<div class="item-source">{{getSourceName effect}}</div>
+				
 				{{#if effect._getIsSave}}
-				<a class="effect-duration effect-save rollable"
+				<a class="item-duration effect-save rollable"
 					data-tooltip="{{effect.duration.label}}">{{effect.duration.label}}</a>
 				{{else}}
-				<div class="effect-duration">{{effect.duration.label}}
+				<div class="item-duration">{{effect.duration.label}}
 				</div>
 				{{/if}}
+				
 				<div class="item-controls effect-controls flexrow">
 					<a class="effect-control" data-action="toggle" data-tooltip="{{localize 'DND4E.EffectToggle'}}">
 						<i class="{{#if (isActive this)}}fas fa-power-off{{else}}fas fa-circle-notch{{/if}}"></i>
@@ -52,8 +58,8 @@
 					{{/if}}
 				</div>
 			</li>
-			{{/each}}
-		</ol>
 		{{/each}}
-	</ol>
-</div>
+		</ol>
+	{{/each}}
+	</li>
+</ol>
