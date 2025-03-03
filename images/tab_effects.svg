@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   style="height: 512px; width: 512px;"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <path
+     id="rect16"
+     style="fill:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.4;paint-order:markers stroke fill"
+     d="m 261.84163,373.99482 c 53.43128,-0.16542 113.8723,-59.94476 113.21061,-113.21061 0.66169,52.935 59.44849,113.21061 113.21062,113.21061 -53.92754,0 -112.71435,59.44849 -113.21062,113.21062 C 375.71393,433.2779 315.10748,373.8294 261.84163,373.99482 Z" />
+  <path
+     id="rect16-7"
+     style="fill:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.4;paint-order:markers stroke fill"
+     d="m 273.39818,102.20756 c 37.70687,-0.11674 80.36061,-42.303485 79.89365,-79.893615 0.46696,37.35665 41.95326,79.893615 79.89361,79.893615 -38.05708,0 -79.54339,41.95326 -79.89361,79.89361 0.46696,-38.05708 -42.30352,-80.01035 -79.89365,-79.89361 z" />
+  <path
+     id="rect16-1"
+     style="fill:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.4;paint-order:markers stroke fill"
+     d="M 21.960325,226.28858 C 109.75753,226.01676 209.07292,127.78863 207.98565,40.263321 c 1.08727,86.981669 97.68449,186.025259 186.02526,186.025259 -88.61258,0 -185.2098,97.68449 -186.02526,186.02526 C 209.07292,323.70126 109.4857,226.01676 21.960325,226.28858 Z" />
+  <path
+     id="rect16-78"
+     style="fill:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.4;paint-order:markers stroke fill"
+     d="m 37.830513,347.95781 c 22.465524,-0.0696 47.878359,-25.20417 47.600139,-47.60015 0.27822,22.25687 24.995508,47.60015 47.600148,47.60015 -22.67419,0 -47.391488,24.9955 -47.600148,47.60014 0.27822,-22.67419 -25.204165,-47.6697 -47.600139,-47.60014 z" />
+</svg>
