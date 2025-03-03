@@ -136,3 +136,39 @@ Handlebars.registerHelper('powerUse', function(powerData) {
 		return "<!-- Could not interpret usage settings for this power -->";
 	}
 });
+
+/* "wepHand" Handlebars Helper: interprets weapon held status
+*
+*  Returns label based on equip state + weapon hand state
+*
+*	@param {Object} item The "system" object of the power
+*	@returns {string} term to be printed.
+*
+/*											*/
+Handlebars.registerHelper('wepHand', function(item) {
+	if(item.toggleClass != 'active') return '';
+	if(!item.system.weaponHand){
+		console.error("No slot specified for this item. Please check item settings.");
+		return '';
+	}
+	try{		
+		switch(item.system.weaponHand){
+			case 'hMain':
+				return game.i18n.localize('Fox4e.HandMain');
+			case 'hOff':
+				return game.i18n.localize('Fox4e.HandOff');
+			case 'hTwo':
+				return game.i18n.localize('Fox4e.HandBoth');
+			case 'hNone':
+				return game.i18n.localize('Fox4e.HandNone');
+			default:
+				return '';
+		}		
+		console.warning("Could not interpret slot for this item. Please check input data.");
+		return '';
+		
+	} catch(err) {
+		console.error("Weapon hand helper spat up. Please check input data.");
+		return '';
+	}
+});
