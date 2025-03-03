@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.668287mm"
+   height="13.63211mm"
+   viewBox="0 0 16.668287 13.63211"
+   version="1.1"
+   id="svg1185"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="box-swordpoint.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1187"
+     pagecolor="#505050"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     lock-margins="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.0895132"
+     inkscape:cx="-64.707799"
+     inkscape:cy="91.325191"
+     inkscape:window-width="3840"
+     inkscape:window-height="2058"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1182" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-122.07392,-124.3205)">
+    <path
+       style="fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:0.245;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       d="m 122.07392,131.13656 c 1.36278,-2.65406 4.89356,-6.81606 8.30971,-6.81606 h 8.32679 c 0.0749,2.58591 -0.007,11.46471 0,13.63211 h -8.32679 c -3.41615,0 -6.94693,-3.93054 -8.30971,-6.81605 z"
+       id="path26" />
+  </g>
+</svg>
