@@ -13,6 +13,22 @@ Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, ite
 * **Example Images**: **Assets used in these examples are used for demonstration only and are not included with the module.** Non-core tokens are by [Yuikami](https://yuikami.tumblr.com), battlemaps are by [Cze & Peku](https://www.patreon.com/czepeku), additional character portraits are my own art.
 
 ## Features
+### Core-inspired PC sheet
+The long-awaited PC sheet, adapting 4e book styles into a (hopefully) beautiful modern VTT sheet!
+
+<a href="https://github.com/user-attachments/assets/fb74f6d5-c04b-453c-b166-920134983912"><img src="https://github.com/user-attachments/assets/fb74f6d5-c04b-453c-b166-920134983912" width=220></a>
+<a href="https://github.com/user-attachments/assets/dac952a8-9972-462c-b977-8c4506e9e0b9"><img src="https://github.com/user-attachments/assets/dac952a8-9972-462c-b977-8c4506e9e0b9" width=220></a>
+<a href="https://github.com/user-attachments/assets/0a8cde97-9345-44cc-93d7-51d7ea7ac6cc"><img src="https://github.com/user-attachments/assets/0a8cde97-9345-44cc-93d7-51d7ea7ac6cc" width=220></a>
+* Centres the info most commonly used during game session in a "vitals" sidebar, with tabbed sheets for less commonly used items.
+  * Skills appear on the vitals banner if they're trained
+  * Custom Resources are displayed on the banner if "in summary" is checked
+* Doesn't override the existing PC sheet, so you can choose it per-character or set it as the default, as you see fit.
+* Retains the functionality of the existing sheet in almost all cases.
+* Makes heavy use of "tooltip" messages to assist in editing.
+* Every piece of visible text (aside from user entry of course) should be translation-ready.
+* Uses core item styling for on-sheet item summaries.
+* Includes a new d20 cursor to make it clear which labels will "roll" an item (send it to chat) vs expand/configure.
+
 ### Core style NPC sheet
 A new NPC sheet based on the official, deliciously compact 4e monster stat blocks we know and love!
 
@@ -98,8 +114,7 @@ In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF C
 
 
 ### To-Do/In Progress
-* New Player Character sheet. (This was actually *almost* complete when I finally worked out how to create a new sheet, so I'm in the process of redoing it.)
-  * <strike>Won't be a drastic overhaul like the NPC sheet, but more of a core-book-themed reskin</strike>. Will be a drastic overhaul, because I saw the Pathfinder 2e sheet and I'm in love.
+* Extra functionality for the PC sheet (user-selectable background image, collapsible to vitals maybe?).
 * New Sheets for all system "items" (powers, feats, gear, etc)
 * Fix the new NPC sheet's power sorting method, for Token Action HUD. For now, load a layout preset from the "extras" folder.
 * Work out a way to separate journal styling from journal-like rich text areas in other sheets. Ideally I would like to have the journal styling based entirely on sheet selection, and have rich text on other sheets be its own toggle. But at the moment I don't know how to make the pop-out journal editor aware of the selected sheet, which means I have to target the editor itself, which means all instances of the editor :\
