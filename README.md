@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Foundry-v11-informational)
 ![](https://img.shields.io/badge/Foundry-v10-informational)
 
-# Fox's 4e Aesthetics for Foundry VTT (BETA)
+# Fox's 4e Aesthetics for Foundry VTT
 Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, item cards and other elements to match the official 4e books as closely as possible.
 
 <a href="https://github.com/user-attachments/assets/27b66dfe-2661-4fe1-b616-a96460b5d0f5"><img src="https://github.com/user-attachments/assets/27b66dfe-2661-4fe1-b616-a96460b5d0f5" height=300></a>
