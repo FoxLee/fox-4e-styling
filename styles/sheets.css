@@ -121,6 +121,9 @@
 .sheet.fox4e .window-content .flatrow>*:not(:last-child){
 	margin-right:0.2em;
 }
+.sheet.fox4e .roll-d20{
+	cursor:url('../images/cursor_roll-d20.svg'), auto;
+}
 
 /*---------- Item Lists ----------*/
 .sheet.fox4e .items-list li{
@@ -193,12 +196,12 @@
 	text-align:center;
 	font-size:0.7rem;
 }
-.sheet.fox4e .item-controls .fas{
+.sheet.fox4e .item-controls a:not(.active) .fas{
 	opacity:0.3;
 }
-.sheet.fox4e .item-controls .fas:focus,
-.sheet.fox4e .item-controls .fas:active,
-.sheet.fox4e .item-controls .fas:hover{
+.sheet.fox4e .item-controls a .fas:focus,
+.sheet.fox4e .item-controls a .fas:active,
+.sheet.fox4e .item-controls a .fas:hover{
 	opacity:1;
 }
 

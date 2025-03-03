@@ -2,9 +2,26 @@
 /***************************************************/
 /*         PC SHEETS                               */
 /***************************************************/
+.sheet.fox4e.actor.pc{
+	text-rendering:optimizeLegibility;
+	--font-primary:'DragonBodySans';
+	--background-atwill:#619769;
+	--background-encounter:#961334;
+	--background-daily:#4d4d4f;
+	--background-recharge:#70774f;
+	--background-other:#193d5e;
+	--background-item:#d7941d;
+	--background-npc:#4e5c2e;
+	--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	--gradient-4e-item:linear-gradient(90deg, #eed4ad 0%, #fff 100%);
+	--background-container:#fff;
+	--background-alternate:#69633c3d;
+	--colour-text-inside:#484a3d;
+	--background-row-odd:#d3d1ba;
+	--background-row-even:var(--gradient-4e);
+}
 
 /*---------- All Sections ----------*/
-
 .sheet.fox4e.actor.pc{
 	padding:0;
 	overflow:hidden;
@@ -19,9 +36,12 @@
 	overflow:hidden;
 }
 .sheet.fox4e.actor.pc section.body{
+	height:calc(100% - 7.05em);
 	position:relative;
-	z-index:1;
     background:#ffecd3;
+	width:100%;
+	flex:calc(100% - 7.05em) 0 0;
+	align-items:flex-start;
 }
 .sheet.fox4e.actor.pc section.body::before{
 	content:'';
@@ -33,29 +53,30 @@
 	width:100%;
 	position:absolute;
 	pointer-events:none;
-	z-index:-1;
+	z-index:0;
 }
 .sheet.fox4e.actor.pc .sheet-body .autosize .ruler{
 	color:#fff;
 }
-.sheet.fox4e.actor.pc .sheet-body :is(h3,h4,h5,h6){
+.sheet.fox4e.actor.pc .sheet-body :is(h2,h3,h4,h5,h6){
 	color:#221f1f;
 	font-family:'DragonBodySans';
 }
 .sheet.fox4e.actor.pc .sheet-body h2{
-	font-family:'DragonBodySans';
-	color:#221f1f;
-	font-size:0.9em;
-	text-transform:uppercase;
-	font-weight:800;
+	font-weight:600;
 }
-.sheet.fox4e.actor.pc .sheet-body .button{
+.sheet.fox4e.actor.pc .sheet-body h3{
+	font-size:1em;
+	text-transform:uppercase;
+	font-weight:600;
+}
+.sheet.fox4e.actor.pc .sheet-body :is(button,.button){
 	display:inline-block;
 	white-space:nowrap;
 	margin-top:1px;
 	margin-bottom:1px;
 	padding:0.1rem 0.4rem;
-	background:transparent;
+	background:rgba(255,255,255,0.4);
 	border-radius:4px;
 	border-top:1px solid #fff;
 	border-bottom:1px solid #d4bf95;
@@ -64,10 +85,18 @@
 	font-size:0.65rem;
 	text-align:center;
 }
-.sheet.fox4e.actor.pc .sheet-body .label{
+.sheet.fox4e.actor.pc .sheet-body select{
+	border-radius:4px;
+	border-top:1px solid #b3a079;
+	border-bottom:1px solid #fff;
+	border-left:1px solid #b3a079;
+	border-right:1px solid #fff;
+	background:rgba(0,0,0,0.1);
+}
+.sheet.fox4e.actor.pc .sheet-body :is(label,.label){
 	font-size:0.68rem;
 	text-transform:uppercase;
-	font-weight:400;
+	font-weight:600;
 	line-height:1;
 	display:inline-block;
 }
@@ -79,6 +108,113 @@
 	margin:unset;
 	list-style:none inside;
 }
+.sheet.fox4e.actor.pc .sheet-body input,
+.sheet.fox4e.actor.pc .sheet-body textarea{
+	background:#fff;
+    border-top:1px solid #b3a079;
+    border-left:1px solid #b3a079;
+}
+.sheet.fox4e.actor.pc .sheet-body input::placeholder,
+.sheet.fox4e.actor.pc .sheet-body textarea::placeholder{
+	color:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.actor.pc .flexrow.responsive{
+	flex-wrap:wrap;
+}
+.sheet.fox4e.actor.pc .flexrow.responsive.two-up>*{
+	flex:50% 0 5;
+}
+.sheet.fox4e.actor.pc :is(.trait-selector,.trait-selector-weapon,.list-string-input){
+	display:block;
+}
+.sheet.fox4e.actor.pc :is(.trait-selector,.trait-selector-weapon,.list-string-input) :is(h4,span.h4){
+	display:inline-block;
+	font-weight:600;
+	text-transform:uppercase;
+	font-size:0.8em;
+	margin-top:0.5em;
+}
+.sheet.fox4e.actor.pc :is(.trait-selector,.trait-selector-weapon,.list-string-input) i{
+	display:inline-block;
+}
+
+/*-- All Sections - Tables --*/
+.sheet.fox4e.actor.pc table{
+	font-family:'DragonbodySans';
+	font-size:0.9rem;
+	border-collapse:collapse;
+	border:none;
+	margin-bottom:1rem;
+	table-layout:auto;
+	width:fit-content;
+}
+.sheet.fox4e.actor.pc table thead{
+	border-bottom:0;
+	text-shadow:unset;
+	text-align:left;
+	color:#fff;
+	background:var(--background-other);
+	font-size:0.75em;
+	text-transform:uppercase;
+}
+.sheet.fox4e.actor.pc table tbody{
+	color:#000;
+    border-bottom:unset;
+}
+.sheet.fox4e.actor.pc table :is(th,td){
+	padding:0.25em 0.6em;
+	width:fit-content;
+}
+.sheet.fox4e.actor.pc table tbody tr{
+	border-bottom:1px solid #fff;
+	position:relative;
+}
+.sheet.fox4e.actor.pc table tr.subhead{
+	color:#fff;
+}
+.sheet.fox4e.actor.pc table tr.flavour{
+	background:var(--gradient-4e);
+	font-style:oblique;
+}
+.sheet.fox4e.actor.pc table thead tr:nth-child(even){
+	background:none;
+}
+.sheet.fox4e.actor.pc table tbody tr:nth-child(2n+1){
+	background:unset;
+}
+.sheet.fox4e.actor.pc table tbody tr:nth-child(odd){
+	background:var(--background-row-odd);
+}
+.sheet.fox4e.actor.pc table tbody tr:nth-child(even){
+	background:var(--background-row-even);
+}
+.sheet.fox4e.actor.pc table :is(tr,td){
+	border:0;
+}
+.sheet.fox4e.actor.pc table tfoot{
+	font-size:0.75rem;
+	background-color:#dedede;
+}
+.sheet.fox4e.actor.pc table tfoot tr td{
+	padding-left:4px;
+	padding-right:4px;
+}
+.sheet.fox4e.actor.pc table tbody tr.has-rider td{
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc table tr.rider td{
+	padding-top:0;
+}
+.sheet.fox4e.actor.pc table tr.rider:not(.final) td{
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc table tr.rider td:first-child{
+	padding-left:1.5em;
+}
+.sheet.fox4e.actor.pc table tbody tr.white{
+	background:#fff;
+}
+
 
 /*---------- Header Banner ----------*/
 
@@ -97,7 +233,7 @@
 	bottom:-1px;
 	left:0;
 	right:0;
-	z-index:2;
+	z-index:1;
 }
 .sheet.fox4e.actor.pc .char-title ::-webkit-input-placeholder,
 .sheet.fox4e.actor.pc .char-title ::-moz-placeholder,
@@ -126,26 +262,28 @@
 	    -ms-flex-align:center;
 	        align-items:center;
 }
-.sheet.fox4e.actor.pc .char-title img.portrait{
+.sheet.fox4e.actor.pc .char-title .image-frame{
 	margin-top:-0.5em;
 	width:100px;
 	height:100px;
 	position:relative;
 	display:block;
 }
-.sheet.fox4e.actor.pc .char-title img.portrait:not(.framed){
+.sheet.fox4e.actor.pc .char-title .image-frame img{
 	border:unset;
+}
+.sheet.fox4e.actor.pc .char-title .image-frame:not(.framed){
 	margin-bottom:calc(-1em + 2px);
 	margin-left:-0.8em;
 }
-.sheet.fox4e.actor.pc .char-title img.portrait.framed{
+.sheet.fox4e.actor.pc .char-title .image-frame.framed{
 	border:2px solid #e5d7a0;
 	background:#e5d7a0;
 	margin-bottom:-1em;
 	border-radius:100px;
 	z-index:1;
 }
-.sheet.fox4e.actor.pc .char-title img.portrait.framed::after{
+.sheet.fox4e.actor.pc .char-title .image-frame.framed::after{
 	content:'';
 	background:url('../images/portrait-frame.png') no-repeat;
 	display:block;
@@ -169,11 +307,8 @@
 .sheet.fox4e.actor.pc .char-title .autosize>input.name{
 	font-size:2em;
 }
-.sheet.fox4e.actor.pc .char-title section.exp{
-	position:absolute;
-	top:0;
-	right:0;
-	padding:0.5rem 0.8rem;
+.sheet.fox4e.actor.pc .sheet-body .char-title :is(label,.label){
+	font-weight:400;
 }
 .sheet.fox4e.actor.pc .char-title section.level{
 	position:absolute;
@@ -196,15 +331,9 @@
 .sheet.fox4e.actor.pc .char-title:focus-within label.epic::before{
 	content:'\2009\2009/';
 }
-
-
-/*---------- Body ----------*/
-
-.sheet.fox4e.actor.pc .body{
-	width:100%;
-	overflow:hidden;
-	flex:calc(100% - 6.5em) 0 0;
-	align-items:flex-start;
+.sheet.fox4e.actor.pc .char-title .traits{
+	margin-top:-4px;
+	font-weight:400;
 }
 
 
@@ -234,6 +363,9 @@
     display:flex;
     align-items:center;
 	flex:1em 100 100;
+	font-family:'DragonBodySans';
+	text-transform:uppercase;
+	font-size:0.9em;
 }
 .sheet.fox4e.actor.pc .vitals h2:after,
 .sheet.fox4e.actor.pc .vitals h2:before{
@@ -249,11 +381,14 @@
 .sheet.fox4e.actor.pc .vitals h2:before{
 	margin-right:0.5em;
 }
-.sheet.fox4e.actor.pc .vitals .label{
+.sheet.fox4e.actor.pc .sheet-body .vitals :is(label,.label){
+	font-weight:400;
 	color:#d9c676;
 }
 .sheet.fox4e.actor.pc .vitals input{
 	background:rgba(255,255,255,0.3);
+	border-left:unset;
+	border-top:unset;
 }
 .sheet.fox4e.actor.pc .vitals input,
 .sheet.fox4e.actor.pc .vitals .attribute-box .attribute-value{
@@ -358,7 +493,8 @@
 .sheet.fox4e.actor.pc .vitals .attribute:is(.health,.surges) .values .tracking.current input{
 	font-size:1.5em;
 }
-.sheet.fox4e.actor.pc .vitals .attribute .surge-bonus.value{adding: 0em 0.3em;
+.sheet.fox4e.actor.pc .vitals .attribute .surge-bonus.value{
+	padding:0em 0.3em;
     height:100%;
     width:100%;
     display:inline-block;
@@ -538,6 +674,9 @@
 .sheet.fox4e.actor.pc .vitals .skill-summary{
 	margin:2px;
 }
+.sheet.fox4e.actor.pc .vitals .skill-summary:last-of-type{
+	margin-bottom:1em;
+}
 .sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list{
 	text-transform:uppercase;
 	font-size:0.8em;
@@ -555,8 +694,9 @@
 	display:inline;
 }
 .sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list li:not(:last-child)::after{
-	content:', ';
-	display:inline;
+	content:'';
+	with:0.5em;
+	display:inline-block;
 }
 
 /*---------- Vitals - Resources ----------*/
@@ -569,182 +709,302 @@
 /*---------- Sheet-Body ----------*/
 .sheet.fox4e.actor.pc section.main{
 	flex:100% 0 100;
-	overflow:hidden;
 	align-items:stretch;
-    max-height:100%;
+    height:100%;
+	z-index:1;
 }
 
 
 /*---------- Tabbed Sections ----------*/
+.sheet.fox4e.actor.pc section.tabs{
+	transform:translatey(-55%) translatex(-0.7em);
+    overflow:visible;
+	position:absolute;
+	z-index:2;
+	margin-left:-1em;
+}
+.sheet.fox4e.actor.pc nav.sheet-tabs{
+    border:unset;
+	justify-content:space-between;
+    max-width:25em;
+    margin-right:auto;
+}
+.sheet.fox4e.actor.pc nav.sheet-tabs button[data-tab]{
+	display:flex;
+	padding:0;
+	font-size:1em;
+	flex:2.8em 0 0;
+	aspect-ratio:219 / 190;
+	background:url(../images/button-2.webp) no-repeat center center;
+	background-size:contain;
+	border:unset;
+	align-items:center;
+	justify-content:center;
+	margin:0;
+	border-radius:0;
+	position:relative;
+	filter:drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3)) drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.4));
+}
+.sheet.fox4e.actor.pc nav.sheet-tabs button[data-tab].active,
+.sheet.fox4e.actor.pc nav.sheet-tabs button[data-tab]:is(:hover,:focus,:active){
+    box-shadow:unset;
+	filter:drop-shadow(0 0 5px var(--color-shadow-primary));
+	background:url(../images/button-2-blue.webp) no-repeat center center;
+	background-size:contain;
+}
+.sheet.fox4e.actor.pc nav.sheet-tabs button[data-tab] .button-icon{
+	display:block;
+	width:72%;
+	height:72%;
+	border:none;
+	object-fit:contain;
+	filter:invert(1);
+}
+.sheet.fox4e.actor.pc section.tabs #button-mask{
+  width:0;
+  height:0;
+}
+.sheet.fox4e.actor.pc nav.sheet-tabs button[data-tab]:not(.active,:hover,:focus,:active) .button-icon{
+	opacity:0.75;
+}
 .sheet.fox4e.actor.pc section.tabs-content{
 	height:100%;
-	overflow-y:scroll;
+	overflow-y:auto;
+	overflow-x:hidden;
+	padding-right:0.75em;
+	padding-top:1.25em;
+	padding-bottom:1.5em;
+	scrollbar-color:#e8e8dc rgba(0,0,0,0.2);
+}
+.sheet.fox4e.actor.pc section.tabs-content h2{
+	font-size:1.5em;
+	text-transform:uppercase;
+	font-weight:800;
+	color:#193d5e;
+	padding:0.1em 0.25em 0.25em 0;
+	line-height:1;
+	text-shadow:-0.02em -0.02em #fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content footer{
+	margin-top:1em;
+}
+.sheet.fox4e.actor.pc .sheet-body section.tabs-content footer button{
+	font-size:0.85em;
+	padding:0.5em;
+}
+.sheet.fox4e.actor.pc .traits-list{
+	list-style-type:none;
+	display:inline-block;
+}
+.sheet.fox4e.actor.pc .traits-list li{
+	display:inline;
+}
+.sheet.fox4e.actor.pc .traits-list li:not(:last-child)::after{
+	content:',';
+}
+.sheet.fox4e.actor.pc .tabs-content .infobox{
+	background:var(--gradient-4e);
+	padding:0.5em;
+	margin-bottom:1em;
+	max-width:20em;
+}
+.sheet.fox4e.actor.pc .tabs-content .infobox>h3{
+	margin-top:0;
 }
 
-
-/*---------- Tab - Powers ----------*/
-.sheet.fox4e.actor.pc .power{
-	background:var(--background-other);
-	color:#fff;
-	margin-bottom:1px;
+/*------------------------------------------------------------------*/
+/*---------------------- All Item Lists ----------------------------*/
+/*------------------------------------------------------------------*/
+.sheet.fox4e.actor.pc .item-list header.filters{
+	justify-content:space-between;
 }
-.sheet.fox4e.actor.pc .power.use-atwill{
-	background:var(--background-atwill);
+.sheet.fox4e.actor.pc .item-list header.filters>*{
+	flex:1;
 }
-.sheet.fox4e.actor.pc .power.use-encounter{
-	background:var(--background-encounter);
-}
-.sheet.fox4e.actor.pc .power.use-daily{
-	background:var(--background-daily);
-}
-.sheet.fox4e.actor.pc .power.use-recharge{
-	background:var(--background-recharge);
-}
-.sheet.fox4e.actor.pc .power.use-item{
-	background:var(--background-item);
-}
-.sheet.fox4e.actor.pc .items-header{
-	padding-right:8px;
+.sheet.fox4e.actor.pc .item-list .items-header{
 	text-transform:uppercase;
 	font-size:0.75em;
     text-align:center;
 	font-weight:600;
-}
-.sheet.fox4e.actor.pc .power-create{
-	white-space:nowrap;
-    text-align:center;
-}
-.sheet.fox4e.actor.pc .power .power-header{
-    align-items:center;
+	margin-top:1em;
+	background:var(--background-other);
+	color:#fff;
+	align-items:center;
 	padding-right:8px;
+	padding:0.2rem 0.3rem;
+	line-height:1;
 }
-.sheet.fox4e.actor.pc .sheet-body .power :is(h3,h4,h5,h6){
+.sheet.fox4e.actor.pc .item-list :is(.item-header,.items-header){
+	gap:0.3rem;
+}
+.sheet.fox4e.actor.pc .item:nth-child(odd) .item-header{
+	background:var(--background-row-odd);
+}
+.sheet.fox4e.actor.pc .item:nth-child(even) .item-header{
+	background:var(--background-row-even);
+}
+.sheet.fox4e.actor.pc .item.expanded .item-header{
+	background:var(--background-other);
 	color:#fff;
 }
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-image{
-	flex:34px 0 0;
-	margin-right:0.3em;
+.sheet.fox4e.actor.pc .item{
+	align-items:center;
+}
+.sheet.fox4e.actor.pc .item:not(:last-child){
+	border-bottom:1px solid #fff;
+}
+.sheet.fox4e.actor.pc .item-list .item-name h4{
+	font-weight:600;
+	line-height:1;
+	font-size:1em;
+}
+.sheet.fox4e.actor.pc .items-header .group-name{
+	font-weight:600;
+	line-height:1;
+	color:#fff;
+	font-size:1em;
+}
+.sheet.fox4e.actor.pc .item-list .item-name,
+.sheet.fox4e.actor.pc .items-header .group-name{
+	flex:100% 20 20;
+}
+.sheet.fox4e.actor.pc .items-header .group-name{
+	text-align:left;
+}
+.sheet.fox4e.actor.pc .item-list .item-image{
+	flex:26px 0 0;
 	text-align:center;
 }
-.sheet.fox4e.actor.pc .item-list .power .item-image img{
+.sheet.fox4e.actor.pc .item-list .item-image img{
 	display:block;
-	height:34px;
-	width:34px;
+	height:26px;
+	width:26px;
 	border:unset;
 	border-radius:0;
 }
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-name{
-	flex:100% 20 20;
-}
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-name h4{
-	font-weight:500;
-    font-size:1.1em;
-}
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-range{
+.sheet.fox4e.actor.pc .item-list .item-controls{
 	flex:50px 0 0;
 	white-space:nowrap;
-}
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-action{
-	flex:35px 0 0;
-	white-space:nowrap;
-}
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-uses{
-	flex:50px 0 0;
-	white-space:nowrap;
-}
-.sheet.fox4e.actor.pc .item-list .power .item-uses input{
-	width:1em;
-	color:#fff;
-	background:unset;
 	text-align:right;
-	padding:0 2px;
-}
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-prep{
-	flex:30px 0 0;
-	text-align:center;
-	white-space:nowrap;
-}
-.sheet.fox4e.actor.pc .item-list :is(.power,.items-header) .item-controls{
-	flex:40px 0 0;
 	justify-content:flex-end;
-	text-align:center;
-	white-space:nowrap;
 }
-.sheet.fox4e.actor.pc .item-list .power .item-controls a{
-	color:#fff;
-	margin:3px;
+.sheet.fox4e.actor.pc .item .item-controls{
+	margin-right:0.3em;
+	font-size:0.8em;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary{
-	color:#000;
+.sheet.fox4e.actor.pc .item .item.power .power-header{
+    align-items:center;
+    padding-right:8px;
+    color:#fff;
+    padding-left:0;
+}
+.sheet.fox4e.actor.pc .item-list .item-controls a:not([data-action='none']){
+	margin:0 2px;
+}
+.sheet.fox4e.actor.pc .item .item-header{
+	background:var(--background-other);
+	border:unset;
+	padding:0;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+}
+.sheet.fox4e.actor.pc .item .item-header h3:hover,
+.sheet.fox4e.actor.pc .item .item-header h3:focus,
+.sheet.fox4e.actor.pc .item .item-header h3:active{
+    text-shadow:1px 0px 3px #0008,
+				-1px -1px 3px #0008,
+				2px 2px 7px #fff,
+				-2px -2px 8px #fff;
+	cursor:pointer;
+}
+.sheet.fox4e.actor.pc .item-list .item .item-image img{
+	display:block;
+	height:26px;
+	width:26px;
+	border:unset;
+	border-radius:0;
+}
+.sheet.fox4e.actor.pc .item-header img{
+	z-index:0;
+	border:none;
+	height:100%;
+	-o-object-fit:contain;
+	object-fit:contain;
+	border-radius:0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*---------- Power Summaries ----------*/
-
-.sheet.fox4e.actor.pc .item-list .item-summary :is(.item-description,.item-details)>p,
-.sheet.fox4e.actor.pc .item-list .item-summary :is(.item-description,.item-details)>:is(span,p,div){
+/*----- Item Summaries—Mostly duplicates chat.css ------*/
+.sheet.fox4e.actor.pc .item :is(.item-summary,.item-description){
+	line-height:1;
+}
+.sheet.fox4e.actor.pc .item .item-summary a.content-link,
+.sheet.fox4e.actor.pc .item .item-summary a.inline-roll{
+	border:0;
+	background:0;
+	padding:0;
+	text-decoration:underline;
+	-webkit-text-decoration-style:dotted;
+	        text-decoration-style:dotted;
+	text-indent:0;
+	white-space:initial;
+	word-break:initial;
+	color:#5d1232;
+}
+.sheet.fox4e.actor.pc .item .item-summary a.inline-roll{
+	font-weight:700;
+}
+.sheet.fox4e.actor.pc .item .item-summary a.inline-result i{
+	display:none;
+}
+.sheet.fox4e.actor.pc .item .item-summary a.inline-roll i{
+	text-indent:0;
+	margin-right:1px;
+}
+.sheet.fox4e.actor.pc .item-summary>p,
+.sheet.fox4e.actor.pc .item-summary .item-details>:is(span,p,div){
 	margin:0;
 	display:block;
 }
-.sheet.fox4e.actor.pc .item-list .item:not(.ritual) .item-summary :is(.item-description,.item-details)>p{
+.sheet.fox4e.actor.pc .item:not(.ritual) .item-summary>p,
+.sheet.fox4e.actor.pc .item-details>span,
+.sheet.fox4e.actor.pc .item-details p,
+.sheet.fox4e.actor.pc.autogen .item-description,
+.sheet.fox4e.actor.pc .item .item-summary .item-properties{
 	padding:0.1em 0.3em 0.1em 0.3em;
 }
-.sheet.fox4e.actor.pc .item-list .item:not(.ritual) .item-summary :is(.item-description,.item-details)>:is(p,ol,ul,span){
+.sheet.fox4e.actor.pc .item:not(.ritual) .item-summary>:is(p,ol,ul,span),
+.sheet.fox4e.actor.pc .item-details>span,
+.sheet.fox4e.actor.pc .item-details p,
+.sheet.fox4e.actor.pc.autogen .item-description,
+.sheet.fox4e.actor.pc .item .item-summary .item-properties{
 	background:var(--gradient-4e);
 }
-.sheet.fox4e.actor.pc .item-list .item:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) .item-summary :is(.item-description,.item-details)>p:not(:first-child){
+.sheet.fox4e.actor.pc .item:not(.power,.ritual,.consumable,.equipment,.weapon,.tool,.backpack) :is(.item-summary,.item-details)>p:not(:first-child){
     text-indent:0.5em;
 }
-.sheet.fox4e.actor.pc .item-list .item:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) .item-summary :is(.item-description,.item-details)>p:not(:first-child)>:is(strong,b):first-of-type{
+.sheet.fox4e.actor.pc .item:not(.power,.ritual,.consumable,.equipment,.weapon,.tool,.backpack) :is(.item-summary,.item-details)>p:not(:first-child)>:is(strong,b):first-of-type{
 	display:inline-block;
     text-indent:-0.5em;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-summary,.item-details,.card-content)>p:not(:first-child)>:is(strong,b):first-of-type::after{
+.sheet.fox4e.actor.pc .item:not(.power,.ritual,.consumable,.equipment,.weapon,.tool,.backpack) :is(.item-summary,.item-details)>p:not(:first-child)>:is(strong,b):first-of-type::after{
 	content:' ';
 	display:inline-block;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.autogen) .card-content p:is(.flavour,.chat-flavour,.basics,.power-basics){
+.sheet.fox4e.actor.pc .item:not(.autogen) .item-summary p:is(.flavour,.chat-flavour,.basics,.power-basics),
+.sheet.fox4e.actor.pc .item:not(.autogen) .item-description{
 	text-indent:unset;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-description,.item-details)>:is(ol,ul){
+.sheet.fox4e.actor.pc .item:not(.power,.ritual,.consumable,.equipment,.weapon,.tool,.backpack) .item-summary>:is(ol,ul){
 	margin:0;
 	padding:0.1em 0.3em 0.1em 1.8em;
 	background:var(--gradient-4e);
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-description,.item-details)>ul{
+.sheet.fox4e.actor.pc .item :not(.power,.ritual,.consumable,.equipment,.weapon,.tool,.backpack) .item-summary>ul{
   list-style:none outside;
   position:relative;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.ritual,.consumable-card,.equipment-card,.weapon-card,.tool,.NPC,.backpack-card) :is(.item-description,.item-details)>ul li::before{
+.sheet.fox4e.actor.pc .item:not(.power,.ritual,.consumable,.equipment,.weapon,.tool,.backpack) .item-summary>ul li::before{
   display:block;
   margin-left:-1em;
   margin-right:0.4em;
@@ -752,145 +1012,1413 @@
   content:'\2726';
   position:absolute;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary>span+br{
+.sheet.fox4e.actor.pc .item-summary .item-details>span+br{
 	display:none;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary :is(.flavour,.chat-flavour){
+.sheet.fox4e.actor.pc .item-summary :is(.flavour,.chat-flavour),
+.sheet.fox4e.actor.pc .item.autogen .item-description{
     background:var(--gradient-4e);
 	font-style:italic;
+	text-indent:0;
+	padding:0em 0.3em;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary p.indent{
+.sheet.fox4e.actor.pc .item-summary p.indent{
 	padding-left:1.3em;
 }
+.sheet.fox4e.actor.pc .item:not(.ritual) .item-summary .card-footer{
+	display:none;
+}
 
-/*---- Chat Cards - PC Power Cards ----*/
+/* ---- Actual Tables ---- */
+.sheet.fox4e.actor.pc .item-summary table{
+	border:unset;
+	color:#000;
+}
+.sheet.fox4e.actor.pc .item-summary table :is(td,th){
+    padding:2px 5px;
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) thead{
+	background:#193d5e;
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) tr:not(:first-child){
+	border-top:1px solid #fff;
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) tr:not(:last-child){
+	border-bottom:1px solid #fff;
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) tbody:not(:first-child) tr{
+	border-top:1px solid #fff;
+	border-bottom:1px solid #fff;
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) td{
+	border:none;
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) tr:nth-child(odd){
+	background:var(--background-row-odd);
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) tr:nth-child(even){
+	background:var(--background-row-even);
+}
+.sheet.fox4e.actor.pc .item-summary table:not(.power,.item,.hazard,.monster) tfoot{
+   font-size:0.85em;
+}
 /*------------------------------------------------------------------*/
-.dnd4e.power-card.use-atwill:not(.NPC) .card-header{
-	background:var(--background-atwill);
+/*--------------------- End All Item Summaries ---------------------*/
+/*------------------------------------------------------------------*/
+
+
+/*-------------------------- Tab - Effects -------------------------*/
+.sheet.fox4e.actor.pc .item-list.effects .item:nth-child(odd){
+	background:var(--background-row-odd);
 }
-.dnd4e.power-card.use-encounter:not(.NPC) .card-header{
-	background:var(--background-encounter);
+.sheet.fox4e.actor.pc .item-list.effects .item:nth-child(even){
+	background:var(--background-row-even);
 }
-.dnd4e.power-card.use-daily:not(.NPC) .card-header{
-	background:var(--background-daily);
+.sheet.fox4e.actor.pc .item-list.effects .item>*:not(.item-image,.item-name){
+	padding-left:0.3em;
+	padding-right:0.3em;
 }
-.dnd4e.power-card.use-item:not(.NPC) .card-header{
+.sheet.fox4e.actor.pc .item-list.effects :is(.effect,.items-header) .item-name{
+	flex:100% 20 20;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.effects .item.effect>*{
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.sheet.fox4e.actor.pc .item-list.effects :is(.effect,.items-header) .item-source{
+	flex:35% 1 1;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.effects :is(.effect,.items-header) .item-duration{
+	flex:60px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.effects .effect :is(.item-source,.item-duration){
+	text-align:left;
+}
+
+/*-------------------------- Tab - Fluff -------------------------*/
+.sheet.fox4e.actor.pc .tab.fluff .basics,
+.sheet.fox4e.actor.pc .tab.fluff .biography{
+	margin-top:0.5em;
+}
+.sheet.fox4e.actor.pc .tab.fluff .basics>.flexrow:last-child>*{
+	flex-basis:50%;
+}
+.sheet.fox4e.actor.pc .tab.fluff .biography .editor{
+	min-height:45vh;
+	background:#fff;
+	border-radius:4px;
+    border-top:1px solid #b3a079;
+    border-left:1px solid #b3a079;
+}
+.sheet.fox4e.actor.pc .tab.fluff .biography .editor:not(.prosemirror){
+	padding-top:1em;
+}
+
+/*-------------------------- Tab - Features -------------------------*/
+.sheet.fox4e.actor.pc .item-list .item.feature{
+    align-items:normal;
+}
+.sheet.fox4e.actor.pc .item-list.features .items-header>*{
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.features header.filters .search input{
+	padding:0.3em;
+}
+.sheet.fox4e.actor.pc .item-list.features select[name="system.featureSortTypes"],
+.sheet.fox4e.actor.pc .item-list.features select[name="system.featureSortTypes"] option{
+	text-transform:capitalize;
+}
+.sheet.fox4e.actor.pc .item-list.features :is(.effect,.items-header) .item-name{
+	flex:100% 20 20;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.features .items-header .item-name{
+	font-size:1em;
+}
+.sheet.fox4e.actor.pc .item-list.features .feature .item-name{
+	text-align:left;
+}
+.sheet.fox4e.actor.pc .item-list.features :is(.feature,.items-header) .item-name{
+	flex:100% 20 20;
+	text-align:left;
+}
+.sheet.fox4e.actor.pc .item-list.features :is(.feature,.items-header) .item-level{
+	flex:25px 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.features .item.feature .feature-header{
+	align-items:center;
+	color:#fff;
+	padding-left:0;
+}
+.sheet.fox4e.actor.pc .item-list.features .item.feature:not(.expanded) .feature-header{
+	color:#000;
+}
+.sheet.fox4e.actor.pc .item-list.features .item.feature.expanded .feature-header h4{
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .item.feature.has-reqs .item-summary .item-properties::before{
+	content:'Prerequisites: ';
+	font-weight:600;
+}
+
+/*-------------------------- Tab - Inventory -------------------------*/
+.sheet.fox4e.actor.pc .item-list .item.gear:nth-child(even) .item-header{
+	background:var(--background-row-even);
+}
+.sheet.fox4e.actor.pc .item-list .item.gear:nth-child(odd) .item-header{
+	background:var(--background-row-odd);
+}
+.sheet.fox4e.actor.pc .item-list .item.gear.expanded .item-header{
 	background:var(--background-item);
+	color:#fff;
 }
-.dnd4e.power-card.use-recharge:not(.NPC) .card-header{
-	background:var(--background-recharge);
+.sheet.fox4e.actor.pc .item-list .item.gear.expanded .item-header h4{
+	color:#fff;
 }
-.dnd4e.power-card.use-other:not(.NPC) .card-header{
-	background:var(--background-other);
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-name{
+	flex:100% 20 20;
 }
-.dnd4e.power-card .item-summary{
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-uses{
+	flex:60px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-slot{
+	flex:65px 0 0;
+	white-space:nowrap;
+	text-align:left;
+}
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-level{
+	flex:25px 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-weight{
+	flex:40px 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-quantity{
+	flex:30px 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.gear :is(.item,.items-header) .item-controls{
+	flex:50px 0 0;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item .item-uses input{
+	width:1em;
+	color:#000;
+	background:unset;
+	text-align:right;
+	padding:0 2px;
+	border-left:unset;
+	border-top:unset;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item.expanded .item-uses input{
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .item:is(.equipment,.weapon,.consumable,.tool,.backpack) :is(.item-summary,.item-summary)>:is(p,ol,ul,span):not(.subheading,.flavour),
+.sheet.fox4e.actor.pc .item.tool .item-summary,
+.sheet.fox4e.actor.pc .item.consumable .item-details .alt,
+.sheet.fox4e.actor.pc .item.tool .item-summary>p{
+	background:#f6e8d3;	
+}
+.sheet.fox4e.actor.pc .item:is(.equipment,.weapon,.consumable,.tool,.backpack) .item-summary>p.flavour,
+.sheet.fox4e.actor.pc .item.tool .item-summary .chat-flavour,
+.sheet.fox4e.actor.pc .item.tool .item-summary .flavour{
+	background:var(--gradient-4e-item);
+	font-style:oblique;
+}
+.sheet.fox4e.actor.pc .item:is(.equipment,.weapon,.consumable,.tool,.backpack) .item-summary p:is(.subheading),
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-details>span{
+	background:#eccc9a;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-details span{
+	margin:0;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-details>span,
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-details p,
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-description p{
+	margin:0;
+	text-indent:-0.5em;
+	padding:0em 0.3em 0em 0.8em;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-summary p:last-of-type{
+	padding-bottom:0.3em;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-summary span{
+	padding-top:0;
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-details>span{
+	display:block;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-details>br{
+	display:none;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.tool) .item-summary>table{
 	background:#fff;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.NPC,.ritual) .item-summary{
+.sheet.fox4e.actor.pc .item.tool .item-summary .card-footer{
+	display:none;
+}
+.sheet.fox4e.actor.pc .item:is(.consumable,.equipment,.weapon,.loot,.tool,.backpack) .item-summary p.basics+p.basics{
+	padding-top:0;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item .item-summary .ac-scale{
+	background:#f6e8d3;
+	-webkit-columns:3;
+	   -moz-columns:3;
+	        columns:3;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item .item-summary .ac-scale p.base-ac{
+	-ms-flex-preferred-size:calc(100% / 3 - 0.3em);
+	    flex-basis:calc(100% / 3 - 0.3em);
+	background:unset;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item item-summary .base-ac>strong{
+	display:inline-block;
+	min-width:3em;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item .item-summary .item-properties{
+	background:transparent;
+	text-align:right;
+	margin-bottom:0.5em;
+	padding-top:0;
+	padding-right:0;
+}
+.sheet.fox4e.actor.pc .item-list.gear .item .item-summary .item-properties .tag{
+    display:inline-block;
+    white-space:nowrap;
+    margin-top:1px;
+    margin-bottom:1px;
+    padding:0.1rem 0.4rem;
+    border-radius:4px;
+    border-bottom:1px solid #fff;
+    border-top:1px solid #d4bf95;
+    border-right:1px solid #fff;
+    border-left:1px solid #d4bf95;
+    text-transform:uppercase;
+    font-size:0.6rem;
+    text-align:center;
+	font-weight:600
+}
+/*---- Inventory - Loot Summaries ----*/
+.sheet.fox4e.actor.pc .item-list.gear .item.gear.loot.expanded .item-header{
+	background:#5b1e34;
+}
+/*---- Inventory - Encumbrance ----*/
+.sheet.fox4e.actor.pc section.load{
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+.sheet.fox4e.actor.pc .encumbrance{
+	position:relative;
+	height:calc(1.2em);
+    border-bottom:1px solid #fff;
+    border-top:1px solid #d4bf95;
+    border-right:1px solid #fff;
+    border-left:1px solid #d4bf95;
+	padding:0;
+	border-radius:5px;
+	background:rgba(0,0,0,0.3);
+}
+.sheet.fox4e.actor.pc .encumbrance .encumbrance-bar{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	height:100%;
+	background:#5b1e34;
+	border-radius:5px;
+}
+.sheet.fox4e.actor.pc .encumbrance .encumbrance-bar.encumbered{
+	background:#d21c3d;
+	border-radius:5px;
+}
+.sheet.fox4e.actor.pc .encumbrance .encumbrance-bar.encumbered::after{
+	content:'\26A0';
+	display:inline-block;
+	color:#fff;
+	font-weight:600;
+	left:5px;
+	top:-3px;
+	position:relative;
+}
+.sheet.fox4e.actor.pc .encumbrance .encumbrance-label{
+	height:10px;
+	padding:0 5px;
+	position:absolute;
+	top:0;
+	right:0;
+	text-align:right;
+	color:#fff;
+	z-index:1;
+	text-transform:uppercase;
+	font-weight:600;
+	font-size:0.8em;
+}
+/*---- Inventory - Fungibles ----*/
+.sheet.fox4e.actor.pc .fungibles .currency{
+	justify-content:flex-end;
+	align-items:center;
+}
+.sheet.fox4e.actor.pc .fungibles .currency h3{
+	flex:100% 20 20;
+	font-size:0.8em;
+}
+.sheet.fox4e.actor.pc .fungibles .currency input{
+	width:3em;
+	flex:3em 0 0;
+}
+.sheet.fox4e.actor.pc .fungibles .currency label{
+	padding-left:3px;
+	padding-right:3px;
+	flex:2.2em 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+
+/*-------------------------- Tab - Ritual Book -------------------------*/
+.sheet.fox4e.actor.pc .item-list.rituals :is(.item,.items-header) .item-name{
+	flex:100% 20 20;
+}
+.sheet.fox4e.actor.pc .item-list.rituals :is(.item,.items-header) .item-category{
+	flex:75px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.rituals :is(.item,.items-header) .item-cost{
+	flex:50px 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.rituals :is(.item,.items-header) .item-level{
+	flex:25px 0 0;
+	white-space:nowrap;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.rituals :is(.item,.items-header) .item-controls{
+	flex:60px 0 0;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .item-list.rituals .item.expanded .item-name h4{
+	color:#fff;
+}
+
+/*-------------------------- Tab - Basics -------------------------*/
+.sheet.fox4e.actor.pc .tab.basics .flexrow.responsive.two-up{
+	gap:1em;
+}
+.sheet.fox4e.actor.pc .tab.basics .flexrow.responsive.two-up>.column:first-child{
+	flex-basis:12em;
+}
+.sheet.fox4e.actor.pc .tab.basics .flexrow.responsive.two-up>.column:last-child{
+	flex-basis:10em;
+}
+.sheet.fox4e.actor.pc table.ability-scores tbody input{
+	width:2.5em;
+}
+.sheet.fox4e.actor.pc table.ability-scores :is(.score-mod,.score-check){
+	text-align:right;
+}
+.sheet.fox4e.actor.pc table.skills .skills-header .skill-trained img{
+	border:unset;
+	height:0;
+	width:auto;
+	filter:invert(1);
+}
+.sheet.fox4e.actor.pc table.skills .skills-header .skill-trained{
+	background:url('../images/skills_training.svg') no-repeat;
+	filter:invert(1);
+	background-size:45%;
+	background-position:center center;
+}
+.sheet.fox4e.actor.pc table.skills tbody .skill-ability{
+	font-size:0.75em;
+	text-transform:uppercase;
+}
+.sheet.fox4e.actor.pc table.skills .skill-value{
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .custom-roll-descriptions::before{
+    content:'\f044\0020';
+    font-weight:900;
+    font-family:'Font Awesome 6 Pro';
+}
+.sheet.fox4e.actor.pc :is(.proficiencies,.languages) h3{
+	margin-top:1.2em;	
+}
+
+/*-------------------------- Tab - Status -------------------------*/
+.sheet.fox4e.actor.pc .tab.status .progression{
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .tab.status .exp input{
+	width:5em;
+	margin-right:0.2em;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc .tab.status .milestones{
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .tab.status .milestones input{
+	width:1.5em;
+}
+.sheet.fox4e.actor.pc .tab.status>.flexrow{
+	gap:1em;
+}
+.sheet.fox4e.actor.pc .tab.status .flexrow.responsive.two-up>*{
+	flex:12em 0 5;
+}
+.sheet.fox4e.actor.pc .tab.status :is(.modifiers.global,.custom-resources){
+	margin-top:1em;
+}
+.sheet.fox4e.actor.pc .tab.status .global.modifiers.infobox{
+	max-width:25em;
+}
+.sheet.fox4e.actor.pc .tab.status .global.modifiers .flexrow.global-mod{
+	justify-content:space-between;
+}
+.sheet.fox4e.actor.pc .tab.status .modifiers.global .global-mod .modifier{
+	flex:6em 0 0;
+	justify-content:space-between;
+}
+.sheet.fox4e.actor.pc .tab.status .modifiers.global .global-mod .modifier>strong{
+	flex:4.2em 0 0;
+}
+.sheet.fox4e.actor.pc .tab.status .modifiers.global .global-mod .modifier>span{
+	flex:2em 0 0;
+}
+.sheet.fox4e.actor.pc .tab.status table.resources{
+	margin-bottom:unset;
+}
+.sheet.fox4e.actor.pc .tab.status table.resources td{
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .tab.status table.resources input[name="system.magicItemUse.dailyuse"]{
+	width:1.5em;
+	text-align:left;
+}
+.sheet.fox4e.actor.pc .tab.status table.resources .used{
+	text-align:center;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources>.flexrow{
+    gap:0.5em;
+	flex-wrap:wrap;
+	justify-content:flex-start;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource{
+	flex:10em 0 5;
+	padding:0.5em;
+	background:var(--gradient-4e);
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .infobox{
+	margin-bottom:0;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-name{
+	margin:-0.5em -0.5em 0.3em -0.5em;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-name input{
+	border-radius:0;
+	background:var(--background-other);
+	color:#fff;
+	border:unset;
+	width:100%;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-name input::placeholder{
+	color:rgba(255,255,255,0.5);
+}
+.sheet.fox4e.actor.pc .tab.status .resource h5{
+	font-size:0.75em;
+	text-transform:uppercase;
+	margin-top:0.2em;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-recharge.flexrow{
+	margin-top:0.3em;
+	align-items:center;
+	justify-content:flex-end;
+	height:1em;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-recharge.flexrow>.label:first-child{
+	margin-right:auto;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-recharge .recharge.flexrow{
+	display:flex;
+	align-items:center;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources input[type='checkbox']{
+	top:0;
+	width:15px;
+	margin-left:2px;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-show{
+	display:flex;
+	align-items:center;
+	text-align:right;
+	justify-content:flex-end;
+}
+.sheet.fox4e.actor.pc .tab.status .custom-resources .resource-show>label:first-child{
+	flex-basis:100%;
+}
+/*--------------------- Tab - Status - Damage ---------------------*/
+.sheet.fox4e.actor.pc table.resistances{
+	width:fit-content;
+}
+.sheet.fox4e.actor.pc table.resistances th:not(.res-name){
+	text-align:center;
+}
+.sheet.fox4e.actor.pc table.resistances td:not(.res-name,.res-immune){
+	text-align:right;
+}
+.sheet.fox4e.actor.pc table.resistances td.res-immune{
+	text-align:center;
+}
+.sheet.fox4e.actor.pc :is(.special-resistances) h3{
+	margin-top:1.2em;	
+}
+
+
+/*------------------------------------------------------------------*/
+/*-------------------------- Tab - Powers --------------------------*/
+/*------------------------------------------------------------------*/
+
+/*---------- Power List / Header ----------*/
+.sheet.fox4e.actor.pc .item-list.powers header.filters>*{
+	flex:calc(33.33% - 0.5em) 0 1;
+}
+.sheet.fox4e.actor.pc .item-list.powers header.filters select{
+	width:100%;
+}
+.sheet.fox4e.actor.pc .item-list.powers header.filters .search input{
+	padding:0.3em;
+    border-top:1px solid #b3a079;
+    border-left:1px solid #b3a079;
+}
+.sheet.fox4e.actor.pc .item-list.powers .items-header{
+	background:unset;
+	color:revert;
+}
+.sheet.fox4e.actor.pc .item-list.powers .items-header h3{
+	color:revert;
+	font-size:1.1em;
+}
+.sheet.fox4e.actor.pc .power-create{
+	white-space:nowrap;
+    text-align:center;
+}
+.sheet.fox4e.actor.pc .item-list.powers .item.power{
+	align-items:normal;
+}
+.sheet.fox4e.actor.pc .item-list.powers .item.power .power-header{
+    align-items:center;
+	padding-right:8px;
+	color:#fff;
+	padding-left:0;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-image{
+	flex:34px 0 0;
+	padding-left:0;
+	padding-right:0;
+	text-align:center;
+}
+.sheet.fox4e.actor.pc .item-list.powers .power .item-image img{
+	display:block;
+	height:34px;
+	width:34px;
+	border:unset;
+	border-radius:0;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-name{
+	flex:100% 20 20;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-level{
+	flex:25px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-range{
+	flex:50px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-action{
+	flex:35px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-uses{
+	flex:50px 0 0;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.powers .power .item-uses input{
+	width:1em;
+	color:#fff;
+	background:unset;
+	text-align:right;
+	padding:0 2px;
+	border-left:unset;
+	border-top:unset;
+}
+.sheet.fox4e.actor.pc .item-list.powers :is(.power,.items-header) .item-prep{
+	flex:20px 0 0;
+	text-align:center;
+	white-space:nowrap;
+}
+.sheet.fox4e.actor.pc .item-list.powers .power .item-controls{
+	margin-right:unset;
+}
+.sheet.fox4e.actor.pc .item-list.powers .power .item-controls a{
+	color:#fff;
+}
+
+/*---- Power Summaries ----*/
+.sheet.fox4e.actor.pc .power :is(.item-header,.item-name h4){
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .power.use-atwill .item-header,
+.sheet.fox4e.actor.pc .item-list.powers .power.use-atwill.expanded .item-header{
+	background:var(--background-atwill);
+}
+.sheet.fox4e.actor.pc .power.use-encounter .item-header,
+.sheet.fox4e.actor.pc .item-list.powers .power.use-encounter.expanded .item-header{
+	background:var(--background-encounter);
+}
+.sheet.fox4e.actor.pc .power.use-daily .item-header,
+.sheet.fox4e.actor.pc .item-list.powers .power.use-daily.expanded .item-header{
+	background:var(--background-daily);
+}
+.sheet.fox4e.actor.pc .power.use-item .item-header,
+.sheet.fox4e.actor.pc .item-list.powers .power.use-item.expanded .item-header{
+	background:var(--background-item);
+}
+.sheet.fox4e.actor.pc .power.use-recharge .item-header,
+.sheet.fox4e.actor.pc .item-list.powers .power.use-recharge.expanded .item-header{
+	background:var(--background-recharge);
+}
+.sheet.fox4e.actor.pc .power.use-other .item-header{
+	background:var(--background-other);
+}
+.sheet.fox4e.actor.pc .item-summary:not(.power,.ritual) .item-summary{
 	background:var(--gradient-4e);
 }	
-.dnd4e.power-card:not(.use-other) .item-details p:not(.flavour,.chat-flavour,.basics,.power-basics),
-.dnd4e.power-card:not(.use-other,.autogen) .card-content>p:not(.flavour,.chat-flavour,.basics,.power-basics){
+.sheet.fox4e.actor.pc .power:not(.use-other) .item-details p:not(.flavour,.chat-flavour,.basics,.power-basics),
+.sheet.fox4e.actor.pc .power:not(.use-other,.autogen) .item-summary>p:not(.flavour,.chat-flavour,.basics,.power-basics){
 	margin:0;
 	text-indent:-0.5em;
 	padding:0.1em 0.3em 0.1em 0.8em;
 }
-.dnd4e.power-card:not(.autogen).use-other .card-content p:not(:first-child){
+.sheet.fox4e.actor.pc .power:not(.autogen).use-other .item-summary p:not(:first-child){
 	padding-top:0.1em;
 }
-.dnd4e.power-card:not(.autogen).use-other .card-content p:not(:last-child){
+.sheet.fox4e.actor.pc .power:not(.autogen).use-other .item-summary p:not(:last-child){
 	padding-bottom:0.1em;
 }
-.dnd4e.power-card:not(.autogen).use-other p:not(:first-child){
+.sheet.fox4e.actor.pc .power:not(.autogen).use-other p:not(:first-child){
 	text-indent:0.5em;
 }
-.dnd4e.power-card:not(.use-other) .item-details p:not(.flavour,.chat-flavour,.basics,.power-basics).indent,
-.dnd4e.power-card:not(.use-other,.autogen) .card-content>p:not(.flavour,.chat-flavour,.basics,.power-basics).indent{
+.sheet.fox4e.actor.pc .power:not(.use-other) .item-details p:not(.flavour,.chat-flavour,.basics,.power-basics).indent,
+.sheet.fox4e.actor.pc .power:not(.use-other,.autogen) .item-summary>p:not(.flavour,.chat-flavour,.basics,.power-basics).indent{
 	padding-left:1.3em;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary .item-description p,
-.sheet.fox4e.actor.pc .item-list .item-summary .item-description span,
-.sheet.fox4e.actor.pc .item-list .item-summary .chat-flavour p,
-.sheet.fox4e.actor.pc .item-list .item-summary  p.chat-flavour,
-.dnd4e.power-card.autogen:not(.NPC) .card-content>p:first-child{
+.sheet.fox4e.actor.pc .power.autogen .item-description p,
+.sheet.fox4e.actor.pc .power.autogen .item-description span,
+.sheet.fox4e.actor.pc .power .chat-flavour p,
+.sheet.fox4e.actor.pc .power  p.chat-flavour,
+.sheet.fox4e.actor.pc .power.autogen .item-summary>p:first-child{
 	font-style:italic;
 }
-.dnd4e.power-card:not(.use-item,.NPC,.ritual) .flavour,
-.dnd4e.power-card:not(.use-item,.NPC,.ritual) .chat-flavour,
-.dnd4e.power-card:not(.use-item,.NPC,.ritual) .card-content>p:first-child:not(.item-summary,.white,.basics,.power-basics),
-.dnd4e.power-card:not(.NPC,.autogen,.use-item) .card-content p:not(.power-basics,.basics,.white){
+.sheet.fox4e.actor.pc .power:not(.use-item,.ritual) .flavour,
+.sheet.fox4e.actor.pc .power:not(.use-item,.ritual) .chat-flavour,
+.sheet.fox4e.actor.pc .power:not(.use-item,.ritual) .item-summary>p:first-child:not(.item-summary,.white,.basics,.power-basics),
+.sheet.fox4e.actor.pc .power:not(.autogen,.use-item) .item-summary p:not(.power-basics,.basics,.white){
 	background:var(--gradient-4e);
 }
-.dnd4e.power-card:not(.use-item,.NPC) :is(.item-details,.card-content)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.alt,.effects-tray,.card-buttons,.white,.power-basics){
+.sheet.fox4e.actor.pc .power:not(.use-item) :is(.item-details,.item-summary)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.alt,.white,.power-basics){
 	background:var(--gradient-4e);
 	text-indent:1em;
 	padding-top:0;
 }
-.dnd4e.power-card:not(.use-item,.NPC) :is(.item-details,.card-content)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,.effects-tray,.power-buttons,:last-child){
+.sheet.fox4e.actor.pc .power:not(.use-item) :is(.item-details,.item-summary)>.effect.alt~:not(.requirements,.trigger,.target,.attack,.hit,.miss,.special,.effect,.sustain,:last-child){
 	padding-bottom:0;
 }
-.dnd4e.power-card:not(.NPC,.use-item) p:not(.flavour,.chat-flavour).alt-highlight,
-.dnd4e.power-card:not(.NPC,.use-item) :not(.flavour,.chat-flavour).alt{
+.sheet.fox4e.actor.pc .power:not(.use-item) p:not(.flavour,.chat-flavour).alt-highlight,
+.sheet.fox4e.actor.pc .power:not(.use-item) :not(.flavour,.chat-flavour).alt{
 	background:var(--gradient-4e);
 }
-.dnd4e.power-card:not(.NPC,.use-item) .item-details>span,
-.dnd4e.power-card:not(.NPC,.use-item) p:not(.flavour,.chat-flavour),
-.dnd4e.power-card:not(.use-item,.NPC) .white,
-.dnd4e.power-card:not(.use-item,.NPC) .card-content>p.subheading,
-.dnd4e.power-card:not(.use-item,.NPC) .white+ul,
-.dnd4e.power-card:not(.NPC,.use-item) p:nth-child(even of .alt-highlight),
-.dnd4e.power-card:not(.NPC,.use-item) .power-basics{
+.sheet.fox4e.actor.pc .power:not(.use-item) .item-details>span,
+.sheet.fox4e.actor.pc .power:not(.use-item) p:not(.flavour,.chat-flavour),
+.sheet.fox4e.actor.pc .power:not(.use-item) .white,
+.sheet.fox4e.actor.pc .power:not(.use-item) .item-summary>p.subheading,
+.sheet.fox4e.actor.pc .power:not(.use-item) .white+ul,
+.sheet.fox4e.actor.pc .power:not(.use-item) p:nth-child(even of .alt-highlight),
+.sheet.fox4e.actor.pc .power:not(.use-item) .power-basics{
 	background:#fff;
 }
-.dnd4e.power-card .item-details span,
-.dnd4e.power-card .item-details p,
-.dnd4e.power-card .item-description p{
+.sheet.fox4e.actor.pc .power .item-details span,
+.sheet.fox4e.actor.pc .power .item-details p,
+.sheet.fox4e.actor.pc .power .item-description p{
 	margin:0;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary :is(.item-details,.card-content)>:is(.hit,.effect)~ul{
+.sheet.fox4e.actor.pc .power :is(.item-details,.item-summary)>:is(.hit,.effect)~ul{
 	margin-top:-0.5em;
 	margin-bottom:0;
 	padding-left:2.2em;
 	padding-bottom:0.3em;
 }
-.dnd4e.power-card.autogen:not(.NPC) :is(.item-details,.card-content)>:is(.hit,.effect)~p+ul{
+.sheet.fox4e.actor.pc .power.autogen :is(.item-details,.item-summary)>:is(.hit,.effect)~p+ul{
 	margin-top:0;
 }
-.dnd4e.power-card.autogen:not(.NPC) :is(.item-details,.card-content)>ul li{
+.sheet.fox4e.actor.pc .power.autogen :is(.item-details,.item-summary)>ul li{
 	text-indent:unset;
 }
-.dnd4e.power-card .item-details p:last-child{
+.sheet.fox4e.actor.pc .power .item-details p:last-child{
 	padding-bottom:0.3em;
 }
-.dnd4e.power-card .item-details span{
+.sheet.fox4e.actor.pc .power .item-details span{
 	padding-top:0;
 	padding-bottom:0;
 }
-.dnd4e.power-card .item-details>span{
+.sheet.fox4e.actor.pc .power .item-details>span{
 	display:block;
 }
-.dnd4e.power-card .item-details>br{
+.sheet.fox4e.actor.pc .power .item-details>br{
 	display:none;
 }
-.sheet.fox4e.actor.pc .item-list .item-summary:not(.power-card,.use-other,.ritual,.NPC) .card-content p{
+.sheet.fox4e.actor.pc .item-summary:not(.power,.use-other,.ritual) .item-summary p{
 	background:var(--gradient-4e);
 }
-.dnd4e.power-card:not(.autogen).use-other .card-content>p{
-	background:#fff;
-}
-.dnd4e.power-card:not(.autogen,.use-item) .power-basics{
+.sheet.fox4e.actor.pc .power:not(.autogen,.use-item) .power-basics{
 	background:#fff;
 	margin:0;
 }
-.dnd4e.power-card:not(.autogen).use-other .card-content>p:not(:first-child){
+.sheet.fox4e.actor.pc .power.autogen :is(.basics,.action,.range-type){
+	font-weight:600;
+}
+.sheet.fox4e.actor.pc .power:not(.autogen).use-other .item-summary>p:not(:first-child){
 	padding:0.1em 0.3em 0.1em 0.3em;
 	text-indent:0.5em;
 }
-.dnd4e.power-card:not(.autogen).use-other .card-content>p:first-child{
+.sheet.fox4e.actor.pc .power:not(.autogen).use-other .item-summary>p:first-child{
 	padding:0.1em 0.3em 0.1em 0.3em;
 }
-.dnd4e.power-card:not(.autogen,.use-other,.use-item,.NPC) .card-content>:is(p.div):last-of-type,
-.dnd4e.power-card:not(.autogen).use-other .card-content>:last-of-type,
-.dnd4e.power-card.autogen .item-details>:is(p.div):last-of-type{
+.sheet.fox4e.actor.pc .power:not(.autogen,.use-other,.use-item) .item-summary>:is(p.div):last-of-type,
+.sheet.fox4e.actor.pc .power:not(.autogen).use-other .item-summary>:last-of-type,
+.sheet.fox4e.actor.pc .power.autogen .item-details>:is(p.div):last-of-type{
 	padding-bottom:0.3em;
+}
+
+/*---- Ritual Summaries ----*/
+.sheet.fox4e.actor.pc .item.ritual.expanded .item-header{
+	background:#8974aa;
+	color:#fff;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary>:not(.item-details){
+    background:#fff;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary{
+	font-weight:300;
+	background:#fff;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary strong,
+.sheet.fox4e.actor.pc .item.ritual .item-summary b{
+	font-weight:500;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary>p:not(:first-child){
+	text-indent:0.5em;
+	padding:0rem 0.3rem 0rem 0.3rem;
+}
+.sheet.fox4e.actor.pc .item-summary:is(.ritual) .item-summary>p:first-child{
+	padding:0.1rem 0.3rem 0rem 0.3rem;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary>p:is(.flavour,.basics)+p{
+	text-indent:0;
+}
+.sheet.fox4e.actor.pc .item.ritual .card-footer{
+	background:#fff;
+	color:#000;
+	-webkit-box-ordinal-group:0;
+	 -ms-flex-order:-1;
+		  order:-1;
+}
+.sheet.fox4e.actor.pc .item-summary .item.ritual{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary>p.flavour{
+	font-style:oblique;
+}
+.sheet.fox4e.actor.pc .item.ritual .item-summary>p:last-of-type{
+	padding-bottom:0.3em;
+}
+
+/*---- Equipment, Consumable and Item Summaries ----*/
+.sheet.fox4e.actor.pc .power.use-item .item-summary>p,
+.sheet.fox4e.actor.pc .power.use-item .item-summary p,
+.sheet.fox4e.actor.pc .power.use-item .item-summary p.alt{
+	background:#f6e8d3;	
+}
+.sheet.fox4e.actor.pc .power.use-item .item-summary p.flavour,
+.sheet.fox4e.actor.pc .power.use-item.autogen .item-summary p.chat-flavour{
+	background:var(--gradient-4e-item);
+	font-style:oblique;
+}
+.sheet.fox4e.actor.pc .power.use-item .item-summary p:is(.subheading),
+.sheet.fox4e.actor.pc .power.use-item .item-summary .item-details>span{
+	background:#eccc9a;
+}
+.sheet.fox4e.actor.pc .power.use-item .item-details span{
+	margin:0;
+}
+.sheet.fox4e.actor.pc .power.use-item .item-summary>span,
+.sheet.fox4e.actor.pc .power.use-item:not(.autogen) .item-summary p:not(.flavour,.subheading){
+	margin:0;
+	text-indent:-0.5em;
+	padding:0em 0.3em 0em 0.8em;
+}
+.sheet.fox4e.actor.pc .power.use-item:not(.autogen) .item-summary p:is(.flavour,.subheading){
+	text-indent:0;
+	padding:0em 0.3em;
+}
+.sheet.fox4e.actor.pc .power.use-item:not(.autogen) .item-summary p:last-of-type:not(.flavour){
+	padding-bottom:0.3em;
+}
+.sheet.fox4e.actor.pc .power.use-item .item-summary span{
+	padding-top:0;
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc .power.use-item .item-details>span{
+	display:block;
+}
+.sheet.fox4e.actor.pc .power.use-item .item-details>br{
+	display:none;
+}
+.sheet.fox4e.actor.pc .power:not(.use-item) .item-summary p:is(.requirements,.trigger,.target,.attack){
+	background:#fff;
+}
+
+
+
+
+
+/*------------------------------*/
+/*------- Journal Areas --------*/
+/*------------------------------*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched){
+	--background-page:#fff;
+	--gradient-4e:-o-linear-gradient(right, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+		--gradient-4e:-webkit-gradient(linear, right top, left top, from(rgba(255,255,255,1)), to(rgba(221,220,203,1)));
+		--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
+	--colour-sidebar-bg:#f2f2ec;
+	--colour-sidebar-text:#48442e;
+	--colour-text-1:#163d5d;
+	--colour-text-2:#4c5b78;
+	--colour-text-3:#56627e;
+	--colour-banner-bg:#193d5e;
+	--colour-text-1:#163d5d;
+	--colour-text-2:#4c5b78;
+	--colour-text-3:#56627e;
+	--colour-banner-bg:#193d5e;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched){
+	--font-primary:var(--font-journal-body);
+	font-family:var(--font-journal-body);
+	padding:1em;
+	text-rendering:optimizeLegibility;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched){
+	margin:0;
+	padding:0 1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor.prosemirror,.editor-content[data-engine="prosemirror"],.editor-enriched){
+	background:var(--background-page);
+}
+.sheet.fox4e.actor.pc section.tabs-content .editor-content[data-engine="prosemirror"].ProseMirror::-webkit-scrollbar-thumb{
+	background:#d3d1ba;
+	border:none;
+}
+.sheet.fox4e.actor.pc section.tabs-content .editor-content[data-engine="prosemirror"].ProseMirror::-webkit-scrollbar-track{
+	background:rgba(0,0,0,0.06);
+}
+
+/*-------------------*/
+/*-- Misc Elements --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) :is(p,ol,ul,figure figcaption){
+	line-height:1.1;
+	font-size:1rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) p{
+	margin:0.1em 0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) p:not(:first-child){
+	text-indent:1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) :is(h1,h2,h3,h4,h5,h6)+p:not(:first-child){
+	text-indent:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) a:is(.content-link,.inline-roll){
+	background:none;
+	border:none;
+	text-decoration:underline;
+	padding:0;
+	white-space:break-spaces;
+	word-break:inherit;
+	color:var(--colour-text-3);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) a[href]{
+	color:var(--colour-text-3);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) a:is(.content-link,.inline-roll) i{
+	margin-right:0;
+	font-size:0.75em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) :is(.fa-file-alt,.fa-file-lines,.fa-file-text)::before{
+	content:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) figure figcaption{
+	font-weight:normal;
+	font-style:italic;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) blockquote{
+	font-size:2em;
+    margin:1em;
+	padding:0;
+    border-left:unset;
+	text-align:justify;
+	color:var(--colour-text-3);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) blockquote p{
+	font-size:0.85em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) blockquote em{
+	font-style:normal;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) code{
+	white-space:pre-wrap;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-margin){
+	margin-top:1rem;
+	margin-bottom:1rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) img:not(.no-border){
+	border:unset;
+}
+
+/*-----------------------------*/
+/*-- Headings and Beginnings --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) :is(h1,h2,h3,h4,h5,h6):is(:not(:first-child),:first-child){
+	color:var(--colour-text-3);
+	font-family:'DragonHead';
+	line-height:1;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h1:is(:not(:first-child),:first-child){
+	color:var(--colour-text-2);
+	font-size:3.5em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:500;
+	margin:1rem 0 0.5rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h2:is(:not(:first-child),:first-child){
+	color:var(--colour-text-1);
+	font-size:2.6em;
+	font-variant:small-caps;
+	border-bottom:none;
+	font-weight:bold;
+	margin:1rem 0 0.5rem;
+	text-transform:unset;
+	padding:revert;
+	text-shadow:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h3:is(:not(:first-child),:first-child){
+	color:var(--colour-text-1);
+	font-size:2.2em;
+	border-bottom:none;
+	margin:1rem 0 0.5rem;
+	text-transform:unset;
+	font-weight:500;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h4:is(:not(:first-child),:first-child){
+	font-size:2em;
+	margin:1rem 0 0.5rem;
+	font-style:normal;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h5:is(:not(:first-child),:first-child){
+	font-size:1.7em;
+	font-weight:500;
+	margin:1rem 0 0.5rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h6:is(:not(:first-child),:first-child){
+	font-size:1.4em;
+	margin:1rem 0 0.5rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) h1+p::first-letter{
+    float:none;
+    font-family:inherit;
+    font-size:inherit;
+    color:inherit;
+    line-height:inherit;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) .first-words{
+    font-family:DragonTitle;
+    font-size:1.5em;
+    font-weight:bold;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-enriched,.editor-content[data-engine="prosemirror"]) .flavour{
+	background:var(--gradient-4e);
+	font-family:'DragonbodySans';
+	font-style:italic;
+	color:#000;
+}
+
+/*-----------*/
+/*-- Lists --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) :is(ul,ol){
+	padding:0 0 0 2.4em;
+	list-style:revert;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) ul{
+	list-style-type:none;
+	position:relative;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) ul li::before{
+	display:block;
+	margin-left:-1.3em;
+	margin-right:0.4em;
+	font-size:1em;
+	content:'\2726';
+	position:absolute;
+	color:var(--colour-text-1);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) :is(ul,ol) li{
+    margin-bottom:0.5em;
+}
+
+/*------------------*/
+/*-- Rules Blocks --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block{
+	background:var(--gradient-4e);
+	padding:1em 1.2em;
+	margin:1em 0;
+	font-family:'DragonbodySans';
+	max-width:500px;
+	font-weight:300;
+	color:#000;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block :is(p,ul,ol)+p{
+    text-indent:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block :is(h1,h2,h3,h4,h5,h6){
+	font-family:'DragonBodySans';
+	color:#000;
+	text-transform:uppercase;
+	font-variant:unset;
+	font-weight:bold;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block>:is(h1,h2,h3,h4,h5,h6):first-child{
+	margin-top:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h2{
+    font-size:1.2em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h3{
+    font-size:1.2em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h4{
+    font-size:1.1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h5{
+    font-size:1.1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block h6{
+    font-size:1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul{
+    font-size:1em;
+    list-style-type:none outside;
+    padding-left:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul li::before{
+    content:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul li{
+    padding-left:1em;
+    text-indent:-1em;
+    margin-bottom:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .rules-block.traits ul li p{
+    margin-top:0;
+    margin-bottom:0.2em;
+}
+
+/*--------------*/
+/*-- Sidebars --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar{
+	background:var(--colour-sidebar-bg);
+	color:var(--colour-sidebar-text);
+	padding:1em 1.2em;
+	margin:1em auto;
+	font-family:'DragonbodySans';
+	font-weight:300;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar :is(h1,h2,h3,h4,h5,h6){
+	color:var(--colour-sidebar-text);
+	text-transform:uppercase;
+	font-variant:unset;
+	font-weight:500;
+	margin-bottom:0.5rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar>:is(h1,h2,h3,h4,h5,h6):first-child{
+	margin-top:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h2{
+    font-size:1.2em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h3{
+    font-size:1.2em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h4{
+    font-size:1.1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h5{
+    font-size:1.1em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .sidebar h6{
+    font-size:1em;
+}
+
+/*-------------*/
+/*-- Rituals --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual{
+	font-family:'DragonbodySans';
+	max-width:500px;
+	font-weight:300;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual h1{
+	font-family:'Dragonhead';
+	font-size:1.8em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual .flavour{
+	font-style:oblique;
+	background:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual>.basics{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack:justify;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) div.ritual>.basics>*{
+	-ms-flex-preferred-size:48%;
+	    flex-basis:48%;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics ul{
+  position:static;
+  padding-left:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics ul li::before{
+  content:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics ul li{
+    margin-bottom:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual table{
+	font-weight:400;
+}
+
+/*------------*/
+/*-- Tables --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table{
+	font-family:'DragonbodySans';
+	font-size:1rem;
+	border-collapse:collapse;
+	border:none;
+	margin-top:1rem;
+	margin-bottom:1rem;
+	table-layout:auto;
+	width:fit-content;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table thead{
+	border-bottom:0;
+	text-shadow:unset;
+	text-align:left;
+	color:#fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody{
+	color:#000;
+    border-bottom:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table :is(th,td){
+	padding:0.25em 0.6em;
+	width:fit-content;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.subhead{
+	color:#fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.flavour{
+	background:var(--gradient-4e);
+	font-style:oblique;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table thead tr:nth-child(even){
+	background:none;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(2n+1){
+	background:unset;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(odd){
+	background:var(--gradient-4e);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr:nth-child(even){
+	background:#fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table :is(tr,td){
+	border:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tfoot{
+	font-size:0.8rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tfoot tr td{
+	padding-left:4px;
+	padding-right:4px;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr.has-rider td{
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.rider td{
+	padding-top:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.rider:not(.final) td{
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.rider td:first-child{
+	padding-left:1.5em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table tbody tr.white{
+	background:#fff;
+}
+
+/*----------------------*/
+/*-- Tables - Generic --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster){
+	border-collapse:collapse;
+	border:none;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) tbody tr{
+	border-bottom:2px solid rgba(255,255,255,0);
+	position:relative;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) thead{
+	background:var(--colour-banner-bg);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(odd){
+	background:#d3d1ba;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table:not(.power,.item,.hazard,.monster) tbody tr:nth-child(even){
+	background:var(--gradient-4e);
+}
+
+/*--------------------*/
+/*-- Tables - Items --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item{
+	border-collapse:collapse;
+	border:none;
+	max-width:500px;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(th,td){
+	line-height:1;
+    padding:0.2em 0.4em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(thead,tr.subhead){
+	background:#d9951c;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item thead tr:first-child th:first-child{
+	font-size:1.2rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(thead,tr.subhead) td:not(:first-child){
+	text-align:right;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item tr:is(.pricing,.detail){
+	background:#fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.item :is(tr.pricing~tr.pricing,tr.detail~tr.detail) td{
+	padding-top:0;
+}
+
+/*---------------------*/
+/*-- Tables - Powers --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power{
+	border-collapse:collapse;
+	border:none;
+	max-width:500px;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power :is(th,td){
+	line-height:1;
+    padding:0.2em 0.4em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.atwill thead{
+	background:#619769;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.encounter thead{
+	background:#961334;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.daily thead{
+	background:#4d4d4f;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.item thead{
+	background:#d9951c;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.recharge thead{
+	background:#193d5e;
+}
+..sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power.misc thead{
+	background:#9271a9;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power thead th:nth-child(2){
+	font-size:0.85rem;
+	font-weight:normal;
+	text-align:right;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power thead th:first-child{
+	font-size:1.2rem;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics{
+	background:#fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics{
+	background:#fff;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics:not(.final) td{
+	padding-bottom:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics~tr.basics td{
+	padding-top:0;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr:not(.basics,.white){
+	background:var(--gradient-4e);
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics .sep{
+	margin-left:0.4em;
+	margin-right:0.4em;
+}
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) table.power tbody tr.basics~tr.basics .sep{
+	color:rgba(255,255,255,0);
+	display:inline-block;
+	width:1.5em;
+}
+
+/*----------------*/
+/*-- Rituals --*/
+.sheet.fox4e.actor.pc section.tabs-content :is(.editor-content[data-engine="prosemirror"],.editor-enriched) .ritual .basics+p{
+	text-indent:0;
 }

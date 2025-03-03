@@ -396,6 +396,7 @@
 	margin-top:1rem;
 	margin-bottom:1rem;
 	table-layout:auto;
+	width:fit-content;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table thead{
 	border-bottom:0;
@@ -409,6 +410,7 @@
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table :is(th,td){
 	padding:0.25em 0.6em;
+	width:fit-content;
 }
 :is(.journal-page-content,.editor-content[data-engine="prosemirror"],.editor-enriched) table tr.subhead{
 	color:#fff;
