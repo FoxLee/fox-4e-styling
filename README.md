@@ -123,3 +123,8 @@ In Fox's opinion, the best visuals come from using Burble + Chat Portrait + DF C
 * From the Foundry VTT config/setup interface, click **"Install Module"** in the **"Add-on Modules"** tab.
 * In the **"Manifest URL"** field, paste the following: `https://github.com/FoxLee/fox-4e-styling/releases/latest/download/module.json`
 * Click "Install".
+
+## Support
+I'm never going to turn any of my Foundry stuff into paid-only, for a lot of different reasons; mostly because I'm an idealistic anti-capitalist grognard, but also because my ability to work is often compromised by disability, so I can't commit to a consistent schedule. NGL though, I could definitely use a tip if you can afford it and you like what I make! If you're inclined to support in monetary form, first of all thank you! And here's some options: [Ko-fi](https://www.ko-fi.com/theartgremblin) / [Patreon](https://www.patreon.com/TheArtGremblin) / [Paypal](https://www.paypal.me/invincibleink)
+
+(If you want a neat game too, you could also tip by paying more than the minimum for a free/PWYW item on the [Invincible Ink](https://www.invincible.ink) shop or [my itch.io](https://theartgremblin.itch.io/)!)
