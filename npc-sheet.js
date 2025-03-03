@@ -21,18 +21,17 @@ export default class Fox4eNPCSheet extends ActorSheet4eNPC{
 	}
 }
 
-
 /**
  * Define a set of template paths to pre-load
  * Pre-loaded templates are compiled and cached for fast access when rendering
  * @return {Promise}
  */
-export const Fox_LoadHandlebarTemplates = async function() {
+export const Fox_LoadNPCTemplates = async function() {
 	// Define template paths to load
-	const templatePaths = [	
+	const templatePaths = [
 	"modules/fox-4e-styling/templates/parts/npc-traits.html",
 	"modules/fox-4e-styling/templates/parts/npc-powers.html",
-	"modules/fox-4e-styling/templates/parts/npc-effects.html",
+	"modules/fox-4e-styling/templates/parts/npc-effects.html"
 	];
 
   // Load the template parts
@@ -40,7 +39,7 @@ export const Fox_LoadHandlebarTemplates = async function() {
 };
 
 Hooks.once( "init", function() {
-	Fox_LoadHandlebarTemplates();
+	Fox_LoadNPCTemplates();
 	Actors.registerSheet("dnd4e", Fox4eNPCSheet, {
 		types: ["NPC"],
 		label: game.i18n.localize('Fox4e.defs.sheet.NPC')

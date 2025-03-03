@@ -19,14 +19,14 @@ export default class Fox4eStyles{
 		// Get HTML head element
 		var head = document.getElementsByTagName('HEAD')[0];
 		
+		document.querySelector(':root').style.setProperty('--font-journal-body', game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.JOURNAL_FONT));
+		
 		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.JOURNAL_STYLES)){
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = './modules/fox-4e-styling/styles/journal.css';
 			head.appendChild(link);
-		
-			document.querySelector(':root').style.setProperty('--font-journal-body', game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.JOURNAL_FONT));
 		}
 		
 		if (game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_STYLES)){
@@ -113,13 +113,18 @@ Hooks.on('renderSettingsConfig', () => {
 });
 
 Hooks.on('renderChatMessage', function(message, html, data){
-	if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
-		html[0].classList.remove('dnd4eBeta');
-		html[0].classList.add('dnd4e');
-	}
-	if(html){
-		const newHTML = html[0].innerHTML.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');
-		html[0].innerHTML = newHTML;
+	if(!html[0].classList.contains('fox')){
+		html[0].classList.add('fox');			
+		if(game.settings.get(Fox4eStyles.ID,Fox4eStyles.SETTINGS.CHAT_OLD)){
+			html[0].classList.remove('dnd4eBeta');
+			html[0].classList.add('dnd4e');
+		}
+		if(html){
+			const newHTML = html[0].innerHTML.replace(/<span class=\"tooltip-add\" data-tooltip=\"([^"]*)\"><a class=\"inline-roll inline-result\" data-tooltip=\"([^"]*)\"/g,'<span class="tooltip-add" data-tooltip="$1 ($2)"><a class="inline-roll inline-result" data-tooltip="$1 ($2)"');
+			if(newHTML != html[0].innerHTML){
+				html[0].innerHTML = newHTML;
+			}
+		}
 	}
 });
 

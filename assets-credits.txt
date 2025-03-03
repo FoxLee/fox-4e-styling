@@ -1,0 +1,7 @@
+This module uses paid and free assets from a variety of artists.
+
+Vector icons: https://www.game-icons.net
+	Lorc, Delapouite and other contributors share a huge library of free vector icons at this site. I've used them primarily on the player character sheet, and in come other locations. Some have also been edited by me!
+
+Graphical UI assets: https://www.artstation.com/a-ravlik/
+	Graphical elements used in the PC sheet are from A-Ravlik's Game UI 05, used under licence.
