@@ -319,7 +319,7 @@
 						--}}{{#if (lt res.value 0)}}{{!--
 							--}}{{#unless res.immune}}{{!--
 								--}}<span class="vulnerability damage">{{!--
-									--}}<span class="res-mod reverse">{{numberFormat res.value decimals=0}}&thinsp;</span>{{!--
+									--}}<span class="res-mod">{{revx res.value}}&thinsp;</span>{{!--
 									--}}<span class="res-name">{{res.label}}{{!--
 										--}}{{#each res.bonus as |bonus b|}}{{!--
 											--}}{{#if bonus.note}}{{#if bonus.active}}{{!--
