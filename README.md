@@ -14,12 +14,12 @@ Foundry VTT module for D&amp;D 4e, which attempts to style sheets, journals, ite
 
 ## Features
 ### Core-inspired PC sheet
-The long-awaited PC sheet, adapting 4e book styles into a (hopefully) beautiful modern VTT sheet!
+**NEW:** The long-awaited PC sheet, adapting 4e book styles into a beautiful and highly-functional VTT sheet!
 
 <a href="https://github.com/user-attachments/assets/fb74f6d5-c04b-453c-b166-920134983912"><img src="https://github.com/user-attachments/assets/fb74f6d5-c04b-453c-b166-920134983912" width=220></a>
 <a href="https://github.com/user-attachments/assets/dac952a8-9972-462c-b977-8c4506e9e0b9"><img src="https://github.com/user-attachments/assets/dac952a8-9972-462c-b977-8c4506e9e0b9" width=220></a>
 <a href="https://github.com/user-attachments/assets/0a8cde97-9345-44cc-93d7-51d7ea7ac6cc"><img src="https://github.com/user-attachments/assets/0a8cde97-9345-44cc-93d7-51d7ea7ac6cc" width=220></a>
-* Centres the info most commonly used during game session in a "vitals" sidebar, with tabbed sheets for less commonly used items.
+* Highlights the info most commonly used during game session in a "vitals" sidebar, with tabbed sheets for less commonly used items; ideally,  a player should be able to spend 90% of any session on the powers tab with the vitals section up, and only have to swap tabs for occasional special tasks.
   * Skills appear on the vitals banner if they're trained
   * Custom Resources are displayed on the banner if "in summary" is checked
 * Doesn't override the existing PC sheet, so you can choose it per-character or set it as the default, as you see fit.
@@ -27,7 +27,7 @@ The long-awaited PC sheet, adapting 4e book styles into a (hopefully) beautiful 
 * Makes heavy use of "tooltip" messages to assist in editing.
 * Every piece of visible text (aside from user entry of course) should be translation-ready.
 * Uses core item styling for on-sheet item summaries.
-* Includes a new d20 cursor to make it clear which labels will "roll" an item (send it to chat) vs expand/configure.
+* Includes a new d20 cursor to make it clear which labels will "roll" an item/send it to chat, vs expand/configure.
 
 ### Core style NPC sheet
 A new NPC sheet based on the official, deliciously compact 4e monster stat blocks we know and love!
