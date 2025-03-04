@@ -1599,8 +1599,11 @@
 .sheet.fox4e.actor.pc table.resistances td:not(.res-name,.res-immune){
 	text-align:right;
 }
-.sheet.fox4e.actor.pc table.resistances td.res-immune{
+.sheet.fox4e.actor.pc table.resistances td:is(.res-immune,.res-imm){
 	text-align:center;
+}
+.sheet.fox4e.actor.pc table.resistances td.override-true{
+	color:rgba(0,0,0,0.3);
 }
 .sheet.fox4e.actor.pc :is(.special-resistances) h3{
 	margin-top:1.2em;	
