@@ -23,7 +23,7 @@
 				<tbody>
 					{{#each system.abilities as |ability a|}}
 					<tr class="attribute ability" data-ability="{{a}}">
-						<td class="score-name ability-name rollable roll-d20" data-tooltip="{{localize 'Fox4e.TipClickRoll'}} {{ability.label}}">{{ability.label}} <span class="score-short">{{ability.name}}</span></td>
+						<td class="score-name ability-name rollable roll-d20" data-tooltip="{{localize 'DND4E.Roll'}} {{ability.label}} {{localize 'DND4E.Check'}}">{{ability.label}} <span class="score-short">{{ability.name}}</span></td>
 						<td class="score-value"><input class="score" name="system.abilities.{{a}}.value" type="text" data-dtype="Number" value="{{ability.value}}" onfocus="this.select()" placeholder="10" /></td>
 						<td class="score-mod" data-tooltip="{{ability.label}} {{localize 'DND4E.Mod'}}: {{numberFormat ability.mod decimals=0 sign=true}}">{{numberFormat ability.mod decimals=0 sign=true}}</td>
 					{{#unless system.halfLevelOptions}}
@@ -39,19 +39,8 @@
 		{{!-- Proficiencies --}}
 		<section class="proficiencies infobox">
 			<h3 class="attribute-name box-title">{{localize 'Fox4e.Proficiencies'}}</h3>
-			<a class="trait-selector" data-options="profArmor" data-target="system.details.armourProf">
-				<h4>{{localize 'DND4E.Armour'}}</h4>
-				<i class="fas fa-edit"></i>
-			</a>
-			{{#if (laden system.details.armourProf.selected)}}
-				<ul class="traits-list proficiency armour">
-				{{#each system.details.armourProf.selected as |v k|}}
-					<li class="tag {{k}}">{{v}}</li>
-				{{/each}}
-				</ul>
-			{{/if}}
 
-			<a class="trait-selector-weapon" data-options="weaponProf" data-target="system.details.weaponProf">
+			<a class="trait-selector-weapon" data-options="weaponProf" data-target="system.details.weaponProf" data-tooltip="{{localize 'Fox4e.TipClickConfig'}}">
 				<h4>{{localize 'DND4E.Weapon'}}/{{localize 'DND4E.WeaponImplement'}}</h4>
 				<i class="fas fa-edit"></i>
 			</a>
@@ -62,12 +51,26 @@
 				{{/each}}
 				</ul>
 			{{/if}}
+			
+			<a class="trait-selector" data-options="profArmor" data-target="system.details.armourProf" data-tooltip="{{localize 'Fox4e.TipClickConfig'}}">
+				<h4>{{localize 'DND4E.Armour'}}</h4>
+				<i class="fas fa-edit"></i>
+			</a>
+			{{#if (laden system.details.armourProf.selected)}}
+				<ul class="traits-list proficiency armour">
+				{{#each system.details.armourProf.selected as |v k|}}
+					<li class="tag {{k}}">{{v}}</li>
+				{{/each}}
+				</ul>
+			{{/if}}
+			
 		</section>{{!-- End proficiencies --}}
 
 		{{!-- Languages --}}
 		<section class="languages infobox">
 			<h3 class="attribute-name box-title">{{localize 'DND4E.Languages'}}</h3>
-			<a class="trait-selector" data-options="spoken" data-target="system.languages.spoken">
+			
+			<a class="trait-selector" data-options="spoken" data-target="system.languages.spoken" data-tooltip="{{localize 'Fox4e.TipClickConfig'}}">
 				<h4>{{localize 'DND4E.Spoken'}}</h4>
 				<i class="fas fa-edit"></i>
 			</a>
@@ -79,7 +82,7 @@
 				</ul>
 			{{/if}}
 			
-			<a class="trait-selector" data-options="script" data-target="system.languages.script">
+			<a class="trait-selector" data-options="script" data-target="system.languages.script" data-tooltip="{{localize 'Fox4e.TipClickConfig'}}">
 				<h4>{{ localize "DND4E.Script" }}</h4>
 				<i class="fas fa-edit"></i>
 			</a>
@@ -113,9 +116,9 @@
 					{{#each system.skills as |skill s|}}
 					<tr class="skill--block" data-skill="{{s}}">
 						<td class="skill-trained"><a class="training-toggle skill-training" data-tooltip="{{skill.hover}} ({{localize 'Fox4e.TipClickCycle'}})">{{{skill.icon}}}</a><input type="hidden" name="system.skills.{{s}}.training" value="{{skill.training}}" data-dtype="Number"></td>
-						<td class="skill-name" data-skill="{{s}}"><h4 class="skill-name rollable roll-d20">{{skill.label}}</h4></td>
+						<td class="skill-label" data-skill="{{s}}"><h4 class="skill-name rollable roll-d20" data-tooltip="{{localize 'DND4E.Roll'}} {{skill.label}} {{localize 'DND4E.Check'}}">{{skill.label}}</h4></td>
 						<td class="skill-ability">{{skill.ability}}</td>
-						<td class="skill-value" data-skill="{{s}}"><input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"> <a class="skill-mod skill-bonus rollable">{{numberFormat skill.total decimals=0 sign=true }}</a></td>
+						<td class="skill-value" data-skill="{{s}}"><input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"> <a class="skill-mod skill-bonus rollable" data-tooltip="{{localize 'Fox4e.TipTotalMod'}} ({{localize 'Fox4e.TipClickConfig'}} {{localize 'Fox4e.ManualBonuses'}})">{{numberFormat skill.total decimals=0 sign=true }}</a></td>
 					</tr>
 					{{/each}}
 				</tbody>
