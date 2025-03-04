@@ -118,10 +118,25 @@
     border-left:1px solid #b3a079;
 	--input-placeholder-color:rgba(0,0,0,0.3);
 }
-.sheet.fox4e.actor.pc .sheet-body input::placeholder,
 .sheet.fox4e.actor.pc .sheet-body textarea::placeholder,
-.sheet.fox4e.actor.pc .sheet-body input[type="text"]::placeholder{
-	color:rgba(0,0,0,0.3);
+.sheet.fox4e.actor.pc .sheet-body input::placeholder{
+	color:#000;
+	opacity:0.4;
+}
+.sheet.fox4e.actor.pc .sheet-body input::-webkit-input-placeholder,
+.sheet.fox4e.actor.pc .sheet-body textarea::-webkit-input-placeholder{
+	color:#000;
+	opacity:0.4;
+}
+.sheet.fox4e.actor.pc .sheet-body input::-moz-placeholder,
+.sheet.fox4e.actor.pc .sheet-body textarea::-moz-placeholder{
+	color:#000;
+	opacity:0.4;
+}
+.sheet.fox4e.actor.pc .sheet-body input::-ms-input-placeholder,
+.sheet.fox4e.actor.pc .sheet-body textarea::-ms-input-placeholder{
+	color:#000;
+	opacity:0.4;
 }
 .sheet.fox4e.actor.pc .flexrow.responsive{
 	flex-wrap:wrap;
@@ -1375,6 +1390,7 @@
 .sheet.fox4e.actor.pc .fungibles .currency{
 	justify-content:flex-end;
 	align-items:center;
+	margin-bottom:0.25em;
 }
 .sheet.fox4e.actor.pc .fungibles .currency h3{
 	flex:100% 20 20;

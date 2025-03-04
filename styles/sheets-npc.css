@@ -413,13 +413,6 @@ sheet.fox4e.npc .head ::placeholder{
 .sheet.fox4e.actor.npc .dmg-taken-mods .bonus-note:not(:last-child)::after{
 	content:';';
 }
-.sheet.fox4e.actor.npc .res-mod.reverse{
-	display:inline-block;
-}
-.sheet.fox4e.actor.npc .res-mod.reverse::first-letter{
-	color:rgba(0,0,0,0);
-	margin-right:-5px;
-}
 
 
 /*---------- Traits Section ----------*/
