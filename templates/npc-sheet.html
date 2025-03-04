@@ -757,7 +757,7 @@
 						<tbody>
 						{{#each system.resistances as |res r|}}
 							<tr class="resistance" data-res="{{r}}">
-								<td class="res-name"><h4 class="res-name">{{#if (eq res.label (localize 'Damage'))}}{{localize 'DND4E.DamageAll'}}{{else}}{{res.label}}{{/if}}</h4></td>
+								<td class="res-name"><h4 class="res-name">{{res.label}}</h4></td>
 								{{#if ../system.advancedCals}}<td class="res-value override-{{res.immune}}">{{res.value}}</a></td>{{/if}}
 								<td class="resistances-bonus res-bonus override-{{res.immune}} rollable" data-target="system.resistances" data-tooltip="{{localize 'Fox4e.TipBonus'}}">{{res.resBonusValue}}</td>
 								<td class="res-immune">
