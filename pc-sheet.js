@@ -65,7 +65,6 @@ export const Fox_LoadPCTemplates = async function() {
 	"modules/fox-4e-styling/templates/parts/pc-powers.html",
 	"modules/fox-4e-styling/templates/parts/pc-inventory.html",
 	"modules/fox-4e-styling/templates/parts/pc-features.html",
-	"modules/fox-4e-styling/templates/parts/pc-damage.html",
 	"modules/fox-4e-styling/templates/parts/pc-status.html",
 	"modules/fox-4e-styling/templates/parts/pc-rituals.html",
 	"modules/fox-4e-styling/templates/parts/pc-fluff.html",
