@@ -173,13 +173,8 @@ Handlebars.registerHelper('wepHand', function(item) {
 	}
 });
 
-/* "revx" Handlebars Helper: converts a number to its "opposite" on the number line
-*
-*  Returns label based on equip state + weapon hand state
-*
-*	@param {Object} item The "system" object of the power
-*	@returns {string} term to be printed.
-*
+/* "revx" Handlebars Helper: 
+*	converts a number to its "opposite" on the number line
 /*											*/
 Handlebars.registerHelper("revx", function(sourceNum){
 	if (isNaN(sourceNum)) return '';
