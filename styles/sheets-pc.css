@@ -82,6 +82,7 @@
 	background:rgba(255,255,255,0.4);
 	border-radius:4px;
 	border-top:1px solid #fff;
+	border-left:1px solid #fff;
 	border-bottom:1px solid #d4bf95;
 	border-right:1px solid #d4bf95;
 	text-transform:uppercase;
@@ -137,6 +138,15 @@
 .sheet.fox4e.actor.pc .sheet-body textarea::-ms-input-placeholder{
 	color:#000;
 	opacity:0.4;
+}
+.sheet.fox4e.actor.pc .sheet-body input[type="checkbox"]{
+	filter:unset;
+	--color-checkbox-checked:#fff;
+	opacity:1;
+}
+.sheet.fox4e.actor.pc .sheet-body input[type="checkbox"]:checked{
+	filter:unset;
+	opacity:1;
 }
 .sheet.fox4e.actor.pc .flexrow.responsive{
 	flex-wrap:wrap;
@@ -703,7 +713,7 @@
 }
 .sheet.fox4e.actor.pc .vitals .skill-summary ol.skill-list{
 	padding:unset;
-	margin":unset;
+	margin:unset;
 	list-style:none;
 	display:inline;
 }
@@ -831,6 +841,9 @@
 .sheet.fox4e.actor.pc .tabs-content .infobox>h3{
 	margin-top:0;
 }
+.sheet.fox4e.actor.pc .tabs-content .config-section-display{
+	text-align:right;
+}
 
 /*------------------------------------------------------------------*/
 /*---------------------- All Item Lists ----------------------------*/
@@ -928,6 +941,13 @@
 	-webkit-box-align:center;
 	    -ms-flex-align:center;
 	        align-items:center;
+}
+.sheet.fox4e.actor.pc .item.not-available .item-header>*{
+	opacity:0.4;
+}
+.sheet.fox4e.actor.pc .item.not-available .item-header .item-image{
+	filter:grayscale(1) contrast(0.75);
+	opacity:1;
 }
 .sheet.fox4e.actor.pc .item .item-header h3:hover,
 .sheet.fox4e.actor.pc .item .item-header h3:focus,
@@ -1142,7 +1162,7 @@
 .sheet.fox4e.actor.pc .item-list .item.feature{
     align-items:normal;
 }
-.sheet.fox4e.actor.pc .item-list.features .items-header>*{
+.sheet.fox4e.actor.pc .item-list.features .items-header>*:not(.group-name){
 	text-align:right;
 }
 .sheet.fox4e.actor.pc .item-list.features header.filters .search input{
