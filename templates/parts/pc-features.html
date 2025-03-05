@@ -18,8 +18,7 @@
 
 	{{#each sections as |section sid|}}
 	{{#unless (eq section.dataset.type 'ritual')}}
-	{{#if (laden section.items)}}
-		<li class="item-group {{section.dataset.type}}">
+		<li class="item-group {{section.dataset.type}}{{#unless ../system.showAll.features}}{{#unless (laden section.items)}}  hidden{{/unless}}{{/unless}}">
 			<div class="items-header flexrow">
 				<h3 class="group-name">{{#if (eq section.dataset.type 'raceFeats')}}{{localize 'Fox4e.Heritage'}} {{localize 'DND4E.Features'}}{{else}}{{localize section.label}}{{/if}}</h3>
 				{{#if section.columns}}
@@ -72,10 +71,16 @@
 			{{/each}}
 			</ol>
 	</li>
-{{/if}}
 {{/unless}}
 {{/each}}
 </ol>
+
+<section class="config">
+	<div class="config-section-display">
+		<label>{{localize 'Fox4e.ShowEmpty'}}</label>
+		<input class="show-empty" type="checkbox" name="system.showAll.features" data-dtype="Boolean" {{checked system.showAll.features}} />
+	</div>
+</section>
 
 <script>
 	function filterFeatures() {

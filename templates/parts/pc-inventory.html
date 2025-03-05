@@ -1,8 +1,8 @@
 <h2>{{localize 'DND4E.Inventory'}}</h2>
 <ol class="item-list gear">
 {{#each sections as |section sid|}}
-{{#if (laden section.items)}}
-	<li class="item-group {{section.dataset.type}}">
+
+	<li class="item-group {{section.dataset.type}}{{#unless ../system.showAll.inventory}}{{#unless (laden section.items)}}  hidden{{/unless}}{{/unless}}">
 		<div class="items-header flexrow">
 			<h3 class="group-name">{{localize section.label}}</h3>
 
@@ -48,7 +48,7 @@
 
 		<ol class="items-list">
 		{{#each section.items as |item iid|}}
-			<li class="item gear {{section.dataset.type}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+			<li class="item gear {{section.dataset.type}}{{#if hasUses}}{{#unless isDepleted}} not-available{{!-- I know what it looks like, but isDepleted returns the opposite of what its name implies! --}}{{/unless}}{{/if}}" data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
 				<div class="flexrow item-header feature-header">
 					<div class="item-image rollable roll-d20" data-tooltip="{{localize 'Fox4e.TipSendChat'}}">
 						<img src="{{item.img}}" width="26" height="26" />
@@ -135,7 +135,6 @@
 		{{/each}}
 		</ol>
 	</li>
-{{/if}}
 {{/each}}
 </ol>
 
@@ -169,5 +168,12 @@
 		<label class="denomination {{k}}" data-tooltip="{{ localize (lookup ../config.ritualcomponents k )}}" for="system.ritualcomp.{{k}}">{{k}}</label>
 		<input type="text" name="system.ritualcomp.{{k}}" value="{{v}}" data-dtype="Number" data-tooltip="{{ localize (lookup ../config.ritualcomponents k )}}"/>
 		{{/each}}
+	</div>
+</section>
+
+<section class="config">
+	<div class="config-section-display">
+		<label>{{localize 'Fox4e.ShowEmpty'}}</label>
+		<input class="show-empty" type="checkbox" name="system.showAll.inventory" data-dtype="Boolean" {{checked system.showAll.inventory}} />
 	</div>
 </section>

@@ -169,9 +169,7 @@
 						<td class="res-mod override-{{res.immune}}">{{numberFormat res.value decimals=0 sign=true}}</td>
 						<td class="res-armour override-{{res.immune}}">{{res.armour}}</td>
 						<td class="resistances-bonus res-bonus override-{{res.immune}} rollable" data-target="system.resistances" data-tooltip="{{localize 'DND4E.BonusesTo'}} {{localize 'DND4E.DamRes'}}">{{res.resBonusValue}}</td>
-						<td class="res-imm"><input class="res-immune" type="checkbox" name="system.resistances.{{r}}.immune" data-dtype="Boolean" {{checked res.immune}} data-tooltip="{{localize 'DND4E.Immunity'}}" /></td>
-						{{log res}}
-						
+						<td class="res-imm"><input class="res-immune" type="checkbox" name="system.resistances.{{r}}.immune" data-dtype="Boolean" {{checked res.immune}} data-tooltip="{{localize 'DND4E.Immunity'}}" /></td>						
 					</tr>
 					{{/each}}
 				</tbody>
