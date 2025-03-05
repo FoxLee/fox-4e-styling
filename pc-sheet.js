@@ -14,7 +14,7 @@ export default class Fox4eSheet extends ActorSheet4e{
 			inventory: new Set(),
 			powers: new Set(),
 			features: new Set(),
-			rituals: new Set()
+			rituals: new Set(),
 		};
 	}
 
@@ -26,7 +26,7 @@ export default class Fox4eSheet extends ActorSheet4e{
 		this._sortRituals(ritualsData);
 		foxData.rituals = ritualsData;
 		foxData.showResources = ( coreData.system.resources.primary?.show || coreData.system.resources.secondary?.show || coreData.system.resources.tertiary?.show ? true : false );
-		let combinedData = {...coreData,...foxData};
+		let combinedData = {...coreData,...foxData};		
 		return combinedData;
 	}
 
