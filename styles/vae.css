@@ -1,6 +1,7 @@
 .visual-active-effects.panel{
 	--font-primary:'DragonBodySans';
 	--vae-name-font:'DragonBodySans';
+	--gradient-4e:linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(221,220,203,1) 100%);
 }
 #visual-active-effects .effect-info{
 	border-left:unset;
@@ -52,6 +53,7 @@
 }
 .visual-active-effects.panel .effect-info-details{
 	line-height:1;
+	color:#000;
 }
 .visual-active-effects.panel .effect-info-details h2,
 .visual-active-effects.panel .effect-info-details h3,
@@ -98,4 +100,7 @@
 	font-size:1.1em;
 	margin:1rem 0.3rem 0.5rem;
 	font-weight:400;
+}
+#tooltip.combat-dock-tooltip .combat-dock-tooltip-wrapper p{
+	color:#000;
 }
