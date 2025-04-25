@@ -3,8 +3,8 @@
 	"title": "Fox's 4e Aesthetics",
 	"description": "Overhauls sheets, journal entries, chat cards and various other things to look like official 4e material.",
 	"url": "https://codeberg.org/FoxLee/fox-4e-styling/",
-	"manifest": "https://codeberg.org/FoxLee/fox-4e-styling/raw/branch/main/module.json",
-	"download": "https://codeberg.org/FoxLee/fox-4e-styling/archive/v3.1.zip",
+	"manifest": "https://foundry.munchlax.org/fox-4e-styling/module.json",
+	"download": "https://foundry.munchlax.org/fox-4e-styling/module.zip",
 	"license": "https://codeberg.org/FoxLee/fox-4e-styling/src/branch/main/LICENSE",
 	"readme": "https://codeberg.org/FoxLee/fox-4e-styling/src/branch/main/README.md",
 	"bugs": "https://codeberg.org/FoxLee/fox-4e-styling/issues",
@@ -34,7 +34,7 @@
 		"recommends": [{
 			"id": "fox-burble",
 			"type": "module",
-			"manifest": "https://codeberg.org/FoxLee/burble/releases/latest/download/module.json"
+			"manifest": "https://foundry.munchlax.org/burble/module.json"
 		}]
 	},
 	"styles": [
