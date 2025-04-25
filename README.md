@@ -6,4 +6,4 @@ From now on, you can find us at https://codeberg.org/FoxLee/fox-4e-styling/!
 
 This repository will be archived soon and deleted as soon as is practical. The manifest should hopefully update automatically next time you run updates, but if it doesn't please use the new URL: https://codeberg.org/FoxLee/fox-4e-styling/raw/branch/main/module.json
 
-Thank you!
+Sorry for the inconvenience, and thank you for understanding!
